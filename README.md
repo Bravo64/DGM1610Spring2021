@@ -1,1 +1,3 @@
-DGM1610Spring2021
+-- Daily Weather Report --
+
+Thursday, January 14th, 2021: Partly Cloudy
