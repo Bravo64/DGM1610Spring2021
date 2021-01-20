@@ -11,3 +11,5 @@ Sunday, January 17th, 2021: Partly Cloudy
 Monday, January 18th, 2021: Cloudy
 
 Tuesday, January 19th, 2021: Sunny, Clear Skies
+
+Wednesday, January 20th, 2021: Sunny, Clear Skies
