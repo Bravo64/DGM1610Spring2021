@@ -15,3 +15,5 @@ Tuesday, January 19th, 2021: Sunny, Clear Skies
 Wednesday, January 20th, 2021: Sunny, Clear Skies
 
 Thursday, January 21st, 2021: Sunny
+
+Friday, January 22st, 2021: Cloudy
