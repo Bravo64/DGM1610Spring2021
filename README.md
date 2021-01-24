@@ -19,3 +19,5 @@ Thursday, January 21st, 2021: Sunny
 Friday, January 22st, 2021: Cloudy
 
 Saturday, January 23rd, 2021: Cloudy, Snowing
+
+Sunday, January 24th, 2021: Partly Cloudy
