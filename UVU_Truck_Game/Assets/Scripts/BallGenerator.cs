@@ -5,14 +5,16 @@ using UnityEngine;
 public class BallGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
+    private int number = 0;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        while (true)
+        while (number < 25)
         {
             yield return new WaitForSeconds(0.5f);
-            Instantiate(ball);
+            Instantiate(ball, transform.position, transform.rotation);
+            number++;
         }
     }
 
