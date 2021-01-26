@@ -23,3 +23,5 @@ Saturday, January 23rd, 2021: Cloudy, Snowing
 Sunday, January 24th, 2021: Partly Cloudy
 
 Monday, January 25th, 2021: Cloudy
+
+Tuesday, January 26th, 2021: Cloudy, Heavy Snowfall
