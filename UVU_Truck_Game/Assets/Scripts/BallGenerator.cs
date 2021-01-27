@@ -10,7 +10,7 @@ public class BallGenerator : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        while (number < 25)
+        while (number < 200)
         {
             yield return new WaitForSeconds(0.5f);
             Instantiate(ball, transform.position, transform.rotation);
