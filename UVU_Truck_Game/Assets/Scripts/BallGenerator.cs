@@ -5,22 +5,25 @@ using UnityEngine;
 public class BallGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
-    private int number = 0;
+    [SerializeField] private int creationLimit = 200;
+    [SerializeField] private int ballsPerSecond = 2;
 
-    // Start is called before the first frame update
+    // Start Function is called before the first frame update
+    // (or at the gameObject's creation/reactivation)
     IEnumerator Start()
     {
-        while (number < 200)
+        // The number of balls we created within this scene
+        int ballsTotal = 0;
+        // loop until we reach the limit value
+        while (ballsTotal < creationLimit)
         {
-            yield return new WaitForSeconds(0.5f);
+            // Wait to create the next ball
+            // The ballsPerSecond variable determines the wait time
+            yield return new WaitForSeconds(1.0f / ballsPerSecond);
+            // Create the ball at our exact location
             Instantiate(ball, transform.position, transform.rotation);
-            number++;
+            // Count this ball
+            ballsTotal++;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
