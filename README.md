@@ -29,3 +29,5 @@ Tuesday, January 26th, 2021: Cloudy, Heavy Snowfall
 Wdndnesday, January 27th, 2021: Partly Cloudy
 
 Thursday, January 28th, 2021: Cloudy
+
+Friday, January 29th, 2021: Partly Cloudy
