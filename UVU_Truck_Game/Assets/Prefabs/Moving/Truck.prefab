@@ -1959,8 +1959,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1236968631}
   - component: {fileID: 1236968630}
+  - component: {fileID: 8285743466482270398}
   m_Layer: 0
-  m_Name: ColoredPiece
+  m_Name: Colored_Piece_Main
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,6 +2032,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8285743466482270398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236968629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dc5636a7b5444769e6c7df7360c9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorOptions:
+  - {r: 0.8666667, g: 0.17254902, b: 0.17254902, a: 1}
+  - {r: 0.2, g: 0.7490196, b: 1, a: 1}
+  - {r: 0.9607843, g: 0.8352941, b: 0.19215687, a: 1}
+  - {r: 0.15686275, g: 0.78431374, b: 0.23137255, a: 1}
+  - {r: 0.85490197, g: 0.18039216, b: 0.8980392, a: 1}
+  - {r: 1, g: 0.6627451, b: 0.18431373, a: 1}
 --- !u!1 &1244006669
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,8 +8,6 @@ public class TruckControls : MonoBehaviour
     [SerializeField] private int wheelSpeed = 10;
     // Sensitivity of the truck tilting (spinning) controls
     [SerializeField] private int tiltSensitivity = 25;
-    // Random color to choose from
-    [SerializeField] private Color[] colorOptions;
     // List of truck wheels
     List<Rigidbody2D> wheels  = new List<Rigidbody2D>();
     // The truck's Rigidbody2D Component
@@ -31,11 +29,6 @@ public class TruckControls : MonoBehaviour
                     // Get the wheel Rigidbody2D Component, and add it to the wheels list
                     wheels.Add(child2.GetComponent<Rigidbody2D>());
                 }
-                else if (child2.name == "ColoredPiece")
-                {
-                    child2.GetComponent<SpriteRenderer>().color = colorOptions[Random.Range(0, colorOptions.Length)];
-                }
-
             }
         }
         // Get the truck's Rigidbody2D Component
