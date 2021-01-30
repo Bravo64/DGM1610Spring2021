@@ -8,8 +8,9 @@ public class RandomColor : MonoBehaviour
     [SerializeField] private Color[] colorOptions;
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        GetComponent<SpriteRenderer>().color = colorOptions[Random.Range(0, colorOptions.Length)];
+        if (Input.GetKeyDown(KeyCode.Space))
+            GetComponent<SpriteRenderer>().color = colorOptions[Random.Range(0, colorOptions.Length)];
     }
 }
