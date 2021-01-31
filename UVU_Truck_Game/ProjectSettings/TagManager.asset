@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wheel
   - ColoredPiece
+  - Vehicle
   layers:
   - Default
   - TransparentFX
