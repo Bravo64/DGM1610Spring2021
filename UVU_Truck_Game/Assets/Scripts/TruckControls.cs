@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class TruckControls : MonoBehaviour
@@ -24,6 +25,15 @@ public class TruckControls : MonoBehaviour
     
     --------------------- DOC END ----------------------
      */
+    
+    //----------------- Public Variables -------------------
+    
+    // Car ID Number (Determines car activation order)
+    [Header("Car ID Number (Order of Activations):")]
+    public int carIDNumber = 0;
+    
+    //------------------------------------------------------
+    
     
     //----- Serialized Variables (private, shows in Editor) -----
     
@@ -58,6 +68,12 @@ public class TruckControls : MonoBehaviour
 
     // The Sprite Renderer of the fuel strip.
     private SpriteRenderer _fuelStripRenderer;
+    
+    // The Main Camera (Cinemachine Virtual Camera)
+    private CinemachineVirtualCamera _mainCamera;
+    
+    // Array of every car in the scene
+    private GameObject[] _allCars;
 
     //-----------------------------------------------------
 
@@ -96,6 +112,17 @@ public class TruckControls : MonoBehaviour
         // Get the truck's Rigidbody2D Component.
         _myRigidbody2D = transform.GetComponent<Rigidbody2D>();
 
+        // Grab the virtual camera object
+        GameObject camObject = GameObject.Find("/Virtual_Cam");
+        if (camObject)
+        {
+            // Get the main camera component (Cinemachine Virtual Camera).
+            _mainCamera = camObject.GetComponent<CinemachineVirtualCamera>();
+        }
+
+    // Collect all cars in the scene ("Vehicle" tag).
+        _allCars = GameObject.FindGameObjectsWithTag("Vehicle");
+        
         // This Method will double check that everything
         // was located and assigned properly.
         CheckForAssignmentErrors();
@@ -213,16 +240,36 @@ public class TruckControls : MonoBehaviour
         // Let other Methods know the fuel
         // is gone by setting this to true.
         _fuelIsEmpty = true;
+        // Wait a second to switch vehicles.
+        yield return new WaitForSeconds(1.0f);
+        // Look through all cars in the scene
+        foreach (var car in _allCars)
+        {
+            // Get their car script.
+            TruckControls carsScript = car.GetComponent<TruckControls>();
+            // Check if they are the next vehicle based on their ID.
+            if (carsScript.carIDNumber == carIDNumber + 1)
+            {
+                // Enabled their controls (script).
+                carsScript.enabled = true;
+                // Set the virtual camera to follow them.
+                _mainCamera.Follow = car.transform;
+            }
+        }
         // Give the car a few seconds to settle.
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
         // while loop continuously checks for car movement.
         while (!_myRigidbody2D.isKinematic)
         {   
-            // Check that we are not still moving (or not much at least).
-            if (_myRigidbody2D.velocity.x < 0.1f && _myRigidbody2D.velocity.y < 0.1f)
+            // Check that we are not moving (almost).
+            if (_myRigidbody2D.velocity.x < 0.01f && 
+                _myRigidbody2D.velocity.y < 0.01f && 
+                _myRigidbody2D.angularVelocity < 0.01f)
             {
                 // "isKinematic" will freeze the car's rigidbody.
                 _myRigidbody2D.isKinematic = true;
+                // Add constraints just in case
+                _myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
                 foreach (var wheel in _wheels)
                 {
                     // Freeze the wheels as well.
@@ -259,7 +306,8 @@ public class TruckControls : MonoBehaviour
         if (_wheels.Count < 2)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Missing (2) children with 'Wheel' tag. \t(Truck --> Front or Back_Wheel_Anchor --> Front/Back_Wheel)");
+            Debug.Log("Error: Missing (2) children with 'Wheel' tag. " +
+                      "\t(/Truck --> Front or Back_Wheel_Anchor --> Front/Back_Wheel)");
             this.enabled = false;
         }
 
@@ -268,7 +316,8 @@ public class TruckControls : MonoBehaviour
         if (!_fuelColorStrip)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: 'Fuel_Color_Strip' child is missing. \t(Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
+            Debug.Log("Error: 'Fuel_Color_Strip' child is missing. " +
+                      "\t(/Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
             this.enabled = false;
         }
 
@@ -289,7 +338,8 @@ public class TruckControls : MonoBehaviour
         if (!_fuelStripRenderer)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Missing 'Color_Strip' SpriteRenderer Component. \t(Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
+            Debug.Log("Error: Missing 'Color_Strip' SpriteRenderer Component. " +
+                      "\t(/Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
             this.enabled = false;
         }
 
@@ -299,6 +349,25 @@ public class TruckControls : MonoBehaviour
         {
             // Print error message if not, and stop the script
             Debug.Log("Error: Truck missing 'Rigidbody2D' component.");
+            this.enabled = false;
+        }
+        
+        // Double check that we have a
+        // Main Virtual Camera Component.
+        if (!_mainCamera)
+        {
+            // Print error message if not, and stop the script
+            Debug.Log("Error: Main 'Cinemachine' Virtual " +
+                      "Camera Component is missing (/'Virtual_Cam')");
+            this.enabled = false;
+        }
+        
+        // Double check we have collected
+        // the cars in the scene.
+        if (_allCars.Length == 0)
+        {
+            // Print error message if not, and stop the script
+            Debug.Log("Error: Cars (Trucks) with 'Vehicle' tag are missing");
             this.enabled = false;
         }
     }
