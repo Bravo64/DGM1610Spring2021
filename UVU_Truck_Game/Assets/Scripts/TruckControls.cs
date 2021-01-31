@@ -14,13 +14,14 @@ public class TruckControls : MonoBehaviour
         truck based on user input, and draining the fuel 
         supply accordingly. It also freezes the truck's
         rigidbody, and disables this script when the
-        fuel is empty.
+        fuel is empty (sending controls to the next car).
         
     Script's Methods:
         - Start
         - Update
         - DrainFuel
         - OutOfFuel (Coroutine)
+        - RestoreFuel (public)
         - CheckForAssignmentErrors
     
     --------------------- DOC END ----------------------
@@ -37,13 +38,13 @@ public class TruckControls : MonoBehaviour
     
     //----- Serialized Variables (private, shows in Editor) -----
     
-    // Move Sensitivity
+    // Move Sensitivity.
     [Header("Forward/backward Senensitivity:")]
     [SerializeField] private int wheelSpeed = 10;
-    // Tilt Sensitivity
+    // Tilt Sensitivity.
     [Header("Senensitivity of truck 'spin':")]
     [SerializeField] private int tiltSensitivity = 25;
-    // Time left on fuel
+    // Time left on fuel.
     [Header("(when gas is pressed):")]
     [Header("Time before fuel is empty...")]
     [SerializeField] private float secondsOfFuel = 20.0f;
@@ -69,11 +70,17 @@ public class TruckControls : MonoBehaviour
     // The Sprite Renderer of the fuel strip.
     private SpriteRenderer _fuelStripRenderer;
     
-    // The Main Camera (Cinemachine Virtual Camera)
+    // The Main Camera (Cinemachine Virtual Camera).
     private CinemachineVirtualCamera _mainCamera;
     
-    // Array of every car in the scene
+    // Array of every car in the scene.
     private GameObject[] _allCars;
+    
+    // The Default amount (in seconds) of a full tank of fuel.
+    private float _defaultFuelAmount;
+    
+    // The Default color of a full tank of fuel.
+    private Color _fullTankColor;
 
     //-----------------------------------------------------
 
@@ -193,6 +200,7 @@ public class TruckControls : MonoBehaviour
             // If secondsOfFuel passes zero,
             // reset it back to zero.
             secondsOfFuel = 0;
+            // Call the OutOfFuel Coroutine
             StartCoroutine(OutOfFuel());
         }
         
@@ -262,9 +270,9 @@ public class TruckControls : MonoBehaviour
         while (!_myRigidbody2D.isKinematic)
         {   
             // Check that we are not moving (almost).
-            if (_myRigidbody2D.velocity.x < 0.01f && 
-                _myRigidbody2D.velocity.y < 0.01f && 
-                _myRigidbody2D.angularVelocity < 0.01f)
+            if (_myRigidbody2D.velocity.x < 0.005f && 
+                _myRigidbody2D.velocity.y < 0.005f && 
+                _myRigidbody2D.angularVelocity < 0.005f)
             {
                 // "isKinematic" will freeze the car's rigidbody.
                 _myRigidbody2D.isKinematic = true;
@@ -290,8 +298,37 @@ public class TruckControls : MonoBehaviour
         // Disable this script.
         this.enabled = false;
     }
-    
-    
+
+    //------- The RestoreFuel Method ------------
+    // This Method is called by the "Fuel Item
+    // Pickup" object when the car triggers its
+    // collider. This Method deals with restoring
+    // the fuel amount, fuel meter, and rigidbodies
+    // to their default state.
+    //----------------------------------------
+    public void RestoreFuel()
+    {
+        // Reactivate the trucks rigidbody
+        _myRigidbody2D.constraints = RigidbodyConstraints2D.None;
+        foreach (var wheel in _wheels)
+        {
+            // Let the other methods know the fuel is back with this variable.
+            _fuelIsEmpty = false;
+            // Restore the fuel (in seconds) to the full default value.
+            secondsOfFuel = _defaultFuelAmount;
+            // Unfreeze the wheels as well.
+            wheel.isKinematic = false;
+            // And Unfreeze the wheel's axel (its parent).
+            wheel.transform.parent.GetComponent<Rigidbody2D>().isKinematic = false;
+            // Reset the color of the fuel meter.
+            _fuelStripRenderer.color = _fullTankColor;
+            // Reset the size of the fuel meter (on x axis).
+            Vector3 fuelMeterScale = _fuelColorStrip.localScale;
+            fuelMeterScale.x = 1.0f;
+            _fuelColorStrip.localScale = fuelMeterScale;
+        }
+    }
+
     //----- The CheckForAssignmentErrors Method --------
     // This Method checks that everything was correctly
     // located and assigned within the Start Method.
@@ -321,9 +358,9 @@ public class TruckControls : MonoBehaviour
             this.enabled = false;
         }
 
-        // Get the fuel color strip's sprite piece
-        // from its children, so that we can change
-        // its color later on.
+        // Now that we know it's there, get the fuel
+        // color strip's sprite piece from its children,
+        // so that we can change its color later on.
         foreach (Transform child3 in _fuelColorStrip)
         {
             // Check for its name
@@ -331,6 +368,15 @@ public class TruckControls : MonoBehaviour
             {
                 // Grab the SpriteRenderer Component.
                 _fuelStripRenderer = child3.GetComponent<SpriteRenderer>();
+                // If tank is not empty.
+                if (secondsOfFuel != 0)
+                {
+                    // If the fuel is not empty, save it as
+                    // the default (full) fuel meter color.
+                    _fullTankColor = _fuelStripRenderer.color;
+                    // Also save its fuel amount as the default value.
+                    _defaultFuelAmount = secondsOfFuel;
+                }
             }
         }
         // Double check that we have
