@@ -3922,7 +3922,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3942,7 +3942,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.45500004, y: -1.2824472}
+  m_ConnectedAnchor: {x: -0.45499986, y: -1.2824471}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801403867933759
@@ -4653,7 +4653,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3454801405152170973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1244427, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3454801405110778578}
@@ -4732,7 +4732,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 838c8925b47b24287b44b0599063a14d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4885,8 +4885,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3454801405395643102}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.00003727293, w: 1}
+  m_LocalPosition: {x: -0.00002582633, y: 0.124442674, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3454801403758147249}
@@ -4966,7 +4966,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 838c8925b47b24287b44b0599063a14d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5097,7 +5097,7 @@ Transform:
   m_GameObject: {fileID: 3454801405459434961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.85, y: 1.55, z: 0}
-  m_LocalScale: {x: 2.9897897, y: 1.0570313, z: 1}
+  m_LocalScale: {x: 3.55785, y: 1.2578672, z: 1.19}
   m_Children:
   - {fileID: 6837453018040781901}
   - {fileID: 3454801405679981216}
@@ -5114,15 +5114,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3454801405459434961}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff321195405484e4590d73777aef5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carIDNumber: 1
+  carIDNumber: 0
   wheelSpeed: 15
-  tiltSensitivity: 40
-  secondsOfFuel: 10
+  tiltSensitivity: 30
+  secondsOfFuel: 5
 --- !u!50 &3454801405459434989
 Rigidbody2D:
   serializedVersion: 4
@@ -5138,8 +5138,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.1
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 2
+  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5153,7 +5153,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 3454801405459434961}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5314,7 +5314,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5334,7 +5334,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5450001, y: -1.2824472}
+  m_ConnectedAnchor: {x: 0.5449999, y: -1.2824473}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801405679981219
