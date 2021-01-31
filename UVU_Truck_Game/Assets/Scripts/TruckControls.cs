@@ -257,7 +257,7 @@ public class TruckControls : MonoBehaviour
             }
         }
         // Give the car a few seconds to settle.
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.5f);
         // while loop continuously checks for car movement.
         while (!_myRigidbody2D.isKinematic)
         {   
