@@ -8,6 +8,7 @@ public class RandomColor : MonoBehaviour
     ---------------- Documentation ---------------------
 
     Script's Name: RandomColor.cs
+    Author: Keali'i Transfield
 
     Script's Description: This script assigns a random color
         to the sprite that it is attached to. In our case, we

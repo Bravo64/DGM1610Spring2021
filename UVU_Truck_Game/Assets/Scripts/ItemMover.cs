@@ -7,22 +7,23 @@ using UnityEngine;
 public class ItemMover : MonoBehaviour
 {
     /*
----------------- Documentation ---------------------
+    ---------------- Documentation ---------------------
 
-Script's Name: TruckControls.cs
+    Script's Name: TruckControls.cs
+    Author: Keali'i Transfield
 
-Script's Description: This script deals with moving the
-    pickup item over time along a straight line to each 
-    waypoint. This will mainly be used for the re-fuel 
-    pickup item. The method it uses is "MoveTowards"
-    with a set of waypoint children.
-    
-Script's Methods:
-    - Start
-    - Update
+    Script's Description: This script deals with moving the
+        pickup item over time along a straight line to each 
+        waypoint. This will mainly be used for the re-fuel 
+        pickup item. The method it uses is "MoveTowards"
+        with a set of waypoint children.
+        
+    Script's Methods:
+        - Start
+        - Update
 
---------------------- DOC END ----------------------
- */
+    --------------------- DOC END ----------------------
+     */
 
 
     //----- Serialized Variables (private, shows in Editor) ------
@@ -75,7 +76,7 @@ Script's Methods:
         if (!_pickupItem)
         {
             // If not, print and error message and disable this script.
-            Debug.Log("Error: Item for 'mover' is missing. Please ensure " +
+            Debug.LogError("Error: Item for 'mover' is missing. Please ensure " +
                       "that the mover has an item sibling with an 'Item' tag.");
             this.enabled = false;
         }
@@ -91,7 +92,7 @@ Script's Methods:
         if (_waypoints.Count == 0)
         {
             // If not, print and error message and disable this script.
-            Debug.Log("Error: Mover has no waypoint children.");
+            Debug.LogError("Error: Mover has no waypoint children.");
             this.enabled = false;
         }
     }

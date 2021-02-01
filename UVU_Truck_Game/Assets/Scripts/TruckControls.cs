@@ -9,6 +9,7 @@ public class TruckControls : MonoBehaviour
     ---------------- Documentation ---------------------
     
     Script's Name: TruckControls.cs
+    Author: Keali'i Transfield
     
     Script's Description: This script deals with moving the
         truck based on user input, and draining the fuel 
@@ -366,8 +367,8 @@ public class TruckControls : MonoBehaviour
         if (_wheels.Count < 2)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Missing (2) children with 'Wheel' tag. " +
-                      "\t(/Truck --> Front or Back_Wheel_Anchor --> Front/Back_Wheel)");
+            Debug.LogError("Error: Missing (2) children with 'Wheel' tag. " +
+                      "\t(Location in Scene: /Truck --> Front or Back_Wheel_Anchor --> Front/Back_Wheel)");
             this.enabled = false;
         }
 
@@ -376,8 +377,8 @@ public class TruckControls : MonoBehaviour
         if (!_fuelColorStrip)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: 'Fuel_Color_Strip' child is missing. " +
-                      "\t(/Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
+            Debug.LogError("Error: 'Fuel_Color_Strip' child is missing. " +
+                      "\t(Location in Scene: /Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
             this.enabled = false;
         }
 
@@ -407,8 +408,8 @@ public class TruckControls : MonoBehaviour
         if (!_fuelStripRenderer)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Missing 'Color_Strip' SpriteRenderer Component. " +
-                      "\t(/Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
+            Debug.LogError("Error: Missing 'Color_Strip' SpriteRenderer Component. " +
+                      "\t(Location in Scene: /Truck --> Fuel_Meter --> Fuel_Color_Strip --> Color_Strip)");
             this.enabled = false;
         }
 
@@ -417,7 +418,7 @@ public class TruckControls : MonoBehaviour
         if (!_myRigidbody2D)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Truck missing 'Rigidbody2D' component.");
+            Debug.LogError("Error: Truck missing 'Rigidbody2D' component.");
             this.enabled = false;
         }
         
@@ -426,8 +427,8 @@ public class TruckControls : MonoBehaviour
         if (!_mainCamera)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Main 'Cinemachine' Virtual " +
-                      "Camera Component is missing (/'Virtual_Cam')");
+            Debug.LogError("Error: Main 'Cinemachine' Virtual " +
+                      "Camera Component is missing (Location in Scene: /'Virtual_Cam')");
             this.enabled = false;
         }
         
@@ -436,7 +437,7 @@ public class TruckControls : MonoBehaviour
         if (_allCars.Length == 0)
         {
             // Print error message if not, and stop the script
-            Debug.Log("Error: Cars (Trucks) with 'Vehicle' tag are missing");
+            Debug.LogError("Error: Cars (Trucks) with 'Vehicle' tag are missing");
             this.enabled = false;
         }
     }

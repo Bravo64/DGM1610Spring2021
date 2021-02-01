@@ -5,24 +5,39 @@ using UnityEngine;
 public class FuelItemPickup : MonoBehaviour
 { 
     /*
----------------- Documentation ---------------------
+    ---------------- Documentation ---------------------
 
-Script's Name: FuelItemPickup.cs
+    Script's Name: FuelItemPickup.cs
+    Author: Keali'i Transfield
 
-Script's Description: This script waits for a "Vehicle" tagged object
-    to enter and trigger this object's trigger collider. It then grabs
-    the "TruckControls" scripts of the other object, and calls its
-    RestoreFuel method. Lastly, the object disables itself.
+    Script's Description: This script waits for a "Vehicle" tagged object
+        to enter and trigger this object's trigger collider. It then grabs
+        the "TruckControls" scripts of the other object, and calls its
+        RestoreFuel method. Lastly, the object disables itself.
+        
+    Script's Methods:
+        - Start
+        - OnTriggerEnter2D
+
+    --------------------- DOC END ----------------------
+     */
     
-Script's Methods:
-    - OnTriggerEnter2D
-
---------------------- DOC END ----------------------
- */
-
-    // The particle effect we create when the place collects the fuel
-    [SerializeField] private GameObject partPrefab;
+    // The particle effect we want to create when fuels is collected (prefabs found in Resources)
+    private GameObject _particlePrefab;
     
+    //-------------- The Start Method -------------------
+    // This Method is called before the first frame update
+    // (or at the gameObject's creation/reactivation).
+    // Here, we pretty much just use it to assign
+    // the Particle Prefab.
+    //-----------------------------------------------------
+
+    void Start()
+    {
+        // Get the Particle Prefab from Resources folder.
+        _particlePrefab = Resources.Load("Prefabs/Fuel_Particle") as GameObject;
+    }
+
     //------- The OnTriggerEnter2D Method ------------
     // This Method is called once another object enters
     // and this triggers this object's trigger collider.
@@ -42,9 +57,17 @@ Script's Methods:
             // Call its public RestoreFuel method,
             // so that it can work on reactivating itself.
             truckScript.RestoreFuel();
-            // Create the fuel particle effect
-            Instantiate(partPrefab, transform.position, Quaternion.identity);
-            // Turn off this object.
+            if (_particlePrefab)
+            {
+                // Create the fuel particle effect
+                Instantiate(_particlePrefab, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                // If we can't find the particle, print an error message.
+                Debug.LogError("'Fuel_Particle' Prefab is missing (Location: /Assets/Resources/Prefabs/Fuel_Particle).'");
+            }
+                // Turn off this object.
             gameObject.SetActive(false);
         }
     }
