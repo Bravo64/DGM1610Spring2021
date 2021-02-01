@@ -1,52 +1,58 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemMover : MonoBehaviour
 {
-        /*
-    ---------------- Documentation ---------------------
+    /*
+---------------- Documentation ---------------------
 
-    Script's Name: TruckControls.cs
+Script's Name: TruckControls.cs
 
-    Script's Description: This script deals with moving the
-        pickup item over time along a straight line. This will
-        mainly be used for the re-fuel pickup item. The method
-        it uses it scaling along the Y axis at an even speed.
-        
-    Script's Methods:
-        - Start
-        - Update
-
-    --------------------- DOC END ----------------------
-     */
-       
+Script's Description: This script deals with moving the
+    pickup item over time along a straight line to each 
+    waypoint. This will mainly be used for the re-fuel 
+    pickup item. The method it uses is "MoveTowards"
+    with a set of waypoint children.
     
+Script's Methods:
+    - Start
+    - Update
+
+--------------------- DOC END ----------------------
+ */
+
+
     //----- Serialized Variables (private, shows in Editor) ------
 
-    [Header("Speed that Item moves along the line:")]
-    [SerializeField] private float movementSpeed = 0.5f;
-    
+    [Header("Speed that Item moves along the line:")] [SerializeField]
+    private float movementSpeed = 5.0f;
+
     //------------------------------------------------------------
-        
-    
+
+
     //---------------- Private Variables -------------------
 
     // The item we are moving.
     private Transform _pickupItem;
-    
-    // An empty object showing where
-    // we want the pickup item to be.
-    private Transform _desiredPositionEmpty;
-    
-    // This variable will keep track of which direction we
-    // are scaling with either a 1 or -1.
-    private int _growthDirection = 1;
+
+    // A list of empties representing
+    // each position we want to go to.
+    private List<Transform> _waypoints = new List<Transform>();
+
+    // A list of empties representing
+    // each position we want to go to.
+    private int _activeWaypoint = 0;
+
+    // The direction we are moving in the waypoints,
+    // which is kept track of with either a 1 or -1.
+    private int _movementDirection = 1;
 
     //------------------------------------------------------
-        
-    
+
+
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation). It
@@ -55,24 +61,16 @@ public class ItemMover : MonoBehaviour
     //----------------------------------------------------
     void Start()
     {
-        // Search through children.
-        foreach (Transform child1 in transform)
-        {
-            // Look for the position empty's name
-            if (child1.name == "Position")
-            {
-                _desiredPositionEmpty = child1;
-            }
-        }
         // Search through our parent's children (siblings)
-        foreach (Transform child2 in transform.parent)
+        foreach (Transform child1 in transform.parent)
         {
             // Look for the pickup item's tag ("Item").
-            if (child2.CompareTag("Item"))
+            if (child1.CompareTag("Item"))
             {
-                _pickupItem = child2;
+                _pickupItem = child1;
             }
         }
+
         // Double check that we got the item.
         if (!_pickupItem)
         {
@@ -81,38 +79,58 @@ public class ItemMover : MonoBehaviour
                       "that the mover has an item sibling with an 'Item' tag.");
             this.enabled = false;
         }
-        // Double check that we got the position empty.
-        if (!_desiredPositionEmpty)
+
+        // Get the waypoint children
+        foreach (Transform child2 in transform)
+        {
+            // Add it to the list
+            _waypoints.Add(child2);
+        }
+
+        // Double check that we got the waypoints.
+        if (_waypoints.Count == 0)
         {
             // If not, print and error message and disable this script.
-            Debug.Log("Error: Mover's 'Position' child is missing.");
+            Debug.Log("Error: Mover has no waypoint children.");
             this.enabled = false;
         }
     }
 
     //------- The Update Method ------------
     // This Method is called once per frame.
-    // For this script, it mainly just changes
-    // the "mover's" scale on the Y axis.
+    // For this script, it moves the item
+    // towards a specific waypoint. Once it
+    // gets close enough, it switches to the
+    // next one.
     //--------------------------------------
     void Update()
     {
-        // Move the item to the desired position.
-        _pickupItem.position = _desiredPositionEmpty.position;
-        // Get the scale
-        Vector3 myScale = transform.localScale;
-        // Alter our scale along the Y Axis
-        myScale.y += _growthDirection * movementSpeed * Time.deltaTime;
-        // If the scale gets too big or small, flip the direction.
-        if (myScale.y >= 1 || myScale.y <= -1)
+        // Move the item towards the active waypoint.
+        _pickupItem.position = Vector3.MoveTowards(_pickupItem.position, _waypoints[_activeWaypoint].position,
+            movementSpeed * Time.deltaTime);
+        if (Vector3.Distance(_pickupItem.position, _waypoints[_activeWaypoint].position) < 0.01f)
         {
-            // Times -1 flips the value
-            _growthDirection *= -1;
-            // Pull the scale back if it gets too far
-            myScale.y = (float)Math.Round(myScale.y);
+            // If we reach the end.
+            if (_activeWaypoint >= _waypoints.Count - 1)
+            {
+                // Make sure we didn't go past
+                _activeWaypoint = _waypoints.Count - 1;
+                // Go back
+                _movementDirection = -1;
+            }
+            // Else if we reach the beginning.
+            else if (_activeWaypoint <= 0)
+            {
+                // Make sure we're currently at zero
+                _activeWaypoint = 0;
+                // Switch to forward
+                _movementDirection = 1;
+            }
+
+            // Change to the next waypoint (index).
+            // "_movementDirection" is either 1 or -1.
+            _activeWaypoint += _movementDirection;
         }
-        // Reassign the scale.
-        transform.localScale = myScale;
     }
 }
 // ---------------------- END OF FILE -----------------------

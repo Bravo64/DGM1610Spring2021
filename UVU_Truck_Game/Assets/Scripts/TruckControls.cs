@@ -47,7 +47,7 @@ public class TruckControls : MonoBehaviour
     // Time left on fuel.
     [Header("(when gas is pressed):")]
     [Header("Time before fuel is empty...")]
-    [SerializeField] private float secondsOfFuel = 20.0f;
+    [SerializeField] private float secondsOfFuel = 3.0f;
     
     //-------------------------------------------------------
 
@@ -248,6 +248,9 @@ public class TruckControls : MonoBehaviour
         // Let other Methods know the fuel
         // is gone by setting this to true.
         _fuelIsEmpty = true;
+        // Add Drag to our rigidbody.
+        _myRigidbody2D.drag = 2;
+        _myRigidbody2D.angularDrag = 2;
         // Wait a second to switch vehicles.
         yield return new WaitForSeconds(1.0f);
         // Look through all cars in the scene
@@ -327,6 +330,9 @@ public class TruckControls : MonoBehaviour
         StopCoroutine(OutOfFuel());
         // Let the other methods know the fuel is back with this variable.
         _fuelIsEmpty = false;
+        // Get rid of drag for our rigidbody.
+        _myRigidbody2D.drag = 0;
+        _myRigidbody2D.angularDrag = 0;
         // Reactivate the trucks rigidbody
         _myRigidbody2D.constraints = RigidbodyConstraints2D.None;
         // Restore the fuel (in seconds) to the full default value.

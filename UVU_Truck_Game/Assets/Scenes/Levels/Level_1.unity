@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: secondsOfFuel
-      value: 3
+      value: 3.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
@@ -1153,7 +1153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: secondsOfFuel
-      value: 3
+      value: 3.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
@@ -1525,25 +1525,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3890546750011780772, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9
+    - target: {fileID: 705240600, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
       objectReference: {fileID: 0}
-    - target: {fileID: 3890546750011780772, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3890546750011780772, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3890546750011780772, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
+    - target: {fileID: 153933301967657013, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.056452
+      value: -25.39
       objectReference: {fileID: 0}
-    - target: {fileID: 3890546750011780772, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
+    - target: {fileID: 153933301967657013, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.029262
+      value: 4.72
       objectReference: {fileID: 0}
     - target: {fileID: 4895463544373290539, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
       propertyPath: m_RootOrder
@@ -1589,17 +1581,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6426143542219646233, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7199993
+      objectReference: {fileID: 0}
     - target: {fileID: 8987792944287502381, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
       propertyPath: m_Name
       value: Fuel_Item_Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 9042379011179792161, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
-      propertyPath: m_Radius
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9042379011179792161, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
