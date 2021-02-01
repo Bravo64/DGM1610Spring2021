@@ -46,3 +46,4 @@ public class RandomColor : MonoBehaviour
         _myRenderer.color = colorOptions[Random.Range(0, colorOptions.Length)];
     }
 }
+// -------------------------- END OF FILE ---------------------------

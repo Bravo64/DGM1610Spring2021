@@ -127,7 +127,7 @@ public class TruckControls : MonoBehaviour
             _mainCamera = camObject.GetComponent<CinemachineVirtualCamera>();
         }
 
-    // Collect all cars in the scene ("Vehicle" tag).
+        // Collect all cars in the scene ("Vehicle" tag).
         _allCars = GameObject.FindGameObjectsWithTag("Vehicle");
         
         // This Method will double check that everything
@@ -418,4 +418,4 @@ public class TruckControls : MonoBehaviour
         }
     }
 }
-// -------------------------- END OF FILE ---------------------------
+// ---------------------- END OF FILE -----------------------
