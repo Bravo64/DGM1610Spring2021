@@ -19,6 +19,9 @@ Script's Methods:
 
 --------------------- DOC END ----------------------
  */
+
+    // The particle effect we create when the place collects the fuel
+    [SerializeField] private GameObject partPrefab;
     
     //------- The OnTriggerEnter2D Method ------------
     // This Method is called once another object enters
@@ -39,6 +42,8 @@ Script's Methods:
             // Call its public RestoreFuel method,
             // so that it can work on reactivating itself.
             truckScript.RestoreFuel();
+            // Create the fuel particle effect
+            Instantiate(partPrefab, transform.position, Quaternion.identity);
             // Turn off this object.
             gameObject.SetActive(false);
         }

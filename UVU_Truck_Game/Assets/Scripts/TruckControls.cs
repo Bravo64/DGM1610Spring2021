@@ -31,7 +31,7 @@ public class TruckControls : MonoBehaviour
     
     // Car ID Number (Determines car activation order)
     [Header("Car ID Number (Order of Activations):")]
-    public int carIDNumber = 0;
+    public int carIDNumber;
     
     //------------------------------------------------------
     
@@ -264,15 +264,18 @@ public class TruckControls : MonoBehaviour
                 _mainCamera.Follow = car.transform;
             }
         }
+
         // Give the car a few seconds to settle.
         yield return new WaitForSeconds(1.5f);
         // while loop continuously checks for car movement.
         while (!_myRigidbody2D.isKinematic)
-        {   
-            // Check that we are not moving (almost).
-            if (_myRigidbody2D.velocity.x < 0.005f && 
-                _myRigidbody2D.velocity.y < 0.005f && 
-                _myRigidbody2D.angularVelocity < 0.005f)
+        {
+            // Check that we are not moving (almost),
+            // and still out of fuel.
+            if (_myRigidbody2D.velocity.x < 0.005f &&
+                _myRigidbody2D.velocity.y < 0.005f &&
+                _myRigidbody2D.angularVelocity < 0.005f &&
+                _fuelIsEmpty)
             {
                 // "isKinematic" will freeze the car's rigidbody.
                 _myRigidbody2D.isKinematic = true;
@@ -285,18 +288,30 @@ public class TruckControls : MonoBehaviour
                     // And freeze the wheel's axel (its parent).
                     wheel.transform.parent.GetComponent<Rigidbody2D>().isKinematic = true;
                 }
+
                 // Leave the while loop.
                 break;
             }
             else
             {
-                // If it's still moving, wait another second
-                // (while loop resets).
+                // If it's still moving (and the fuel's off),
+                // wait another second (while loop resets).
                 yield return new WaitForSeconds(1.0f);
             }
         }
-        // Disable this script.
-        this.enabled = false;
+
+        if (secondsOfFuel > 0.0f)
+        {
+            // If the fuels was turned back on while
+            // we were doing this, stop this method.
+            _fuelIsEmpty = false;
+            yield return false;
+        }
+        else
+        { 
+            // Disable this script.
+            this.enabled = false;
+        }
     }
 
     //------- The RestoreFuel Method ------------
@@ -308,24 +323,26 @@ public class TruckControls : MonoBehaviour
     //----------------------------------------
     public void RestoreFuel()
     {
+        // If the out of fuel coroutine is still going, we need to stop it.
+        StopCoroutine(OutOfFuel());
+        // Let the other methods know the fuel is back with this variable.
+        _fuelIsEmpty = false;
         // Reactivate the trucks rigidbody
         _myRigidbody2D.constraints = RigidbodyConstraints2D.None;
+        // Restore the fuel (in seconds) to the full default value.
+        secondsOfFuel = _defaultFuelAmount;
+        // Reset the color of the fuel meter.
+        _fuelStripRenderer.color = _fullTankColor;
+        // Reset the size of the fuel meter (on x axis).
+        Vector3 fuelMeterScale = _fuelColorStrip.localScale;
+        fuelMeterScale.x = 1.0f;
+        _fuelColorStrip.localScale = fuelMeterScale;
         foreach (var wheel in _wheels)
         {
-            // Let the other methods know the fuel is back with this variable.
-            _fuelIsEmpty = false;
-            // Restore the fuel (in seconds) to the full default value.
-            secondsOfFuel = _defaultFuelAmount;
             // Unfreeze the wheels as well.
             wheel.isKinematic = false;
             // And Unfreeze the wheel's axel (its parent).
             wheel.transform.parent.GetComponent<Rigidbody2D>().isKinematic = false;
-            // Reset the color of the fuel meter.
-            _fuelStripRenderer.color = _fullTankColor;
-            // Reset the size of the fuel meter (on x axis).
-            Vector3 fuelMeterScale = _fuelColorStrip.localScale;
-            fuelMeterScale.x = 1.0f;
-            _fuelColorStrip.localScale = fuelMeterScale;
         }
     }
 

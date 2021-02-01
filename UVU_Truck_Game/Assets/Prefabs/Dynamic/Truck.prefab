@@ -3942,7 +3942,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.45499986, y: -1.2824471}
+  m_ConnectedAnchor: {x: -0.45499983, y: -1.2824476}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801403867933759
@@ -5171,7 +5171,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.9328821, y: 1.4639561}
       - {x: 0.23956603, y: 1.6255817}
-      - {x: -0.59321004, y: 1.6344746}
+      - {x: -0.59249127, y: 1.6159697}
       - {x: -0.59327644, y: 1.6166922}
       - {x: -0.83103466, y: 1.3045074}
       - {x: -0.841332, y: 1.3046609}
