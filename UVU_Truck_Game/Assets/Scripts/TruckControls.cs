@@ -198,13 +198,13 @@ public class TruckControls : MonoBehaviour
         // If the car was moving fast in the saved velocity (last frame),
         // but is now moving slow (this frame), that means an impact took place.
         // Play the impact audio.
-        if ((_myRigidbody2D.velocity.x + _myRigidbody2D.velocity.y) / 2 < _averageVelocity - 0.4f)
+        if ((_myRigidbody2D.velocity.x + _myRigidbody2D.velocity.y) / 2 < _averageVelocity - 0.375f)
         {
             // Double check that it's not already playing
             if (!_impactAudio.isPlaying)
             {
                 // Set it to a random pitch
-                _impactAudio.pitch = Random.Range(0.7f, 1.25f);
+                _impactAudio.pitch = Random.Range(0.75f, 1.25f);
                 _impactAudio.Play();
             }
         }
@@ -285,8 +285,17 @@ public class TruckControls : MonoBehaviour
             // Calculate the shrink speed based on the scale remaining, and 
             // amount of fuel time left.
             float shrinkSpeed = (_fuelColorStrip.localScale.x / secondsOfFuel);
-            // Shrink on the X Axis.
-            fuelStripScale.x -= shrinkSpeed * Time.deltaTime;
+            // Shrink on the X Axis (if greater than 0).
+            if (fuelStripScale.x > 0)
+            {
+                // Shrink on X
+                fuelStripScale.x -= shrinkSpeed * Time.deltaTime;
+            }
+            else if (fuelStripScale.x < 0)
+            {
+                // If X scale passes zero, set it back to zero.
+                fuelStripScale.x = 0;
+            }
             // Get the color.
             Color spriteColor = _fuelStripRenderer.color;
             // Manipulate the color over time from green to red (using RGB).
@@ -391,8 +400,6 @@ public class TruckControls : MonoBehaviour
                 // Wait one frame. Then continue the loop.
                 yield return 1;
             }
-            // Disable this script.
-            this.enabled = false;
         }
     }
 
