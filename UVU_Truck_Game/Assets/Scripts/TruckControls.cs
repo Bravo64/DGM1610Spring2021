@@ -77,11 +77,18 @@ public class TruckControls : MonoBehaviour
     // Array of every car in the scene.
     private GameObject[] _allCars;
     
+    // The AudioSource component of the Game
+    // Object that has the impact sound effect.
+    private AudioSource _impactAudio;
+    
     // The Default amount (in seconds) of a full tank of fuel.
     private float _defaultFuelAmount;
     
     // The Default color of a full tank of fuel.
     private Color _fullTankColor;
+    
+    // The current velocity average of the car.
+    private float _averageVelocity = 0.0f;
 
     //-----------------------------------------------------
 
@@ -115,6 +122,12 @@ public class TruckControls : MonoBehaviour
                     _fuelColorStrip = child2.transform;
                 }
             }
+            // Check for the Impact Audio Game Object's name.
+            if (child.name == "Impact_Audio")
+            {
+                // Get its audio source component
+                _impactAudio = child.GetComponent<AudioSource>();
+            }
         }
 
         // Get the truck's Rigidbody2D Component.
@@ -144,6 +157,21 @@ public class TruckControls : MonoBehaviour
     //--------------------------------------
     void Update()
     {
+        // If the car was moving fast in the saved velocity (last frame),
+        // but is now moving slow (this frame), that means an impact took place.
+        // Play the impact audio.
+        if ((_myRigidbody2D.velocity.x + _myRigidbody2D.velocity.y) / 2 < _averageVelocity - 0.4f)
+        {
+            // Double check that it's not already playing
+            if (!_impactAudio.isPlaying)
+            {
+                // Set it to a random pitch
+                _impactAudio.pitch = Random.Range(0.7f, 1.25f);
+                _impactAudio.Play();
+            }
+        }
+        // Save the current velocity of the vehicle
+        _averageVelocity = (_myRigidbody2D.velocity.x + _myRigidbody2D.velocity.y) / 2;
         // Check that the fuel's not empty.
         // If it is, end the Method.
         if (_fuelIsEmpty)
@@ -438,6 +466,14 @@ public class TruckControls : MonoBehaviour
         {
             // Print error message if not, and stop the script
             Debug.LogError("Error: Cars (Trucks) with 'Vehicle' tag are missing");
+            this.enabled = false;
+        }
+        
+        // Double check we have collected the impact audio game object.
+        if (!_impactAudio)
+        {
+            // Print error message if not, and stop the script
+            Debug.LogError("Error: 'Impact_Audio' Game Object child it missing (Location in Scene: /Truck --> Impact_Audio)");
             this.enabled = false;
         }
     }
