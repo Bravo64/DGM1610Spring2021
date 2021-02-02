@@ -40,14 +40,14 @@ public class FuelItemPickup : MonoBehaviour
 
     //------- The OnTriggerEnter2D Method ------------
     // This Method is called once another object enters
-    // and this triggers this object's trigger collider.
+    // and triggers this object's trigger collider.
     // In this case, this object checks that the object
     // is a vehicle, and acts accordingly (ending with
     // disabling itself).
     //--------------------------------------
     void OnTriggerEnter2D(Collider2D col)
     {
-        // Check for "Vehicle" tag
+        // Check for "Vehicle" tag on other object.
         if (col.CompareTag("Vehicle"))
         {
             // Get the controls script from the vehicle

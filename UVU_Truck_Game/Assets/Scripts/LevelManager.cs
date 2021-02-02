@@ -18,9 +18,10 @@ public class LevelManager : MonoBehaviour
     the scene can easily gain access to it.
         
     Script's Methods:
-        - Awake
+        - Awake (only non-public)
         - GetPlayerScore
         - AddCoin
+        - LevelComplete
     
     --------------------- DOC END ----------------------
      */
@@ -76,5 +77,17 @@ public class LevelManager : MonoBehaviour
     {
         // Add one coin.
         _playerScore += coinValue;
+    }
+    
+    //-------- The LevelComplete Method -------------
+    // This Method is called by the finish flag Object
+    // once the player triggers the finish line.
+    // It then goes through the process of completing
+    // the level (e.g. loading the next scene).
+    //--------------------------------------------
+    
+    public void LevelComplete()
+    {
+        Debug.Log("Level Complete!");
     }
 }
