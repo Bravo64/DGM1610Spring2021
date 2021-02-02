@@ -28,8 +28,13 @@ public class ItemMover : MonoBehaviour
 
     //----- Serialized Variables (private, shows in Editor) ------
 
-    [Header("Speed that Item moves along the line:")] [SerializeField]
-    private float movementSpeed = 5.0f;
+    [Header("Speed that Item moves along the path:")] 
+    [SerializeField] private float movementSpeed = 5.0f;
+    // Design my own enumeration variable
+    enum CycleType{ pingPong, loop}
+    // Define a version of the enum
+    [Header("Type of cycle Item takes along path:")] 
+    [SerializeField] CycleType cycleType = CycleType.pingPong;
 
     //------------------------------------------------------------
 
@@ -84,8 +89,11 @@ public class ItemMover : MonoBehaviour
         // Get the waypoint children
         foreach (Transform child2 in transform)
         {
-            // Add it to the list
-            _waypoints.Add(child2);
+            // Add it to the list if it is active
+            if (child2.gameObject.activeSelf)
+            {
+                _waypoints.Add(child2);
+            }
         }
 
         // Double check that we got the waypoints.
@@ -114,17 +122,27 @@ public class ItemMover : MonoBehaviour
             // If we reach the end.
             if (_activeWaypoint >= _waypoints.Count - 1)
             {
-                // Make sure we didn't go past
+                // Make sure we didn't go past.
                 _activeWaypoint = _waypoints.Count - 1;
-                // Go back
-                _movementDirection = -1;
+                // Check what type of loop we are making (using our enum).
+                if (cycleType == CycleType.pingPong)
+                {
+                    // Go backwards (ping pong).
+                    _movementDirection = -1;
+                }
+                else if (cycleType == CycleType.loop)
+                {
+                    // Move towards the first waypoint
+                    // (-1 will change to -1 + 1 = waypoint 0).
+                    _activeWaypoint = -1;
+                }
             }
             // Else if we reach the beginning.
-            else if (_activeWaypoint <= 0)
+            else if (_activeWaypoint <= 0 && cycleType == CycleType.pingPong)
             {
-                // Make sure we're currently at zero
+                // Make sure we're currently at zero.
                 _activeWaypoint = 0;
-                // Switch to forward
+                // Switch to forward.
                 _movementDirection = 1;
             }
 
