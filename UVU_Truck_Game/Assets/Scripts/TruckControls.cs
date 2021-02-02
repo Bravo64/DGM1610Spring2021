@@ -81,6 +81,10 @@ public class TruckControls : MonoBehaviour
     // Object that has the impact sound effect.
     private AudioSource _impactAudio;
     
+    // The AudioSource component of the Game
+    // Object that has the acceleration sound effect.
+    private AudioSource _accelerationAudio;
+    
     // The Default amount (in seconds) of a full tank of fuel.
     private float _defaultFuelAmount;
     
@@ -89,6 +93,9 @@ public class TruckControls : MonoBehaviour
     
     // The current velocity average of the car.
     private float _averageVelocity = 0.0f;
+    
+    // Are we accelerating or not?
+    private bool _accelerating = false;
 
     //-----------------------------------------------------
 
@@ -128,6 +135,12 @@ public class TruckControls : MonoBehaviour
                 // Get its audio source component
                 _impactAudio = child.GetComponent<AudioSource>();
             }
+            // Check for the Acceleration Audio Game Object's name.
+            else if (child.name == "Acceleration_Audio")
+            {
+                // Get its audio source component
+                _accelerationAudio = child.GetComponent<AudioSource>();
+            }
         }
 
         // Get the truck's Rigidbody2D Component.
@@ -157,6 +170,31 @@ public class TruckControls : MonoBehaviour
     //--------------------------------------
     void Update()
     {
+        // If we are accelerating.
+        if (_accelerating)
+        {
+            if (_accelerationAudio.volume < 1.0f)
+            {
+                // Turn up the acceleration audio (if not already turned up).
+                _accelerationAudio.volume += Time.deltaTime;
+            }
+        }
+        // If not accelerating
+        else
+        {
+            if (_accelerationAudio.volume > 0.0f)
+            {
+                // Turn down the acceleration audio (if volume not at zero).
+                _accelerationAudio.volume -= Time.deltaTime / 2;
+            }
+        }
+        
+        if (Input.GetButtonUp("Vertical"))
+        {
+            // If not pressed (button goes up), let the
+            // sound effect object know with this variable.
+            _accelerating = false;
+        }
         // If the car was moving fast in the saved velocity (last frame),
         // but is now moving slow (this frame), that means an impact took place.
         // Play the impact audio.
@@ -180,10 +218,14 @@ public class TruckControls : MonoBehaviour
         }
         // Check that the Player is
         // pressing Up or Down Arrow.
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetButton("Vertical"))
         {
+            // Let the acceleration sound effect object
+            // know we are accelerating with this variable.
+            _accelerating = true;
             // Set up the rotation variable in
             // preparation for applied angular force
+            // to the wheels.
             // (Multiply Axis by sensitivity variable).
             float rotation = Input.GetAxis("Vertical") * -wheelSpeed;
             // Access each wheel in the wheels list
@@ -197,7 +239,7 @@ public class TruckControls : MonoBehaviour
 
         // Check that the Player is pressing
         // Left or Right Arrow.
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetButton("Horizontal"))
         {
             // Set up the rotation variable in
             // preparation for applied angular force
@@ -340,7 +382,15 @@ public class TruckControls : MonoBehaviour
             yield return false;
         }
         else
-        { 
+        {
+            // If the acceleration audio is still on at this point
+            // make sure we turn it off before disabling this script.
+            while (_accelerationAudio.volume > 0.0f)
+            {
+                _accelerationAudio.volume -= Time.deltaTime / 2;
+                // Wait one frame. Then continue the loop.
+                yield return 1;
+            }
             // Disable this script.
             this.enabled = false;
         }
@@ -474,6 +524,14 @@ public class TruckControls : MonoBehaviour
         {
             // Print error message if not, and stop the script
             Debug.LogError("Error: 'Impact_Audio' Game Object child it missing (Location in Scene: /Truck --> Impact_Audio)");
+            this.enabled = false;
+        }
+        
+        // Double check we have collected the acceleration audio game object.
+        if (!_accelerationAudio)
+        {
+            // Print error message if not, and stop the script
+            Debug.LogError("Error: 'Acceleration_Audio' Game Object child it missing (Location in Scene: /Truck --> Acceleration_Audio)");
             this.enabled = false;
         }
     }
