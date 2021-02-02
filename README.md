@@ -37,3 +37,5 @@ Saturday, January 30th, 2021: Sunny
 Sunday, January 31th, 2021: Clear, Sunny
 
 Monday, February 1st, 2021: Cloudy
+
+Tuesday, February 2nd, 2021: Cloudy
