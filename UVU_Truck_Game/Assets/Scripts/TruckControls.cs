@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TruckControls : MonoBehaviour
 {
@@ -31,8 +32,8 @@ public class TruckControls : MonoBehaviour
     //----------------- Public Variables -------------------
     
     // Car ID Number (Determines car activation order)
-    [Header("Car ID Number (Order of Activations):")]
-    public int carIDNumber;
+    [Header("Car Importance (Zero is the main Car):")]
+    public int carImportance;
     
     //------------------------------------------------------
     
@@ -40,16 +41,19 @@ public class TruckControls : MonoBehaviour
     //----- Serialized Variables (private, shows in Editor) -----
     
     // Move Sensitivity.
-    [Header("Forward/backward Senensitivity:")]
-    [SerializeField] private int wheelSpeed = 10;
+    [Header("Forward/backward Sensitivity:")]
+    [SerializeField] 
+    private int wheelSpeed = 10;
     // Tilt Sensitivity.
-    [Header("Senensitivity of truck 'spin':")]
-    [SerializeField] private int tiltSensitivity = 25;
+    [Header("Sensitivity of truck 'spin':")]
+    [SerializeField] 
+    private int tiltSensitivity = 25;
     // Time left on fuel.
     [Header("(when gas is pressed):")]
     [Header("Time before fuel is empty...")]
-    [SerializeField] private float secondsOfFuel = 3.0f;
-    
+    [SerializeField] 
+    private float secondsOfFuel = 3.0f;
+
     //-------------------------------------------------------
 
 
@@ -339,7 +343,7 @@ public class TruckControls : MonoBehaviour
             // Get their car script.
             TruckControls carsScript = car.GetComponent<TruckControls>();
             // Check if they are the next vehicle based on their ID.
-            if (carsScript.carIDNumber == carIDNumber + 1)
+            if (carsScript.carImportance == carImportance + 1)
             {
                 // Enabled their controls (script).
                 carsScript.enabled = true;
@@ -530,7 +534,8 @@ public class TruckControls : MonoBehaviour
         if (!_impactAudio)
         {
             // Print error message if not, and stop the script
-            Debug.LogError("Error: 'Impact_Audio' Game Object child it missing (Location in Scene: /Truck --> Impact_Audio)");
+            Debug.LogError("Error: 'Impact_Audio' Game Object child it " + 
+                           "missing (Location in Scene: /Truck --> Impact_Audio)");
             this.enabled = false;
         }
         
@@ -538,7 +543,8 @@ public class TruckControls : MonoBehaviour
         if (!_accelerationAudio)
         {
             // Print error message if not, and stop the script
-            Debug.LogError("Error: 'Acceleration_Audio' Game Object child it missing (Location in Scene: /Truck --> Acceleration_Audio)");
+            Debug.LogError("Error: 'Acceleration_Audio' Game Object child it " +
+                           "missing (Location in Scene: /Truck --> Acceleration_Audio)");
             this.enabled = false;
         }
     }
