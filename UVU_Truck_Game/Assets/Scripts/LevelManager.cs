@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
         - Start (non-public)
         - GetPlayerScore
         - AddCoin
-        - UpdateScoreText (Coroutine)
+        - AnimateScoreAdding (Coroutine)
         - LevelComplete
     
     --------------------- DOC END ----------------------
@@ -136,21 +136,21 @@ public class LevelManager : MonoBehaviour
     
     public void AddCoin()
     {
-        // Save the old text for the UpdateScoreText coroutine
+        // Save the old score value for the AnimateScoreAdding coroutine
         int oldScore = _playerScore;
         // Add one coin.
         _playerScore += coinValue;
         // "Animate" the score cycling upward with this coroutine
-        StartCoroutine(UpdateScoreText(oldScore, _playerScore));
+        StartCoroutine(AnimateScoreAdding(oldScore, _playerScore));
     }
     
     
-    //-------- The UpdateScoreText Coroutine ---------
+    //-------- The AnimateScoreAdding Coroutine ---------
     // This Coroutine updates the Score Text over time
     // so that the visible on-screen number cycles up
     // in a sort of adding score "animation."
     //-----------------------------------------------
-    private IEnumerator UpdateScoreText(int visableScore, int newScore)
+    private IEnumerator AnimateScoreAdding(int visableScore, int newScore)
     {
         // Add upward (though a while loop) until
         // we finally reach the real score.
