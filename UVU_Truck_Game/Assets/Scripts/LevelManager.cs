@@ -49,8 +49,11 @@ public class LevelManager : MonoBehaviour
     // The Canvas that all level text is on.
     private Transform _levelTextCanvas;
     
-    // The Text Mesh Pro text that displays the score to the player.
+    // The Text component that displays the score to the player.
     private Text _scoreText;
+    
+    // The Audio Source for the Score text "adding" sound.
+    private AudioSource _scoreSound;
     
     //------------------------------------------------------
 
@@ -75,7 +78,7 @@ public class LevelManager : MonoBehaviour
     //-----------------------------------------------------
     void Start()
     {
-        // Grab the Level Text Canvas
+        // Grab the Level Text Canvas from the children
         foreach (Transform child1 in transform)
         {
             // Check for the Canvas's name
@@ -95,7 +98,7 @@ public class LevelManager : MonoBehaviour
             this.enabled = false;
         }
         
-        // Grab the Score Text
+        // Grab the Score Text from the Canvas's children
         foreach (Transform child2 in _levelTextCanvas)
         {
             // Check for the Score Text's name
@@ -112,6 +115,17 @@ public class LevelManager : MonoBehaviour
             // If not, print and error message and disable this script.
             Debug.LogError("Error: 'Score_Text' Text Component is missing " +
                            "(Location in scene: /Level Manager --> Level_Text_Canvas --> Score_Text).");
+            this.enabled = false;
+        }
+        
+        // Get the score texts "adding" sound Audio Source Component
+        _scoreSound = _scoreText.GetComponent<AudioSource>();
+
+        // Double check that we got the Score "adding" sound.
+        if (!_scoreSound)
+        {
+            // If not, print and error message and disable this script.
+            Debug.LogError("Error: 'Score_Text' is missing the 'adding' sound Audio Source Component");
             this.enabled = false;
         }
     }
@@ -156,6 +170,11 @@ public class LevelManager : MonoBehaviour
         // we finally reach the real score.
         while (visableScore < newScore)
         {
+            // Play the "adding" sound if not already playing
+            if (!_scoreSound.isPlaying)
+            {
+                _scoreSound.Play();
+            }
             // Add one to the score on every frame
             // in order to "Animate" an upward cycle.
             visableScore += 1;
@@ -164,6 +183,8 @@ public class LevelManager : MonoBehaviour
             // Wait one frame and then come back
             yield return 1;
         }
+        // Stop the sound when done.
+        _scoreSound.Stop();
     }
     
     
