@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -18,9 +20,11 @@ public class LevelManager : MonoBehaviour
     the scene can easily gain access to it.
         
     Script's Methods:
-        - Awake (only non-public)
+        - Awake (non-public)
+        - Start (non-public)
         - GetPlayerScore
         - AddCoin
+        - UpdateScoreText (Coroutine)
         - LevelComplete
     
     --------------------- DOC END ----------------------
@@ -42,6 +46,12 @@ public class LevelManager : MonoBehaviour
     // This is how much each coin is worth.
     private int _playerScore = 0;
     
+    // The Canvas that all level text is on.
+    private Transform _levelTextCanvas;
+    
+    // The Text Mesh Pro text that displays the score to the player.
+    private Text _scoreText;
+    
     //------------------------------------------------------
 
     //-------------- The Awake Method -------------------
@@ -57,6 +67,56 @@ public class LevelManager : MonoBehaviour
         _instance = this;
     }
     
+    
+    //-------------- The Start Method -------------------
+    // This Method is called before the first frame update
+    // (or at the gameObject's creation/reactivation). It
+    // is mainly used for level text Game Object setup.
+    //-----------------------------------------------------
+    void Start()
+    {
+        // Grab the Level Text Canvas
+        foreach (Transform child1 in transform)
+        {
+            // Check for the Canvas's name
+            if (child1.name == "Level_Text_Canvas")
+            {
+                // Save it
+                _levelTextCanvas = child1;
+            }
+        }
+        
+        // Double check that we got the Canvas.
+        if (!_levelTextCanvas)
+        {
+            // If not, print and error message and disable this script.
+            Debug.LogError("Error: Canvas 'Level_Text_Canvas' is missing (Location " +
+                           "in scene: /Level Manager --> Level_Text_Canvas).");
+            this.enabled = false;
+        }
+        
+        // Grab the Score Text
+        foreach (Transform child2 in _levelTextCanvas)
+        {
+            // Check for the Score Text's name
+            if (child2.name == "Score_Text")
+            {
+                // Get the Score text component and Save it
+                _scoreText = child2.GetComponent<Text>();
+            }
+        }
+        
+        // Double check that we got the Score text.
+        if (!_scoreText)
+        {
+            // If not, print and error message and disable this script.
+            Debug.LogError("Error: 'Score_Text' Text Component is missing " +
+                           "(Location in scene: /Level Manager --> Level_Text_Canvas --> Score_Text).");
+            this.enabled = false;
+        }
+    }
+    
+    
     //------- The GetPlayerScore Method ----------
     // This Method gives you the score when called.
     // However, the caller cannot change the score.
@@ -68,6 +128,7 @@ public class LevelManager : MonoBehaviour
         return _playerScore;
     }
     
+    
     //----------- The AddCoin Method ---------------
     // This Method adds one coin to the score based on
     // what the coin value is set to in the variable.
@@ -75,9 +136,36 @@ public class LevelManager : MonoBehaviour
     
     public void AddCoin()
     {
+        // Save the old text for the UpdateScoreText coroutine
+        int oldScore = _playerScore;
         // Add one coin.
         _playerScore += coinValue;
+        // "Animate" the score cycling upward with this coroutine
+        StartCoroutine(UpdateScoreText(oldScore, _playerScore));
     }
+    
+    
+    //-------- The UpdateScoreText Coroutine ---------
+    // This Coroutine updates the Score Text over time
+    // so that the visible on-screen number cycles up
+    // in a sort of adding score "animation."
+    //-----------------------------------------------
+    private IEnumerator UpdateScoreText(int visableScore, int newScore)
+    {
+        // Add upward (though a while loop) until
+        // we finally reach the real score.
+        while (visableScore < newScore)
+        {
+            // Add one to the score on every frame
+            // in order to "Animate" an upward cycle.
+            visableScore += 1;
+            // Display the score to the player
+            _scoreText.text = visableScore.ToString();
+            // Wait one frame and then come back
+            yield return 1;
+        }
+    }
+    
     
     //-------- The LevelComplete Method -------------
     // This Method is called by the finish flag Object
