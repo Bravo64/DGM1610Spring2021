@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 4228789
     locked: 0
+  - name: Level_Items_Back
+    uniqueID: 2755485141
+    locked: 0
   - name: Pickups
     uniqueID: 3131270059
     locked: 0
