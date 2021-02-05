@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;
@@ -55,7 +56,7 @@ public class TruckControls : MonoBehaviour
     [Header("(when gas is pressed):")]
     [Header("Time before fuel is empty...")]
     [SerializeField] 
-    private float secondsOfFuel = 2.0f;
+    private float secondsOfFuel = 1.8f;
 
     //-------------------------------------------------------
 
@@ -84,8 +85,8 @@ public class TruckControls : MonoBehaviour
     // Array of every car in the scene.
     private GameObject[] _allCars;
     
-    // Array of every "TruckControls" script in the scene.
-    private TruckControls[] _allCarsScripts;
+    // List of every "TruckControls" script in the scene.
+    private List<TruckControls> _allCarsScripts  = new List<TruckControls>();
     
     // The AudioSource component of the Game
     // Object that has the impact sound effect.
@@ -175,6 +176,12 @@ public class TruckControls : MonoBehaviour
 
         // Collect all cars in the scene ("Vehicle" tag).
         _allCars = GameObject.FindGameObjectsWithTag("Vehicle");
+        
+        // Get the "TruckControls" script from each car in the scene
+        foreach (var car in _allCars)
+        {
+            _allCarsScripts.Add(car.GetComponent<TruckControls>());
+        }
         
         // This Method will double check that everything
         // was located and assigned properly.
@@ -386,17 +393,15 @@ public class TruckControls : MonoBehaviour
         // Wait a second to switch vehicles.
         yield return new WaitForSeconds(1.0f);
         // Look through all cars in the scene
-        foreach (var car in _allCars)
+        foreach (var carScript in _allCarsScripts)
         {
-            // Get their car script.
-            TruckControls carsScript = car.GetComponent<TruckControls>();
             // Check if they are the next vehicle based on their ID.
-            if (carsScript.carImportance == carImportance + 1)
+            if (carScript.carImportance == carImportance + 1)
             {
                 // Enabled their controls (script).
-                carsScript.enabled = true;
+                carScript.enabled = true;
                 // Set the virtual camera to follow them.
-                _mainCamera.Follow = car.transform;
+                _mainCamera.Follow = carScript.transform;
             }
         }
 
@@ -571,11 +576,11 @@ public class TruckControls : MonoBehaviour
         }
         
         // Double check we have collected
-        // the cars in the scene.
-        if (_allCars.Length == 0)
+        // the car scripts in the scene.
+        if (_allCarsScripts.Count == 0)
         {
             // Print error message if not, and stop the script
-            Debug.LogError("Error: Cars (Trucks) with 'Vehicle' tag are missing");
+            Debug.LogError("Error: Cars (Trucks) with 'Vehicle' tag and 'TruckControls' script are missing");
             this.enabled = false;
         }
         
