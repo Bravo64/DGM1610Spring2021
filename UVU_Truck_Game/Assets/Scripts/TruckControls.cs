@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class TruckControls : MonoBehaviour
 {
@@ -100,6 +102,10 @@ public class TruckControls : MonoBehaviour
     
     // Are we accelerating or not?
     private bool _accelerating = false;
+    
+    // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
+    // (Found in the Resources folder)
+    private GameObject _outOfFuelPrefab;
 
     //-----------------------------------------------------
 
@@ -112,6 +118,8 @@ public class TruckControls : MonoBehaviour
     //-----------------------------------------------------
     void Start()
     {
+        // Get the Out of Fuel Text Prefab from Resources folder.
+        _outOfFuelPrefab = Resources.Load("Prefabs/Out_Of_Fuel") as GameObject;
         // Loop through the truck's children.
         foreach (Transform child in transform)
         {
@@ -332,6 +340,8 @@ public class TruckControls : MonoBehaviour
         // Let other Methods know the fuel
         // is gone by setting this to true.
         _fuelIsEmpty = true;
+        // Create "Out Of Fuel" flashing message.
+        Instantiate(_outOfFuelPrefab, transform.position, quaternion.identity);
         // Add Drag to our rigidbody.
         _myRigidbody2D.drag = 2;
         _myRigidbody2D.angularDrag = 2;

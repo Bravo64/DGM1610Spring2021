@@ -29,14 +29,19 @@ public class LevelManager : MonoBehaviour
     
     --------------------- DOC END ----------------------
      */
-    
+
     //----------------- Static Variables -------------------
-    
+
     // This is our script. Doing this as static
     // makes the script available to everyone.
     public static LevelManager _instance;
-    
+
     //----- Serialized Variables (private, shows in Editor) -----
+
+    // The Level Number
+    [Header("on the scene name (e.g. 'Level_1'):")]
+    [Header("This number must match the one")]
+    [SerializeField] private int levelNumber = 1;
     
     // This is the value of a coin pickup item.
     [SerializeField] private int coinValue = 150;
@@ -107,6 +112,19 @@ public class LevelManager : MonoBehaviour
                 // Get the Score text component and Save it
                 _scoreText = child2.GetComponent<Text>();
             }
+            
+            // Check for the Level Text (Outline) name
+            if (child2.name == "Level_Text_Outline")
+            {
+                // Put the correct level number in the level text message (at beginning of level).
+                child2.GetComponent<TextMeshProUGUI>().text = "LEVEL " + levelNumber.ToString();
+                // Also get the white inner text (which is a child).
+                foreach (Transform child3 in child2.transform)
+                {
+                    // Put the correct level number here as well.
+                    child3.GetComponent<Text>().text = "LEVEL " + levelNumber.ToString();
+                }
+            }
         }
         
         // Double check that we got the Score text.
@@ -117,7 +135,7 @@ public class LevelManager : MonoBehaviour
                            "(Location in scene: /Level Manager --> Level_Text_Canvas --> Score_Text).");
             this.enabled = false;
         }
-        
+
         // Get the score texts "adding" sound Audio Source Component
         _scoreSound = _scoreText.GetComponent<AudioSource>();
 
