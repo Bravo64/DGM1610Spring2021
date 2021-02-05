@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: wheelSpeed
-      value: 16
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: carIDNumber
@@ -238,6 +238,10 @@ PrefabInstance:
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: carImportance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: secondsOfFuel
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4320637208422334291, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: Priority
@@ -1181,18 +1185,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1233845837, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
-      propertyPath: m_Name
-      value: Fuel_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3454801403867933758, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.45499986
-      objectReference: {fileID: 0}
-    - target: {fileID: 3454801403867933758, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -1.2824471
-      objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434961, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_Name
       value: Truck_0
@@ -1242,8 +1234,8 @@ PrefabInstance:
       value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
-      propertyPath: wheelSpeed
-      value: 15
+      propertyPath: secondsOfFuel
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
@@ -2125,7 +2117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3567417524730564284, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.30332425
+      value: 0.31849045
       objectReference: {fileID: 0}
     - target: {fileID: 3567417524730564284, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_LocalScale.y
@@ -2133,7 +2125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3567417524730564284, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.3
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 4047515475467930608, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Camera
@@ -2770,6 +2762,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1867786736, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8264465372956573880, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
       propertyPath: m_Name
       value: Flag_Finish

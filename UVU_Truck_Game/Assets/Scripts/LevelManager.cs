@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
         - Awake (non-public)
         - Start (non-public)
         - GetPlayerScore
-        - AddCoin
+        - AddToScore (with value input)
         - AnimateScoreAdding (Coroutine)
         - LevelComplete
     
@@ -42,9 +42,6 @@ public class LevelManager : MonoBehaviour
     [Header("on the scene name (e.g. 'Level_1'):")]
     [Header("This number must match the one")]
     [SerializeField] private int levelNumber = 1;
-    
-    // This is the value of a coin pickup item.
-    [SerializeField] private int coinValue = 150;
 
     //----------------- Private Variables -------------------
     
@@ -162,16 +159,16 @@ public class LevelManager : MonoBehaviour
     
     
     //----------- The AddCoin Method ---------------
-    // This Method adds one coin to the score based on
-    // what the coin value is set to in the variable.
+    // This Method adds an entered amount to the
+    // score variable
     //--------------------------------------------
     
-    public void AddCoin()
+    public void AddToScore(int amountToAdd)
     {
         // Save the old score value for the AnimateScoreAdding coroutine
         int oldScore = _playerScore;
         // Add one coin.
-        _playerScore += coinValue;
+        _playerScore += amountToAdd;
         // "Animate" the score cycling upward with this coroutine
         StartCoroutine(AnimateScoreAdding(oldScore, _playerScore));
     }

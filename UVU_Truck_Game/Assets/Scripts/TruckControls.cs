@@ -23,6 +23,7 @@ public class TruckControls : MonoBehaviour
     Script's Methods:
         - Start
         - Update
+        - FixedUpdate
         - DrainFuel
         - OutOfFuel (Coroutine)
         - RestoreFuel (public)
@@ -45,16 +46,16 @@ public class TruckControls : MonoBehaviour
     // Move Sensitivity.
     [Header("Forward/backward Sensitivity:")]
     [SerializeField] 
-    private int wheelSpeed = 10;
+    private int wheelSpeed = 20;
     // Tilt Sensitivity.
     [Header("Sensitivity of truck 'spin':")]
     [SerializeField] 
-    private int tiltSensitivity = 25;
+    private int tiltSensitivity = 70;
     // Time left on fuel.
     [Header("(when gas is pressed):")]
     [Header("Time before fuel is empty...")]
     [SerializeField] 
-    private float secondsOfFuel = 3.0f;
+    private float secondsOfFuel = 2.0f;
 
     //-------------------------------------------------------
 
@@ -83,6 +84,9 @@ public class TruckControls : MonoBehaviour
     // Array of every car in the scene.
     private GameObject[] _allCars;
     
+    // Array of every "TruckControls" script in the scene.
+    private TruckControls[] _allCarsScripts;
+    
     // The AudioSource component of the Game
     // Object that has the impact sound effect.
     private AudioSource _impactAudio;
@@ -102,6 +106,9 @@ public class TruckControls : MonoBehaviour
     
     // Are we accelerating or not?
     private bool _accelerating = false;
+    
+    // Are we trying to tilt or not?
+    private bool _tilting = false;
     
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
     // (Found in the Resources folder)
@@ -174,14 +181,42 @@ public class TruckControls : MonoBehaviour
         CheckForAssignmentErrors();
     }
 
-    
-    //------- The Update Method ------------
-    // This Method is called once per frame.
-    // For this script, it mainly checks for
-    // player input, and acts accordingly.
+    //------- The Update Method ------
+    // This Method is called once per frame,
+    // and is somewhat similar to FixedUpdate.
+    // Here, is is used for things that FixedUpdate
+    // does not need to do (e.g. user inputs).
     //--------------------------------------
     void Update()
     {
+        if (Input.GetButton("Vertical"))
+        {
+            // If button held down, let FixedUpdate
+            // know to start spinning the wheels
+            // through this variable.
+            _accelerating = true;
+            // Drain the vehicles fuel tank
+            DrainFuel();
+        }
+        else if (Input.GetButtonUp("Vertical"))
+        {
+            // If not pressed (button goes up),
+            // let FixedUpdate know.
+            _accelerating = false;
+        }
+        
+        if (Input.GetButton("Horizontal"))
+        {
+            // If button held down, let FixedUpdate know
+            // to start tilting through this variable.
+            _tilting = true;
+        }
+        else if (Input.GetButtonUp("Horizontal"))
+        {
+            // If not pressed (button goes up),
+            // let FixedUpdate know.
+            _tilting = false;
+        }
         // If we are accelerating.
         if (_accelerating)
         {
@@ -197,16 +232,23 @@ public class TruckControls : MonoBehaviour
             if (_accelerationAudio.volume > 0.0f)
             {
                 // Turn down the acceleration audio (if volume not at zero).
-                _accelerationAudio.volume -= Time.deltaTime / 2;
+                _accelerationAudio.volume -= Time.deltaTime;
             }
         }
-        
-        if (Input.GetButtonUp("Vertical"))
-        {
-            // If not pressed (button goes up), let the
-            // sound effect object know with this variable.
-            _accelerating = false;
-        }
+    }
+
+    //------- The FixedUpdate Method ------
+    // This Method is called a fixed number
+    // of times per second (e.g. 50 FPS).
+    // It is generally used when applying
+    // force to the physics engine (collision
+    // calculations are finished), and is similar to
+    // "Update." Here, we track the user input
+    // and apply forces to the wheels and vehicle
+    // tilt accordingly.
+    //--------------------------------------
+    void FixedUpdate()
+    {
         // If the car was moving fast in the saved velocity (last frame),
         // but is now moving slow (this frame), that means an impact took place.
         // Play the impact audio.
@@ -228,13 +270,10 @@ public class TruckControls : MonoBehaviour
         {
             return;
         }
-        // Check that the Player is
-        // pressing Up or Down Arrow.
-        if (Input.GetButton("Vertical"))
+        // Check that the Update method is
+        // telling us to spin the wheels.
+        if (_accelerating)
         {
-            // Let the acceleration sound effect object
-            // know we are accelerating with this variable.
-            _accelerating = true;
             // Set up the rotation variable in
             // preparation for applied angular force
             // to the wheels.
@@ -245,13 +284,12 @@ public class TruckControls : MonoBehaviour
             {
                 // Turn this wheel
                 wheel.AddTorque(rotation);
-                DrainFuel();
             }
         }
 
-        // Check that the Player is pressing
-        // Left or Right Arrow.
-        if (Input.GetButton("Horizontal"))
+        // Check that the Update method
+        // is telling us to tilt the vehicle.
+        if (_tilting)
         {
             // Set up the rotation variable in
             // preparation for applied angular force
@@ -410,7 +448,7 @@ public class TruckControls : MonoBehaviour
             // make sure we turn it off before disabling this script.
             while (_accelerationAudio.volume > 0.0f)
             {
-                _accelerationAudio.volume -= Time.deltaTime / 2;
+                _accelerationAudio.volume -= Time.deltaTime;
                 // Wait one frame. Then continue the loop.
                 yield return 1;
             }
@@ -435,6 +473,7 @@ public class TruckControls : MonoBehaviour
         _myRigidbody2D.angularDrag = 0;
         // Reactivate the trucks rigidbody
         _myRigidbody2D.constraints = RigidbodyConstraints2D.None;
+        _myRigidbody2D.isKinematic = false;
         // Restore the fuel (in seconds) to the full default value.
         secondsOfFuel = _defaultFuelAmount;
         // Reset the color of the fuel meter.

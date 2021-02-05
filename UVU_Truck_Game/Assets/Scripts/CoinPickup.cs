@@ -25,6 +25,9 @@ public class CoinPickup : MonoBehaviour
     // The particle effect we want to create when fuels is collected (prefabs found in Resources)
     private GameObject _particlePrefab;
     
+    // The value of the coin for the player score
+    private int coinValue = 150;
+    
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation).
@@ -50,12 +53,13 @@ public class CoinPickup : MonoBehaviour
         // Check for "Vehicle" tag
         if (col.CompareTag("Vehicle"))
         {
-            // Tell the static level manager to add one coin
-            LevelManager._instance.AddCoin();
+            // Tell the static Level Manager to
+            // add the coin value to the score.
+            LevelManager._instance.AddToScore(coinValue);
             
             if (_particlePrefab)
             {
-                // Create the fuel particle effect
+                // Create the fuel particle effect.
                 Instantiate(_particlePrefab, transform.position, Quaternion.identity);
             }
             else
