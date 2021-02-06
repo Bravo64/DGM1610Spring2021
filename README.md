@@ -45,3 +45,5 @@ Wednesday, February 3nd, 2021: Cloudy, Lightning
 Thursday, February 4nd, 2021: Clear
 
 Friday, February 5th, 2021: Cloudy, Snow
+
+Saturday, February 6th, 2021: Cloudy, Snowy (weird, dirty, salty snow)
