@@ -21,6 +21,10 @@ public class ItemMover : MonoBehaviour
     Script's Methods:
         - Start
         - Update
+        
+    REQUIREMENTS:
+        - sibling (child of my parent) with "Item" tag
+        - At least 1 active child (Waypoints)
 
     --------------------- DOC END ----------------------
      */

@@ -27,6 +27,9 @@ public class LevelManager : MonoBehaviour
         - AnimateScoreAdding (Coroutine)
         - LevelComplete
     
+    REQUIREMENTS:
+        -NA
+    
     --------------------- DOC END ----------------------
      */
 
@@ -39,8 +42,8 @@ public class LevelManager : MonoBehaviour
     //----- Serialized Variables (private, shows in Editor) -----
 
     // The Level Number
-    [Header("on the scene name (e.g. 'Level_1'):")]
-    [Header("This number must match the one")]
+    [Header("This number must match the one", order = 0)]
+    [Header("on the scene name (e.g. 'Level_1'):", order = 1)]
     [SerializeField] private int levelNumber = 1;
 
     //----------------- Private Variables -------------------

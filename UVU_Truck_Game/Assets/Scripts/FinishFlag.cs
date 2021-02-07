@@ -6,23 +6,26 @@ using UnityEngine;
 public class FinishFlag : MonoBehaviour
 {
     /*
----------------- Documentation ---------------------
+    ---------------- Documentation ---------------------
 
-Script's Name: FinishFlag.cs
-Author: Keali'i Transfield
+    Script's Name: FinishFlag.cs
+    Author: Keali'i Transfield
 
-Script's Description: This script is for the flag at the finish line
-    of the level. The flag waits until an object with a "Vehicle" tag
-    triggers its trigger collider component. It then plays a level
-    complete sounds and tells the Level Manager that the level 
-    is completed.
-    
-Script's Methods:
-    - Start
-    - OnTriggerEnter
+    Script's Description: This script is for the flag at the finish line
+        of the level. The flag waits until an object with a "Vehicle" tag
+        triggers its trigger collider component. It then plays a level
+        complete sounds and tells the Level Manager that the level 
+        is completed.
+        
+    Script's Methods:
+        - Start
+        - OnTriggerEnter
+        
+    REQUIREMENTS:
+        - "Flag_Particle" child Game Object
 
---------------------- DOC END ----------------------
- */
+    --------------------- DOC END ----------------------
+    */
 
     // The flag particle child object (with the audio as well)
     private GameObject _flagParticle;

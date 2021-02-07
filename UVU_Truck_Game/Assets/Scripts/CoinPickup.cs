@@ -18,6 +18,10 @@ public class CoinPickup : MonoBehaviour
     Script's Methods:
         - Start
         - OnTriggerEnter2D
+        
+    REQUIREMENTS:
+        - "Coin_Particle" Game Object
+            (Folder Path: /Resources/Prefabs/Coin_Particle)
 
     --------------------- DOC END ----------------------
      */

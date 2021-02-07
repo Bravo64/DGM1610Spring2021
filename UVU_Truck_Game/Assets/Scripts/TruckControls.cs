@@ -29,32 +29,45 @@ public class TruckControls : MonoBehaviour
         - OutOfFuel (Coroutine)
         - RestoreFuel (public)
         - CheckForAssignmentErrors
+        
+    REQUIREMENTS:
+        - "Out_Of_Fuel" Particle Prefab
+            (Folder Path: /Resources/Prefabs/Out_Of_Fuel)
+        - 2 "Wheel" tagged grandchildren (with Rigidbody2D)
+        - "Fuel_Color_Strip" grandchild
+        - "Impact_Audio" child (with Audio Source)
+        - "Acceleration_Audio" child (with Audio Source)
+        - Rigidbody2D
+        - "Virtual_Cam" Cinemachine Camera
+        - "Vehicle" tagged cars in scene
     
     --------------------- DOC END ----------------------
      */
-    
+
     //----------------- Public Variables -------------------
-    
+
     // Car ID Number (Determines car activation order)
     [Header("Car Importance (Zero is the main Car):")]
     public int carImportance;
-    
+
     //------------------------------------------------------
-    
-    
+
+
     //----- Serialized Variables (private, shows in Editor) -----
-    
+
     // Move Sensitivity.
-    [Header("Forward/backward Sensitivity:")]
-    [SerializeField] 
+    [Header("Forward/backward Sensitivity:", order = 0)] 
+    [SerializeField]
     private int wheelSpeed = 20;
+
     // Tilt Sensitivity.
-    [Header("Sensitivity of truck 'spin':")]
-    [SerializeField] 
+    [Header("Sensitivity of truck 'spin':", order = 1)] 
+    [SerializeField]
     private int tiltSensitivity = 70;
+
     // Time left on fuel.
-    [Header("(when gas is pressed):")]
-    [Header("Time before fuel is empty...")]
+    [Header("Time before fuel is empty...", order = 2)]
+    [Header("(when gas is pressed):", order = 3)]
     [SerializeField] 
     private float secondsOfFuel = 1.8f;
 
@@ -211,7 +224,7 @@ public class TruckControls : MonoBehaviour
             // let FixedUpdate know.
             _accelerating = false;
         }
-        
+
         if (Input.GetButton("Horizontal"))
         {
             // If button held down, let FixedUpdate know

@@ -20,6 +20,9 @@ public class RandomColor : MonoBehaviour
         - Start
         - Update
 
+    REQUIREMENTS:
+        - Sprite Renderer
+
     --------------------- DOC END ----------------------
      */
     

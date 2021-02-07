@@ -19,6 +19,10 @@ public class FuelItemPickup : MonoBehaviour
         - Start
         - OnTriggerEnter2D
 
+    REQUIREMENTS:
+        - "Fuel_Particle" child Game Object
+        (Folder Path: /Resources/Prefabs/Fuel_Particle)
+
     --------------------- DOC END ----------------------
      */
     
