@@ -38,9 +38,10 @@ public class TruckControls : MonoBehaviour
         - "Fuel_Color_Strip" grandchild
         - "Impact_Audio" child (with Audio Source)
         - "Acceleration_Audio" child (with Audio Source)
-        - Rigidbody2D
+        - Rigidbody2D Component
         - "Virtual_Cam" Cinemachine Camera
-        - "Vehicle" tagged cars in scene
+        - "Vehicle" tagged cars inside the active scene
+        - "Blue_Speed_Trail" Particle child
     
     --------------------- DOC END ----------------------
      */
@@ -128,6 +129,9 @@ public class TruckControls : MonoBehaviour
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
     // (Found in the Resources folder)
     private GameObject _outOfFuelPrefab;
+    
+    // The transform of the super speed blue trail particle object
+    private Transform _blueTrailParticle;
 
     //-----------------------------------------------------
 
@@ -175,6 +179,12 @@ public class TruckControls : MonoBehaviour
                 // Get its audio source component
                 _accelerationAudio = child.GetComponent<AudioSource>();
             }
+            // Check for the blue super speed particle trail name.
+            else if (child.name == "Blue_Speed_Trail")
+            {
+                // Save the blue trail
+                _blueTrailParticle = child;
+            }
         }
 
         // Get the truck's Rigidbody2D Component.
@@ -205,7 +215,7 @@ public class TruckControls : MonoBehaviour
     //------- The Update Method ------
     // This Method is called once per frame,
     // and is somewhat similar to FixedUpdate.
-    // Here, is is used for things that FixedUpdate
+    // Here, it is used for things that FixedUpdate
     // does not need to do (e.g. user inputs).
     //--------------------------------------
     void Update()
@@ -216,7 +226,7 @@ public class TruckControls : MonoBehaviour
             // know to start spinning the wheels
             // through this variable.
             _accelerating = true;
-            // Drain the vehicles fuel tank
+            // Drain the vehicle's fuel tank
             DrainFuel();
         }
         else if (Input.GetButtonUp("Vertical"))
@@ -520,7 +530,7 @@ public class TruckControls : MonoBehaviour
     }
 
     //----- The SpeedBoost Coroutine --------
-    // This Coroutine sets the vehicles (wheel) speed
+    // This Coroutine sets the vehicle's (wheel) speed
     // to a much higher value, but only for a few seconds.
     // This Coroutine is called when the player vehicle
     // collects a "Super Fuel" pickup.
@@ -534,8 +544,11 @@ public class TruckControls : MonoBehaviour
         _wheels[1].sharedMaterial.friction = 0;
         // Push the car forward (right direction from our POV).
         _myRigidbody2D.AddForce(transform.right * 3000);
-        // This will stabilize the rotation
+        // This will help to stabilize the rotation
         _myRigidbody2D.AddTorque(5000);
+        // We will save the size of the blue
+        // trail particle in this variable.
+        Vector3 currentScale;
         // Gradually reset the friction over time until
         // we get back to the original friction value.
         while (_wheels[0].sharedMaterial.friction < originalFriction)
@@ -543,12 +556,38 @@ public class TruckControls : MonoBehaviour
             // Add time to the friction
             _wheels[0].sharedMaterial.friction += Time.deltaTime * 2;
             _wheels[1].sharedMaterial.friction += Time.deltaTime * 2;
+            // Scale up the blue speed trail particle
+            // transform on the x axis over time
+            // (while it is less than one).
+            if (_blueTrailParticle.localScale.x < 1.0f)
+            {
+                // Grab the scale
+                currentScale = _blueTrailParticle.localScale;
+                currentScale.x += Time.deltaTime;
+                _blueTrailParticle.localScale = currentScale;
+            }
             // Wait one frame, and come back.
             yield return 0;
         }
-        // Double check that it reset exactly.
+        // Double check that the friction reset exactly.
         _wheels[0].sharedMaterial.friction = originalFriction;
         _wheels[1].sharedMaterial.friction = originalFriction;
+        // Scale down the blue trail over time (X axis)
+        while (_blueTrailParticle.localScale.x > 0.0f)
+        {
+            // Get the scale
+            currentScale = _blueTrailParticle.localScale;
+            // Shrink the X axis by time
+            currentScale.x -= Time.deltaTime / 2;
+            // Reassign the scale
+            _blueTrailParticle.localScale = currentScale;
+            // Wait one frame, and come back.
+            yield return 0;
+        }
+        // Double check that X axis resets to 0.
+        currentScale = _blueTrailParticle.localScale;
+        currentScale.x = 0;
+        _blueTrailParticle.localScale = currentScale;
     }
 
     //----- The CheckForAssignmentErrors Method --------
@@ -643,7 +682,7 @@ public class TruckControls : MonoBehaviour
         if (!_impactAudio)
         {
             // Print error message if not, and stop the script
-            Debug.LogError("Error: 'Impact_Audio' Game Object child it " + 
+            Debug.LogError("Error: 'Impact_Audio' GameObject child is " + 
                            "missing (Location in Scene: /Truck --> Impact_Audio)");
             this.enabled = false;
         }
@@ -652,8 +691,16 @@ public class TruckControls : MonoBehaviour
         if (!_accelerationAudio)
         {
             // Print error message if not, and stop the script
-            Debug.LogError("Error: 'Acceleration_Audio' Game Object child it " +
+            Debug.LogError("Error: 'Acceleration_Audio' GameObject child is " +
                            "missing (Location in Scene: /Truck --> Acceleration_Audio)");
+            this.enabled = false;
+        }
+        
+        // Double check we have collected the super speed blue trail particle object (transform).
+        if (!_blueTrailParticle)
+        {
+            // Print error message if not, and stop the script
+            Debug.LogError("Error: 'Blue_Speed_Trail' particle child object is missing.");
             this.enabled = false;
         }
     }

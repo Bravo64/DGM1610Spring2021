@@ -131,3 +131,4 @@ public class RevealTextByCharacter : MonoBehaviour
     }
     
 }
+// ---------------------- END OF FILE -----------------------
