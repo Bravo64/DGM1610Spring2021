@@ -22,6 +22,7 @@ public class FuelItemPickup : MonoBehaviour
     REQUIREMENTS:
         - "Fuel_Particle" child Game Object
         (Folder Path: /Resources/Prefabs/Fuel_Particle)
+        - Super_Fuel_Sound sibling object (if superFuel is true).
 
     --------------------- DOC END ----------------------
      */
@@ -72,10 +73,33 @@ public class FuelItemPickup : MonoBehaviour
             }
             else
             {
-                // If we can't find the particle, print an error message.
+                // If we can't find the particle, print an error message and stop the script.
                 Debug.LogError("'Fuel_Particle' Prefab is missing (Location: /Assets/Resources/Prefabs/Fuel_Particle).'");
+                this.enabled = false;
             }
-                // Turn off this object.
+
+            bool soundFound = false;
+            if (superFuel)
+            {
+                // Get the sound sibling object by name
+                foreach (Transform child in transform.parent)
+                {
+                    if (child.name == "Super_Fuel_Sound")
+                    {
+                        child.gameObject.SetActive(true);
+                        soundFound = true;
+                    }
+                }
+                
+                if (!soundFound)
+                {
+                    // If we can't find the super sound sibling object,
+                    // print an error message  and stop the script.
+                    Debug.LogError("Error: Sibling Object 'Super_Fuel_Sound' is missing.'");
+                    this.enabled = false;
+                }
+            }
+            // Turn off this object.
             gameObject.SetActive(false);
         }
     }
