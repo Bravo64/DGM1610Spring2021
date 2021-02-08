@@ -28,6 +28,7 @@ public class TruckControls : MonoBehaviour
         - DrainFuel
         - OutOfFuel (Coroutine)
         - RestoreFuel (public)
+        - SpeedBoost (Coroutine)
         - CheckForAssignmentErrors
         
     REQUIREMENTS:
@@ -272,7 +273,9 @@ public class TruckControls : MonoBehaviour
         // If the car was moving fast in the saved velocity (last frame),
         // but is now moving slow (this frame), that means an impact took place.
         // Play the impact audio.
-        if ((_myRigidbody2D.velocity.x + _myRigidbody2D.velocity.y) / 2 < _averageVelocity - 0.375f)
+        if ((math.abs(_myRigidbody2D.velocity.x) + 
+             math.abs(_myRigidbody2D.velocity.y)) / 2 < 
+            _averageVelocity - 1.0f)
         {
             // Double check that it's not already playing
             if (!_impactAudio.isPlaying)
@@ -282,8 +285,10 @@ public class TruckControls : MonoBehaviour
                 _impactAudio.Play();
             }
         }
-        // Save the current velocity of the vehicle
-        _averageVelocity = (_myRigidbody2D.velocity.x + _myRigidbody2D.velocity.y) / 2;
+        // Save the current (absolute) average
+        // velocity of the vehicle
+        _averageVelocity = (math.abs(_myRigidbody2D.velocity.x) + 
+                            math.abs(_myRigidbody2D.velocity.y)) / 2;
         // Check that the fuel's not empty.
         // If it is, end the Method.
         if (_fuelIsEmpty)
@@ -480,7 +485,7 @@ public class TruckControls : MonoBehaviour
     // the fuel amount, fuel meter, and rigidbodies
     // to their default state.
     //----------------------------------------
-    public void RestoreFuel()
+    public void RestoreFuel(bool superFuel)
     {
         // If the out of fuel coroutine is still going, we need to stop it.
         StopCoroutine(OutOfFuel());
@@ -507,6 +512,29 @@ public class TruckControls : MonoBehaviour
             // And Unfreeze the wheel's axel (its parent).
             wheel.transform.parent.GetComponent<Rigidbody2D>().isKinematic = false;
         }
+        // If we picked up "super fuel," initiate a few second speed boost. 
+        if (superFuel)
+        {
+            StartCoroutine(SpeedBoost());
+        }
+    }
+
+    //----- The SpeedBoost Coroutine --------
+    // This Coroutine sets the vehicles (wheel) speed
+    // to a much higher value, but only for a few seconds.
+    // This Coroutine is called when the player vehicle
+    // collects a "Super Fuel" pickup.
+    //-------------------------------------------------
+    IEnumerator SpeedBoost()
+    {
+        // Save the old speed.
+        int originalSpeed = wheelSpeed;
+        // Multiply (boost) our speed.
+        wheelSpeed *= 4;
+        // Wait a few seconds.
+        yield return new WaitForSeconds(1.0f);
+        // Reset our speed back to normal.
+        wheelSpeed = originalSpeed;
     }
 
     //----- The CheckForAssignmentErrors Method --------

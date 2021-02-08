@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1150769219
 Transform:
   m_ObjectHideFlags: 0
@@ -5702,6 +5702,7 @@ GameObject:
   - component: {fileID: 901814478424753401}
   - component: {fileID: 5916523568126411227}
   - component: {fileID: 9042379011179792161}
+  - component: {fileID: 1599719305306094141}
   m_Layer: 0
   m_Name: Fuel_Item_Pickup
   m_TagString: Item
@@ -5774,6 +5775,25 @@ CircleCollider2D:
   m_Offset: {x: -0.14, y: 0.15}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!95 &1599719305306094141
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772050263400437922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59e203405694a48e9a1acb017bfcafe5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1299635058527175488
 GameObject:
   m_ObjectHideFlags: 0

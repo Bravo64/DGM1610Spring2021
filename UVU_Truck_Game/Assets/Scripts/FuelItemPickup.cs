@@ -29,6 +29,10 @@ public class FuelItemPickup : MonoBehaviour
     // The particle effect we want to create when fuels is collected (prefabs found in Resources)
     private GameObject _particlePrefab;
     
+    [Header("Super Fuel gives speed boost:", order = 0)]
+    // Super fuel gives a few second speed increase to the vehicle.
+    [SerializeField] private bool superFuel = false;
+    
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation).
@@ -60,7 +64,7 @@ public class FuelItemPickup : MonoBehaviour
             truckScript.enabled = true;
             // Call its public RestoreFuel method,
             // so that it can work on reactivating itself.
-            truckScript.RestoreFuel();
+            truckScript.RestoreFuel(superFuel);
             if (_particlePrefab)
             {
                 // Create the fuel particle effect
