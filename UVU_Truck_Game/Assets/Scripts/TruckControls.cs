@@ -527,14 +527,21 @@ public class TruckControls : MonoBehaviour
     //-------------------------------------------------
     IEnumerator SpeedBoost()
     {
-        // Save the old speed.
-        int originalSpeed = wheelSpeed;
-        // Multiply (boost) our speed.
-        wheelSpeed *= 4;
-        // Wait a few seconds.
-        yield return new WaitForSeconds(1.0f);
-        // Reset our speed back to normal.
-        wheelSpeed = originalSpeed;
+        // Save the old wheel materials' friction.
+        float friction1 = _wheels[0].sharedMaterial.friction;
+        float friction2 = _wheels[1].sharedMaterial.friction;
+        // Make the wheels slippery
+        _wheels[0].sharedMaterial.friction = 0;
+        _wheels[1].sharedMaterial.friction = 0;
+        // Push the car forward (right direction from our POV).
+        _myRigidbody2D.AddForce(transform.right * 3000);
+        // This will stabilize the rotation
+        _myRigidbody2D.AddTorque(5000);
+        // Wait a bit.
+        yield return new WaitForSeconds(0.25f);
+        // Reset the wheel friction back to normal.
+        _wheels[0].sharedMaterial.friction = friction1;
+        _wheels[1].sharedMaterial.friction = friction2;
     }
 
     //----- The CheckForAssignmentErrors Method --------
