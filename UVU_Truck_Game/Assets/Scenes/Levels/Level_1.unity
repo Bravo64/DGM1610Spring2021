@@ -167,6 +167,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3454801403867933757, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405152170969, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405395643098, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434961, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_Name
       value: Truck_1
@@ -214,6 +226,22 @@ PrefabInstance:
     - target: {fileID: 3454801405459434962, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: wheelSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: carImportance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405679981217, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
@@ -971,6 +999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3454801403867933757, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3454801403867933758, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.45499986
@@ -978,6 +1010,14 @@ PrefabInstance:
     - target: {fileID: 3454801403867933758, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: -1.2824471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405152170969, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405395643098, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434961, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_Name
@@ -1033,11 +1073,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: wheelSpeed
-      value: 20
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: carImportance
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405679981217, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
@@ -1802,6 +1846,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 761846766150437528, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 761846766150437528, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 2566914048
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460765812758507741, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3542063
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460765812758507741, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030599088816033092, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477966226014730532, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4047515475467930608, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1853,6 +1921,14 @@ PrefabInstance:
     - target: {fileID: 4047515475904811243, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Name
       value: Level_Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077824293286259117, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.453016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077824293286259117, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.028396
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71344b7470104577b9d131c8029e164, type: 3}
@@ -1977,6 +2053,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1150769218, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4895463544373290539, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
       propertyPath: m_RootOrder
       value: 7

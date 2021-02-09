@@ -37,16 +37,9 @@ public class FinishFlag : MonoBehaviour
     //-----------------------------------------------------
     private void Start()
     {
-        // Cycle through our children
-        foreach (Transform child in transform)
-        {
-            // Check for the flag particle child object's name
-            if (child.name == "Flag_Particle")
-            {
-                // Save the child
-                _flagParticle = child.gameObject;
-            }
-        }
+        // Save the Flag Particle child game object.
+        _flagParticle = transform.Find("Flag_Particle").gameObject;
+
         // Double check that we got it
         if (!_flagParticle)
         {

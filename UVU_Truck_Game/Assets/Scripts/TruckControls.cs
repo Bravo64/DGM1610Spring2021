@@ -146,44 +146,34 @@ public class TruckControls : MonoBehaviour
     {
         // Get the Out of Fuel Text Prefab from Resources folder.
         _outOfFuelPrefab = Resources.Load("Prefabs/Out_Of_Fuel") as GameObject;
+        // Get the Impact_Audio child's Audio Source component
+        _impactAudio = transform.Find("Impact_Audio").GetComponent<AudioSource>();
+        // Get the Acceleration_Audio child's Audio Source component
+        _accelerationAudio = transform.Find("Acceleration_Audio").GetComponent<AudioSource>();
+        // Get the Blue Trail Particle Child
+        _blueTrailParticle = transform.Find("Blue_Speed_Trail");
         // Loop through the truck's children.
         foreach (Transform child in transform)
         {
-            // Find the wheels in the
-            // children of the children.
-            foreach (Transform child2 in child)
+            // Find the wheels in the children
+            // of the children (grandchild).
+            foreach (Transform grandchild in child)
             {
                 // Check for "Wheel" Tag.
-                if (child2.CompareTag("Wheel"))
+                if (grandchild.CompareTag("Wheel"))
                 {
                     // Get the wheel Rigidbody2D Component,
                     // and add it to the wheels list.
-                    _wheels.Add(child2.GetComponent<Rigidbody2D>());
+                    _wheels.Add(grandchild.GetComponent<Rigidbody2D>());
+                    // Make sure the material's friction is properly reset.
+                    _wheels[0].sharedMaterial.friction = 10.0f;
                 }
                 // Else, check for the fuel strip's name.
-                else if (child2.name == "Fuel_Color_Strip")
+                else if (grandchild.name == "Fuel_Color_Strip")
                 {
                     // Save the fuel strip transform.
-                    _fuelColorStrip = child2.transform;
+                    _fuelColorStrip = grandchild.transform;
                 }
-            }
-            // Check for the Impact Audio Game Object's name.
-            if (child.name == "Impact_Audio")
-            {
-                // Get its audio source component
-                _impactAudio = child.GetComponent<AudioSource>();
-            }
-            // Check for the Acceleration Audio Game Object's name.
-            else if (child.name == "Acceleration_Audio")
-            {
-                // Get its audio source component
-                _accelerationAudio = child.GetComponent<AudioSource>();
-            }
-            // Check for the blue super speed particle trail name.
-            else if (child.name == "Blue_Speed_Trail")
-            {
-                // Save the blue trail
-                _blueTrailParticle = child;
             }
         }
 

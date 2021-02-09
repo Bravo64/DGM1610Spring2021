@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -26,9 +27,13 @@ public class LevelManager : MonoBehaviour
         - AddToScore (with value input)
         - AnimateScoreAdding (Coroutine)
         - LevelComplete
+        - LoadNextLevel (Coroutine)
     
     REQUIREMENTS:
-        -NA
+        - Level Text Canvas Child
+        - Score Text grandchild (canvas child)
+        - Level Text grandchild (outline and regular)
+        - Level Complete Text grandchild (outline and regular)
     
     --------------------- DOC END ----------------------
      */
@@ -84,16 +89,8 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         // Grab the Level Text Canvas from the children
-        foreach (Transform child1 in transform)
-        {
-            // Check for the Canvas's name
-            if (child1.name == "Level_Text_Canvas")
-            {
-                // Save it
-                _levelTextCanvas = child1;
-            }
-        }
-        
+        _levelTextCanvas = transform.Find("Level_Text_Canvas");
+
         // Double check that we got the Canvas.
         if (!_levelTextCanvas)
         {
@@ -104,29 +101,18 @@ public class LevelManager : MonoBehaviour
         }
         
         // Grab the Score Text from the Canvas's children
-        foreach (Transform child2 in _levelTextCanvas)
-        {
-            // Check for the Score Text's name
-            if (child2.name == "Score_Text")
-            {
-                // Get the Score text component and Save it
-                _scoreText = child2.GetComponent<Text>();
-            }
-            
-            // Check for the Level Text (Outline) name
-            if (child2.name == "Level_Text_Outline")
-            {
-                // Put the correct level number in the level text message (at beginning of level).
-                child2.GetComponent<TextMeshProUGUI>().text = "LEVEL " + levelNumber.ToString();
-                // Also get the white inner text (which is a child).
-                foreach (Transform child3 in child2.transform)
-                {
-                    // Put the correct level number here as well.
-                    child3.GetComponent<Text>().text = "LEVEL " + levelNumber.ToString();
-                }
-            }
-        }
-        
+        _scoreText = _levelTextCanvas.Find("Score_Text").GetComponent<Text>();
+        // Get the Audio Source as well.
+        _scoreSound = _scoreText.GetComponent<AudioSource>();
+        // Set the level number on the Level Outline Text.
+        _levelTextCanvas.Find("Level_Text_Outline")
+            .GetComponent<TextMeshProUGUI>()
+            .text = "LEVEL " + levelNumber.ToString();
+        // And the regular Level Text.
+        _levelTextCanvas.Find("Level_Text_Outline")
+            .Find("Level_Text").GetComponent<Text>()
+            .text = "LEVEL " + levelNumber.ToString();
+
         // Double check that we got the Score text.
         if (!_scoreText)
         {
@@ -199,7 +185,7 @@ public class LevelManager : MonoBehaviour
             // Display the score to the player
             _scoreText.text = visableScore.ToString();
             // Wait one frame and then come back
-            yield return 1;
+            yield return 0;
         }
         // Stop the sound when done.
         _scoreSound.Stop();
@@ -210,12 +196,40 @@ public class LevelManager : MonoBehaviour
     // This Method is called by the finish flag Object
     // once the player triggers the finish line.
     // It then goes through the process of completing
-    // the level (e.g. loading the next scene).
+    // the level, displaying the level complete text,
+    // and calling for the loading of the next level.
     //--------------------------------------------
-    
     public void LevelComplete()
     {
-        Debug.Log("Level Complete!");
+        // Get the level complete text object from the Canvas's children
+        Transform levelCompleteText = _levelTextCanvas.Find("Level_Complete_Text_Outline");
+        
+        // Double check that we got the Level Complete text.
+        if (!levelCompleteText)
+        {
+            // If not, print and error message and disable this script.
+            Debug.LogError("Error: 'Level_Complete_Text_Outline' grandchild is missing (Location " +
+                           "in scene: /Level Manager --> Level_Text_Canvas --> Level_Complete_Text_Outline).");
+            this.enabled = false;
+        }
+        
+        // Enable the Level Complete text
+        levelCompleteText.gameObject.SetActive(true);
+        
+        // Begin the coroutine that will load the next scene
+        StartCoroutine(LoadNextLevel());
+    }
+    
+    //-------- The LoadNextLevel Coroutine -------------
+    // This Coroutine come directly after the LevelComplete
+    // method is called. It deals with loading the next
+    //--------------------------------------------
+    private IEnumerator LoadNextLevel()
+    {
+        // Wait a few seconds to give the text some time to leave
+        yield return new WaitForSeconds(3.0f);
+        // Load the next scene index in the game's build settings
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
 // ---------------------- END OF FILE -----------------------
