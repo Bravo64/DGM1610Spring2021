@@ -26,6 +26,9 @@ public class CoinPickup : MonoBehaviour
     --------------------- DOC END ----------------------
      */
     
+    // The Level Manager in the scene
+    private LevelManager _levelManager;
+    
     // The particle effect we want to create when fuels is collected (prefabs found in Resources)
     private GameObject _particlePrefab;
     
@@ -41,6 +44,9 @@ public class CoinPickup : MonoBehaviour
 
     void Start()
     {
+        // Grab the Level Manager in the scene
+        _levelManager = Transform.FindObjectOfType<LevelManager>();
+        
         // Get the Particle Prefab from Resources folder.
         _particlePrefab = Resources.Load("Prefabs/Coin_Particle") as GameObject;
     }
@@ -59,7 +65,7 @@ public class CoinPickup : MonoBehaviour
         {
             // Tell the static Level Manager to
             // add the coin value to the score.
-            LevelManager._instance.AddToScore(coinValue);
+            _levelManager.AddToScore(coinValue);
             
             if (_particlePrefab)
             {

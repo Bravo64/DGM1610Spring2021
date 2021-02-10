@@ -38,12 +38,6 @@ public class LevelManager : MonoBehaviour
     --------------------- DOC END ----------------------
      */
 
-    //----------------- Static Variables -------------------
-
-    // This is our script. Doing this as static
-    // makes the script available to everyone.
-    public static LevelManager _instance;
-
     //----- Serialized Variables (private, shows in Editor) -----
 
     // The Level Number
@@ -65,20 +59,10 @@ public class LevelManager : MonoBehaviour
     // The Audio Source for the Score text "adding" sound.
     private AudioSource _scoreSound;
     
+    // The Scriptable Object that will contain the player score.
+    private ValueManager _valueManager;
+    
     //------------------------------------------------------
-
-    //-------------- The Awake Method -------------------
-    // This Method is called before the first frame update
-    // (or at the gameObject's creation/reactivation) and
-    // ALSO before the Start method. Here it is mainly used
-    // to set this script as the main static version.
-    //-----------------------------------------------------
-    void Awake()
-    {
-        // This script becomes static under "_instance"
-        // (Accessible to everyone in scene)
-        _instance = this;
-    }
     
     
     //-------------- The Start Method -------------------
@@ -88,7 +72,16 @@ public class LevelManager : MonoBehaviour
     //-----------------------------------------------------
     void Start()
     {
-        // Grab the Level Text Canvas from the children
+        // Get the Value Manager Scriptable Object from the Resources folder (for score storing).
+        _valueManager = Resources.Load("ScriptableObjects/Value_Manager") as ValueManager;
+        
+        // Make sure the player score is reset when the level begins.
+        if (!(_valueManager is null))
+        {
+            _valueManager.playerScore = 0;
+        }
+
+        // Grab the Level Text Canvas from the children.
         _levelTextCanvas = transform.Find("Level_Text_Canvas");
 
         // Double check that we got the Canvas.
@@ -133,20 +126,8 @@ public class LevelManager : MonoBehaviour
             this.enabled = false;
         }
     }
-    
-    
-    //------- The GetPlayerScore Method ----------
-    // This Method gives you the score when called.
-    // However, the caller cannot change the score.
-    //--------------------------------------------
-    
-    public int GetPlayerScore()
-    {
-        // Give the score
-        return _playerScore;
-    }
-    
-    
+
+
     //----------- The AddCoin Method ---------------
     // This Method adds an entered amount to the
     // score variable
@@ -158,6 +139,8 @@ public class LevelManager : MonoBehaviour
         int oldScore = _playerScore;
         // Add one coin.
         _playerScore += amountToAdd;
+        // Save the current score to the Value Manager Scriptable Object
+        _valueManager.playerScore = _playerScore;
         // "Animate" the score cycling upward with this coroutine
         StartCoroutine(AnimateScoreAdding(oldScore, _playerScore));
     }
@@ -221,8 +204,8 @@ public class LevelManager : MonoBehaviour
     }
     
     //-------- The LoadNextLevel Coroutine -------------
-    // This Coroutine come directly after the LevelComplete
-    // method is called. It deals with loading the next
+    // This Coroutine comes directly after the LevelComplete
+    // method is called. It deals with loading the next level.
     //--------------------------------------------
     private IEnumerator LoadNextLevel()
     {

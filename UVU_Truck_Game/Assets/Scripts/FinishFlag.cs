@@ -26,6 +26,9 @@ public class FinishFlag : MonoBehaviour
 
     --------------------- DOC END ----------------------
     */
+    
+    // The Level Manager in the scene
+    private LevelManager _levelManager;
 
     // The flag particle child object (with the audio as well)
     private GameObject _flagParticle;
@@ -37,6 +40,9 @@ public class FinishFlag : MonoBehaviour
     //-----------------------------------------------------
     private void Start()
     {
+        // Grab the Level Manager in the scene
+        _levelManager = Transform.FindObjectOfType<LevelManager>();
+        
         // Save the Flag Particle child game object.
         _flagParticle = transform.Find("Flag_Particle").gameObject;
 
@@ -68,7 +74,7 @@ public class FinishFlag : MonoBehaviour
             _flagParticle.SetActive(true);
             // Let the Level Manager know
             // that we have completed the level.
-            LevelManager._instance.LevelComplete();
+            _levelManager.LevelComplete();
         }
     }
     
