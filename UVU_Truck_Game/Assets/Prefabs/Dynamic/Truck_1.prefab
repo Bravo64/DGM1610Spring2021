@@ -4069,7 +4069,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.45499983, y: -1.2824472}
+  m_ConnectedAnchor: {x: -0.45499986, y: -1.2824471}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801403867933759
@@ -5210,7 +5210,7 @@ GameObject:
   - component: {fileID: 7672833996745744513}
   - component: {fileID: 5443126536279875359}
   m_Layer: 0
-  m_Name: Truck
+  m_Name: Truck_1
   m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5255,6 +5255,20 @@ MonoBehaviour:
   wheelSpeed: 20
   tiltSensitivity: 50
   secondsOfFuel: 2
+  myRigidbody2D: {fileID: 3454801405459434989}
+  impactAudio: {fileID: 5538903763456874162}
+  accelerationAudio: {fileID: 4320637208422334291}
+  _blueTrailParticle: {fileID: 1057740693119241446}
+  wheelAxles:
+  - {fileID: 3454801405679981217}
+  - {fileID: 3454801403867933757}
+  wheels:
+  - {fileID: 3454801405395643098}
+  - {fileID: 3454801405152170969}
+  fuelColorStrip: {fileID: 7547817573058157641}
+  fuelStripRenderer: {fileID: 2209262404412050908}
+  mainCamera: {fileID: 0}
+  _outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}
 --- !u!50 &3454801405459434989
 Rigidbody2D:
   serializedVersion: 4
@@ -5562,7 +5576,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.54500026, y: -1.2824473}
+  m_ConnectedAnchor: {x: 0.5449999, y: -1.2824473}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801405679981219

@@ -24,7 +24,7 @@ public class Operators : MonoBehaviour
         _doubleVariable -= 1.0f;
         _characterVariable = 'B';
         _stringVariable += "!";
-        _booleanVariable = !_booleanVariable
+        _booleanVariable = !_booleanVariable;
         
         print(_integerVariable);
         print(_doubleVariable);
