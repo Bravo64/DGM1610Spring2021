@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
     the scene can easily gain access to it.
         
     Script's Methods:
-        - Awake (non-public)
         - Start (non-public)
         - GetPlayerScore
         - AddToScore (with value input)
@@ -29,102 +28,73 @@ public class LevelManager : MonoBehaviour
         - LevelComplete
         - LoadNextLevel (Coroutine)
     
-    REQUIREMENTS:
-        - Level Text Canvas Child
-        - Score Text grandchild (canvas child)
-        - Level Text grandchild (outline and regular)
-        - Level Complete Text grandchild (outline and regular)
-    
     --------------------- DOC END ----------------------
      */
 
-    //----- Serialized Variables (private, shows in Editor) -----
+    //----- Serialized and Public Variables (Visible in Inspector) -----
 
+    [Header("---------- VALUE VARIABLES ----------", order = 0)]
+    [Space(10, order = 1)]
+    
     // The Level Number
-    [Header("This number must match the one", order = 0)]
-    [Header("on the scene name (e.g. 'Level_1'):", order = 1)]
-    [SerializeField] private int levelNumber = 1;
-
-    //----------------- Private Variables -------------------
+    [UnityEngine.Range(1, 50)]
+    [SerializeField]
+    private int levelNumber = 1;
     
-    // This is how much each coin is worth.
-    private int _playerScore = 0;
+    [Header("----------- TEXT OBJECTS -----------", order = 2)]
+    [Space(10, order = 3)]
     
-    // The Canvas that all level text is on.
-    private Transform _levelTextCanvas;
+    // The Text component that displays current
+    // level text outline (at level start).
+    [SerializeField]
+    private TextMeshProUGUI levelTextOutline;
+    
+    // The Text component that displays
+    // current level text (at level start).
+    [SerializeField]
+    private Text levelText;
     
     // The Text component that displays the score to the player.
+    [SerializeField]
     private Text _scoreText;
+
+    // The Game Object that displays
+    // level complete text (at level end).
+    [SerializeField]
+    private GameObject levelCompleteText;
+    
+    [Header("--------------- AUDIO ---------------", order = 4)]
+    [Space(10, order = 5)]
     
     // The Audio Source for the Score text "adding" sound.
-    private AudioSource _scoreSound;
+    [SerializeField]
+    private AudioSource scoreSound;
+    
+    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)]
+    [Space(10, order = 7)]
     
     // The Scriptable Object that will contain the player score.
-    private ValueManager _valueManager;
+    [SerializeField]
+    private ValueManager valueManager;
     
-    //------------------------------------------------------
+    //--------------------------------------------------------
     
     
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation). It
-    // is mainly used for level text Game Object setup.
+    // is mainly used for level text setup.
     //-----------------------------------------------------
-    void Start()
+    private void Start()
     {
-        // Get the Value Manager Scriptable Object from the Resources folder (for score storing).
-        _valueManager = Resources.Load("ScriptableObjects/Value_Manager") as ValueManager;
-        
-        // Make sure the player score is reset when the level begins.
-        if (!(_valueManager is null))
-        {
-            _valueManager.playerScore = 0;
-        }
-
-        // Grab the Level Text Canvas from the children.
-        _levelTextCanvas = transform.Find("Level_Text_Canvas");
-
-        // Double check that we got the Canvas.
-        if (!_levelTextCanvas)
-        {
-            // If not, print and error message and disable this script.
-            Debug.LogError("Error: Canvas 'Level_Text_Canvas' is missing (Location " +
-                           "in scene: /Level Manager --> Level_Text_Canvas).");
-            this.enabled = false;
-        }
-        
-        // Grab the Score Text from the Canvas's children
-        _scoreText = _levelTextCanvas.Find("Score_Text").GetComponent<Text>();
-        // Get the Audio Source as well.
-        _scoreSound = _scoreText.GetComponent<AudioSource>();
-        // Set the level number on the Level Outline Text.
-        _levelTextCanvas.Find("Level_Text_Outline")
-            .GetComponent<TextMeshProUGUI>()
-            .text = "LEVEL " + levelNumber.ToString();
+        // Set the level text outline
+        // to the current level number
+        levelTextOutline.text = "LEVEL " + levelNumber.ToString();
         // And the regular Level Text.
-        _levelTextCanvas.Find("Level_Text_Outline")
-            .Find("Level_Text").GetComponent<Text>()
-            .text = "LEVEL " + levelNumber.ToString();
-
-        // Double check that we got the Score text.
-        if (!_scoreText)
-        {
-            // If not, print and error message and disable this script.
-            Debug.LogError("Error: 'Score_Text' Text Component is missing " +
-                           "(Location in scene: /Level Manager --> Level_Text_Canvas --> Score_Text).");
-            this.enabled = false;
-        }
-
-        // Get the score texts "adding" sound Audio Source Component
-        _scoreSound = _scoreText.GetComponent<AudioSource>();
-
-        // Double check that we got the Score "adding" sound.
-        if (!_scoreSound)
-        {
-            // If not, print and error message and disable this script.
-            Debug.LogError("Error: 'Score_Text' is missing the 'adding' sound Audio Source Component");
-            this.enabled = false;
-        }
+        levelText.text = "LEVEL " + levelNumber.ToString();
+        // Make sure we've reset the
+        // player score for this level.
+        valueManager.playerScore = 0;
     }
 
 
@@ -136,13 +106,13 @@ public class LevelManager : MonoBehaviour
     public void AddToScore(int amountToAdd)
     {
         // Save the old score value for the AnimateScoreAdding coroutine
-        int oldScore = _playerScore;
+        int oldScore = valueManager.playerScore;
         // Add one coin.
-        _playerScore += amountToAdd;
+        valueManager.playerScore += amountToAdd;
         // Save the current score to the Value Manager Scriptable Object
-        _valueManager.playerScore = _playerScore;
+        valueManager.playerScore = valueManager.playerScore;
         // "Animate" the score cycling upward with this coroutine
-        StartCoroutine(AnimateScoreAdding(oldScore, _playerScore));
+        StartCoroutine(AnimateScoreAdding(oldScore, valueManager.playerScore));
     }
     
     
@@ -158,9 +128,9 @@ public class LevelManager : MonoBehaviour
         while (visableScore < newScore)
         {
             // Play the "adding" sound if not already playing
-            if (!_scoreSound.isPlaying)
+            if (!scoreSound.isPlaying)
             {
-                _scoreSound.Play();
+                scoreSound.Play();
             }
             // Add one to the score on every frame
             // in order to "Animate" an upward cycle.
@@ -171,7 +141,7 @@ public class LevelManager : MonoBehaviour
             yield return 0;
         }
         // Stop the sound when done.
-        _scoreSound.Stop();
+        scoreSound.Stop();
     }
     
     
@@ -184,20 +154,8 @@ public class LevelManager : MonoBehaviour
     //--------------------------------------------
     public void LevelComplete()
     {
-        // Get the level complete text object from the Canvas's children
-        Transform levelCompleteText = _levelTextCanvas.Find("Level_Complete_Text_Outline");
-        
-        // Double check that we got the Level Complete text.
-        if (!levelCompleteText)
-        {
-            // If not, print and error message and disable this script.
-            Debug.LogError("Error: 'Level_Complete_Text_Outline' grandchild is missing (Location " +
-                           "in scene: /Level Manager --> Level_Text_Canvas --> Level_Complete_Text_Outline).");
-            this.enabled = false;
-        }
-        
         // Enable the Level Complete text
-        levelCompleteText.gameObject.SetActive(true);
+        levelCompleteText.SetActive(true);
         
         // Begin the coroutine that will load the next scene
         StartCoroutine(LoadNextLevel());

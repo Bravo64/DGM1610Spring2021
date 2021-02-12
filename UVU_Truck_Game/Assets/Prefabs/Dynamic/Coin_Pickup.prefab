@@ -50,7 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  cycleType: 0
+  pickupItem: {fileID: 6630810033828433446}
+  movementCycleType: 1
 --- !u!1 &2282292879601644105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf401a20f27fe4b3685401cc1acf17c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinParticle: {fileID: 7880785366531790217, guid: 59153f6790a3943be84100f8f1ede6e0, type: 3}
 --- !u!58 &1252400312
 CircleCollider2D:
   m_ObjectHideFlags: 0

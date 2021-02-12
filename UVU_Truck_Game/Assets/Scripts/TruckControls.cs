@@ -30,18 +30,6 @@ public class TruckControls : MonoBehaviour
         - OutOfFuel (Coroutine)
         - RestoreFuel (public)
         - SpeedBoost (Coroutine)
-        
-    REQUIREMENTS:
-        - "Out_Of_Fuel" Particle Prefab
-            (Folder Path: /Resources/Prefabs/Out_Of_Fuel)
-        - 2 "Wheel" tagged grandchildren (with Rigidbody2D)
-        - "Fuel_Color_Strip" grandchild
-        - "Impact_Audio" child (with Audio Source)
-        - "Acceleration_Audio" child (with Audio Source)
-        - Rigidbody2D Component
-        - "Virtual_Cam" Cinemachine Camera
-        - "Vehicle" tagged cars inside the active scene
-        - "Blue_Speed_Trail" Particle child
     
     --------------------- DOC END ----------------------
      */
@@ -53,7 +41,6 @@ public class TruckControls : MonoBehaviour
     
     // Car ID Number (Determines car activation order, 1 is main)
     [UnityEngine.Range(30, 1)]
-    [SerializeField]
     public int carImportance = 1;
     // Move Sensitivity.
     [UnityEngine.Range(0, 50)]
@@ -128,9 +115,8 @@ public class TruckControls : MonoBehaviour
     [Space(10, order = 1)]
     
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
-    // (Found in the Resources folder)
     [SerializeField]
-    private GameObject _outOfFuelPrefab;
+    private GameObject outOfFuelPrefab;
 
     //-----------------------------------------------------------------
     
@@ -394,7 +380,7 @@ public class TruckControls : MonoBehaviour
         // is gone by setting this to true.
         _fuelIsEmpty = true;
         // Create "Out Of Fuel" flashing message.
-        Instantiate(_outOfFuelPrefab, transform.position, quaternion.identity);
+        Instantiate(outOfFuelPrefab, transform.position, quaternion.identity);
         // Add Drag to our rigidbody.
         myRigidbody2D.drag = 2;
         myRigidbody2D.angularDrag = 2;

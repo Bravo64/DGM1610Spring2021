@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1150769219
 Transform:
   m_ObjectHideFlags: 0
@@ -542,7 +542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  cycleType: 0
+  pickupItem: {fileID: 3890546750011780772}
+  movementCycleType: 0
 --- !u!1 &1536285990
 GameObject:
   m_ObjectHideFlags: 0
@@ -5737,6 +5738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b92718b5d254c34951ddb7925e1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelParticle: {fileID: 7880785366531790217, guid: 7a640c23b8a044953b066975e1cb3a84, type: 3}
   superFuel: 0
 --- !u!50 &5916523568126411227
 Rigidbody2D:
@@ -7143,6 +7145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b92718b5d254c34951ddb7925e1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelParticle: {fileID: 0}
   superFuel: 0
 --- !u!50 &6469424841899592334
 Rigidbody2D:

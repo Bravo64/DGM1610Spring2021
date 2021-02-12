@@ -1889,30 +1889,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 761846766150437528, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_fontColor.a
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 761846766150437528, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 2566914048
-      objectReference: {fileID: 0}
-    - target: {fileID: 1460765812758507741, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3542063
-      objectReference: {fileID: 0}
-    - target: {fileID: 1460765812758507741, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3030599088816033092, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477966226014730532, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4047515475467930608, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1965,16 +1941,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 4077824293286259117, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.453016
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077824293286259117, guid: e71344b7470104577b9d131c8029e164, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.028396
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71344b7470104577b9d131c8029e164, type: 3}
+--- !u!114 &4047515474685195886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4047515475904811237, guid: e71344b7470104577b9d131c8029e164, type: 3}
+  m_PrefabInstance: {fileID: 4047515474685195885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2dc7f6f2500403fb2c472fab8050fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6630810033437843092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2039,6 +2018,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1867786735, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
+      propertyPath: flagParticle
+      value: 
+      objectReference: {fileID: 8264465373242358830}
+    - target: {fileID: 1867786735, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 4047515474685195886}
     - target: {fileID: 8264465372956573880, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
       propertyPath: m_Name
       value: Flag_Finish
@@ -2089,6 +2076,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
+--- !u!1 &8264465373242358830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8461639516833090695, guid: 61593cf1896e14abdb612ab8e6917e6c, type: 3}
+  m_PrefabInstance: {fileID: 8264465373242358829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9008978303607428365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2096,10 +2088,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1150769218, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4895463544373290539, guid: f700fb5e9fc2345e5a03cfbbb6c31f0e, type: 3}
       propertyPath: m_RootOrder
       value: 7

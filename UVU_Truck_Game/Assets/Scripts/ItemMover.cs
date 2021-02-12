@@ -21,34 +21,43 @@ public class ItemMover : MonoBehaviour
     Script's Methods:
         - Start
         - Update
-        
-    REQUIREMENTS:
-        - sibling (child of my parent) with "Item" tag
-        - At least 1 active child (Waypoints)
 
     --------------------- DOC END ----------------------
      */
 
 
-    //----- Serialized Variables (private, shows in Editor) ------
+    //----- Public and Serialized Variables (visable in editor) ------
 
-    [Header("Speed that Item moves along the path:")] 
-    [SerializeField] private float movementSpeed = 5.0f;
+    [Header("------------- VALUE VARIABLES -------------", order = 0)]
+    [Space(10, order = 1)]
+    
+    [UnityEngine.Range(0.0f, 50.0f)]
+    [SerializeField] 
+    private float movementSpeed = 5.0f;
+    
+    [Header("--------------- SIBLINGS ---------------", order = 2)]
+    [Space(10, order = 3)]
+    
+    // The item we are moving.
+    [SerializeField]
+    private Transform pickupItem;
+    
     // Design my own enumeration variable
     enum CycleType{ pingPong, loop}
+
+    [Header("--------------- ENUMERATIONS ---------------", order = 4)] 
+    [Space(10, order = 5)]
+    
     // Define a version of the enum
-    [Header("Type of cycle Item takes along path:")] 
-    [SerializeField] CycleType cycleType = CycleType.pingPong;
+    [SerializeField] 
+    CycleType movementCycleType = CycleType.pingPong;
 
     //------------------------------------------------------------
 
 
     //---------------- Private Variables -------------------
 
-    // The item we are moving.
-    private Transform _pickupItem;
-
-    // A list of empties representing
+    // A list of (active) empties representing
     // each position we want to go to.
     private List<Transform> _waypoints = new List<Transform>();
 
@@ -71,26 +80,8 @@ public class ItemMover : MonoBehaviour
     //----------------------------------------------------
     void Start()
     {
-        // Search through our parent's children (siblings)
-        foreach (Transform child1 in transform.parent)
-        {
-            // Look for the pickup item's tag ("Item").
-            if (child1.CompareTag("Item"))
-            {
-                _pickupItem = child1;
-            }
-        }
 
-        // Double check that we got the item.
-        if (!_pickupItem)
-        {
-            // If not, print and error message and disable this script.
-            Debug.LogError("Error: Item for 'mover' is missing. Please ensure " +
-                      "that the mover has an item sibling with an 'Item' tag.");
-            this.enabled = false;
-        }
-
-        // Get the waypoint children
+        // Get the active waypoint children
         foreach (Transform child2 in transform)
         {
             // Add it to the list if it is active
@@ -104,7 +95,7 @@ public class ItemMover : MonoBehaviour
         if (_waypoints.Count == 0)
         {
             // If not, print and error message and disable this script.
-            Debug.LogError("Error: Mover has no waypoint children.");
+            Debug.LogError("Error: Mover has no (active) waypoint children.");
             this.enabled = false;
         }
     }
@@ -119,9 +110,9 @@ public class ItemMover : MonoBehaviour
     void Update()
     {
         // Move the item towards the active waypoint.
-        _pickupItem.position = Vector3.MoveTowards(_pickupItem.position, _waypoints[_activeWaypoint].position,
+        pickupItem.position = Vector3.MoveTowards(pickupItem.position, _waypoints[_activeWaypoint].position,
             movementSpeed * Time.deltaTime);
-        if (Vector3.Distance(_pickupItem.position, _waypoints[_activeWaypoint].position) < 0.01f)
+        if (Vector3.Distance(pickupItem.position, _waypoints[_activeWaypoint].position) < 0.01f)
         {
             // If we reach the end.
             if (_activeWaypoint >= _waypoints.Count - 1)
@@ -129,12 +120,12 @@ public class ItemMover : MonoBehaviour
                 // Make sure we didn't go past.
                 _activeWaypoint = _waypoints.Count - 1;
                 // Check what type of loop we are making (using our enum).
-                if (cycleType == CycleType.pingPong)
+                if (movementCycleType == CycleType.pingPong)
                 {
                     // Go backwards (ping pong).
                     _movementDirection = -1;
                 }
-                else if (cycleType == CycleType.loop)
+                else if (movementCycleType == CycleType.loop)
                 {
                     // Move towards the first waypoint
                     // (-1 will change to -1 + 1 = waypoint 0).
@@ -142,7 +133,7 @@ public class ItemMover : MonoBehaviour
                 }
             }
             // Else if we reach the beginning.
-            else if (_activeWaypoint <= 0 && cycleType == CycleType.pingPong)
+            else if (_activeWaypoint <= 0 && movementCycleType == CycleType.pingPong)
             {
                 // Make sure we're currently at zero.
                 _activeWaypoint = 0;

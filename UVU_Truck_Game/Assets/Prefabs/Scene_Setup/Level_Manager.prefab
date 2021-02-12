@@ -205,7 +205,7 @@ RectTransform:
   m_GameObject: {fileID: 3030599088816033092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3873501, y: 1.709511, z: 1.8144263}
+  m_LocalScale: {x: 1.3873501, y: 1.453016, z: 1.8144263}
   m_Children:
   - {fileID: 1460765812758507741}
   m_Father: {fileID: 4047515475467930615}
@@ -213,7 +213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4999.8, y: 0.29223}
+  m_AnchoredPosition: {x: -4999.8, y: -0.028396}
   m_SizeDelta: {x: 881.3254, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3843168197905415262
@@ -349,8 +349,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2147483648
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+    rgba: 2566914048
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0.6}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -826,6 +826,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNumber: 1
+  levelTextOutline: {fileID: 2585701763644747284}
+  levelText: {fileID: 8768693080811352578}
+  _scoreText: {fileID: 4047515475931911632}
+  levelCompleteText: {fileID: 3030599088816033092}
+  scoreSound: {fileID: 509919014}
+  valueManager: {fileID: 11400000, guid: 0b0c3c6b99baf4e93bf111a2ab256db4, type: 2}
 --- !u!1 &4047515475931911638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,14 +1036,14 @@ RectTransform:
   m_GameObject: {fileID: 8458580135927121007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4484992, y: 0.29825386, z: 0.26471344}
+  m_LocalScale: {x: 0.4484992, y: 0.3542063, z: 0.26471344}
   m_Children: []
   m_Father: {fileID: 4077824293286259117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.7, y: -2.5}
+  m_AnchoredPosition: {x: 8.7, y: -3.3}
   m_SizeDelta: {x: 991.0589, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &814923234069111463

@@ -18,45 +18,25 @@ public class FinishFlag : MonoBehaviour
         is completed.
         
     Script's Methods:
-        - Start
         - OnTriggerEnter
-        
-    REQUIREMENTS:
-        - "Flag_Particle" child Game Object
 
     --------------------- DOC END ----------------------
     */
     
+    [Header("------------- SCENE OBJECTS -------------", order = 0)]
+    [Space(10, order = 1)]
+    
     // The Level Manager in the scene
-    private LevelManager _levelManager;
+    [SerializeField]
+    private LevelManager levelManager;
 
+    [Header("--------------- PREFABS ---------------", order = 2)]
+    [Space(10, order = 3)]
+    
     // The flag particle child object (with the audio as well)
-    private GameObject _flagParticle;
-    
-    //-------------- The Start Method -------------------
-    // This Method is called before the first frame update
-    // (or at the gameObject's creation/reactivation). Here,
-    // it is mainly used for getting and setting up variables
-    //-----------------------------------------------------
-    private void Start()
-    {
-        // Grab the Level Manager in the scene
-        _levelManager = Transform.FindObjectOfType<LevelManager>();
-        
-        // Save the Flag Particle child game object.
-        _flagParticle = transform.Find("Flag_Particle").gameObject;
+    [SerializeField]
+    private GameObject flagParticle;
 
-        // Double check that we got it
-        if (!_flagParticle)
-        {
-            // If not, print an error and disable the script
-            Debug.LogError("Error: The Finish Line Flag's 'Flag_Particle' child is " +
-                           "missing. (Location in Scene: /Flag_Finish/Flag_Particle)");
-            // Disable this script
-            this.enabled = false;
-        }
-    }
-    
     //------- The OnTriggerEnter2D Method ------------
     // This Method is called once another object enters
     // and triggers this object's trigger collider.
@@ -71,10 +51,10 @@ public class FinishFlag : MonoBehaviour
         {
             // Activate the particle
             // (with attached audio as well)
-            _flagParticle.SetActive(true);
+            flagParticle.SetActive(true);
             // Let the Level Manager know
             // that we have completed the level.
-            _levelManager.LevelComplete();
+            levelManager.LevelComplete();
         }
     }
     

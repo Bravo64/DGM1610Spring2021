@@ -64,7 +64,6 @@ public class RevealTextByCharacter : MonoBehaviour
         // Grab my text and audio components.
         _myText = GetComponent<Text>();
         _myAudio = GetComponent<AudioSource>();
-
         if (!_myText)
         {
             // If text component was not found, print an error and end the script's execution.

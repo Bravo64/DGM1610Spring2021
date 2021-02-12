@@ -18,20 +18,20 @@ public class CoinPickup : MonoBehaviour
     Script's Methods:
         - Start
         - OnTriggerEnter2D
-        
-    REQUIREMENTS:
-        - "Coin_Particle" Game Object
-            (Folder Path: /Resources/Prefabs/Coin_Particle)
 
     --------------------- DOC END ----------------------
      */
     
+    [Header("---------------- PREFABS ----------------", order = 0)]
+    [Space(10, order = 1)]
+    
+    // The particle effect we want to create when fuels is collected
+    [SerializeField]
+    private GameObject coinParticle;
+    
     // The Level Manager in the scene
     private LevelManager _levelManager;
-    
-    // The particle effect we want to create when fuels is collected (prefabs found in Resources)
-    private GameObject _particlePrefab;
-    
+
     // The value of the coin for the player score
     private int coinValue = 150;
     
@@ -39,16 +39,13 @@ public class CoinPickup : MonoBehaviour
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation).
     // Here, we pretty much just use it to assign
-    // the Particle Prefab.
+    // the Level Manager.
     //-----------------------------------------------------
 
     void Start()
     {
         // Grab the Level Manager in the scene
         _levelManager = Transform.FindObjectOfType<LevelManager>();
-        
-        // Get the Particle Prefab from Resources folder.
-        _particlePrefab = Resources.Load("Prefabs/Coin_Particle") as GameObject;
     }
 
     //------- The OnTriggerEnter2D Method ------------
@@ -67,17 +64,10 @@ public class CoinPickup : MonoBehaviour
             // add the coin value to the score.
             _levelManager.AddToScore(coinValue);
             
-            if (_particlePrefab)
-            {
-                // Create the fuel particle effect.
-                Instantiate(_particlePrefab, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                // If we can't find the particle, print an error message.
-                Debug.LogError("'Coin_Particle' Prefab is missing (Location: /Assets/Resources/Prefabs/Coin_Particle').'");
-            }
-                // Turn off this object.
+            // Create the fuel particle effect.
+            Instantiate(coinParticle, transform.position, Quaternion.identity);
+
+            // Turn off this object.
             gameObject.SetActive(false);
         }
     }

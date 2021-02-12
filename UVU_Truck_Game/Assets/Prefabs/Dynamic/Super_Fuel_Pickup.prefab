@@ -5167,7 +5167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  cycleType: 0
+  pickupItem: {fileID: 0}
+  movementCycleType: 0
 --- !u!1 &465632467873036921
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,7 +5744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b92718b5d254c34951ddb7925e1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  superFuel: 1
+  fuelParticle: {fileID: 7880785366531790217, guid: 7a640c23b8a044953b066975e1cb3a84, type: 3}
+  givesSpeedBoost: 1
 --- !u!50 &6083787596318828164
 Rigidbody2D:
   serializedVersion: 4
@@ -12119,7 +12121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b92718b5d254c34951ddb7925e1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  superFuel: 0
+  fuelParticle: {fileID: 0}
+  givesSpeedBoost: 0
 --- !u!50 &6899024098406919633
 Rigidbody2D:
   serializedVersion: 4
