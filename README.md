@@ -57,3 +57,5 @@ Tuesday, February 9th, 2021: Cloudy
 Wednesday, February 10th, 2021: Cloudy
 
 Thursday, February 11th, 2021: Cloudy
+
+Friday, February 12th, 2021: Rainy
