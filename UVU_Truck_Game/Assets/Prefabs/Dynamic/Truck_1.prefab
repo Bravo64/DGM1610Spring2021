@@ -5267,8 +5267,8 @@ MonoBehaviour:
   - {fileID: 3454801405152170969}
   fuelColorStrip: {fileID: 7547817573058157641}
   fuelStripRenderer: {fileID: 2209262404412050908}
-  mainCamera: {fileID: 0}
-  _outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}
+  mainVirtualCamera: {fileID: 0}
+  outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}
 --- !u!50 &3454801405459434989
 Rigidbody2D:
   serializedVersion: 4
