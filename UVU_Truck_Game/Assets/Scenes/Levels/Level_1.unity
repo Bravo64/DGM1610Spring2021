@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: carImportance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: mainVirtualCamera
+      value: 
+      objectReference: {fileID: 826399965}
     - target: {fileID: 3454801405679981217, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_Mass
       value: 0.5
@@ -1110,6 +1114,10 @@ PrefabInstance:
       propertyPath: carImportance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: mainVirtualCamera
+      value: 
+      objectReference: {fileID: 826399965}
     - target: {fileID: 3454801405679981217, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: m_Mass
       value: 0.5

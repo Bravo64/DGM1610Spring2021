@@ -122,7 +122,7 @@ public class TruckControls : MonoBehaviour
     
     // The Main Camera (Cinemachine Virtual Camera).
     [SerializeField]
-    private CinemachineVirtualCamera mainCamera;
+    private CinemachineVirtualCamera mainVirtualCamera;
     
     [Header("---------------- PREFABS ----------------", order = 0)]
     [Space(10, order = 1)]
@@ -409,7 +409,7 @@ public class TruckControls : MonoBehaviour
                 // Enabled their controls (script).
                 carScript.enabled = true;
                 // Set the virtual camera to follow them.
-                mainCamera.Follow = carScript.transform;
+                mainVirtualCamera.Follow = carScript.transform;
             }
         }
 
