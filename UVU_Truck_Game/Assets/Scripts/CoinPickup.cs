@@ -33,7 +33,7 @@ public class CoinPickup : MonoBehaviour
     private LevelManager _levelManager;
 
     // The value of the coin for the player score
-    private int coinValue = 150;
+    private int coinValue = 123;
     
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update

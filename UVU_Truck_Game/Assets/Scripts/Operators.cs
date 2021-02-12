@@ -31,6 +31,14 @@ public class Operators : MonoBehaviour
         print(_characterVariable);
         print(_stringVariable);
         print(_booleanVariable);
-    }
+
+        // modulus division
+        int valueA = 4;
+        int valueB = 2;
+        float remainder = valueA % valueB;
+
+        print (remainder);
+
+}
     
 }

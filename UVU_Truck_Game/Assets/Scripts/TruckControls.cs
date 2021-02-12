@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class TruckControls : MonoBehaviour
 {
     /*
@@ -42,6 +43,7 @@ public class TruckControls : MonoBehaviour
     // Car ID Number (Determines car activation order, 1 is main)
     [UnityEngine.Range(30, 1)]
     public int carImportance = 1;
+    
     // Move Sensitivity.
     [UnityEngine.Range(0, 50)]
     [SerializeField]
@@ -59,13 +61,6 @@ public class TruckControls : MonoBehaviour
 
     // Boolean telling when we are out of fuel.
     private bool _fuelIsEmpty;
-    
-    [Header("------------ MY COMPONENTS ------------", order = 2)]
-    [Space(10, order = 3)]
-    
-    // The truck's Rigidbody2D Component.
-    [SerializeField]
-    private Rigidbody2D myRigidbody2D;
 
     [Header("---------------- CHILDREN ----------------", order = 0)]
     [Space(10, order = 1)]
@@ -142,6 +137,9 @@ public class TruckControls : MonoBehaviour
     
     // Are we trying to tilt or not?
     private bool _tilting = false;
+    
+    // Our Rigidbody2D Component.
+    private Rigidbody2D myRigidbody2D;
 
     //-----------------------------------------------------
 
@@ -161,6 +159,8 @@ public class TruckControls : MonoBehaviour
             _defaultFuelAmount = secondsOfFuel;
             
         }
+        // Get our Rigidbody2D Component.
+        myRigidbody2D = GetComponent<Rigidbody2D>();
         // Get all the cars in the scene with the "Vehicle" tag.
         _allCars = GameObject.FindGameObjectsWithTag("Vehicle");
         // Get their scripts as well

@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 826399965}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: wheelSpeed
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: carImportance
@@ -1108,7 +1108,7 @@ PrefabInstance:
       objectReference: {fileID: 826399965}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: wheelSpeed
-      value: 13
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: carImportance
