@@ -4069,7 +4069,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.45499986, y: -1.2824471}
+  m_ConnectedAnchor: {x: -0.45499983, y: -1.2824472}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801403867933759
@@ -5253,12 +5253,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carImportance: 0
   wheelSpeed: 20
-  tiltSensitivity: 50
+  tiltSensitivity: 60
   secondsOfFuel: 2
-  myRigidbody2D: {fileID: 3454801405459434989}
   impactAudio: {fileID: 5538903763456874162}
   accelerationAudio: {fileID: 4320637208422334291}
-  _blueTrailParticle: {fileID: 1057740693119241446}
+  yellowTrailParticle: {fileID: 1057740693119241446}
   wheelAxles:
   - {fileID: 3454801405679981217}
   - {fileID: 3454801403867933757}
@@ -5576,7 +5575,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.5449999, y: -1.2824473}
+  m_ConnectedAnchor: {x: 0.54500026, y: -1.2824473}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801405679981219
@@ -6605,7 +6604,7 @@ GameObject:
   - component: {fileID: 703669894637628267}
   - component: {fileID: 2126522473243573638}
   m_Layer: 0
-  m_Name: Blue_Speed_Trail
+  m_Name: Yellow_Speed_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6815,7 +6814,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.5, b: 1, a: 0.23529412}
+      maxColor: {r: 1, g: 0.80982494, b: 0, a: 0.23529412}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

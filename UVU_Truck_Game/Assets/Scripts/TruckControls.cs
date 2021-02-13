@@ -52,7 +52,7 @@ public class TruckControls : MonoBehaviour
     // Tilt Sensitivity.
     [UnityEngine.Range(0, 150)]
     [SerializeField]
-    private int tiltSensitivity = 70;
+    private int tiltSensitivity = 60;
 
     // Time left on fuel.
     [UnityEngine.Range(0.0f, 20.0f)]
@@ -77,7 +77,7 @@ public class TruckControls : MonoBehaviour
     
     // The transform of the super speed blue trail particle object
     [SerializeField]
-    private Transform _blueTrailParticle;
+    private Transform yellowTrailParticle;
     
     // List for the wheel car axles (Rigidbody2D).
     [SerializeField]
@@ -525,12 +525,12 @@ public class TruckControls : MonoBehaviour
             // Scale up the blue speed trail particle
             // transform on the x axis over time
             // (while it is less than one).
-            if (_blueTrailParticle.localScale.x < 1.0f)
+            if (yellowTrailParticle.localScale.x < 1.0f)
             {
                 // Grab the scale
-                currentScale = _blueTrailParticle.localScale;
+                currentScale = yellowTrailParticle.localScale;
                 currentScale.x += Time.deltaTime;
-                _blueTrailParticle.localScale = currentScale;
+                yellowTrailParticle.localScale = currentScale;
             }
 
             // Wait one frame, and come back.
@@ -541,22 +541,22 @@ public class TruckControls : MonoBehaviour
         wheels[0].sharedMaterial.friction = originalFriction;
         wheels[1].sharedMaterial.friction = originalFriction;
         // Scale down the blue trail over time (X axis)
-        while (_blueTrailParticle.localScale.x > 0.0f)
+        while (yellowTrailParticle.localScale.x > 0.0f)
         {
             // Get the scale
-            currentScale = _blueTrailParticle.localScale;
+            currentScale = yellowTrailParticle.localScale;
             // Shrink the X axis by time
             currentScale.x -= Time.deltaTime / 2;
             // Reassign the scale
-            _blueTrailParticle.localScale = currentScale;
+            yellowTrailParticle.localScale = currentScale;
             // Wait one frame, and come back.
             yield return 0;
         }
 
         // Double check that X axis resets to 0.
-        currentScale = _blueTrailParticle.localScale;
+        currentScale = yellowTrailParticle.localScale;
         currentScale.x = 0;
-        _blueTrailParticle.localScale = currentScale;
+        yellowTrailParticle.localScale = currentScale;
     }
 }
 // ---------------------- END OF FILE -----------------------
