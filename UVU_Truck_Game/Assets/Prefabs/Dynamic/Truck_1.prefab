@@ -4069,7 +4069,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.45499983, y: -1.2824472}
+  m_ConnectedAnchor: {x: -0.455, y: -1.2824472}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801403867933759
@@ -5266,6 +5266,7 @@ MonoBehaviour:
   - {fileID: 3454801405152170969}
   fuelColorStrip: {fileID: 7547817573058157641}
   fuelStripRenderer: {fileID: 2209262404412050908}
+  _levelManager: {fileID: 0}
   mainVirtualCamera: {fileID: 0}
   outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}
 --- !u!50 &3454801405459434989
@@ -5575,7 +5576,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.54500026, y: -1.2824473}
+  m_ConnectedAnchor: {x: 0.545, y: -1.2824472}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!235 &3454801405679981219
@@ -11588,7 +11589,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae93459f5599b4ac9bbe665abce5c453, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1.5
   Loop: 0
   Mute: 0

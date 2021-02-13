@@ -45,7 +45,7 @@ public class CoinPickup : MonoBehaviour
     void Start()
     {
         // Grab the Level Manager in the scene
-        _levelManager = Transform.FindObjectOfType<LevelManager>();
+        _levelManager = GameObject.FindObjectOfType<LevelManager>();
     }
 
     //------- The OnTriggerEnter2D Method ------------

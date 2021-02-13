@@ -33,16 +33,14 @@ public class LevelManager : MonoBehaviour
 
     //----- Serialized and Public Variables (Visible in Inspector) -----
 
-    [Header("---------- VALUE VARIABLES ----------", order = 0)]
-    [Space(10, order = 1)]
+    [Header("---------- VALUE VARIABLES ----------", order = 0)] [Space(10, order = 1)]
     
     // The Level Number
     [UnityEngine.Range(1, 50)]
     [SerializeField]
     private int levelNumber = 1;
     
-    [Header("----------- TEXT OBJECTS -----------", order = 2)]
-    [Space(10, order = 3)]
+    [Header("----------- TEXT OBJECTS -----------", order = 2)] [Space(10, order = 3)]
     
     // The Text component that displays current
     // level text outline (at level start).
@@ -63,19 +61,21 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject levelCompleteText;
     
-    [Header("--------------- AUDIO ---------------", order = 4)]
-    [Space(10, order = 5)]
+    [Header("--------------- AUDIO ---------------", order = 4)] [Space(10, order = 5)]
     
     // The Audio Source for the Score text "adding" sound.
     [SerializeField]
     private AudioSource scoreSound;
     
-    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)]
-    [Space(10, order = 7)]
+    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)] [Space(10, order = 7)]
     
     // The Scriptable Object that will contain the player score.
     [SerializeField]
     private ValueManager valueManager;
+
+    [Header("-------------- PLAYER ---------------", order = 6)] [Space(10, order = 7)]
+
+    public GameObject activePlayerVehicle;
     
     //--------------------------------------------------------
     

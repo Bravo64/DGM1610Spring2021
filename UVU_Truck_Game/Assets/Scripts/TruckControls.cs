@@ -37,8 +37,7 @@ public class TruckControls : MonoBehaviour
 
     //---------- Public and Static Variables (visible in inspector)-----------
     
-    [Header("----------- VALUE VARIABLES -----------", order = 0)]
-    [Space(10, order = 1)]
+    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 1)]
     
     // Car ID Number (Determines car activation order, 1 is main)
     [UnityEngine.Range(30, 1)]
@@ -55,15 +54,14 @@ public class TruckControls : MonoBehaviour
     private int tiltSensitivity = 60;
 
     // Time left on fuel.
-    [UnityEngine.Range(0.0f, 20.0f)]
+    [UnityEngine.Range(0.0f, 60.0f)]
     [SerializeField]
     private float secondsOfFuel = 1.8f;
 
     // Boolean telling when we are out of fuel.
     private bool _fuelIsEmpty;
 
-    [Header("---------------- CHILDREN ----------------", order = 0)]
-    [Space(10, order = 1)]
+    [Header("---------------- CHILDREN ----------------", order = 0)] [Space(10, order = 1)]
     
     // The AudioSource component of the Game
     // Object that has the impact sound effect.
@@ -83,8 +81,7 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private Rigidbody2D[] wheelAxles;
     
-    [Header("------------- GRANDCHILDREN --------------", order = 0)]
-    [Space(10, order = 1)]
+    [Header("------------- GRANDCHILDREN --------------", order = 0)] [Space(10, order = 1)]
     
     // List for the wheels of the car (Rigidbody2D)
     [SerializeField]
@@ -99,15 +96,17 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private SpriteRenderer fuelStripRenderer;
     
-    [Header("------------- SCENE OBJECTS -------------", order = 0)]
-    [Space(10, order = 1)]
+    [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 1)]
+    
+    // The Level Manager in the scene
+    [SerializeField]
+    private LevelManager _levelManager;
     
     // The Main Camera (Cinemachine Virtual Camera).
     [SerializeField]
     private CinemachineVirtualCamera mainVirtualCamera;
     
-    [Header("---------------- PREFABS ----------------", order = 0)]
-    [Space(10, order = 1)]
+    [Header("---------------- PREFABS ----------------", order = 0)] [Space(10, order = 1)]
     
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
     [SerializeField]
@@ -396,6 +395,9 @@ public class TruckControls : MonoBehaviour
                 carScript.enabled = true;
                 // Set the virtual camera to follow them.
                 mainVirtualCamera.Follow = carScript.transform;
+                // Let everyone know who the active
+                // car is through the Level Manager variable
+                _levelManager.activePlayerVehicle = carScript.gameObject;
             }
         }
 
