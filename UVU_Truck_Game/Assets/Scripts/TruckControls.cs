@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Cinemachine;
-using NUnit.Framework;
 using Unity.Mathematics;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -172,7 +169,8 @@ public class TruckControls : MonoBehaviour
         // If not, print an error and disable the script.
         if (_allCarsScripts.Count == 0)
         {
-            Debug.Log("Error: Scene is missing cars with 'Vehicle' tag and 'TruckControls.cs' Script");
+            Debug.Log("Error: Scene is missing cars with 'Vehicle' " +
+                      "tag and 'TruckControls.cs' Script");
             this.enabled = false;
         }
     }
@@ -472,7 +470,7 @@ public class TruckControls : MonoBehaviour
         // Get rid of drag for our rigidbody.
         myRigidbody2D.drag = 0;
         myRigidbody2D.angularDrag = 0;
-        // Reactivate the trucks rigidbody
+        // Reactivate the truck's rigidbody
         myRigidbody2D.constraints = RigidbodyConstraints2D.None;
         myRigidbody2D.isKinematic = false;
         // Restore the fuel (in seconds) to the full default value.
@@ -512,7 +510,7 @@ public class TruckControls : MonoBehaviour
         wheels[1].sharedMaterial.friction = 0;
         // Push the car forward (right direction from our POV).
         myRigidbody2D.AddForce(transform.right * 3000);
-        // This will help to stabilize the rotation
+        // This will help to stabilize the rotation.
         myRigidbody2D.AddTorque(5000);
         // We will save the size of the blue
         // trail particle in this variable.
