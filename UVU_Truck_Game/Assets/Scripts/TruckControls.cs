@@ -84,6 +84,8 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private Rigidbody2D[] wheels;
     
+    [Header("---------------- FUEL UI -----------------", order = 0)] [Space(10, order = 1)]
+    
     // Color strip that tells the player
     // how much fuel they have left.
     [SerializeField]
