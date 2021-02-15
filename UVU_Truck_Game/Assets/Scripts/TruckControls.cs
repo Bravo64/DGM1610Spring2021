@@ -46,7 +46,7 @@ public class TruckControls : MonoBehaviour
     private int wheelSpeed = 20;
 
     // Tilt Sensitivity.
-    [UnityEngine.Range(0, 150)]
+    [UnityEngine.Range(0, 500)]
     [SerializeField]
     private int tiltSensitivity = 60;
 

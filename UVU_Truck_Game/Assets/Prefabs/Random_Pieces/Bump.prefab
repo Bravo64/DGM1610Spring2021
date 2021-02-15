@@ -1161,7 +1161,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 5207285352622793230}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 838c8925b47b24287b44b0599063a14d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1234,6 +1234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681ba4ba746d34afbbd0766ff7a5c1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minXScale: 0.5
+  maxXScale: 5
   endPoint: {fileID: 7847118356361095344}
   randomPieces:
   - {fileID: 5754352913601014232, guid: 92fe6cb2b780a4d0796ff508dcae2664, type: 3}

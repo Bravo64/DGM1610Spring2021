@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class RandomPieceCreator : MonoBehaviour
 {
@@ -28,6 +27,17 @@ public class RandomPieceCreator : MonoBehaviour
      */
 
     //---------- Public and Static Variables (visible in inspector)-----------
+
+    [Header("------------ VALUE VARIABLES ------------", order = 0)] [Space(10, order = 1)]
+    
+    // These will determine the possible
+    // sizes when we randomize a pieces scale
+    [UnityEngine.Range(0.0f, 10.0f)]
+    [SerializeField]
+    private float minXScale = 0.5f;
+    [UnityEngine.Range(0.0f, 10.0f)]
+    [SerializeField]
+    private float maxXScale = 5.0f;
 
     [Header("--------------- CHILDREN ---------------", order = 0)] [Space(10, order = 1)]
     
@@ -71,6 +81,12 @@ public class RandomPieceCreator : MonoBehaviour
     //-----------------------------------------------------
     private void Start()
     {
+        // Get our scale.
+        Vector3 myScale = transform.localScale;
+        // Randomize the x scale based on the size limit variables.
+        myScale.x = UnityEngine.Random.Range(minXScale, maxXScale);
+        // Reassign our scale
+        transform.localScale = myScale;
         // Grab the Level Manager in the scene.
         _levelManager = GameObject.FindObjectOfType<LevelManager>();
         // Choose a random piece index.
