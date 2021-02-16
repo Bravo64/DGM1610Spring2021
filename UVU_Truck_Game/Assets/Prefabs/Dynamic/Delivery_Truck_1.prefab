@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 041c838c51218461e90cbc5b8161f2d5, type: 3}
   m_Color: {r: 0.08672567, g: 0.092920355, b: 0.1, a: 1}
   m_FlipX: 0
@@ -8425,6 +8425,7 @@ GameObject:
   - component: {fileID: 5785421905612881986}
   - component: {fileID: 3603778820291993444}
   - component: {fileID: 7278792264135902641}
+  - component: {fileID: 9188264491315553117}
   m_Layer: 0
   m_Name: Delivery_Truck_1
   m_TagString: Vehicle
@@ -8480,7 +8481,7 @@ MonoBehaviour:
   - {fileID: 8530163141945371072}
   - {fileID: 8530163142728454339}
   fuelColorStrip: {fileID: 0}
-  fuelStripRenderer: {fileID: 0}
+  fuelStripImage: {fileID: 0}
   _levelManager: {fileID: 0}
   mainVirtualCamera: {fileID: 0}
   outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}
@@ -8614,7 +8615,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5434059, y: 0.40907168}
+  m_Offset: {x: 0.58454573, y: 0.40907168}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8625,7 +8626,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7799225, y: 2.099111}
+  m_Size: {x: 0.6976428, y: 2.099111}
   m_EdgeRadius: 0
 --- !u!61 &3603778820291993444
 BoxCollider2D:
@@ -8678,6 +8679,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.3686405, y: 0.22600994}
+  m_EdgeRadius: 0
+--- !u!61 &9188264491315553117
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530163141815176907}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5434059, y: 0.3322354}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7799225, y: 1.9454387}
   m_EdgeRadius: 0
 --- !u!1 &8530163141945371076
 GameObject:

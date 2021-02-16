@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -91,9 +93,9 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private Transform fuelColorStrip;
 
-    // The Sprite Renderer of the fuel strip.
+    // The Image UI component of the fuel strip.
     [SerializeField]
-    private SpriteRenderer fuelStripRenderer;
+    private Image fuelStripImage;
     
     [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 1)]
     
@@ -152,7 +154,7 @@ public class TruckControls : MonoBehaviour
         {
             // If the fuel is not empty, save it as
             // the default (full) fuel meter color.
-            _fullTankColor = fuelStripRenderer.color;
+            _fullTankColor = fuelStripImage.color;
             // Also save its fuel amount as the default value.
             _defaultFuelAmount = secondsOfFuel;
             
@@ -194,10 +196,10 @@ public class TruckControls : MonoBehaviour
             // Drain the vehicle's fuel tank
             DrainFuel();
         }
-        else if (Input.GetButtonUp("Vertical"))
+        else if (_accelerating)
         {
-            // If not pressed (button goes up),
-            // let FixedUpdate know.
+            // If not pressed, let FixedUpdate
+            // know through this variable.
             _accelerating = false;
         }
 
@@ -207,10 +209,10 @@ public class TruckControls : MonoBehaviour
             // to start tilting through this variable.
             _tilting = true;
         }
-        else if (Input.GetButtonUp("Horizontal"))
+        else if (_tilting)
         {
-            // If not pressed (button goes up),
-            // let FixedUpdate know.
+            // If not pressed, let FixedUpdate
+            // know through this variable.
             _tilting = false;
         }
         // If we are accelerating.
@@ -297,6 +299,21 @@ public class TruckControls : MonoBehaviour
             float rotation = Input.GetAxis("Horizontal") * -tiltSensitivity;
             // Turn (tilt) the whole truck
             myRigidbody2D.AddTorque(rotation);
+            // Check if we are rotating faster than we'd like.
+            float maxSpinSpeed = 350.0f;
+            if (myRigidbody2D.angularVelocity > maxSpinSpeed) 
+            {
+                // Pull back the angular velocity
+                // (prevents certain glitches).
+                myRigidbody2D.angularVelocity = maxSpinSpeed;
+            }
+            // Check the other direction as well.
+            else if (myRigidbody2D.angularVelocity < -maxSpinSpeed)
+            {
+                // Pull back the angular velocity
+                // (prevents certain glitches).
+                myRigidbody2D.angularVelocity = -maxSpinSpeed;
+            }
         }
     }
 
@@ -347,13 +364,13 @@ public class TruckControls : MonoBehaviour
                 fuelStripScale.x = 0;
             }
             // Get the color.
-            Color spriteColor = fuelStripRenderer.color;
+            Color spriteColor = fuelStripImage.color;
             // Manipulate the color over time from green to red (using RGB).
             spriteColor.g -= (spriteColor.g / secondsOfFuel) * Time.deltaTime;
             spriteColor.b -= (spriteColor.b / secondsOfFuel) * Time.deltaTime;
             spriteColor.r += (spriteColor.r / secondsOfFuel) * Time.deltaTime * 5;
             // Reassign the color.
-            fuelStripRenderer.color = spriteColor;
+            fuelStripImage.color = spriteColor;
         }
         else if (fuelStripScale.x < 0.01)
         {
@@ -478,7 +495,7 @@ public class TruckControls : MonoBehaviour
         // Restore the fuel (in seconds) to the full default value.
         secondsOfFuel = _defaultFuelAmount;
         // Reset the color of the fuel meter.
-        fuelStripRenderer.color = _fullTankColor;
+        fuelStripImage.color = _fullTankColor;
         // Reset the size of the fuel meter (on x axis).
         Vector3 fuelMeterScale = fuelColorStrip.localScale;
         fuelMeterScale.x = 1.0f;
