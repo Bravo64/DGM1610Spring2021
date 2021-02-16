@@ -286,6 +286,18 @@ public class TruckControls : MonoBehaviour
             {
                 // Turn this wheel
                 wheel.AddTorque(rotation);
+                // To reduce glitches, we will
+                // clamp (limit) the wheels'
+                // positions and rotation speeds.
+                // (prevents axel separation glitch)
+                float maxDistance = 0.7f;
+                float maxSpin = 10000.0f;
+                // Limit position.
+                wheel.transform.localPosition = 
+                    Vector3.ClampMagnitude(wheel.transform.localPosition, 
+                        maxDistance);
+                // Limit spin.
+                wheel.angularVelocity = Mathf.Clamp(wheel.angularVelocity, -maxSpin, maxSpin);
             }
         }
 
@@ -299,21 +311,10 @@ public class TruckControls : MonoBehaviour
             float rotation = Input.GetAxis("Horizontal") * -tiltSensitivity;
             // Turn (tilt) the whole truck
             myRigidbody2D.AddTorque(rotation);
-            // Check if we are rotating faster than we'd like.
+            // Limit our angular (spinning) velocity so it
+            // doesn't get too fast (reduces glitches).
             float maxSpinSpeed = 350.0f;
-            if (myRigidbody2D.angularVelocity > maxSpinSpeed) 
-            {
-                // Pull back the angular velocity
-                // (prevents certain glitches).
-                myRigidbody2D.angularVelocity = maxSpinSpeed;
-            }
-            // Check the other direction as well.
-            else if (myRigidbody2D.angularVelocity < -maxSpinSpeed)
-            {
-                // Pull back the angular velocity
-                // (prevents certain glitches).
-                myRigidbody2D.angularVelocity = -maxSpinSpeed;
-            }
+            myRigidbody2D.angularVelocity = Mathf.Clamp(myRigidbody2D.angularVelocity, -maxSpinSpeed, maxSpinSpeed);
         }
     }
 

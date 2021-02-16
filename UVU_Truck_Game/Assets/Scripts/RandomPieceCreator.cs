@@ -92,7 +92,7 @@ public class RandomPieceCreator : MonoBehaviour
         // Choose a random piece index.
         _chosenPiece = UnityEngine.Random.Range(0, randomPieces.Length);
         // Choose a random wait time.
-        _waitInterval = UnityEngine.Random.Range(1.0f, 1.5f);
+        _waitInterval = UnityEngine.Random.Range(0.75f, 1.0f);
         // Start the Coroutine
         StartCoroutine(CheckDistance());
     }
