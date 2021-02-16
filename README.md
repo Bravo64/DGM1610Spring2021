@@ -65,3 +65,5 @@ Saturday, February 13th, 2021: Rainy
 Sunday, February 14th, 2021: Snowy
 
 Monday, February 15th, 2021: Snowy
+
+Tuesday, February 16th, 2021: Heavy Snow
