@@ -644,6 +644,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!1 &317329882
@@ -741,6 +745,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!4 &407629874 stripped
@@ -942,6 +950,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!1001 &806560890
@@ -999,6 +1011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!4 &858557976 stripped
@@ -1278,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!1001 &925125097
@@ -1397,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!4 &941889547 stripped
@@ -1520,6 +1544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!4 &1059471045 stripped
@@ -1620,7 +1648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1171709252
 Transform:
   m_ObjectHideFlags: 0
@@ -1706,6 +1734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!1001 &1258779872
@@ -2021,6 +2053,10 @@ PrefabInstance:
       value: -40.944
       objectReference: {fileID: 0}
     - target: {fileID: 4047515475904811237, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: intDataObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b330dfb11ed44357be1d97a405579b0, type: 2}
+    - target: {fileID: 4047515475904811237, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: activePlayerVehicle
       value: 
       objectReference: {fileID: 3454801404447970884}
@@ -2221,6 +2257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!1971053207 &1628076515
@@ -2428,6 +2468,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!1001 &1671562331
@@ -2555,6 +2599,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504168321072983217, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
 --- !u!4 &1913221503 stripped
@@ -3081,10 +3129,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4464639279910751262, guid: fa1514d8a24c74991ae3272ee6d66006, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8530163141815176904, guid: fa1514d8a24c74991ae3272ee6d66006, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3145,10 +3189,6 @@ PrefabInstance:
       propertyPath: fuelStripImage
       value: 
       objectReference: {fileID: 41024089}
-    - target: {fileID: 8530163141815176948, guid: fa1514d8a24c74991ae3272ee6d66006, type: 3}
-      propertyPath: tiltSensitivity
-      value: 350
-      objectReference: {fileID: 0}
     - target: {fileID: 8530163141815176948, guid: fa1514d8a24c74991ae3272ee6d66006, type: 3}
       propertyPath: mainVirtualCamera
       value: 

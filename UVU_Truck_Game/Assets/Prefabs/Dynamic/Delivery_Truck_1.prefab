@@ -6541,7 +6541,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -8724,8 +8724,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carImportance: 1
   wheelSpeed: 50
-  tiltSensitivity: 400
+  tiltSensitivity: 350
   secondsOfFuel: 60
+  boostAngularForce: 5000
+  fuelMeterIsAttached: 0
   impactAudio: {fileID: 1535430726194025896}
   accelerationAudio: {fileID: 7090122778572045385}
   yellowTrailParticle: {fileID: 6286189666797424636}
@@ -8737,6 +8739,7 @@ MonoBehaviour:
   - {fileID: 8530163142728454339}
   fuelColorStrip: {fileID: 0}
   fuelStripImage: {fileID: 0}
+  fuelStripRenderer: {fileID: 0}
   _levelManager: {fileID: 0}
   mainVirtualCamera: {fileID: 0}
   outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}

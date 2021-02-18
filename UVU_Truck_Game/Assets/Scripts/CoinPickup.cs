@@ -16,7 +16,6 @@ public class CoinPickup : MonoBehaviour
         the static level manager and activates its "AddCoin" method.
         
     Script's Methods:
-        - Start
         - OnTriggerEnter2D
 
     --------------------- DOC END ----------------------
@@ -28,25 +27,16 @@ public class CoinPickup : MonoBehaviour
     // The particle effect we want to create when fuels is collected
     [SerializeField]
     private GameObject coinParticle;
-    
-    // The Level Manager in the scene
-    private LevelManager _levelManager;
 
+    [Header("------------- SCENE OBJECTS -------------", order = 2)]
+    [Space(10, order = 3)]
+    
+    // The level manager in the scene
+    [SerializeField]
+    private LevelManager levelManager;
+    
     // The value of the coin for the player score
     private int coinValue = 123;
-    
-    //-------------- The Start Method -------------------
-    // This Method is called before the first frame update
-    // (or at the gameObject's creation/reactivation).
-    // Here, we pretty much just use it to assign
-    // the Level Manager.
-    //-----------------------------------------------------
-
-    void Start()
-    {
-        // Grab the Level Manager in the scene
-        _levelManager = GameObject.FindObjectOfType<LevelManager>();
-    }
 
     //------- The OnTriggerEnter2D Method ------------
     // This Method is called once another object enters
@@ -60,9 +50,10 @@ public class CoinPickup : MonoBehaviour
         // Check for "Vehicle" tag
         if (col.CompareTag("Vehicle"))
         {
-            // Tell the static Level Manager to
-            // add the coin value to the score.
-            _levelManager.AddToScore(coinValue);
+            // Tell the scene Level Manager to
+            // add the coin value to the score
+            // (accessed through this scriptable object).
+            levelManager.AddToScore(coinValue);
             
             // Create the fuel particle effect.
             Instantiate(coinParticle, transform.position, Quaternion.identity);

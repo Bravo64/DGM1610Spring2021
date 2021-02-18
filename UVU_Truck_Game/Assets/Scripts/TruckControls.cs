@@ -24,6 +24,7 @@ public class TruckControls : MonoBehaviour
         fuel is empty (sending controls to the next car).
         
     Script's Methods:
+        - Start
         - Update
         - FixedUpdate
         - DrainFuel
@@ -36,7 +37,8 @@ public class TruckControls : MonoBehaviour
 
     //---------- Public and Static Variables (visible in inspector)-----------
     
-    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 1)]
+    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 0)]
+    [Space(10, order = 1)]
     
     // Car ID Number (Determines car activation order, 1 is main)
     [UnityEngine.Range(30, 1)]
@@ -56,11 +58,24 @@ public class TruckControls : MonoBehaviour
     [UnityEngine.Range(0.0f, 60.0f)]
     [SerializeField]
     private float secondsOfFuel = 1.8f;
+    
+    // Boosting can cause the wheel to catch and
+    // spin the car forward. To correct this, we
+    // will add torque based on this variable.
+    [UnityEngine.Range(0, 10000f)]
+    [SerializeField]
+    private int boostAngularForce = 5000;
 
-    // Boolean telling when we are out of fuel.
-    private bool _fuelIsEmpty;
+    [Header("-------------- BOOLEANS --------------", order = 0)] [Space(10, order = 2)]
+    [Space(10, order = 3)]
+    
+    // Is the fuel meter attached to
+    // the side of the truck, or part of the UI?
+    [SerializeField]
+    private bool fuelMeterIsAttached = false;
 
-    [Header("---------------- CHILDREN ----------------", order = 0)] [Space(10, order = 1)]
+    [Header("---------------- CHILDREN ----------------", order = 0)] [Space(10, order = 4)]
+    [Space(10, order = 5)]
     
     // The AudioSource component of the Game
     // Object that has the impact sound effect.
@@ -80,24 +95,32 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private Rigidbody2D[] wheelAxles;
     
-    [Header("------------- GRANDCHILDREN --------------", order = 0)] [Space(10, order = 1)]
+    [Header("------------- GRANDCHILDREN --------------", order = 0)] [Space(10, order = 6)]
+    [Space(10, order = 7)]
     
     // List for the wheels of the car (Rigidbody2D)
     [SerializeField]
     private Rigidbody2D[] wheels;
     
-    [Header("---------------- FUEL UI -----------------", order = 0)] [Space(10, order = 1)]
+    [Header("---------------- FUEL UI -----------------", order = 0)] [Space(10, order = 8)]
+    [Space(10, order = 9)]
     
     // Color strip that tells the player
     // how much fuel they have left.
     [SerializeField]
     private Transform fuelColorStrip;
 
-    // The Image UI component of the fuel strip.
+    // The Image UI component of the fuel strip (if in UI).
     [SerializeField]
     private Image fuelStripImage;
     
-    [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 1)]
+    // The SpriteRenderer component of the fuel strip
+    // (if attached to side of vehicle).
+    [SerializeField]
+    private SpriteRenderer fuelStripRenderer;
+    
+    [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 10)]
+    [Space(10, order = 11)]
     
     // The Level Manager in the scene
     [SerializeField]
@@ -107,7 +130,8 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera mainVirtualCamera;
     
-    [Header("---------------- PREFABS ----------------", order = 0)] [Space(10, order = 1)]
+    [Header("---------------- PREFABS ----------------", order = 0)] [Space(10, order = 12)]
+    [Space(10, order = 13)]
     
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
     [SerializeField]
@@ -134,12 +158,15 @@ public class TruckControls : MonoBehaviour
     
     // Are we accelerating or not?
     private bool _accelerating = false;
-    
+
     // Are we trying to tilt or not?
     private bool _tilting = false;
     
     // Our Rigidbody2D Component.
     private Rigidbody2D myRigidbody2D;
+    
+    // Boolean telling when we are out of fuel.
+    private bool _fuelIsEmpty;
 
     //-----------------------------------------------------
 
@@ -150,15 +177,6 @@ public class TruckControls : MonoBehaviour
     //-----------------------------------------------------
     void Start()
     {
-        if (secondsOfFuel != 0)
-        {
-            // If the fuel is not empty, save it as
-            // the default (full) fuel meter color.
-            _fullTankColor = fuelStripImage.color;
-            // Also save its fuel amount as the default value.
-            _defaultFuelAmount = secondsOfFuel;
-            
-        }
         // Get our Rigidbody2D Component.
         myRigidbody2D = GetComponent<Rigidbody2D>();
         // Get all the cars in the scene with the "Vehicle" tag.
@@ -176,6 +194,25 @@ public class TruckControls : MonoBehaviour
             Debug.Log("Error: Scene is missing cars with 'Vehicle' " +
                       "tag and 'TruckControls.cs' Script");
             this.enabled = false;
+        }
+        if (secondsOfFuel != 0)
+        {
+            // This if statement deals with either the case of
+            // the Fuel meter being a UI Image in the corner, or
+            // being attached to the side of the vehicle.
+            // (different vehicle prefabs display it differently)
+            if (fuelMeterIsAttached)
+            {
+                // If the fuel is not empty, save it as
+                // the default (full) fuel meter color.
+                _fullTankColor = fuelStripRenderer.color;
+            }
+            else
+            {
+                _fullTankColor = fuelStripImage.color;
+            }
+            // Also save its fuel amount as the default value.
+            _defaultFuelAmount = secondsOfFuel;
         }
     }
 
@@ -365,13 +402,30 @@ public class TruckControls : MonoBehaviour
                 fuelStripScale.x = 0;
             }
             // Get the color.
-            Color spriteColor = fuelStripImage.color;
+            // (from either the UI or the vehicle's side indicator)
+            Color spriteColor;
+            if (fuelMeterIsAttached)
+            {
+                spriteColor = fuelStripRenderer.color;
+            }
+            else
+            {
+                spriteColor = fuelStripImage.color;
+            }
             // Manipulate the color over time from green to red (using RGB).
             spriteColor.g -= (spriteColor.g / secondsOfFuel) * Time.deltaTime;
             spriteColor.b -= (spriteColor.b / secondsOfFuel) * Time.deltaTime;
             spriteColor.r += (spriteColor.r / secondsOfFuel) * Time.deltaTime * 5;
             // Reassign the color.
-            fuelStripImage.color = spriteColor;
+            if (fuelMeterIsAttached)
+            {
+                fuelStripRenderer.color = spriteColor;
+            }
+            else
+            {
+                fuelStripImage.color = spriteColor;
+            }
+            
         }
         else if (fuelStripScale.x < 0.01)
         {
@@ -495,8 +549,15 @@ public class TruckControls : MonoBehaviour
         myRigidbody2D.isKinematic = false;
         // Restore the fuel (in seconds) to the full default value.
         secondsOfFuel = _defaultFuelAmount;
-        // Reset the color of the fuel meter.
-        fuelStripImage.color = _fullTankColor;
+        // Reset the color of the fuel meter (UI or side indicator).
+        if (fuelMeterIsAttached)
+        {
+            fuelStripRenderer.color = _fullTankColor;
+        }
+        else
+        {
+            fuelStripImage.color = _fullTankColor;
+        }
         // Reset the size of the fuel meter (on x axis).
         Vector3 fuelMeterScale = fuelColorStrip.localScale;
         fuelMeterScale.x = 1.0f;
@@ -531,7 +592,7 @@ public class TruckControls : MonoBehaviour
         // Push the car forward (right direction from our POV).
         myRigidbody2D.AddForce(transform.right * 3000);
         // This will help to stabilize the rotation.
-        myRigidbody2D.AddTorque(5000);
+        myRigidbody2D.AddTorque(boostAngularForce);
         // We will save the size of the blue
         // trail particle in this variable.
         Vector3 currentScale;

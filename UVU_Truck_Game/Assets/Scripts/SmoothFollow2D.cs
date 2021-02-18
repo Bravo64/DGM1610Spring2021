@@ -26,14 +26,16 @@ public class SmoothFollow2D : MonoBehaviour
     --------------------- DOC END ----------------------
     */
     
-    [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 1)]
+    [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 0)]
+    [Space(10, order = 1)]
     
     // The object we want to follow on the X and Y Axis
     // (probably the main camera).
     [SerializeField]
     private Transform targetObject;
     
-    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 1)]
+    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 2)]
+    [Space(10, order = 3)]
     
     // The amount of time we take
     // to reach our target destination

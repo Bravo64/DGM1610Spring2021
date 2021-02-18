@@ -1190,7 +1190,8 @@ MonoBehaviour:
   _scoreText: {fileID: 4047515475931911632}
   levelCompleteText: {fileID: 3030599088816033092}
   scoreSound: {fileID: 509919014}
-  valueManager: {fileID: 11400000, guid: 0b0c3c6b99baf4e93bf111a2ab256db4, type: 2}
+  intDataObject: {fileID: 11400000, guid: 1b330dfb11ed44357be1d97a405579b0, type: 2}
+  managerReference: {fileID: 11400000, guid: 7dc5db0eaa6fb4b5eb6c95a1264dd880, type: 2}
   activePlayerVehicle: {fileID: 0}
 --- !u!1 &4047515475931911638
 GameObject:

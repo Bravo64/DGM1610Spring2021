@@ -1368,6 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinParticle: {fileID: 7880785366531790217, guid: 59153f6790a3943be84100f8f1ede6e0, type: 3}
+  managerReference: {fileID: 11400000, guid: 7dc5db0eaa6fb4b5eb6c95a1264dd880, type: 2}
 --- !u!58 &1252400312
 CircleCollider2D:
   m_ObjectHideFlags: 0
