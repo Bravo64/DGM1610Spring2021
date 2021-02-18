@@ -69,3 +69,5 @@ Monday, February 15th, 2021: Snowy
 Tuesday, February 16th, 2021: Heavy Snow
 
 Wednesday, February 17th, 2021: Mostly Clear
+
+Thursday, February 18th, 2021: Light Snow
