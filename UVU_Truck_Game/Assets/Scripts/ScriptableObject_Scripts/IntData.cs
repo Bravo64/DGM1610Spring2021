@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Integer Variable", menuName = "Variable/Integer")]
 public class IntData : ScriptableObject
 {
-    public int playerScore;
+    public int value;
 }

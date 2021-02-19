@@ -98,7 +98,7 @@ public class LevelManager : MonoBehaviour
         levelText.text = "LEVEL " + levelNumber.ToString();
         // Make sure we've reset the
         // player score for this level.
-        intDataObject.playerScore = 0;
+        intDataObject.value = 0;
     }
 
 
@@ -110,13 +110,13 @@ public class LevelManager : MonoBehaviour
     public void AddToScore(int amountToAdd)
     {
         // Save the old score value for the AnimateScoreAdding coroutine
-        int oldScore = intDataObject.playerScore;
+        int oldScore = intDataObject.value;
         // Add one coin.
-        intDataObject.playerScore += amountToAdd;
+        intDataObject.value += amountToAdd;
         // Save the current score to the Value Manager Scriptable Object
-        intDataObject.playerScore = intDataObject.playerScore;
+        intDataObject.value = intDataObject.value;
         // "Animate" the score cycling upward with this coroutine
-        StartCoroutine(AnimateScoreAdding(oldScore, intDataObject.playerScore));
+        StartCoroutine(AnimateScoreAdding(oldScore, intDataObject.value));
     }
     
     
