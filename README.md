@@ -75,3 +75,5 @@ Thursday, February 18th, 2021: Light Snow
 Friday, February 19th, 2021: Cloudy
 
 Saturday, February 20th, 2021: Mostly Clear
+
+Sunday, February 21th, 2021: Clear
