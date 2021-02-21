@@ -1066,6 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821805421428657388}
   - component: {fileID: 5207829213441548699}
+  - component: {fileID: 6921759999623211709}
   m_Layer: 0
   m_Name: Slight_Inclline
   m_TagString: Untagged
@@ -1111,6 +1112,35 @@ MonoBehaviour:
   - {fileID: 3050108254453947055, guid: 35965943848a24dff8a043b66d1da5ed, type: 3}
   - {fileID: 7062660695541101778, guid: aed42bd815e8b47869d32e95bb87c06e, type: 3}
   - {fileID: 2862243940518112023, guid: 8188515518d1c4d2faef85e991411407, type: 3}
+  _requestPlayerObject: {fileID: 11400000, guid: c19aec99441144e85bfb84e24b4173b2, type: 2}
+--- !u!114 &6921759999623211709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2370515988451626593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cae1ff36c8fd4eda8c64662bb503da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 064d8c87250764825b364c6493aa0d02, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5207829213441548699}
+        m_TargetAssemblyTypeName: RandomPieceCreator, Assembly-CSharp
+        m_MethodName: EventAssignPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3453516106592007932
 GameObject:
   m_ObjectHideFlags: 0

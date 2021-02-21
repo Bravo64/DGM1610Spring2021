@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameEvents;
 using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
@@ -28,12 +29,12 @@ public class CoinPickup : MonoBehaviour
     [SerializeField]
     private GameObject coinParticle;
 
-    [Header("------------- SCENE OBJECTS -------------", order = 2)]
+    [Header("------------- Events -------------", order = 2)]
     [Space(10, order = 3)]
     
-    // The level manager in the scene
+    // The Game Event that broadcasts when we added to the score
     [SerializeField]
-    private LevelManager levelManager;
+    private IntEvent addedToScore;
     
     // The value of the coin for the player score
     private int coinValue = 123;
@@ -52,8 +53,8 @@ public class CoinPickup : MonoBehaviour
         {
             // Tell the scene Level Manager to
             // add the coin value to the score
-            // (accessed through this scriptable object).
-            levelManager.AddToScore(coinValue);
+            // (televised through this scriptable object event).
+            addedToScore.Raise(coinValue);
             
             // Create the fuel particle effect.
             Instantiate(coinParticle, transform.position, Quaternion.identity);

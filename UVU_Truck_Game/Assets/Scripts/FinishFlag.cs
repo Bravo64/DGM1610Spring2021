@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameEvents;
 using UnityEngine;
 
 public class FinishFlag : MonoBehaviour
@@ -23,12 +24,12 @@ public class FinishFlag : MonoBehaviour
     --------------------- DOC END ----------------------
     */
     
-    [Header("------------- SCENE OBJECTS -------------", order = 0)]
+    [Header("------------- EVENTS -------------", order = 0)]
     [Space(10, order = 1)]
     
-    // The Level Manager in the scene
+    // The Game Event that broadcasts that the level was completed
     [SerializeField]
-    private LevelManager levelManager;
+    private VoidEvent levelCompletedEvent;
 
     [Header("--------------- PREFABS ---------------", order = 2)]
     [Space(10, order = 3)]
@@ -49,12 +50,8 @@ public class FinishFlag : MonoBehaviour
         // Check for "Vehicle" tag on other object.
         if (col.CompareTag("Vehicle"))
         {
-            // Activate the particle
-            // (with attached audio as well)
-            flagParticle.SetActive(true);
-            // Let the Level Manager know
-            // that we have completed the level.
-            levelManager.LevelComplete();
+            // Televise that the level has been completed.
+            levelCompletedEvent.Raise();
         }
     }
     

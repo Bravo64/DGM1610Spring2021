@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameEvents;
 using UnityEngine;
 
 public class RandomPieceCreator : MonoBehaviour
@@ -52,6 +53,13 @@ public class RandomPieceCreator : MonoBehaviour
     // An array of all the random pieces we have to choose from.
     [SerializeField]
     private GameObject[] randomPieces;
+
+    [Header("---------------- Events ----------------", order = 2)]
+    [Space(10, order = 3)]
+    
+    // Event asking the game manager who the current player is.
+    [SerializeField]
+    private VoidEvent _requestPlayerObject;
     
     //-----------------------------------------------------------------
     
@@ -69,6 +77,9 @@ public class RandomPieceCreator : MonoBehaviour
     // (so we're not needlessly
     // doing it all the time)
     private float _waitInterval;
+    
+    // The player GameObject in the scene.
+    private GameObject _activePlayerVehicle;
 
     //-----------------------------------------------------------------
     
@@ -81,6 +92,9 @@ public class RandomPieceCreator : MonoBehaviour
     //-----------------------------------------------------
     private void Start()
     {
+        // Let the level manager know we would
+        // like to know who the active player is.
+        _requestPlayerObject.Raise();
         // Get our scale.
         Vector3 myScale = transform.localScale;
         // Randomize the x scale based on the size limit variables.
@@ -95,6 +109,17 @@ public class RandomPieceCreator : MonoBehaviour
         _waitInterval = UnityEngine.Random.Range(0.75f, 1.0f);
         // Start the Coroutine
         StartCoroutine(CheckDistance());
+    }
+
+    //------- The EventAssignPlayer Method ------------
+    // Waits for a broadcast from the level manager
+    // to let us know who the active player is. We then
+    // save that value to our variable.
+    //------------------------------------------------
+    public void EventAssignPlayer(GameObject playerBeingBroadcast)
+    {
+        // Save the inputted player GameObject (sent from level manager)
+        _activePlayerVehicle = playerBeingBroadcast;
     }
 
     //------- The CheckDistance Coroutine ------------
@@ -113,7 +138,7 @@ public class RandomPieceCreator : MonoBehaviour
         {
             // Check our distance from the player on the X axis
             if (transform.position.x - 
-                _levelManager.activePlayerVehicle.transform.position.x 
+                _activePlayerVehicle.transform.position.x 
                 < 100.0f)
             {
                 // We are close enough to the player.

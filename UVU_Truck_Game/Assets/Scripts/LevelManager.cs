@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameEvents;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -81,6 +82,11 @@ public class LevelManager : MonoBehaviour
     [Space(10, order = 9)]
 
     public GameObject activePlayerVehicle;
+    
+    [Header("-------------- Events ---------------", order = 6)] [Space(10, order = 8)]
+    [Space(10, order = 9)]
+
+    public GameObjectEvent broadcastPlayerEvent;
     
     //--------------------------------------------------------
 
@@ -165,6 +171,17 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(LoadNextLevel());
     }
     
+    //------- The BroadcastPlayer Method ------------
+    // Sends out the player object when someone sends
+    // out an event saying that then need it.
+    //------------------------------------------------
+
+    public void BroadcastPlayer()
+    {
+        // Send out the active player through this event.
+        broadcastPlayerEvent.Raise(activePlayerVehicle);
+    }
+
     //-------- The LoadNextLevel Coroutine -------------
     // This Coroutine comes directly after the LevelComplete
     // method is called. It deals with loading the next level.
