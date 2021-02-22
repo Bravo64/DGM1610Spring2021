@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using GameEvents;
 using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Mathematics;
 using UnityEngine;
@@ -36,135 +37,134 @@ public class TruckControls : MonoBehaviour
      */
 
     //---------- Public and Static Variables (visible in inspector)-----------
-    
-    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 0)]
+
+    [Header("----------- VALUE VARIABLES -----------", order = 0)]
+    [Space(10, order = 0)]
     [Space(10, order = 1)]
-    
+
     // Car ID Number (Determines car activation order, 1 is main)
     [UnityEngine.Range(30, 1)]
     public int carImportance = 1;
-    
+
     // Move Sensitivity.
-    [UnityEngine.Range(0, 50)]
-    [SerializeField]
+    [UnityEngine.Range(0, 50)] [SerializeField]
     private int wheelSpeed = 20;
 
     // Tilt Sensitivity.
-    [UnityEngine.Range(0, 500)]
-    [SerializeField]
+    [UnityEngine.Range(0, 500)] [SerializeField]
     private int tiltSensitivity = 60;
 
     // Time left on fuel.
-    [UnityEngine.Range(0.0f, 60.0f)]
-    [SerializeField]
+    [UnityEngine.Range(0.0f, 60.0f)] [SerializeField]
     private float secondsOfFuel = 1.8f;
-    
+
     // Boosting can cause the wheel to catch and
     // spin the car forward. To correct this, we
     // will add torque based on this variable.
-    [UnityEngine.Range(0, 10000f)]
-    [SerializeField]
+    [UnityEngine.Range(0, 10000f)] [SerializeField]
     private int boostAngularForce = 5000;
 
-    [Header("-------------- BOOLEANS --------------", order = 0)] [Space(10, order = 2)]
+    [Header("-------------- BOOLEANS --------------", order = 0)]
+    [Space(10, order = 2)]
     [Space(10, order = 3)]
-    
+
     // Is the fuel meter attached to
     // the side of the truck, or part of the UI?
     [SerializeField]
     private bool fuelMeterIsAttached = false;
 
-    [Header("---------------- CHILDREN ----------------", order = 0)] [Space(10, order = 4)]
+    [Header("---------------- CHILDREN ----------------", order = 0)]
+    [Space(10, order = 4)]
     [Space(10, order = 5)]
-    
+
     // The AudioSource component of the Game
     // Object that has the impact sound effect.
     [SerializeField]
     private AudioSource impactAudio;
-    
+
     // The AudioSource component of the Game
     // Object that has the acceleration sound effect.
-    [SerializeField]
-    private AudioSource accelerationAudio;
-    
+    [SerializeField] private AudioSource accelerationAudio;
+
     // The transform of the super speed blue trail particle object
-    [SerializeField]
-    private Transform yellowTrailParticle;
-    
+    [SerializeField] private Transform yellowTrailParticle;
+
     // List for the wheel car axles (Rigidbody2D).
-    [SerializeField]
-    private Rigidbody2D[] wheelAxles;
-    
-    [Header("------------- GRANDCHILDREN --------------", order = 0)] [Space(10, order = 6)]
+    [SerializeField] private Rigidbody2D[] wheelAxles;
+
+    [Header("------------- GRANDCHILDREN --------------", order = 0)]
+    [Space(10, order = 6)]
     [Space(10, order = 7)]
-    
+
     // List for the wheels of the car (Rigidbody2D)
     [SerializeField]
     private Rigidbody2D[] wheels;
-    
-    [Header("---------------- FUEL UI -----------------", order = 0)] [Space(10, order = 8)]
+
+    [Header("---------------- FUEL UI -----------------", order = 0)]
+    [Space(10, order = 8)]
     [Space(10, order = 9)]
-    
+
     // Color strip that tells the player
     // how much fuel they have left.
     [SerializeField]
     private Transform fuelColorStrip;
 
     // The Image UI component of the fuel strip (if in UI).
-    [SerializeField]
-    private Image fuelStripImage;
-    
+    [SerializeField] private Image fuelStripImage;
+
     // The SpriteRenderer component of the fuel strip
     // (if attached to side of vehicle).
-    [SerializeField]
-    private SpriteRenderer fuelStripRenderer;
-    
-    [Header("------------- SCENE OBJECTS -------------", order = 0)] [Space(10, order = 10)]
+    [SerializeField] private SpriteRenderer fuelStripRenderer;
+
+    [Header("------------- SCENE OBJECTS -------------", order = 0)]
+    [Space(10, order = 10)]
     [Space(10, order = 11)]
-    
-    // The Level Manager in the scene
-    [SerializeField]
-    private LevelManager _levelManager;
-    
+
     // The Main Camera (Cinemachine Virtual Camera).
-    [SerializeField]
-    private CinemachineVirtualCamera mainVirtualCamera;
-    
-    [Header("---------------- PREFABS ----------------", order = 0)] [Space(10, order = 12)]
+    [SerializeField] private CinemachineVirtualCamera mainVirtualCamera;
+
+    [Header("---------------- PREFABS ----------------", order = 0)]
+    [Space(10, order = 12)]
     [Space(10, order = 13)]
-    
+
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
     [SerializeField]
     private GameObject outOfFuelPrefab;
 
+    [Header("---------------- EVENTS ----------------", order = 0)]
+    [Space(10, order = 12)]
+    [Space(10, order = 13)]
+    [SerializeField]
+    private GameObjectEvent broadcastPlayer;
+
     //-----------------------------------------------------------------
-    
+
     //----------- Private Variables (Hidden from Inspector) -----------
-    
+
     // Array of every car in the scene.
     private GameObject[] _allCars;
-    
+
     // List of every "TruckControls" script in the scene.
-    private List<TruckControls> _allCarsScripts  = new List<TruckControls>();
+    private List<TruckControls> _allCarsScripts = new List<TruckControls>();
 
     // The Default amount (in seconds) of a full tank of fuel.
     private float _defaultFuelAmount;
-    
+
     // The Default color of a full tank of fuel.
     private Color _fullTankColor;
-    
+
     // The current velocity average of the car.
     private float _averageVelocity = 0.0f;
-    
+
     // Are we accelerating or not?
     private bool _accelerating = false;
 
     // Are we trying to tilt or not?
     private bool _tilting = false;
-    
+
     // Our Rigidbody2D Component.
     private Rigidbody2D myRigidbody2D;
-    
+
     // Boolean telling when we are out of fuel.
     private bool _fuelIsEmpty;
 
@@ -187,6 +187,7 @@ public class TruckControls : MonoBehaviour
             // Add each of them to the full list
             _allCarsScripts.Add(car.GetComponent<TruckControls>());
         }
+
         // Double check that we collected the cars properly.
         // If not, print an error and disable the script.
         if (_allCarsScripts.Count == 0)
@@ -195,6 +196,7 @@ public class TruckControls : MonoBehaviour
                       "tag and 'TruckControls.cs' Script");
             this.enabled = false;
         }
+
         if (secondsOfFuel != 0)
         {
             // This if statement deals with either the case of
@@ -211,6 +213,7 @@ public class TruckControls : MonoBehaviour
             {
                 _fullTankColor = fuelStripImage.color;
             }
+
             // Also save its fuel amount as the default value.
             _defaultFuelAmount = secondsOfFuel;
         }
@@ -252,6 +255,7 @@ public class TruckControls : MonoBehaviour
             // know through this variable.
             _tilting = false;
         }
+
         // If we are accelerating.
         if (_accelerating)
         {
@@ -287,8 +291,8 @@ public class TruckControls : MonoBehaviour
         // If the car was moving fast in the saved velocity (last frame),
         // but is now moving slow (this frame), that means an impact took place.
         // Play the impact audio.
-        if ((math.abs(myRigidbody2D.velocity.x) + 
-             math.abs(myRigidbody2D.velocity.y)) / 2 < 
+        if ((math.abs(myRigidbody2D.velocity.x) +
+             math.abs(myRigidbody2D.velocity.y)) / 2 <
             _averageVelocity - 1.0f)
         {
             // Double check that it's not already playing
@@ -299,9 +303,10 @@ public class TruckControls : MonoBehaviour
                 impactAudio.Play();
             }
         }
+
         // Save the current (absolute) average
         // velocity of the vehicle
-        _averageVelocity = (math.abs(myRigidbody2D.velocity.x) + 
+        _averageVelocity = (math.abs(myRigidbody2D.velocity.x) +
                             math.abs(myRigidbody2D.velocity.y)) / 2;
         // Check that the fuel's not empty.
         // If it is, end the Method.
@@ -309,6 +314,7 @@ public class TruckControls : MonoBehaviour
         {
             return;
         }
+
         // Check that the Update method is
         // telling us to spin the wheels.
         if (_accelerating)
@@ -330,8 +336,8 @@ public class TruckControls : MonoBehaviour
                 float maxDistance = 0.7f;
                 float maxSpin = 10000.0f;
                 // Limit position.
-                wheel.transform.localPosition = 
-                    Vector3.ClampMagnitude(wheel.transform.localPosition, 
+                wheel.transform.localPosition =
+                    Vector3.ClampMagnitude(wheel.transform.localPosition,
                         maxDistance);
                 // Limit spin.
                 wheel.angularVelocity = Mathf.Clamp(wheel.angularVelocity, -maxSpin, maxSpin);
@@ -355,7 +361,7 @@ public class TruckControls : MonoBehaviour
         }
     }
 
-    
+
     //------- The DrainFuel Method ------------
     // This is called when the player moves and
     // we need the fuel to go down. It deals with
@@ -379,7 +385,7 @@ public class TruckControls : MonoBehaviour
             // Call the OutOfFuel Coroutine
             StartCoroutine(OutOfFuel());
         }
-        
+
         // Get the fuel strip's scale
         Vector3 fuelStripScale = fuelColorStrip.localScale;
 
@@ -401,6 +407,7 @@ public class TruckControls : MonoBehaviour
                 // If X scale passes zero, set it back to zero.
                 fuelStripScale.x = 0;
             }
+
             // Get the color.
             // (from either the UI or the vehicle's side indicator)
             Color spriteColor;
@@ -412,6 +419,7 @@ public class TruckControls : MonoBehaviour
             {
                 spriteColor = fuelStripImage.color;
             }
+
             // Manipulate the color over time from green to red (using RGB).
             spriteColor.g -= (spriteColor.g / secondsOfFuel) * Time.deltaTime;
             spriteColor.b -= (spriteColor.b / secondsOfFuel) * Time.deltaTime;
@@ -425,7 +433,7 @@ public class TruckControls : MonoBehaviour
             {
                 fuelStripImage.color = spriteColor;
             }
-            
+
         }
         else if (fuelStripScale.x < 0.01)
         {
@@ -434,11 +442,12 @@ public class TruckControls : MonoBehaviour
             // and end the script.
             fuelStripScale.x = 0.0f;
         }
+
         // Reassign the fuel strip's scale
         fuelColorStrip.localScale = fuelStripScale;
     }
-    
-    
+
+
     //---------- The OutOfFuel Coroutine -------------
     // This Coroutine deals with disabling this script
     // and the truck rigidbodies when the truck runs 
@@ -467,9 +476,6 @@ public class TruckControls : MonoBehaviour
                 carScript.enabled = true;
                 // Set the virtual camera to follow them.
                 mainVirtualCamera.Follow = carScript.transform;
-                // Let everyone know who the active
-                // car is through the Level Manager variable
-                _levelManager.activePlayerVehicle = carScript.gameObject;
             }
         }
 
@@ -497,6 +503,7 @@ public class TruckControls : MonoBehaviour
                     // And freeze the wheel's axel (its parent).
                     wheelAxles[i].isKinematic = true;
                 }
+
                 // Leave the while loop.
                 break;
             }
@@ -558,6 +565,7 @@ public class TruckControls : MonoBehaviour
         {
             fuelStripImage.color = _fullTankColor;
         }
+
         // Reset the size of the fuel meter (on x axis).
         Vector3 fuelMeterScale = fuelColorStrip.localScale;
         fuelMeterScale.x = 1.0f;
@@ -569,6 +577,7 @@ public class TruckControls : MonoBehaviour
             // And Unfreeze the wheel's axel (its parent).
             wheelAxles[i].isKinematic = false;
         }
+
         // If we picked up "super fuel," initiate a few second speed boost. 
         if (superFuel)
         {
@@ -639,5 +648,21 @@ public class TruckControls : MonoBehaviour
         currentScale.x = 0;
         yellowTrailParticle.localScale = currentScale;
     }
+
+    //------- The BroadcastYourself Method ------------
+    // This Method is called when someone in the scene
+    // sends out an event signal saying they would like
+    // to know who the active player is. We double check
+    // that we are the active player, and then send ourselves
+    // to them through a game event.
+    //----------------------------------------
+    public void BroadcastYourself()
+    {
+        if (mainVirtualCamera.Follow == transform)
+        {
+            broadcastPlayer.Raise(gameObject);
+        }
+    }
 }
+
 // ---------------------- END OF FILE -----------------------

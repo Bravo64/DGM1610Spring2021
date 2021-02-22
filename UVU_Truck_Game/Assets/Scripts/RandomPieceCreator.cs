@@ -65,9 +65,6 @@ public class RandomPieceCreator : MonoBehaviour
     
     //----------- Private Variables (Hidden from Inspector) -----------
 
-    // The Level Manager in the scene
-    private LevelManager _levelManager;
-    
     // The index of the random piece
     // we choose from the array.
     private int _chosenPiece;
@@ -101,8 +98,6 @@ public class RandomPieceCreator : MonoBehaviour
         myScale.x = UnityEngine.Random.Range(minXScale, maxXScale);
         // Reassign our scale
         transform.localScale = myScale;
-        // Grab the Level Manager in the scene.
-        _levelManager = GameObject.FindObjectOfType<LevelManager>();
         // Choose a random piece index.
         _chosenPiece = UnityEngine.Random.Range(0, randomPieces.Length);
         // Choose a random wait time.

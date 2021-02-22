@@ -8,6 +8,8 @@ TagManager:
   - ColoredPiece
   - Vehicle
   - Item
+  - Ground
+  - Cargo
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class TextUpdater : MonoBehaviour
 {
     /*
     ---------------- Documentation ---------------------
@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
         
     Script's Methods:
         - Start (non-public)
-        - GetPlayerScore
+        - GetlevelScore
         - AddToScore (with value input)
         - AnimateScoreAdding (Coroutine)
         - LevelComplete
@@ -64,6 +64,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject levelCompleteText;
     
+    // The Text Component that displays
+    // how many cure crates are still in the cargo.
+    [SerializeField]
+    private Text cureCrateText;
+    
     [Header("--------------- AUDIO ---------------", order = 4)] [Space(10, order = 4)]
     [Space(10, order = 5)]
     
@@ -74,22 +79,27 @@ public class LevelManager : MonoBehaviour
     [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)] [Space(10, order = 6)]
     [Space(10, order = 7)]
     
-    // The Scriptable Object that will contain the player score.
+    // The Scriptable Object that will contain
+    // the player score for this level.
     [SerializeField]
-    private IntData intDataObject;
-
-    [Header("-------------- PLAYER ---------------", order = 6)] [Space(10, order = 8)]
-    [Space(10, order = 9)]
-
-    public GameObject activePlayerVehicle;
+    private IntData levelScore;
     
-    [Header("-------------- Events ---------------", order = 6)] [Space(10, order = 8)]
-    [Space(10, order = 9)]
-
-    public GameObjectEvent broadcastPlayerEvent;
+    // The Scriptable Object that will contain
+    // the number of cure crates still in the cargo.
+    [SerializeField]
+    private IntData carriedCrates;
     
+    [SerializeField]
+    private IntData livingCrates;
+
     //--------------------------------------------------------
 
+    private void Awake()
+    {
+        carriedCrates.value = 0;
+        livingCrates.value = 0;
+    }
+    
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation). It
@@ -104,7 +114,7 @@ public class LevelManager : MonoBehaviour
         levelText.text = "LEVEL " + levelNumber.ToString();
         // Make sure we've reset the
         // player score for this level.
-        intDataObject.value = 0;
+        levelScore.value = 0;
     }
 
 
@@ -116,13 +126,13 @@ public class LevelManager : MonoBehaviour
     public void AddToScore(int amountToAdd)
     {
         // Save the old score value for the AnimateScoreAdding coroutine
-        int oldScore = intDataObject.value;
+        int oldScore = levelScore.value;
         // Add one coin.
-        intDataObject.value += amountToAdd;
+        levelScore.value += amountToAdd;
         // Save the current score to the Value Manager Scriptable Object
-        intDataObject.value = intDataObject.value;
+        levelScore.value = levelScore.value;
         // "Animate" the score cycling upward with this coroutine
-        StartCoroutine(AnimateScoreAdding(oldScore, intDataObject.value));
+        StartCoroutine(AnimateScoreAdding(oldScore, levelScore.value));
     }
     
     
@@ -170,17 +180,6 @@ public class LevelManager : MonoBehaviour
         // Begin the coroutine that will load the next scene
         StartCoroutine(LoadNextLevel());
     }
-    
-    //------- The BroadcastPlayer Method ------------
-    // Sends out the player object when someone sends
-    // out an event saying that then need it.
-    //------------------------------------------------
-
-    public void BroadcastPlayer()
-    {
-        // Send out the active player through this event.
-        broadcastPlayerEvent.Raise(activePlayerVehicle);
-    }
 
     //-------- The LoadNextLevel Coroutine -------------
     // This Coroutine comes directly after the LevelComplete
@@ -192,6 +191,16 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         // Load the next scene index in the game's build settings
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
+    //-------- The LoadNextLevel Coroutine -------------
+    // This Coroutine comes directly after the LevelComplete
+    // method is called. It deals with loading the next level.
+    //--------------------------------------------
+
+    public void UpdateCrateText()
+    {
+        cureCrateText.text = "CURES: " + carriedCrates.value;
     }
 }
 // ---------------------- END OF FILE -----------------------
