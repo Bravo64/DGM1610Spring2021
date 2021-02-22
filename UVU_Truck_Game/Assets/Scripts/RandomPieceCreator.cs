@@ -22,6 +22,7 @@ public class RandomPieceCreator : MonoBehaviour
         
     Script's Methods:
         - Start
+        - EventAssignPlayer
         - CheckDistance (Coroutine)
 
     --------------------- DOC END ----------------------
@@ -40,24 +41,23 @@ public class RandomPieceCreator : MonoBehaviour
     [SerializeField]
     private float maxXScale = 5.0f;
 
-    [Header("--------------- CHILDREN ---------------", order = 0)] [Space(10, order = 1)]
+    [Header("--------------- CHILDREN ---------------", order = 2)] [Space(10, order = 3)]
     
     // The end point of our object.
     // (where we will create the next piece)
     [SerializeField]
     private Transform endPoint;
     
-    [Header("---------------- PREFABS ----------------", order = 2)]
-    [Space(10, order = 3)]
+    [Header("---------------- PREFABS ----------------", order = 4)] [Space(10, order = 5)]
     
     // An array of all the random pieces we have to choose from.
     [SerializeField]
     private GameObject[] randomPieces;
 
-    [Header("---------------- Events ----------------", order = 2)]
-    [Space(10, order = 3)]
+    [Header("---------------- EVENTS ----------------", order = 6)] [Space(10, order = 7)]
     
-    // Event asking the game manager who the current player is.
+    // Event asking the active player where
+    // they are located in the scene.
     [SerializeField]
     private VoidEvent _requestPlayerObject;
     
@@ -107,8 +107,8 @@ public class RandomPieceCreator : MonoBehaviour
     }
 
     //------- The EventAssignPlayer Method ------------
-    // Waits for a broadcast from the level manager
-    // to let us know who the active player is. We then
+    // Waits for a game event broadcast from the active player
+    // to let us know where they are in the scene. We then
     // save that value to our variable.
     //------------------------------------------------
     public void EventAssignPlayer(GameObject playerBeingBroadcast)
@@ -154,3 +154,5 @@ public class RandomPieceCreator : MonoBehaviour
         this.enabled = false;
     }
 }
+
+// ---------------------- END OF FILE -----------------------

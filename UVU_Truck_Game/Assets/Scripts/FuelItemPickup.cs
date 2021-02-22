@@ -40,7 +40,7 @@ public class FuelItemPickup : MonoBehaviour
     // In this case, this object checks that the object
     // is a vehicle, and acts accordingly (ending with
     // disabling itself).
-    //--------------------------------------
+    //----------------------------------------
     void OnTriggerEnter2D(Collider2D col)
     {
         // Check for "Vehicle" tag on other object.

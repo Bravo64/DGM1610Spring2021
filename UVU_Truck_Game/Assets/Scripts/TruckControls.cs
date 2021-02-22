@@ -32,15 +32,14 @@ public class TruckControls : MonoBehaviour
         - OutOfFuel (Coroutine)
         - RestoreFuel (public)
         - SpeedBoost (Coroutine)
+        - BroadcastYourself
     
     --------------------- DOC END ----------------------
      */
 
     //---------- Public and Static Variables (visible in inspector)-----------
 
-    [Header("----------- VALUE VARIABLES -----------", order = 0)]
-    [Space(10, order = 0)]
-    [Space(10, order = 1)]
+    [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 1)]
 
     // Car ID Number (Determines car activation order, 1 is main)
     [UnityEngine.Range(30, 1)]
@@ -64,18 +63,14 @@ public class TruckControls : MonoBehaviour
     [UnityEngine.Range(0, 10000f)] [SerializeField]
     private int boostAngularForce = 5000;
 
-    [Header("-------------- BOOLEANS --------------", order = 0)]
-    [Space(10, order = 2)]
-    [Space(10, order = 3)]
+    [Header("-------------- BOOLEANS --------------", order = 2)] [Space(10, order = 3)]
 
     // Is the fuel meter attached to
     // the side of the truck, or part of the UI?
     [SerializeField]
     private bool fuelMeterIsAttached = false;
 
-    [Header("---------------- CHILDREN ----------------", order = 0)]
-    [Space(10, order = 4)]
-    [Space(10, order = 5)]
+    [Header("---------------- CHILDREN ----------------", order = 4)] [Space(10, order = 5)]
 
     // The AudioSource component of the Game
     // Object that has the impact sound effect.
@@ -92,17 +87,13 @@ public class TruckControls : MonoBehaviour
     // List for the wheel car axles (Rigidbody2D).
     [SerializeField] private Rigidbody2D[] wheelAxles;
 
-    [Header("------------- GRANDCHILDREN --------------", order = 0)]
-    [Space(10, order = 6)]
-    [Space(10, order = 7)]
+    [Header("------------- GRANDCHILDREN --------------", order = 6)] [Space(10, order = 7)]
 
     // List for the wheels of the car (Rigidbody2D)
     [SerializeField]
     private Rigidbody2D[] wheels;
 
-    [Header("---------------- FUEL UI -----------------", order = 0)]
-    [Space(10, order = 8)]
-    [Space(10, order = 9)]
+    [Header("---------------- FUEL UI -----------------", order = 8)] [Space(10, order = 9)]
 
     // Color strip that tells the player
     // how much fuel they have left.
@@ -116,30 +107,28 @@ public class TruckControls : MonoBehaviour
     // (if attached to side of vehicle).
     [SerializeField] private SpriteRenderer fuelStripRenderer;
 
-    [Header("------------- SCENE OBJECTS -------------", order = 0)]
-    [Space(10, order = 10)]
-    [Space(10, order = 11)]
+    [Header("------------- SCENE OBJECTS -------------", order = 10)] [Space(10, order = 11)]
 
     // The Main Camera (Cinemachine Virtual Camera).
     [SerializeField] private CinemachineVirtualCamera mainVirtualCamera;
 
-    [Header("---------------- PREFABS ----------------", order = 0)]
-    [Space(10, order = 12)]
-    [Space(10, order = 13)]
+    [Header("---------------- PREFABS ----------------", order = 12)] [Space(10, order = 13)]
 
     // A Text prefab game object that floats upward and flashes "OUT OF FUEL"
     [SerializeField]
     private GameObject outOfFuelPrefab;
 
-    [Header("---------------- EVENTS ----------------", order = 0)]
-    [Space(10, order = 12)]
-    [Space(10, order = 13)]
+    [Header("---------------- EVENTS ----------------", order = 14)] [Space(10, order = 15)]
+    
+    // If someone wants to know who the active player is,
+    // we will hear it. We will then let them know who
+    // it is through this game event.
     [SerializeField]
     private GameObjectEvent broadcastPlayer;
 
     //-----------------------------------------------------------------
 
-    //----------- Private Variables (Hidden from Inspector) -----------
+    //----------- Private Variables (hidden from inspector) -----------
 
     // Array of every car in the scene.
     private GameObject[] _allCars;
@@ -658,8 +647,11 @@ public class TruckControls : MonoBehaviour
     //----------------------------------------
     public void BroadcastYourself()
     {
+        // The active player is the one the
+        // virtual camera is currently following.
         if (mainVirtualCamera.Follow == transform)
         {
+            // Send ourselves out inside this event.
             broadcastPlayer.Raise(gameObject);
         }
     }

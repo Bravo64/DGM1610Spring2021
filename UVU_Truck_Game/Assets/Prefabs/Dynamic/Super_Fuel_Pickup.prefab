@@ -5167,7 +5167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  pickupItem: {fileID: 0}
+  pickupItem: {fileID: 3714271107069807099}
   movementCycleType: 0
 --- !u!1 &465632467873036921
 GameObject:

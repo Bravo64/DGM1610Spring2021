@@ -74,3 +74,5 @@ public class SmoothFollow2D : MonoBehaviour
         transform.position = myPostion;
     }
 }
+
+// ---------------------- END OF FILE -----------------------

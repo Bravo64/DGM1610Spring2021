@@ -28,6 +28,7 @@ public class TextUpdater : MonoBehaviour
         - AnimateScoreAdding (Coroutine)
         - LevelComplete
         - LoadNextLevel (Coroutine)
+        - UpdateCrateText
     
     --------------------- DOC END ----------------------
      */
@@ -89,6 +90,9 @@ public class TextUpdater : MonoBehaviour
     [SerializeField]
     private IntData carriedCrates;
     
+    // The Scriptable Object that will contain
+    // the number of cure crates that have not
+    // touched the ground and died.
     [SerializeField]
     private IntData livingCrates;
 
@@ -187,20 +191,25 @@ public class TextUpdater : MonoBehaviour
     //--------------------------------------------
     private IEnumerator LoadNextLevel()
     {
-        // Wait a few seconds to give the text some time to leave
+        // Wait a few seconds to give the "level complete" text some time to leave
         yield return new WaitForSeconds(3.0f);
         // Load the next scene index in the game's build settings
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
-    //-------- The LoadNextLevel Coroutine -------------
-    // This Coroutine comes directly after the LevelComplete
-    // method is called. It deals with loading the next level.
+    //-------- The UpdateCrateText Method -------------
+    // This Method is called through a game event, sent
+    // by one of the crates if they detect that they
+    // have either left or re-entered the truck's
+    // back cargo. The "carriedCrates" Scriptable Object
+    // holds that new amount we need to display.
     //--------------------------------------------
-
     public void UpdateCrateText()
     {
+        // Update the text with the current amount.
+        // (which the "carriedCrates" Scriptable Object holds)
         cureCrateText.text = "CURES: " + carriedCrates.value;
     }
 }
+
 // ---------------------- END OF FILE -----------------------
