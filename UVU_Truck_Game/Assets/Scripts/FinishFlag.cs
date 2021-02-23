@@ -50,6 +50,8 @@ public class FinishFlag : MonoBehaviour
         // Check for "Vehicle" tag on other object.
         if (col.CompareTag("Vehicle"))
         {
+            // Turn on the level complete particle
+            flagParticle.SetActive(true);
             // Televise that the level has been completed.
             levelCompletedEvent.Raise();
         }

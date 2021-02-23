@@ -13,13 +13,15 @@ Script's Name: CureCrate.cs
 Author: Keali'i Transfield
 
 Script's Description: This script is for the cure crates being 
-held in the back of the players truck.
+held in the back of the players truck. It is basically for 
+handling what happens when they are dropped.
     
 Script's Methods:
     - Start
     - OnTriggerEnter2D
     - OnTriggerExit2D
     - OnCollisionEnter2D
+    - OnCollisionExit2D
 
 --------------------- DOC END ----------------------
  */
@@ -87,6 +89,9 @@ Script's Methods:
         // Check for the tag of the back of the truck.
         if (other.CompareTag("Cargo"))
         {
+            // Add ourselves to the count and tell the
+            // "Text Updater" to display the current
+            // amount through a game event.
             carriedCrates.value += 1;
             updateCrateText.Raise();
         }
@@ -122,24 +127,24 @@ Script's Methods:
     //------------------------------------------
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // Don't do anything if we are dead.
-        if (_dead)
-        {
-            return;
-        }
-
-        // Check that we hit the ground by the tag
+        // Check that we hit the ground by the tag.
         if (other.gameObject.CompareTag("Ground"))
         {
-            // Update the Scriptable Object value
-            livingCrates.value -= 1;
             // Change our tag so we also
             // kill others that touch us.
             gameObject.tag = "Ground";
-            // Turn off the blue stuff
+            // Don't do anything beyond this
+            // if we are dead already.
+            if (_dead)
+            {
+                return;
+            }
+            // Update the Scriptable Object value.
+            livingCrates.value -= 1;
+            // Turn off the blue stuff.
             blueInside.SetActive(false);
             blueTrail.SetActive(false);
-            // Turn on the smashing effect (with audio)
+            // Turn on the smashing effect (with audio).
             smashParticleObject.SetActive(true);
             // Turn everything off.
             _dead = true;
@@ -155,6 +160,23 @@ Script's Methods:
             carriedCrates.value = livingCrates.value;
             // Let the Text Updater know
             updateCrateText.Raise();
+        }
+    }
+    
+    //------- The OnCollisionExit2D Method --------
+    // This Method is called when this object
+    // stops touching another collision object.
+    // In this case, it is used to reset the
+    // crate's tag after leaving the ground.
+    //------------------------------------------
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        // Check that we left the ground.
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            // Reset our tag back to normal so we
+            // don't kill other crates we touch.
+            gameObject.tag = "Crate";
         }
     }
 }

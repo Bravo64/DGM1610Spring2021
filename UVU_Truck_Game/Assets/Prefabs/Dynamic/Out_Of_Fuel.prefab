@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "OUT \nOF \nFUEL"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6ebafd9159e9943229c5674ae2ea8b9b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 25680852d0af24cdda0e8d58b8674a1d, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 25680852d0af24cdda0e8d58b8674a1d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -213,7 +213,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1539482155
-  m_SortingOrder: -10
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &9191029061995078035
 MonoBehaviour:
