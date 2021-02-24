@@ -627,7 +627,7 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDrag: 0.1
   m_AngularDrag: 0.06
-  m_GravityScale: 1.5
+  m_GravityScale: 1.35
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0

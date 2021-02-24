@@ -23,6 +23,16 @@ public class Smashable : MonoBehaviour
     --------------------- DOC END ----------------------
      */
     
+    [Header("---------------- VALUES ----------------", order = 0)] [Space(10, order = 1)]
+    
+    [UnityEngine.Range(0.0f, 3.0f)]
+    [SerializeField] 
+    private float minimumPitch = 0.65f;
+    
+    [UnityEngine.Range(0.0f, 3.0f)]
+    [SerializeField] 
+    private float maximumPitch = 3.0f;
+    
     [Header("---------------- CHILDREN ----------------", order = 0)] [Space(10, order = 1)]
     
     // The child object holding the smashing particle component
@@ -80,12 +90,9 @@ public class Smashable : MonoBehaviour
             explosionParticle.SetActive(true);
             // Turn off building sprites
             decorations.SetActive(false);
-            if (changeAudioPitch)
-            {
-                // Set my audio to a random pitch.
-                _myAudio.pitch = Random.Range(0.65f, 3.0f);
-            }
-            // Play my Audio if it's not already playing
+            // Set my audio to a random pitch.
+            _myAudio.pitch = Random.Range(minimumPitch, maximumPitch);
+            // Play my Audio if it's not already playing.
             if (!_myAudio.isPlaying)
             {
                 _myAudio.Play();

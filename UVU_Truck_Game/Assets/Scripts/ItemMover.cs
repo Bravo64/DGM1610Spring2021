@@ -9,7 +9,7 @@ public class ItemMover : MonoBehaviour
     /*
     ---------------- Documentation ---------------------
 
-    Script's Name: TruckControls.cs
+    Script's Name: ItemMover.cs
     Author: Keali'i Transfield
 
     Script's Description: This script deals with moving the

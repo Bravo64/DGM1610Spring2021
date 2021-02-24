@@ -148,7 +148,6 @@ Script's Methods:
             smashParticleObject.SetActive(true);
             // Turn everything off.
             _dead = true;
-            this.enabled = false;
         }
         
         // Double check that nothing was calculated improperly.
