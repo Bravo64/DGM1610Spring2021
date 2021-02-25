@@ -68,9 +68,11 @@ public class ItemMover : MonoBehaviour
     // The direction we are moving in the waypoints,
     // which is kept track of with either a 1 or -1.
     private int _movementDirection = 1;
+    
+    // Reset the scale at the beginning of update
+    private bool _scaleResetComplete = false;
 
     //------------------------------------------------------
-
 
     //-------------- The Start Method -------------------
     // This Method is called before the first frame update
@@ -109,6 +111,19 @@ public class ItemMover : MonoBehaviour
     //--------------------------------------
     void Update()
     {
+        // Check if we have reset the scale yet
+        if (!_scaleResetComplete)
+        {
+            // Make sure our grandparent is null
+            transform.parent.parent = null;
+        
+            // Reset our parents scale in case
+            // our grandparent had a weird scale.
+            transform.parent.localScale = Vector3.one;
+            // Mark this as completed.
+            _scaleResetComplete = true;
+        }
+
         // Move the item towards the active waypoint.
         pickupItem.position = Vector3.MoveTowards(pickupItem.position, _waypoints[_activeWaypoint].position,
             movementSpeed * Time.deltaTime);

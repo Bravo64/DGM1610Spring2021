@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using Cinemachine;
 using GameEvents;
-using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
@@ -156,6 +154,9 @@ public class TruckControls : MonoBehaviour
 
     // Boolean telling when we are out of fuel.
     private bool _fuelIsEmpty;
+    
+    // New WaitForSeconds Object with 1 Second inside.
+    private WaitForSeconds _wfsObjOneSec = new WaitForSeconds(1.0f);
 
     //-----------------------------------------------------
 
@@ -454,7 +455,7 @@ public class TruckControls : MonoBehaviour
         myRigidbody2D.drag = 2;
         myRigidbody2D.angularDrag = 2;
         // Wait a second to switch vehicles.
-        yield return new WaitForSeconds(1.0f);
+        yield return _wfsObjOneSec;
         // Look through all cars in the scene
         foreach (var carScript in _allCarsScripts)
         {
@@ -468,8 +469,8 @@ public class TruckControls : MonoBehaviour
             }
         }
 
-        // Give the car a few seconds to settle.
-        yield return new WaitForSeconds(1.5f);
+        // Give the car a second to settle.
+        yield return _wfsObjOneSec;
         // while loop continuously checks for car movement.
         while (!myRigidbody2D.isKinematic)
         {
@@ -500,7 +501,7 @@ public class TruckControls : MonoBehaviour
             {
                 // If it's still moving (and the fuel's off),
                 // wait another second (while loop resets).
-                yield return new WaitForSeconds(1.0f);
+                yield return _wfsObjOneSec;
             }
         }
 

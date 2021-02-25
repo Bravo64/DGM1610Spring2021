@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using GameEvents;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RandomPieceCreator : MonoBehaviour
 {
@@ -77,6 +78,10 @@ public class RandomPieceCreator : MonoBehaviour
     
     // The player GameObject in the scene.
     private GameObject _activePlayerVehicle;
+    
+    // Our WaitForSeconds Object that will
+    // hold a random wait time.
+    private WaitForSeconds _wfsObj;
 
     //-----------------------------------------------------------------
     
@@ -95,13 +100,14 @@ public class RandomPieceCreator : MonoBehaviour
         // Get our scale.
         Vector3 myScale = transform.localScale;
         // Randomize the x scale based on the size limit variables.
-        myScale.x = UnityEngine.Random.Range(minXScale, maxXScale);
+        myScale.x = Random.Range(minXScale, maxXScale);
         // Reassign our scale
         transform.localScale = myScale;
         // Choose a random piece index.
-        _chosenPiece = UnityEngine.Random.Range(0, randomPieces.Length);
-        // Choose a random wait time.
-        _waitInterval = UnityEngine.Random.Range(0.75f, 1.0f);
+        _chosenPiece = Random.Range(0, randomPieces.Length);
+        // Make a new WaitForSeconds Object
+        // and Choose a random wait time.
+        _wfsObj = new WaitForSeconds(Random.Range(0.75f, 1.0f));
         // Start the Coroutine
         StartCoroutine(CheckDistance());
     }
@@ -147,7 +153,7 @@ public class RandomPieceCreator : MonoBehaviour
             {
                 // If not close enough yet, wait a bit
                 // and come back (loop continues)
-                yield return new WaitForSeconds(_waitInterval);
+                yield return _wfsObj;
             }
         }
         // We are done. Disable this script.

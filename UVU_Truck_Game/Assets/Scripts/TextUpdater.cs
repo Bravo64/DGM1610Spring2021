@@ -22,6 +22,7 @@ public class TextUpdater : MonoBehaviour
     the scene can easily gain access to it.
         
     Script's Methods:
+        - Awake (non-public)
         - Start (non-public)
         - GetlevelScore
         - AddToScore (with value input)
@@ -39,7 +40,7 @@ public class TextUpdater : MonoBehaviour
     [Space(10, order = 1)]
     
     // The Level Number
-    [UnityEngine.Range(1, 50)]
+    [UnityEngine.Range(0, 50)]
     [SerializeField]
     private int levelNumber = 1;
     
@@ -98,8 +99,16 @@ public class TextUpdater : MonoBehaviour
 
     //--------------------------------------------------------
 
+    //-------------- The Awake Method -------------------
+    // This Method is called before the first frame update
+    // AND before the Start method. It is used for setting
+    // something that needs to be done ASAP.
+    //-----------------------------------------------------
+    
     private void Awake()
     {
+        // Reset Crate values within
+        // the Scriptable Objects references.
         carriedCrates.value = 0;
         livingCrates.value = 0;
     }
@@ -133,8 +142,6 @@ public class TextUpdater : MonoBehaviour
         int oldScore = levelScore.value;
         // Add one coin.
         levelScore.value += amountToAdd;
-        // Save the current score to the Value Manager Scriptable Object
-        levelScore.value = levelScore.value;
         // "Animate" the score cycling upward with this coroutine
         StartCoroutine(AnimateScoreAdding(oldScore, levelScore.value));
     }

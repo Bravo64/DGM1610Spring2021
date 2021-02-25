@@ -23,7 +23,7 @@ public class ZombieMover : MonoBehaviour
         
     Script's Methods:
         - Start
-        - Update
+        - MoveZombie (coroutine)
 
     --------------------- DOC END ----------------------
      */
@@ -71,7 +71,7 @@ public class ZombieMover : MonoBehaviour
 
     // A list of empties representing
     // each position we want to go to.
-    private int _activeWaypoint = 0;
+    private int _activeWaypoint;
 
     // The direction we are moving in the waypoints,
     // which is kept track of with either a 1 or -1.
@@ -85,6 +85,11 @@ public class ZombieMover : MonoBehaviour
     
     // The position the zombie was a last frame
     private Vector2 _positionLastFrame;
+    
+    // A small list of some WaitForSeconds
+    // objects with random wait times
+    // that we can randomly pull from.
+    private List<WaitForSeconds> _wfsObjList = new List<WaitForSeconds>();
 
     //------------------------------------------------------
 
@@ -124,6 +129,14 @@ public class ZombieMover : MonoBehaviour
         _randomWait2 = Random.Range(minRandomWait, maxRandomWait);
         // Set this variable so it's not at zero.
         _positionLastFrame = zombie.position;
+        // Set the active waitpoint to the middle one
+        _activeWaypoint = (int)(_waypoints.Count / 2);
+        // Make 5 random WaitForSeconds
+        // objects and add them to the list.
+        for (var i = 0; i < 5; i++)
+        {
+            _wfsObjList.Add(new WaitForSeconds(Random.Range(minRandomWait/2, maxRandomWait)));
+        }
         // Start the movement coroutine.
         StartCoroutine(MoveZombie());
     }
@@ -191,10 +204,8 @@ public class ZombieMover : MonoBehaviour
             {
                 // Select a new random amount of time.
                 _randomWait2 = Random.Range(minRandomWait, maxRandomWait);
-                // Select a random time to wait.
-                float pauseLength = Random.Range(minRandomWait/2, maxRandomWait);
-                // Pause for a bit.
-                yield return new WaitForSeconds(pauseLength);
+                // Pause for a bit with randomly chosen WaitForSeconds object.
+                yield return _wfsObjList[Random.Range(0, _wfsObjList.Count)];
                 // Pick a random speed for the zombie.
                 _currentMovementSpeed = Random.Range(minMovementSpeed, maxMovementSpeed);
             }

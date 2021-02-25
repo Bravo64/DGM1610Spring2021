@@ -601,7 +601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440318963579737354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.205, y: 1.169, z: -157.17929}
+  m_LocalPosition: {x: 0.86, y: 1.149, z: -157.17929}
   m_LocalScale: {x: 0.1967028, y: 0.5563696, z: 0.5881}
   m_Children: []
   m_Father: {fileID: 8530163141815176904}
@@ -635,7 +635,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.75
+  m_Mass: 0.65
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -659,7 +659,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.205, y: 1.1689999}
+  m_ConnectedAnchor: {x: 0.8600001, y: 1.1490002}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &2107177814333480178
@@ -6541,8 +6541,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.25
-  m_LinearDrag: 0
+  m_Mass: 1.5
+  m_LinearDrag: 0.5
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -8528,7 +8528,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.7
+  m_Mass: 0.8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -8836,11 +8836,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.9
   m_LinearDrag: 0
-  m_AngularDrag: 0.5
+  m_AngularDrag: 1
   m_GravityScale: 3.5
-  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -8954,7 +8954,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.58454573, y: 0.40907168}
+  m_Offset: {x: 0.58454573, y: 0.42522928}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8965,7 +8965,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6976428, y: 2.099111}
+  m_Size: {x: 0.6976428, y: 2.0667958}
   m_EdgeRadius: 0
 --- !u!61 &3603778820291993444
 BoxCollider2D:
@@ -9002,11 +9002,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 8530163141815176907}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4420566, y: -0.5433287}
+  m_Offset: {x: -0.4420566, y: -0.54196835}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9017,7 +9017,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3686405, y: 0.22600994}
+  m_Size: {x: 1.3686405, y: 0.22328952}
   m_EdgeRadius: 0
 --- !u!61 &9188264491315553117
 BoxCollider2D:
@@ -9028,11 +9028,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 8530163141815176907}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 488d96835fd7a4cda806b1beb1b60536, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5434059, y: 0.3322354}
+  m_Offset: {x: 0.5434059, y: 0.3463732}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9043,7 +9043,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7799225, y: 1.9454387}
+  m_Size: {x: 0.7799225, y: 1.9171631}
   m_EdgeRadius: 0
 --- !u!114 &7422475623673453651
 MonoBehaviour:
@@ -9330,7 +9330,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.7
+  m_Mass: 0.6
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

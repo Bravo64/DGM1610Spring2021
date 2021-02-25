@@ -42,14 +42,9 @@ public class Smashable : MonoBehaviour
     // The Game Object holding sprite decorations of the building
     [SerializeField] 
     private GameObject decorations;
-    
-    [Header("---------------- BOOLEANS ----------------", order = 0)] [Space(10, order = 1)]
-    
-    // Should we change the pitch when we play it
+
+    // The AudioSource Component on the Particle Object.
     [SerializeField]
-    private bool changeAudioPitch = true;
-    
-    // My AudioSource Component.
     private AudioSource _myAudio;
     
     // Shows that we have collided with player
@@ -65,8 +60,6 @@ public class Smashable : MonoBehaviour
         // Reset the scale and parent in case the parent changes.
         transform.parent = null;
         transform.localScale = Vector3.one;
-        // Get my AudioSource Component.
-        _myAudio = GetComponent<AudioSource>();
     }
 
     //------- The OnTriggerEnter2D Method ------------
@@ -88,11 +81,22 @@ public class Smashable : MonoBehaviour
         {
             // Turn on explosion particle child
             explosionParticle.SetActive(true);
-            // Turn off building sprites
-            decorations.SetActive(false);
+            // Make it so it has no parent
+            explosionParticle.transform.parent = null;
+            if (transform.parent != null)
+            {
+                // If we have a parent, turn it off.
+                transform.parent.gameObject.SetActive(false);
+            }
+            else
+            {
+                // If not, turn ourselves off.
+                gameObject.SetActive(false);
+            }
             // Set my audio to a random pitch.
             _myAudio.pitch = Random.Range(minimumPitch, maximumPitch);
-            // Play my Audio if it's not already playing.
+            // Play my Audio if it's not already playing
+            // (found on the child particle object).
             if (!_myAudio.isPlaying)
             {
                 _myAudio.Play();
