@@ -83,3 +83,5 @@ Monday, February 22th, 2021: Clear
 Tuesday, February 23th, 2021: Mostly Cloudy
 
 Wednesday, February 24th, 2021: Cloudy
+
+Thursday, February 25th, 2021: Clear, Sunny Skies!
