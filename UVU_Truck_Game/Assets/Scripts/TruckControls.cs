@@ -116,13 +116,10 @@ public class TruckControls : MonoBehaviour
     [SerializeField]
     private GameObject outOfFuelPrefab;
 
-    [Header("---------------- EVENTS ----------------", order = 14)] [Space(10, order = 15)]
+    [Header("---------------- SCRIPTABLE OBJECTS ----------------", order = 14)] [Space(10, order = 15)]
     
-    // If someone wants to know who the active player is,
-    // we will hear it. We will then let them know who
-    // it is through this game event.
     [SerializeField]
-    private GameObjectEvent broadcastPlayer;
+    private FloatData playerXLocation;
 
     //-----------------------------------------------------------------
 
@@ -217,6 +214,9 @@ public class TruckControls : MonoBehaviour
     //--------------------------------------
     void Update()
     {
+        // Let everyone in the scene know where the (active)
+        // player is through this scriptable object (X axis).
+        playerXLocation.value = transform.position.x;
         if (Input.GetButton("Vertical"))
         {
             // If button held down, let FixedUpdate
@@ -637,24 +637,6 @@ public class TruckControls : MonoBehaviour
         currentScale = yellowTrailParticle.localScale;
         currentScale.x = 0;
         yellowTrailParticle.localScale = currentScale;
-    }
-
-    //------- The BroadcastYourself Method ------------
-    // This Method is called when someone in the scene
-    // sends out an event signal saying they would like
-    // to know who the active player is. We double check
-    // that we are the active player, and then send ourselves
-    // to them through a game event.
-    //----------------------------------------
-    public void BroadcastYourself()
-    {
-        // The active player is the one the
-        // virtual camera is currently following.
-        if (mainVirtualCamera.Follow == transform)
-        {
-            // Send ourselves out inside this event.
-            broadcastPlayer.Raise(gameObject);
-        }
     }
 }
 

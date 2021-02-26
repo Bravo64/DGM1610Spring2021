@@ -5,7 +5,7 @@ using GameEvents;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class RandomPieceCreator : MonoBehaviour
+public class RandomPiece : MonoBehaviour
 {
     
     /*
@@ -22,9 +22,7 @@ public class RandomPieceCreator : MonoBehaviour
         and check the distance again (while loop set to true).
         
     Script's Methods:
-        - Start
-        - EventAssignPlayer
-        - CheckDistance (Coroutine)
+        - Start (IEnumerator / Coroutine)
 
     --------------------- DOC END ----------------------
      */
@@ -55,13 +53,14 @@ public class RandomPieceCreator : MonoBehaviour
     [SerializeField]
     private GameObject[] randomPieces;
 
-    [Header("---------------- EVENTS ----------------", order = 6)] [Space(10, order = 7)]
-    
-    // Event asking the active player where
-    // they are located in the scene.
+    [Header("-------------- SCRIPTABLE OBJECTS --------------", order = 6)]
+    [Space(10, order = 7)]
+
+    // The location of the player (on the X Axis)
+    // is saved inside a FloatData Scriptable Object.
     [SerializeField]
-    private VoidEvent _requestPlayerObject;
-    
+    private FloatData playerXLocation;
+
     //-----------------------------------------------------------------
     
     //----------- Private Variables (Hidden from Inspector) -----------
@@ -90,13 +89,13 @@ public class RandomPieceCreator : MonoBehaviour
     // This Method is called before the first frame update
     // (or at the gameObject's creation/reactivation). It
     // is mainly used for game object setup and selecting
-    // some random values.
+    // some random values. In this case, it also acts as a
+    // coroutine and check the distance from the player
+    // in intervals. When the player is close enough, we 
+    // create the next piece.
     //-----------------------------------------------------
-    private void Start()
+    private IEnumerator Start()
     {
-        // Let the level manager know we would
-        // like to know who the active player is.
-        _requestPlayerObject.Raise();
         // Get our scale.
         Vector3 myScale = transform.localScale;
         // Randomize the x scale based on the size limit variables.
@@ -108,44 +107,20 @@ public class RandomPieceCreator : MonoBehaviour
         // Make a new WaitForSeconds Object
         // and Choose a random wait time.
         _wfsObj = new WaitForSeconds(Random.Range(0.75f, 1.0f));
-        // Start the Coroutine
-        StartCoroutine(CheckDistance());
-    }
-
-    //------- The EventAssignPlayer Method ------------
-    // Waits for a game event broadcast from the active player
-    // to let us know where they are in the scene. We then
-    // save that value to our variable.
-    //------------------------------------------------
-    public void EventAssignPlayer(GameObject playerBeingBroadcast)
-    {
-        // Save the inputted player GameObject (sent from level manager)
-        _activePlayerVehicle = playerBeingBroadcast;
-    }
-
-    //------- The CheckDistance Coroutine ------------
-    // This Coroutine checks how far away we are from the
-    // active player. If we are close enough, it then
-    // instantiates a random piece at our end point's
-    // position, and then disables the script.
-    // If we are not close enough, we wait a bit, come
-    // back, and check the distance again (while loop).
-    //--------------------------------------
-    
-    private IEnumerator CheckDistance()
-    {
-        // Keep looping as long as we need
+        
+        // Check our distance from the player inside this loop
         while (true)
         {
             // Check our distance from the player on the X axis
-            if (transform.position.x - 
-                _activePlayerVehicle.transform.position.x 
-                < 100.0f)
+            // (Player X Location is a Scriptable Object)
+            if (transform.position.x - playerXLocation.value < 100.0f)
             {
                 // We are close enough to the player.
                 // Create the next piece at our
                 // end point's position.
+                
                 Instantiate(randomPieces[_chosenPiece], endPoint.position, endPoint.rotation);
+                
                 // Leave the loop
                 break;
             }

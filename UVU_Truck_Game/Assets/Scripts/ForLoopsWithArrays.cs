@@ -21,6 +21,9 @@ public class ForLoopsWithArrays : MonoBehaviour
         for (var i = 0; i < fruitList.Count; i++)
         {
             yield return _wfsObj;
+            // These loops can be done with Lists or Arrays.
+            // They essentially work the same way.
+            // Use list[i] / array[i] to grab an item.
             print(fruitList[i] + " is a fruit.");
         }
     }

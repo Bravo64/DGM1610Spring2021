@@ -8759,7 +8759,6 @@ GameObject:
   - component: {fileID: 3603778820291993444}
   - component: {fileID: 7278792264135902641}
   - component: {fileID: 9188264491315553117}
-  - component: {fileID: 7422475623673453651}
   m_Layer: 0
   m_Name: Delivery_Truck_1
   m_TagString: Vehicle
@@ -8823,7 +8822,7 @@ MonoBehaviour:
   fuelStripRenderer: {fileID: 0}
   mainVirtualCamera: {fileID: 0}
   outOfFuelPrefab: {fileID: 9191029061995078033, guid: f17dc2cc497ee435880d0c264aeeaa37, type: 3}
-  broadcastPlayer: {fileID: 11400000, guid: 064d8c87250764825b364c6493aa0d02, type: 2}
+  playerXLocation: {fileID: 11400000, guid: c41e435755d824e3e89e713282b6f780, type: 2}
 --- !u!50 &8530163141815176951
 Rigidbody2D:
   serializedVersion: 4
@@ -9045,34 +9044,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7799225, y: 1.9171631}
   m_EdgeRadius: 0
---- !u!114 &7422475623673453651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8530163141815176907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59338710d7cc4dea83749e288eb4d6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: c19aec99441144e85bfb84e24b4173b2, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8530163141815176948}
-        m_TargetAssemblyTypeName: TruckControls, Assembly-CSharp
-        m_MethodName: BroadcastYourself
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8530163141945371076
 GameObject:
   m_ObjectHideFlags: 0

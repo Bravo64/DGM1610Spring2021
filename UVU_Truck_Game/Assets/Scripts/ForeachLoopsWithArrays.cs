@@ -18,6 +18,10 @@ public class ForeachLoopsWithArrays : MonoBehaviour
         }
         
         _wfsObj = new WaitForSeconds(holdTime);
+        // These loops can be done with Lists or Arrays.
+        // They essentially work the same way.
+        // Just assign a keyword to represent
+        // the elements inside.
         foreach (string fruit in fruitList)
         {
             yield return _wfsObj;
