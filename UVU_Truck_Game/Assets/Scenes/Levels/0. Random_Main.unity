@@ -2852,9 +2852,6 @@ MonoBehaviour:
   - {fileID: 7062660695541101778, guid: aed42bd815e8b47869d32e95bb87c06e, type: 3}
   - {fileID: 2862243940518112023, guid: 8188515518d1c4d2faef85e991411407, type: 3}
   playerXLocation: {fileID: 11400000, guid: c41e435755d824e3e89e713282b6f780, type: 2}
-  myZombies: []
-  myCoins: []
-  reset: 0
 --- !u!1001 &1102898018814119489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3028,7 +3025,7 @@ PrefabInstance:
       objectReference: {fileID: 1164306135}
     - target: {fileID: 8530163141815176948, guid: fa1514d8a24c74991ae3272ee6d66006, type: 3}
       propertyPath: secondsOfFuel
-      value: 60
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8530163141815176948, guid: fa1514d8a24c74991ae3272ee6d66006, type: 3}
       propertyPath: fuelColorStrip
@@ -3184,14 +3181,6 @@ PrefabInstance:
     - target: {fileID: 3196608148597457895, guid: fee6d5e2b57344b78a8088c89a95cce8, type: 3}
       propertyPath: m_Name
       value: Sunny_Background
-      objectReference: {fileID: 0}
-    - target: {fileID: 3196608148597457895, guid: fee6d5e2b57344b78a8088c89a95cce8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7857204324370765994, guid: fee6d5e2b57344b78a8088c89a95cce8, type: 3}
-      propertyPath: smoothTime
-      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7857204324370765994, guid: fee6d5e2b57344b78a8088c89a95cce8, type: 3}
       propertyPath: targetObject
@@ -3407,7 +3396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5754352914613538423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 19.99, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5754352914699087056}

@@ -93,6 +93,10 @@ PrefabInstance:
       propertyPath: cycleType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2745759546426432551, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: speedRandomizer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3028450668976398318, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -266,6 +270,10 @@ PrefabInstance:
     - target: {fileID: 2745759546426432551, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: cycleType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745759546426432551, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: speedRandomizer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3028450668976398318, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_RootOrder
@@ -441,6 +449,10 @@ PrefabInstance:
       propertyPath: cycleType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2745759546426432551, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: speedRandomizer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3028450668976398318, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -614,6 +626,10 @@ PrefabInstance:
     - target: {fileID: 2745759546426432551, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: cycleType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745759546426432551, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: speedRandomizer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3028450668976398318, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_RootOrder

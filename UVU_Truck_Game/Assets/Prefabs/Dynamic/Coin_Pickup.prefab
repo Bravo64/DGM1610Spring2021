@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  speedRandomizer: 0
   pickupItem: {fileID: 6630810033828433446}
   movementCycleType: 1
 --- !u!1 &2282292879601644105

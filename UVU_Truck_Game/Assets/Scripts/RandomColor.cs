@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class RandomColor : MonoBehaviour
 {
     /*
@@ -18,10 +19,6 @@ public class RandomColor : MonoBehaviour
         
     Script's Methods:
         - Start
-        - Update
-
-    REQUIREMENTS:
-        - Sprite Renderer
 
     --------------------- DOC END ----------------------
      */
@@ -31,6 +28,7 @@ public class RandomColor : MonoBehaviour
     // Array of random colors to choose from (Set up in editor)
     [SerializeField] private Color[] colorOptions;
     // The sprite renderer of this object
+    // (variable is hidden in inspector)
     private SpriteRenderer _myRenderer;
     
     //-------------------------------------------------

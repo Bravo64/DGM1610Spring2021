@@ -134,6 +134,9 @@ public class TruckControls : MonoBehaviour
     // The Default amount (in seconds) of a full tank of fuel.
     private float _defaultFuelAmount;
 
+    // The Scale of the fuel meter strip when it is full.
+    private Vector3 _defaultFuelScale;
+    
     // The Default color of a full tank of fuel.
     private Color _fullTankColor;
 
@@ -200,7 +203,8 @@ public class TruckControls : MonoBehaviour
             {
                 _fullTankColor = fuelStripImage.color;
             }
-
+            // Save the default scale of the fuel strip meter
+            _defaultFuelScale = fuelColorStrip.localScale;
             // Also save its fuel amount as the default value.
             _defaultFuelAmount = secondsOfFuel;
         }
@@ -223,8 +227,12 @@ public class TruckControls : MonoBehaviour
             // know to start spinning the wheels
             // through this variable.
             _accelerating = true;
-            // Drain the vehicle's fuel tank
-            DrainFuel();
+            // if we are pressing forward
+            if (Input.GetAxis("Vertical") > 0.0f)
+            {
+                // Drain the vehicle's fuel tank
+                DrainFuel();
+            }
         }
         else if (_accelerating)
         {
@@ -556,10 +564,8 @@ public class TruckControls : MonoBehaviour
             fuelStripImage.color = _fullTankColor;
         }
 
-        // Reset the size of the fuel meter (on x axis).
-        Vector3 fuelMeterScale = fuelColorStrip.localScale;
-        fuelMeterScale.x = 1.0f;
-        fuelColorStrip.localScale = fuelMeterScale;
+        // Reset the size of the fuel meter (mainly on the x axis).
+        fuelColorStrip.localScale = _defaultFuelScale;
         for (int i = 0; i < 2; i++)
         {
             // Unfreeze the wheels as well.

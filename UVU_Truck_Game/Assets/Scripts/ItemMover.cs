@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ItemMover : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class ItemMover : MonoBehaviour
     [UnityEngine.Range(0.0f, 50.0f)]
     [SerializeField] 
     private float movementSpeed = 5.0f;
+    
+    // This will determine how random the speed is allowed to be.
+    [UnityEngine.Range(0.0f, 50.0f)]
+    [SerializeField] 
+    private float speedRandomizer = 0.0f;
     
     [Header("--------------- SIBLINGS ---------------", order = 2)]
     [Space(10, order = 3)]
@@ -82,7 +88,8 @@ public class ItemMover : MonoBehaviour
     //----------------------------------------------------
     void Start()
     {
-
+        movementSpeed += Random.Range(-speedRandomizer, speedRandomizer);
+        
         // Get the active waypoint children
         foreach (Transform child2 in transform)
         {

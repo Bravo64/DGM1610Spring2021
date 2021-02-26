@@ -11,7 +11,7 @@ public class TextUpdater : MonoBehaviour
     /*
     ---------------- Documentation ---------------------
     
-    Script's Name: LevelManager.cs
+    Script's Name: TextUpdater.cs
     Author: Keali'i Transfield
     
     Script's Description: This script is one of the most important
@@ -24,7 +24,6 @@ public class TextUpdater : MonoBehaviour
     Script's Methods:
         - Awake (non-public)
         - Start (non-public)
-        - GetlevelScore
         - AddToScore (with value input)
         - AnimateScoreAdding (Coroutine)
         - LevelComplete
