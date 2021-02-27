@@ -87,3 +87,5 @@ Wednesday, February 24th, 2021: Cloudy
 Thursday, February 25th, 2021: Clear, Sunny Skies!
 
 Friday, February 26th, 2021: Mostly Cloudy
+
+Saturday, February 27th, 2021: Cloudy
