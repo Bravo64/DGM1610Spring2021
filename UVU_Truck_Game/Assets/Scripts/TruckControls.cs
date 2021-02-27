@@ -118,8 +118,13 @@ public class TruckControls : MonoBehaviour
 
     [Header("---------------- SCRIPTABLE OBJECTS ----------------", order = 14)] [Space(10, order = 15)]
     
+    // Players X and Y coordinates will be store in
+    // scriptable object so that everyone can access them.
     [SerializeField]
-    private FloatData playerXLocation;
+    private FloatData playerXLocationObj;
+    
+    [SerializeField]
+    private FloatData playerYLocationObj;
 
     //-----------------------------------------------------------------
 
@@ -219,8 +224,10 @@ public class TruckControls : MonoBehaviour
     void Update()
     {
         // Let everyone in the scene know where the (active)
-        // player is through this scriptable object (X axis).
-        playerXLocation.value = transform.position.x;
+        // player is through these scriptable objects.
+        var position = transform.position;
+        playerXLocationObj.value = position.x;
+        playerYLocationObj.value = position.y;
         if (Input.GetButton("Vertical"))
         {
             // If button held down, let FixedUpdate
