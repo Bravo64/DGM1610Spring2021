@@ -35,17 +35,15 @@ public class TextUpdater : MonoBehaviour
 
     //----- Serialized and Public Variables (Visible in Inspector) -----
 
-    [Header("---------- VALUE VARIABLES ----------", order = 0)] [Space(10, order = 0)]
-    [Space(10, order = 1)]
-    
+    [Header("---------- VALUE VARIABLES ----------", order = 0)] [Space(10, order = 1)]
+
     // The Level Number
     [UnityEngine.Range(0, 50)]
     [SerializeField]
     private int levelNumber = 1;
     
-    [Header("----------- TEXT OBJECTS -----------", order = 2)] [Space(10, order = 2)]
-    [Space(10, order = 3)]
-    
+    [Header("----------- TEXT OBJECTS -----------", order = 2)] [Space(10, order = 3)]
+
     // The Text component that displays current
     // level text outline (at level start).
     [SerializeField]
@@ -70,31 +68,41 @@ public class TextUpdater : MonoBehaviour
     [SerializeField]
     private Text cureCrateText;
     
-    [Header("--------------- AUDIO ---------------", order = 4)] [Space(10, order = 4)]
-    [Space(10, order = 5)]
-    
+    [Header("--------------- AUDIO ---------------", order = 4)] [Space(10, order = 5)]
+
     // The Audio Source for the Score text "adding" sound.
     [SerializeField]
     private AudioSource scoreSound;
     
-    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)] [Space(10, order = 6)]
-    [Space(10, order = 7)]
-    
+    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)] [Space(10, order = 7)]
+
     // The Scriptable Object that will contain
     // the player score for this level.
     [SerializeField]
-    private IntData levelScore;
+    private IntData levelScoreObj;
     
     // The Scriptable Object that will contain
     // the number of cure crates still in the cargo.
     [SerializeField]
-    private IntData carriedCrates;
+    private IntData carriedCratesObj;
     
     // The Scriptable Object that will contain
     // the number of cure crates that have not
     // touched the ground and died.
     [SerializeField]
-    private IntData livingCrates;
+    private IntData livingCratesObj;
+    
+    [Header("-------------- EVENTS --------------", order = 8)] [Space(10, order = 9)]
+    
+    // The event that calls the level loader,
+    // which restarts the scene.
+    [SerializeField]
+    private VoidEvent restartLevelEvent;
+
+    // The event that calls the level loader,
+    // which loads the next scene in the build.
+    [SerializeField] 
+    private VoidEvent loadNextLevelEvent;
 
     //--------------------------------------------------------
 
@@ -108,8 +116,8 @@ public class TextUpdater : MonoBehaviour
     {
         // Reset Crate values within
         // the Scriptable Objects references.
-        carriedCrates.value = 0;
-        livingCrates.value = 0;
+        carriedCratesObj.value = 0;
+        livingCratesObj.value = 0;
     }
     
     //-------------- The Start Method -------------------
@@ -126,7 +134,7 @@ public class TextUpdater : MonoBehaviour
         levelText.text = "LEVEL " + levelNumber.ToString();
         // Make sure we've reset the
         // player score for this level.
-        levelScore.value = 0;
+        levelScoreObj.value = 0;
     }
 
 
@@ -138,11 +146,11 @@ public class TextUpdater : MonoBehaviour
     public void AddToScore(int amountToAdd)
     {
         // Save the old score value for the AnimateScoreAdding coroutine
-        int oldScore = levelScore.value;
+        int oldScore = levelScoreObj.value;
         // Add one coin.
-        levelScore.value += amountToAdd;
+        levelScoreObj.value += amountToAdd;
         // "Animate" the score cycling upward with this coroutine
-        StartCoroutine(AnimateScoreAdding(oldScore, levelScore.value));
+        StartCoroutine(AnimateScoreAdding(oldScore, levelScoreObj.value));
     }
     
     
@@ -187,20 +195,9 @@ public class TextUpdater : MonoBehaviour
         // Enable the Level Complete text
         levelCompleteText.SetActive(true);
         
-        // Begin the coroutine that will load the next scene
-        StartCoroutine(LoadNextLevel());
-    }
-
-    //-------- The LoadNextLevel Coroutine -------------
-    // This Coroutine comes directly after the LevelComplete
-    // method is called. It deals with loading the next level.
-    //--------------------------------------------
-    private IEnumerator LoadNextLevel()
-    {
-        // Wait a few seconds to give the "level complete" text some time to leave
-        yield return new WaitForSeconds(3.0f);
-        // Load the next scene index in the game's build settings
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Raise the event that will tell the
+        // scene loader to load the next scene
+        loadNextLevelEvent.Raise();
     }
     
     //-------- The UpdateCrateText Method -------------
@@ -214,7 +211,7 @@ public class TextUpdater : MonoBehaviour
     {
         // Update the text with the current amount.
         // (which the "carriedCrates" Scriptable Object holds)
-        cureCrateText.text = "CURES: " + carriedCrates.value;
+        cureCrateText.text = "CURES: " + carriedCratesObj.value;
     }
 }
 

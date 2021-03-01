@@ -125,6 +125,13 @@ public class TruckControls : MonoBehaviour
     
     [SerializeField]
     private FloatData playerYLocationObj;
+    
+    [Header("---------------- EVENTS ----------------", order = 16)] [Space(10, order = 17)]
+    
+    // The Scriptable Object Game Event letting the
+    // Scene Loader know to restart the scene
+    [SerializeField]
+    private VoidEvent restartLevelEvent;
 
     //-----------------------------------------------------------------
 
@@ -467,10 +474,11 @@ public class TruckControls : MonoBehaviour
         // Create "Out Of Fuel" flashing message.
         Instantiate(outOfFuelPrefab, transform.position, quaternion.identity);
         // Add Drag to our rigidbody.
-        myRigidbody2D.drag = 2;
-        myRigidbody2D.angularDrag = 2;
+        myRigidbody2D.drag = 1;
+        myRigidbody2D.angularDrag = 0.5f;
         // Wait a second to switch vehicles.
         yield return _wfsObjOneSec;
+        bool nextCarFound = false;
         // Look through all cars in the scene
         foreach (var carScript in _allCarsScripts)
         {
@@ -481,9 +489,16 @@ public class TruckControls : MonoBehaviour
                 carScript.enabled = true;
                 // Set the virtual camera to follow them.
                 mainVirtualCamera.Follow = carScript.transform;
+                // More cars exist. We don't need to restart.
+                nextCarFound = true;
             }
         }
-
+        // We don't have any more cars left.
+        // Let the level Loader know to reset the scene.
+        if (!nextCarFound)
+        {
+            //   restartLevelEvent.Raise();
+        }
         // Give the car a second to settle.
         yield return _wfsObjOneSec;
         // while loop continuously checks for car movement.

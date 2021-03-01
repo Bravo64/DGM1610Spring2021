@@ -42,9 +42,14 @@ Script's Methods:
     [Header("---------------- EVENTS ----------------", order = 2)] [Space(10, order = 3)]
     
     // The Scriptable Object Game Event letting the
-    // Text Updater to update the Cure Crate UI Text.
+    // Text Updater know to update the Cure Crate UI Text.
     [SerializeField]
     private VoidEvent updateCrateText;
+    
+    // The Scriptable Object Game Event letting the
+    // Scene Loader know to restart the scene
+    [SerializeField]
+    private VoidEvent restartLevelEvent;
 
     [Header("---------------- CHILDREN ----------------", order = 4)] [Space(10, order = 5)]
     
@@ -176,6 +181,12 @@ Script's Methods:
             // Reset our tag back to normal so we
             // don't kill other crates we touch.
             gameObject.tag = "Crate";
+            // If we drop all our crates, make the scene
+            // loader reset the scene through this event.
+            if (livingCrates.value <= 0)
+            {
+                restartLevelEvent.Raise();
+            }
         }
     }
 }
