@@ -91,3 +91,5 @@ Friday, February 26th, 2021: Mostly Cloudy
 Saturday, February 27th, 2021: Cloudy
 
 Sunday, February 28th, 2021: Mostly Cloudy
+
+Monday, March 1st, 2021: Clear and Sunny, Slightly Breezy
