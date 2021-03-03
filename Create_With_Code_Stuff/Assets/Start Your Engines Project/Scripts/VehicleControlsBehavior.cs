@@ -8,6 +8,12 @@ public class VehicleControlsBehavior : MonoBehaviour
     private float movementSpeed = 10.0f;
     [SerializeField]
     private float turnSpeed = 20.0f;
+    [SerializeField]
+    private float weaponForce = 100.0f;
+    [SerializeField]
+    private Transform weaponBarrel;
+    [SerializeField]
+    private Rigidbody projectile;
     Rigidbody _myRigidbody;
     
     // Start is called before the first frame update
@@ -40,6 +46,12 @@ public class VehicleControlsBehavior : MonoBehaviour
                 direction = 1;
             }
                 transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * turnSpeed * direction * Time.deltaTime);
+        }
+        
+        if (Input.GetButtonDown("Jump"))
+        {
+            Rigidbody projectileRB = Instantiate(projectile, weaponBarrel.position, weaponBarrel.rotation);
+            projectileRB.velocity = transform.forward * weaponForce;
         }
     }
 }
