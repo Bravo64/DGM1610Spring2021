@@ -94,4 +94,6 @@ Sunday, February 28th, 2021: Mostly Cloudy
 
 Monday, March 1st, 2021: Clear and Sunny, Slightly Breezy
 
-Tuesday, March 2st, 2021: Slightly Sloudy
+Tuesday, March 2st, 2021: Slightly Cloudy
+
+Wednesday, March 3rd, 2021: Mostly Clear
