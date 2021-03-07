@@ -12,15 +12,7 @@ public class Smashable : MonoBehaviour
     Script's Name: Smashable.cs
     Author: Keali'i Transfield
 
-    Script's Description: This script checks for a collision with
-    the player vehicle, and then deactivates its sprites
-    and enables the destruction particle (both are children).
-        
-    Script's Methods:
-        - OnTriggerEnter2D
-        - Start
-
-    --------------------- DOC END ----------------------
+    ----------------------------------------------------
      */
     
     [Header("---------------- VALUES ----------------", order = 0)] [Space(10, order = 1)]

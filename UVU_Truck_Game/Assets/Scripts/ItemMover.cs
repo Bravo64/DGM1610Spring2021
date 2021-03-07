@@ -13,17 +13,7 @@ public class ItemMover : MonoBehaviour
     Script's Name: ItemMover.cs
     Author: Keali'i Transfield
 
-    Script's Description: This script deals with moving the
-        pickup item over time along a straight line to each 
-        waypoint. This will mainly be used for the re-fuel 
-        pickup item. The method it uses is "MoveTowards"
-        with a set of waypoint children.
-        
-    Script's Methods:
-        - Start
-        - Update
-
-    --------------------- DOC END ----------------------
+    ----------------------------------------------------
      */
 
 

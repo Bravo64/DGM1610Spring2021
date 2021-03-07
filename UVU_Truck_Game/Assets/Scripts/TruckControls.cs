@@ -16,23 +16,7 @@ public class TruckControls : MonoBehaviour
     Script's Name: TruckControls.cs
     Author: Keali'i Transfield
     
-    Script's Description: This script deals with moving the
-        truck based on user input, and draining the fuel 
-        supply accordingly. It also freezes the truck's
-        rigidbody, and disables this script when the
-        fuel is empty (sending controls to the next car).
-        
-    Script's Methods:
-        - Start
-        - Update
-        - FixedUpdate
-        - DrainFuel
-        - OutOfFuel (Coroutine)
-        - RestoreFuel (public)
-        - SpeedBoost (Coroutine)
-        - BroadcastYourself
-    
-    --------------------- DOC END ----------------------
+    ----------------------------------------------------
      */
 
     //---------- Public and Static Variables (visible in inspector)-----------

@@ -11,15 +11,8 @@ public class DeathWall : MonoBehaviour
 
     Script's Name: DeathWall.cs
     Author: Keali'i Transfield
-
-    Script's Description: This script is for the evil wall that
-    chases the player at a slowly increasing speed. If it caches 
-    up to the player, the level is ended.
-        
-    Script's Methods:
-        - Update
-
-    --------------------- DOC END ----------------------
+    
+    ----------------------------------------------------
      */
     
     [Header("----------- VALUE VARIABLES -----------", order = 0)] [Space(10, order = 1)]

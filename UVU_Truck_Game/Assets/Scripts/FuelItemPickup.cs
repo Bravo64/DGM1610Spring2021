@@ -10,15 +10,7 @@ public class FuelItemPickup : MonoBehaviour
     Script's Name: FuelItemPickup.cs
     Author: Keali'i Transfield
 
-    Script's Description: This script waits for a "Vehicle" tagged object
-        to enter and trigger this object's trigger collider. It then grabs
-        the "TruckControls" scripts of the other object, and calls its
-        RestoreFuel method. Lastly, the object disables itself.
-        
-    Script's Methods:
-        - OnTriggerEnter2D
-
-    --------------------- DOC END ----------------------
+    ----------------------------------------------------
      */
     
     [Header("--------------- PREFABS ---------------", order = 0)]

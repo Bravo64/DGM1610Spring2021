@@ -14,23 +14,7 @@ public class TextUpdater : MonoBehaviour
     Script's Name: TextUpdater.cs
     Author: Keali'i Transfield
     
-    Script's Description: This script is one of the most important
-    scripts in the scene. This scripts deals with loading new scenes,
-    keeping track of the players current score, and other functions
-    that we be useful for multiple objects to have access to. This
-    script is made static public by default, so that any object in
-    the scene can easily gain access to it.
-        
-    Script's Methods:
-        - Awake (non-public)
-        - Start (non-public)
-        - AddToScore (with value input)
-        - AnimateScoreAdding (Coroutine)
-        - LevelComplete
-        - LoadNextLevel (Coroutine)
-        - UpdateCrateText
-    
-    --------------------- DOC END ----------------------
+    ----------------------------------------------------
      */
 
     //----- Serialized and Public Variables (Visible in Inspector) -----
@@ -74,7 +58,14 @@ public class TextUpdater : MonoBehaviour
     [SerializeField]
     private AudioSource scoreSound;
     
-    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 6)] [Space(10, order = 7)]
+    [Header("-------------- CHILDREN --------------", order = 6)] [Space(10, order = 7)]
+    
+    // The child object that has an animation
+    // that makes the screen red (for when we die)
+    [SerializeField]
+    private GameObject redDeathFilter;
+    
+    [Header("--------- SCRIPTABLE OBJECTS ---------", order = 8)] [Space(10, order = 9)]
 
     // The Scriptable Object that will contain
     // the player score for this level.
@@ -92,7 +83,7 @@ public class TextUpdater : MonoBehaviour
     [SerializeField]
     private IntData livingCratesObj;
     
-    [Header("-------------- EVENTS --------------", order = 8)] [Space(10, order = 9)]
+    [Header("-------------- EVENTS --------------", order = 10)] [Space(10, order = 11)]
     
     // The event that calls the level loader,
     // which restarts the scene.

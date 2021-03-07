@@ -672,6 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235563801}
   - component: {fileID: 235563800}
+  - component: {fileID: 235563804}
   - component: {fileID: 235563803}
   - component: {fileID: 235563802}
   m_Layer: 0
@@ -693,6 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faab23360145048499fb3ec2a445833a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redDeathFilter: {fileID: 1778577246}
 --- !u!4 &235563801
 Transform:
   m_ObjectHideFlags: 0
@@ -753,7 +755,35 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 235563800}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: ActivateReset
+        m_MethodName: GameOverReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &235563804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235563799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59338710d7cc4dea83749e288eb4d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: cc92bf7c7157949e99d213b70f96af34, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 235563800}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: SimpleLevelReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2636,6 +2666,10 @@ PrefabInstance:
       propertyPath: levelNumber
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4047515475904811237, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: redDeathFilter
+      value: 
+      objectReference: {fileID: 1778577246}
     - target: {fileID: 4047515475904811242, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2691,6 +2725,26 @@ PrefabInstance:
     - target: {fileID: 4047515475931911638, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Name
       value: Score Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153251026645906012, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210712459724402961, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210712459724402961, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210712459724402961, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210712459724402961, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8458580135927121007, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Name
@@ -3181,6 +3235,11 @@ PrefabInstance:
       objectReference: {fileID: 1164306135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+--- !u!1 &1778577246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5153251026645906012, guid: e71344b7470104577b9d131c8029e164, type: 3}
+  m_PrefabInstance: {fileID: 1568870097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1913221503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3468333393720283831, guid: ce0c8249a7fd94b628e0f2e1bc025021, type: 3}

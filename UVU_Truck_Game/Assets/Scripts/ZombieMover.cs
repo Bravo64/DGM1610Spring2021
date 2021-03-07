@@ -14,18 +14,7 @@ public class ZombieMover : MonoBehaviour
     Script's Name: ZombieMover.cs
     Author: Keali'i Transfield
 
-    Script's Description: This script deals with moving the
-        ZOMBIE item over time along a straight line to each 
-        waypoint. A coroutine with random some pauses, as 
-        well as some random directions changes will ensure 
-        that the zombie has a bit of personality. The method 
-        it uses is "MoveTowards" with a set of waypoint children.
-        
-    Script's Methods:
-        - Start
-        - MoveZombie (coroutine)
-
-    --------------------- DOC END ----------------------
+    ----------------------------------------------------
      */
 
 

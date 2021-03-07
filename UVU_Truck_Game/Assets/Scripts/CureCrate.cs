@@ -7,24 +7,13 @@ using UnityEngine;
 public class CureCrate : MonoBehaviour
 {
     /*
----------------- Documentation ---------------------
+    ---------------- Documentation ---------------------
 
-Script's Name: CureCrate.cs
-Author: Keali'i Transfield
+    Script's Name: CureCrate.cs
+    Author: Keali'i Transfield
 
-Script's Description: This script is for the cure crates being 
-held in the back of the players truck. It is basically for 
-handling what happens when they are dropped.
-    
-Script's Methods:
-    - Start
-    - OnTriggerEnter2D
-    - OnTriggerExit2D
-    - OnCollisionEnter2D
-    - OnCollisionExit2D
-
---------------------- DOC END ----------------------
- */
+    ----------------------------------------------------
+     */
     
     [Header("------------ SCRIPTABLE OBJECTS ------------", order = 0)] [Space(10, order = 1)]
     

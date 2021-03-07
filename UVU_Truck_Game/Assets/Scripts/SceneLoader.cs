@@ -5,7 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void ActivateReset()
+    /*
+    ---------------- Documentation ---------------------
+
+    Script's Name: SceneLoader.cs
+    Author: Keali'i Transfield
+
+    ----------------------------------------------------
+     */
+    
+    [Header("-------------- OBJECTS IN SCENE --------------", order = 0)] [Space(10, order = 1)]
+    
+    // The object that has an animation
+    // that makes the screen red (for when we die)
+    [SerializeField]
+    private GameObject redDeathFilter;
+    
+    //-------------------------------------------------
+    // This three functions below basically just wait for
+    // an event call to activate them, and then they activate
+    // the corresponding coroutine. They are essentially
+    // a middle man.
+    //-------------------------------------------------
+    public void GameOverReset()
+    {
+        redDeathFilter.SetActive(true);
+        StartCoroutine(RestartLevel());
+    }
+    public void SimpleLevelReset()
     {
         StartCoroutine(RestartLevel());
     }
@@ -17,7 +44,7 @@ public class SceneLoader : MonoBehaviour
 
     //-------- The RestartLevel Coroutine -------------
     // This Coroutine deals with restarting the current scene
-    //--------------------------------------------
+    //-------------------------------------------------
     private IEnumerator RestartLevel()
     {
         // Slow down time
@@ -49,3 +76,5 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
+
+// ---------------------- END OF FILE -----------------------
