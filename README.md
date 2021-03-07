@@ -101,3 +101,5 @@ Wednesday, March 3rd, 2021: Mostly Clear
 Thursday, March 4rd, 2021: Clear and Sunny
 
 Friday, March 5rd, 2021: Sunny, Again!! :D
+
+Saturday, March 6th, 2021: Somewhat Cloudy
