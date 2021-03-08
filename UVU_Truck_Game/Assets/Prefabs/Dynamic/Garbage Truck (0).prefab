@@ -5252,10 +5252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff321195405484e4590d73777aef5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carImportance: 1
-  wheelSpeed: 30
-  tiltSensitivity: 125
-  secondsOfFuel: 2
+  carImportance: 2
+  wheelSpeed: 28
+  tiltSensitivity: 150
+  secondsOfFuel: 5
   boostAngularForce: 1000
   fuelMeterIsAttached: 1
   impactAudio: {fileID: 5538903763456874162}
