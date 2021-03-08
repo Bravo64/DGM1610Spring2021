@@ -105,3 +105,5 @@ Friday, March 5rd, 2021: Sunny, Again!! :D
 Saturday, March 6th, 2021: Somewhat Cloudy
 
 Sunday, March 7th, 2021: Cloudy
+
+Monday (SPRING BREAK!!), March 8th, 2021: Mostly Cloudy
