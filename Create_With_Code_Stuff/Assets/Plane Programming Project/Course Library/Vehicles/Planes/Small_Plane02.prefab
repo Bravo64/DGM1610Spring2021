@@ -213,9 +213,9 @@ MonoBehaviour:
   speed: 10
   rotationSpeed: 75
   propRotationSpeed: 720
-  weaponForce: 100
+  weaponForce: 150
   propeller: {fileID: 400000}
-  bullet: {fileID: 2577409565423921457, guid: db9301ca9d60e46cbbfab5be41ac3de6, type: 3}
+  bullet: {fileID: 6169163874746831572, guid: db9301ca9d60e46cbbfab5be41ac3de6, type: 3}
   weaponLeft: {fileID: 7058598650006546481}
   weaponRight: {fileID: 8766024472559480154}
 --- !u!1 &2336041323659623461
@@ -241,13 +241,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336041323659623461}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.548764, y: 3.2995172, z: 1.8734632}
+  m_LocalRotation: {x: -0.7070964, y: -0, z: -0, w: 0.7071172}
+  m_LocalPosition: {x: 9.548764, y: 3.3, z: 1.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3408426792656879275
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,10 +271,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3408426792656879275}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.548764, y: 3.2995172, z: 1.8734632}
+  m_LocalRotation: {x: -0.7070964, y: -0, z: -0, w: 0.7071172}
+  m_LocalPosition: {x: -9.548764, y: 3.3, z: 1.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
