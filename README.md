@@ -109,3 +109,5 @@ Sunday, March 7th, 2021: Cloudy
 Monday (SPRING BREAK!!), March 8th, 2021: Mostly Cloudy
 
 Tuesday (SPRING BREAK!!), March 9th, 2021: Cloudy
+
+Wednesday (SPRING BREAK!!), March 10th, 2021: Slightly Cloudy
