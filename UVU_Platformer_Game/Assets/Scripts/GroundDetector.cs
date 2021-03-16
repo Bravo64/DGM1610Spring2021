@@ -15,6 +15,7 @@ public class GroundDetector : MonoBehaviour
             if (other.gameObject.CompareTag("Ground"))
             {
                 playerScript.isGrounded = true;
+                playerScript.spriteAnimator.SetBool("isGrounded", true);
             }
         }
     }
@@ -26,6 +27,7 @@ public class GroundDetector : MonoBehaviour
             if (other.gameObject.CompareTag("Ground"))
             {
                 playerScript.isGrounded = true;
+                playerScript.spriteAnimator.SetBool("isGrounded", true);
             }
         }
     }
@@ -37,6 +39,7 @@ public class GroundDetector : MonoBehaviour
             if (other.gameObject.CompareTag("Ground"))
             {
                 playerScript.isGrounded = false;
+                playerScript.spriteAnimator.SetBool("isGrounded", false);
             }
         }
     }

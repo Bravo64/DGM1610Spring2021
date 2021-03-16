@@ -7,9 +7,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] 
-    private float movementSpeed = 8.0f;
+    private float movementSpeed = 9.0f;
     [SerializeField]
-    private float jumpForce = 800.0f;
+    private float jumpForce = 900.0f;
+    public Animator spriteAnimator;
     
     [HideInInspector]
     public bool isGrounded = false;
@@ -33,14 +34,15 @@ public class Player : MonoBehaviour
             var myScale = transform.localScale;
             if (horizontal > 0)
             {
-                myScale.x = -math.abs(myScale.x);
+                myScale.x = math.abs(myScale.x);
             }
             else
             {
-                myScale.x = math.abs(myScale.x);
+                myScale.x = -math.abs(myScale.x);
             }
             transform.localScale = myScale;
             _myRigidbody2D.velocity = _myVelocity;
+            spriteAnimator.SetBool("walking", true);
         }
         
         if (Input.GetButtonUp("Horizontal"))
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
             var horizontal = Input.GetAxis("Horizontal");
             _myVelocity.x = (horizontal * currentSpeed) * 0.6f;
             _myRigidbody2D.velocity = _myVelocity;
+            spriteAnimator.SetBool("walking", false);
         }
         
         if (Input.GetButtonDown("Jump") && isGrounded)

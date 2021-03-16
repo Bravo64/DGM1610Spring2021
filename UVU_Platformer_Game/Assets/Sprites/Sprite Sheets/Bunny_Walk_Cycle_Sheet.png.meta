@@ -1,0 +1,972 @@
+fileFormatVersion: 2
+guid: 2954f0db7406848069186be1f9e484df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1040324289078600160
+    second: Bunny_Walk_Cycle_Sheet_0
+  - first:
+      213: -1475311529043422073
+    second: Bunny_Walk_Cycle_Sheet_1
+  - first:
+      213: -1745665793075949360
+    second: Bunny_Walk_Cycle_Sheet_2
+  - first:
+      213: 9090175386235102658
+    second: Bunny_Walk_Cycle_Sheet_3
+  - first:
+      213: -1193642935824468302
+    second: Bunny_Walk_Cycle_Sheet_4
+  - first:
+      213: -1394587908052213203
+    second: Bunny_Walk_Cycle_Sheet_5
+  - first:
+      213: 6204419279906592863
+    second: Bunny_Walk_Cycle_Sheet_6
+  - first:
+      213: 4899027385433540216
+    second: Bunny_Walk_Cycle_Sheet_7
+  - first:
+      213: -2942848218393703740
+    second: Bunny_Walk_Cycle_Sheet_8
+  - first:
+      213: -1909866007071722034
+    second: Bunny_Walk_Cycle_Sheet_9
+  - first:
+      213: -5851464663556478795
+    second: Bunny_Walk_Cycle_Sheet_10
+  - first:
+      213: 6677649331699571468
+    second: Bunny_Walk_Cycle_Sheet_11
+  - first:
+      213: -2576025862192722061
+    second: Bunny_Walk_Cycle_Sheet_12
+  - first:
+      213: 2414845555998511329
+    second: Bunny_Walk_Cycle_Sheet_13
+  - first:
+      213: -6060406464290741068
+    second: Bunny_Walk_Cycle_Sheet_14
+  - first:
+      213: -6425465304777232516
+    second: Bunny_Walk_Cycle_Sheet_15
+  - first:
+      213: 1102617455769476688
+    second: Bunny_Walk_Cycle_Sheet_16
+  - first:
+      213: 2215773249806098658
+    second: Bunny_Walk_Cycle_Sheet_17
+  - first:
+      213: -5760912389682018874
+    second: Bunny_Walk_Cycle_Sheet_18
+  - first:
+      213: 8150854591338928152
+    second: Bunny_Walk_Cycle_Sheet_19
+  - first:
+      213: 2490323787960540609
+    second: Bunny_Walk_Cycle_Sheet_20
+  - first:
+      213: -3290262662999836114
+    second: Bunny_Walk_Cycle_Sheet_21
+  - first:
+      213: -4333054849462166169
+    second: Bunny_Walk_Cycle_Sheet_22
+  - first:
+      213: 6034702752336190500
+    second: Bunny_Walk_Cycle_Sheet_23
+  - first:
+      213: 5158167131942249603
+    second: Bunny_Walk_Cycle_Sheet_24
+  - first:
+      213: 3649401613488580357
+    second: Bunny_Walk_Cycle_Sheet_25
+  - first:
+      213: 1158485946880217338
+    second: Bunny_Walk_Cycle_Sheet_26
+  - first:
+      213: 8754760782597674454
+    second: Bunny_Walk_Cycle_Sheet_27
+  - first:
+      213: -6575799748675824611
+    second: Bunny_Walk_Cycle_Sheet_28
+  - first:
+      213: 4075593621722862568
+    second: Bunny_Walk_Cycle_Sheet_29
+  - first:
+      213: -7481336417814181220
+    second: Bunny_Walk_Cycle_Sheet_30
+  - first:
+      213: 1406166869502114924
+    second: Bunny_Walk_Cycle_Sheet_31
+  - first:
+      213: -1606650576819858414
+    second: Bunny_Walk_Cycle_Sheet_32
+  - first:
+      213: -1868045956013948327
+    second: Bunny_Walk_Cycle_Sheet_33
+  - first:
+      213: -5221046984798962369
+    second: Bunny_Walk_Cycle_Sheet_34
+  - first:
+      213: -8650560949676941292
+    second: Bunny_Walk_Cycle_Sheet_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2495
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e524a22960091f0800000000000000
+      internalID: -1040324289078600160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 2495
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784145a1bf3a68be0800000000000000
+      internalID: -1475311529043422073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 2495
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0582bc53626c7e0800000000000000
+      internalID: -1745665793075949360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 2495
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5ea8a1a5ac62e70800000000000000
+      internalID: 9090175386235102658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2495
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b63785f2145f6fe0800000000000000
+      internalID: -1193642935824468302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 2495
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d222e7cbfad65ace0800000000000000
+      internalID: -1394587908052213203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1996
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58da6076768a1650800000000000000
+      internalID: 6204419279906592863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1996
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8764dad6377dcf340800000000000000
+      internalID: 4899027385433540216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1996
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca80c22327e827d0800000000000000
+      internalID: -2942848218393703740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1996
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec575e74cface75e0800000000000000
+      internalID: -1909866007071722034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1996
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b827f014eb6bcea0800000000000000
+      internalID: -5851464663556478795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 1996
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0bd39effa6cbac50800000000000000
+      internalID: 6677649331699571468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1497
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f88cf602e104cd0800000000000000
+      internalID: -2576025862192722061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1497
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0d8b02d31438120800000000000000
+      internalID: 2414845555998511329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1497
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b4287d1e6c15eba0800000000000000
+      internalID: -6060406464290741068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1497
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fe720595924d6a0800000000000000
+      internalID: -6425465304777232516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1497
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ed84eebb84d4f00800000000000000
+      internalID: 1102617455769476688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 1497
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e06181f70200ce10800000000000000
+      internalID: 2215773249806098658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 998
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c54bd644b02d00b0800000000000000
+      internalID: -5760912389682018874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 998
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8185e94d017ad1170800000000000000
+      internalID: 8150854591338928152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 998
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cdd7157a486f8220800000000000000
+      internalID: 2490323787960540609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 998
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2af9226a83a652d0800000000000000
+      internalID: -3290262662999836114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 998
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d16896295edd3c0800000000000000
+      internalID: -4333054849462166169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 998
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c12161e229fb350800000000000000
+      internalID: 6034702752336190500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 499
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38463876dad759740800000000000000
+      internalID: 5158167131942249603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 499
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50769be9e6745a230800000000000000
+      internalID: 3649401613488580357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 499
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0d31da4d4c31010800000000000000
+      internalID: 1158485946880217338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 499
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5514c0c882f7970800000000000000
+      internalID: 8754760782597674454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 499
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14131af7f01eb4a0800000000000000
+      internalID: -6575799748675824611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 499
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e393a73eca6f8830800000000000000
+      internalID: 4075593621722862568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a0ef27a24fc2890800000000000000
+      internalID: -7481336417814181220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cb89f4155b38310800000000000000
+      internalID: 1406166869502114924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214d97210d704b9e0800000000000000
+      internalID: -1606650576819858414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 0
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9520fafa91e5316e0800000000000000
+      internalID: -1868045956013948327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dfe6bfd6d1b87b0800000000000000
+      internalID: -5221046984798962369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bunny_Walk_Cycle_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 0
+        width: 375
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410e3ae16a803f780800000000000000
+      internalID: -8650560949676941292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
