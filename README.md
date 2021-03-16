@@ -120,4 +120,6 @@ Saturday (SPRING BREAK!!), March 13th, 2021: Heavy Snowfall
 
 Sunday (SPRING BREAK!!), March 14th, 2021: Partly Cloudy
 
+Monday, March 15th, 2021: Mostly Clear
+
 
