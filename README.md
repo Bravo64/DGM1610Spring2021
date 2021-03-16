@@ -122,4 +122,6 @@ Sunday (SPRING BREAK!!), March 14th, 2021: Partly Cloudy
 
 Monday, March 15th, 2021: Mostly Clear
 
+Tuesday, March 16th, 2021: Rain and Lightning
+
 
