@@ -124,4 +124,6 @@ Monday, March 15th, 2021: Mostly Clear
 
 Tuesday, March 16th, 2021: Rain and Lightning
 
+Wednesday, March 17th, 2021: Beautiful, slightly cloudy day!
+
 
