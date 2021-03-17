@@ -12,6 +12,8 @@ public class Animal : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 2.0f;
     [SerializeField]
+    private float speedIncreasePerSecond = 0.2f;
+    [SerializeField]
     private Transform minZMarker;
     [SerializeField]
     private IntData scoreObj;
@@ -32,7 +34,7 @@ public class Animal : MonoBehaviour
 
     void Update()
     {
-        movementSpeed += Time.deltaTime * 0.1f;
+        movementSpeed += speedIncreasePerSecond * Time.deltaTime;
         movement.Set(0,0,-movementSpeed);
         _myRigidbody.velocity = movement;
         

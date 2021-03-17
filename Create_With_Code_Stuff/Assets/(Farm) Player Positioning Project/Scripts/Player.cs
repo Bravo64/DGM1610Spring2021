@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Numerics;
 using GameEvents;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     [SerializeField] 
@@ -32,8 +34,9 @@ public class Player : MonoBehaviour
     private VoidEvent updateLivesText;
 
     private CharacterController _myCharacterController;
+    private Animator _myAnimator;
     private float _horizontalInput;
-    private Vector3 _movement;
+    private Vector3 _movement, _myPosition;
     private int _foodIndex;
 
     void Start()
@@ -43,26 +46,47 @@ public class Player : MonoBehaviour
         scoreObj.value = scoreAtStart;
         updateScoreText.Raise();
         _myCharacterController = GetComponent<CharacterController>();
+        _myAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
-        if (transform.position.x <= minXMarker.position.x && _horizontalInput < 0)
+        _myPosition = transform.position;
+        if (Input.GetButton("Horizontal"))
         {
-            _horizontalInput = 0;
+            _horizontalInput = Input.GetAxis("Horizontal");
+            if (_horizontalInput < 0)
+            {
+                transform.rotation = Quaternion.LookRotation(-Vector3.right);
+                if (transform.position.x <= minXMarker.position.x)
+                {
+                    _horizontalInput = 0;
+                }
+            }
+            else if (_horizontalInput > 0)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.right);
+                if (transform.position.x >= maxXMarker.position.x)
+                {
+                    _horizontalInput = 0;
+                }
+            }
         }
-        else if (transform.position.x >= maxXMarker.position.x && _horizontalInput > 0)
+
+        if (Input.GetButtonUp("Horizontal"))
         {
+            transform.rotation = Quaternion.LookRotation(Vector3.forward);
             _horizontalInput = 0;
         }
 
         _movement.Set(_horizontalInput * movementSpeed, gravity, 0);
+        _myAnimator.SetFloat("Speed_f",  Mathf.Abs(_horizontalInput * movementSpeed));
         _myCharacterController.Move(_movement * Time.deltaTime);
 
         if (Input.GetButtonDown("Jump"))
         {
-            for (int i = 0; i < 10; i++)
+            _myAnimator.SetInteger("Animation_int", 10);
+            for (int i = 0; i < 50; i++)
             {
                 _foodIndex = Random.Range(0, foodObjectPool.Length);
                 if (!foodObjectPool[_foodIndex].activeSelf)
@@ -72,6 +96,15 @@ public class Player : MonoBehaviour
                     break;
                 }
             }
+            
         }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            _myAnimator.SetInteger("Animation_int", 0);
+        }
+
+        _myPosition.Set(transform.position.x, _myPosition.y, _myPosition.z);
+        transform.position = _myPosition;
     }
 }
