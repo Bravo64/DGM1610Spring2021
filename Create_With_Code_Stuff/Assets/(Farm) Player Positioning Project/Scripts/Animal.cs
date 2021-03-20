@@ -25,6 +25,8 @@ public class Animal : MonoBehaviour
     private VoidEvent updateLivesText;
     [SerializeField]
     private GameObject disappearParticle;
+    [SerializeField]
+    private GameObject foodDisappearParticle;
     
     private Rigidbody _myRigidbody;
     private Vector3 movement;
@@ -55,6 +57,10 @@ public class Animal : MonoBehaviour
             scoreObj.value++;
             updateScoreText.Raise();
             other.gameObject.SetActive(false);
+            disappearParticle.SetActive(true);
+            disappearParticle.transform.position = transform.position;
+            foodDisappearParticle.SetActive(true);
+            foodDisappearParticle.transform.position = other.transform.position;
             gameObject.SetActive(false);
         }
     }
