@@ -23,6 +23,8 @@ public class Animal : MonoBehaviour
     private IntData livesObj;
     [SerializeField]
     private VoidEvent updateLivesText;
+    [SerializeField]
+    private GameObject disappearParticle;
     
     private Rigidbody _myRigidbody;
     private Vector3 movement;
