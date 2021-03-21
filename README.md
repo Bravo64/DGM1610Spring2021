@@ -132,4 +132,6 @@ Friday, March 19th, 2021: Warm, Mostly Clear
 
 Saturday, March 20th, 2021: Rainy
 
+Sunday, March 21st, 2021: Mostly Cloudy
+
 
