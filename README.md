@@ -130,4 +130,6 @@ Thusday, March 18th, 2021: Partly Cloudy
 
 Friday, March 19th, 2021: Warm, Mostly Clear
 
+Saturday, March 20th, 2021: Rainy
+
 
