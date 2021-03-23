@@ -136,4 +136,6 @@ Sunday, March 21st, 2021: Mostly Cloudy
 
 Monday, March 22st, 2021: Partly Cloudy (and a bit breezy)
 
+Tuesday, March 23rd, 2021: Mostly Cloudy
+
 
