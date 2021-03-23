@@ -12,49 +12,36 @@ public class Player : MonoBehaviour
     private float gravity = -9.81f;
     [SerializeField]
     private float jumpForce = 175f;
-    [SerializeField] 
-    private float jumpForceSmoothDecrease = 500.0f;
-    [SerializeField] 
+    [SerializeField]
     private float mouseTurnSensitivity = 10.0f;
     
     private CharacterController _myCharacterController;
     private Vector3 _moveDirection;
-    private float _verticalInput, _horizontalInput, _mouseMovementX;
-    private float _currentJumpForce;
-    private float _currentGravity;
+    private float yDirection;
 
     void Start()
     {
         _myCharacterController = GetComponent<CharacterController>();
-        _currentJumpForce = 0.0f;
     }
     
     void Update()
     {
-        if (_currentJumpForce > 0)
+        _moveDirection.Set(movementSpeed * Input.GetAxis("Horizontal"), yDirection, movementSpeed * Input.GetAxis("Vertical"));
+
+        yDirection += gravity * Time.deltaTime;
+        
+        if (_myCharacterController.isGrounded && _moveDirection.y < 0)
         {
-            _currentJumpForce -= jumpForceSmoothDecrease * Time.deltaTime;
+            yDirection = -1;
         }
-        _verticalInput = Input.GetAxis("Vertical");
-        _horizontalInput = Input.GetAxis("Horizontal");
-        _mouseMovementX = Input.GetAxis("Mouse X");
-        if (_myCharacterController.isGrounded)
+
+        if (Input.GetButtonDown("Jump"))
         {
-            _currentGravity = gravity;
-            if (Input.GetButtonDown("Jump"))
-            {
-                _currentJumpForce = jumpForce;
-            }
+            yDirection = jumpForce;
         }
-        else
-        {
-            _currentGravity += gravity * 1.5f * Time.deltaTime;
-        }
-        _moveDirection.Set(_horizontalInput * movementSpeed,
-            _currentGravity + _currentJumpForce,
-                      _verticalInput * movementSpeed);
+        
         _moveDirection = transform.TransformDirection(_moveDirection);
         _myCharacterController.Move(_moveDirection * Time.deltaTime);
-        transform.Rotate(transform.up * (_mouseMovementX * mouseTurnSensitivity));
+        transform.Rotate(transform.up * (Input.GetAxis("Mouse X") * mouseTurnSensitivity));
     }
 }
