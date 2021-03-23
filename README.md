@@ -134,4 +134,6 @@ Saturday, March 20th, 2021: Rainy
 
 Sunday, March 21st, 2021: Mostly Cloudy
 
+Monday, March 22st, 2021: Partly Cloudy (and a bit breezy)
+
 
