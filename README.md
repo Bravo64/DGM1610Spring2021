@@ -138,4 +138,6 @@ Monday, March 22st, 2021: Partly Cloudy (and a bit breezy)
 
 Tuesday, March 23rd, 2021: Mostly Cloudy
 
+Wednesday, March 24rd, 2021: Slightly Cloudy
+
 
