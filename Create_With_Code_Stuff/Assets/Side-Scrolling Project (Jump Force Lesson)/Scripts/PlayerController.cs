@@ -62,29 +62,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            _isGrounded = true;
-            _myAnimator.SetBool("Grounded", true);
-            runParticle.Play();
-        }
-
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            StartCoroutine(Dead());
-        }
+        _isGrounded = true;
+        _myAnimator.SetBool("Grounded", true);
+        runParticle.Play();
     }
     
     private void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            _isGrounded = false;
-            _myAnimator.SetBool("Grounded", false);
-        }
+        _isGrounded = false;
+        _myAnimator.SetBool("Grounded", false);
     }
 
-    IEnumerator Dead()
+    public void PlayerDead()
+    {
+        StartCoroutine(GameOver());
+    }
+    
+    IEnumerator GameOver()
     {
         if (!_deathSetupComplete)
         {
