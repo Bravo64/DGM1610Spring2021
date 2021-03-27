@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using GameEvents;
 using UnityEngine;
@@ -50,23 +51,8 @@ public class PlayerControllerX : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        // if player collides with bomb, explode and set gameOver to true
-        if (other.gameObject.CompareTag("Bomb"))
-        {
-            other.gameObject.SetActive(false);
-            StartCoroutine(Dead());
-        } 
-
-        // if player collides with money, fireworks
-        else if (other.gameObject.CompareTag("Money"))
-        {
-            fireworksParticle.Play();
-            playerAudio.PlayOneShot(moneySound, 1.0f);
-            other.gameObject.SetActive(false);
-
-        }
         
-        else if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             playerRb.AddForce(Vector3.up * groundBounceForce, ForceMode.Impulse);
             playerAudio.PlayOneShot(bounceSound);
@@ -74,7 +60,18 @@ public class PlayerControllerX : MonoBehaviour
 
     }
 
-    IEnumerator Dead()
+    public void CollectedMoney()
+    {
+        fireworksParticle.Play();
+        playerAudio.PlayOneShot(moneySound, 1.0f);
+    }
+
+    public void TouchedABomb()
+    {
+        StartCoroutine(Dead());
+    }
+
+    public IEnumerator Dead()
     {
         playerRenderer.enabled = false;
         playerRb.constraints = RigidbodyConstraints.FreezeAll;
