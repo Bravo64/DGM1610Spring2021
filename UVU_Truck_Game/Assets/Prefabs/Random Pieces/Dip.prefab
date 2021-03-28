@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 102620133}
   - component: {fileID: 102620135}
   - component: {fileID: 102620134}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Layer (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!1 &493433582
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ GameObject:
   - component: {fileID: 493433583}
   - component: {fileID: 493433586}
   - component: {fileID: 493433585}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Top Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!1 &741735875
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +333,7 @@ GameObject:
   - component: {fileID: 741735876}
   - component: {fileID: 741735878}
   - component: {fileID: 741735877}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Layer (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,6 +482,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!1 &819368672
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +494,7 @@ GameObject:
   - component: {fileID: 819368673}
   - component: {fileID: 819368675}
   - component: {fileID: 819368674}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Layer (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,6 +643,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!1 &2014082780
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +655,7 @@ GameObject:
   - component: {fileID: 2014082781}
   - component: {fileID: 2014082783}
   - component: {fileID: 2014082782}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Layer (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,6 +804,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!1 &2119283838
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +816,7 @@ GameObject:
   - component: {fileID: 2119283839}
   - component: {fileID: 2119283841}
   - component: {fileID: 2119283840}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Layer (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,6 +965,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!1 &5712271754710131
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +978,7 @@ GameObject:
   - component: {fileID: 9191309499162109351}
   - component: {fileID: 2640022301646226731}
   - component: {fileID: 5565694590546118043}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1122,6 +1128,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
+  m_UTess2D: 0
 --- !u!60 &5565694590546118043
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1233,7 +1240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5757920995864978402}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}

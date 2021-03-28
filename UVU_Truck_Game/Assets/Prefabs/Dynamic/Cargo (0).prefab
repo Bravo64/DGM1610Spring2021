@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6180811781293432710}
   - component: {fileID: 2079278070225347735}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3723118549623968955}
   - component: {fileID: 3942677726583909009}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7200274921669638695}
   - component: {fileID: 3400230879370180327}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2056374063693355215}
   - component: {fileID: 739083459781808173}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6660180768861979901}
   - component: {fileID: 7620163266585304736}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4947417452091186126}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3468333392435961158}
   - component: {fileID: 3468333392435961159}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Blue Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 2790270765762469886}
   - component: {fileID: 3468333393720283829}
   - component: {fileID: 3468333393720283828}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cargo (0)
   m_TagString: Crate
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9014024374358363761}
   - component: {fileID: 2056367376843086351}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5611089911086142617}
   - component: {fileID: 7510480216602503650}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3934824019033058402}
   - component: {fileID: 7571042803212059532}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 7352931643408832747}
   - component: {fileID: 1554549974452924730}
   - component: {fileID: 1442059917198975025}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Blue Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +919,7 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4543492304632087850}
-  serializedVersion: 6
+  serializedVersion: 7
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
@@ -4549,19 +4549,20 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -4735,17 +4736,20 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -5761,7 +5765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5679755583192325602}
   - component: {fileID: 8765076314668180017}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5842,7 +5846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2334117075988614910}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5878,7 +5882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246671267432925984}
   - component: {fileID: 352761341958202054}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5960,7 +5964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6299444326321313525}
   - component: {fileID: 6739387318828604604}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6042,7 +6046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6770446682174956465}
   - component: {fileID: 2160172204226535652}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6124,7 +6128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6274533474295430169}
   - component: {fileID: 2950735573679702087}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Black Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6206,7 +6210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5966595275430926285}
   - component: {fileID: 2412316327302745623}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6287,7 +6291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8865279884803660909}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6328,7 +6332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4463412009450921417}
   - component: {fileID: 6980492736993456855}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6410,7 +6414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661538584866440104}
   - component: {fileID: 4446137267099378690}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6492,7 +6496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2667926658215508586}
   - component: {fileID: 5685990430032957769}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6574,7 +6578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586620291435763902}
   - component: {fileID: 2538695196950163518}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6656,7 +6660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7815445117718708114}
   - component: {fileID: 5460675407863145014}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6738,7 +6742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7411676601938417666}
   - component: {fileID: 4759695645777300210}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6822,7 +6826,7 @@ GameObject:
   - component: {fileID: 5911144492927234936}
   - component: {fileID: 2656883677944300242}
   - component: {fileID: 3267031037433700725}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Crate Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6850,7 +6854,7 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8456189293304883816}
-  serializedVersion: 6
+  serializedVersion: 7
   lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 1
@@ -10422,19 +10426,20 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -10608,17 +10613,20 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -11729,7 +11737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8904023744502085617}
   - component: {fileID: 7572077818383200904}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11811,7 +11819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8809068438395303044}
   - component: {fileID: 1822579102907257850}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bridge Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 90020407}
   - component: {fileID: 90020406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96070046}
   - component: {fileID: 96070045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218765419}
   - component: {fileID: 218765418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 276230138}
   - component: {fileID: 276230137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 287382396}
   - component: {fileID: 287382395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 306411279}
   - component: {fileID: 306411278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310747415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Truck Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375398795}
   - component: {fileID: 375398794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375509495}
   - component: {fileID: 375509494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386768275}
   - component: {fileID: 386768274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407315379}
   - component: {fileID: 407315380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458406772}
   - component: {fileID: 458406771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515929087}
   - component: {fileID: 515929086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553250043}
   - component: {fileID: 553250042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584033936}
   - component: {fileID: 584033937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634251829}
   - component: {fileID: 634251828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792226983}
   - component: {fileID: 792226982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,7 +1382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792338044}
   - component: {fileID: 792338043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806800100}
   - component: {fileID: 806800101}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958869313}
   - component: {fileID: 958869312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1628,7 +1628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1005006246}
   - component: {fileID: 1005006245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1710,7 +1710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1014919709}
   - component: {fileID: 1014919708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1792,7 +1792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1056460197}
   - component: {fileID: 1056460196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1874,7 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076800304}
   - component: {fileID: 1076800303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 1215557286}
   - component: {fileID: 1215557288}
   - component: {fileID: 1215557287}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fuel Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2039,7 +2039,7 @@ GameObject:
   - component: {fileID: 1233845840}
   - component: {fileID: 1233845839}
   - component: {fileID: 1233845838}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fuel Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,6 +2110,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1233845838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,7 +2139,7 @@ GameObject:
   - component: {fileID: 1236968631}
   - component: {fileID: 1236968630}
   - component: {fileID: 8285743466482270398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colored Piece Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2239,7 +2240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244006671}
   - component: {fileID: 1244006670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2321,7 +2322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1264580943}
   - component: {fileID: 1264580942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2403,7 +2404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388278892}
   - component: {fileID: 1388278891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,7 +2486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1495163511}
   - component: {fileID: 1495163510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2567,7 +2568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1630734939}
   - component: {fileID: 1630734938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788163101}
   - component: {fileID: 1788163100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2731,7 +2732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2050198334}
   - component: {fileID: 2050198333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2813,7 +2814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2121647218}
   - component: {fileID: 2121647217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2895,7 +2896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4270752400954030360}
   - component: {fileID: 4772384919443937154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Small Piece (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2977,7 +2978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3354767717796701504}
   - component: {fileID: 4320637208422334291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acceleration Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3104,7 +3105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7465064072812728580}
   - component: {fileID: 3489478478976940720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hub Cap (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3185,7 +3186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6837453018040781901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fuel Meter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3227,7 +3228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1451679188679294090}
   - component: {fileID: 8356988869383787748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Small Piece (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3309,7 +3310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262899754046016348}
   - component: {fileID: 2209262404412050908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Color Strip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3391,7 +3392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138883683894909441}
   - component: {fileID: 2414497586075340272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (8)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -3473,7 +3474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6153332048388156705}
   - component: {fileID: 121506688457853575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (10)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -3555,7 +3556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6335935683455808230}
   - component: {fileID: 8873662432755393460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3637,7 +3638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538023083098466066}
   - component: {fileID: 2714584918577835349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3718,7 +3719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6272170179076279972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColoredPieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3762,7 +3763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3283898401784037350}
   - component: {fileID: 4508195655988973199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (5)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -3844,7 +3845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801403758147249}
   - component: {fileID: 3454801403758147250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hub Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3926,7 +3927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801403845085747}
   - component: {fileID: 3454801403845085772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4010,7 +4011,7 @@ GameObject:
   - component: {fileID: 3454801403867933757}
   - component: {fileID: 3454801403867933758}
   - component: {fileID: 3454801403867933759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back Wheel Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4106,7 +4107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801403891533372}
   - component: {fileID: 3454801403891533374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Axel Connector Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4188,7 +4189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801404183126390}
   - component: {fileID: 3454801404183126391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4270,7 +4271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801404402842797}
   - component: {fileID: 3454801404402842798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4352,7 +4353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801404629577930}
   - component: {fileID: 3454801404629577924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Axel Connector Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4434,7 +4435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801404672684116}
   - component: {fileID: 3454801404672684117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4516,7 +4517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801404857977915}
   - component: {fileID: 3454801404857977908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4598,7 +4599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801404981391553}
   - component: {fileID: 3454801404981391554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4680,7 +4681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801405110778578}
   - component: {fileID: 3454801405110778579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hub Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4766,7 @@ GameObject:
   - component: {fileID: 3454801405152170969}
   - component: {fileID: 3454801405152170970}
   - component: {fileID: 3454801405152170971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back Wheel
   m_TagString: Wheel
   m_Icon: {fileID: 0}
@@ -4914,7 +4915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801405380571605}
   - component: {fileID: 3454801405380571606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4998,7 +4999,7 @@ GameObject:
   - component: {fileID: 3454801405395643096}
   - component: {fileID: 3454801405395643098}
   - component: {fileID: 3454801405395643099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front Wheel
   m_TagString: Wheel
   m_Icon: {fileID: 0}
@@ -5124,7 +5125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801405457799617}
   - component: {fileID: 3454801405457799618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hub Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5209,7 +5210,7 @@ GameObject:
   - component: {fileID: 3454801405459434989}
   - component: {fileID: 7672833996745744513}
   - component: {fileID: 5443126536279875359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Garbage Truck (0)
   m_TagString: Vehicle
   m_Icon: {fileID: 0}
@@ -5439,7 +5440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454801405596501091}
   - component: {fileID: 3454801405596501116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5523,7 +5524,7 @@ GameObject:
   - component: {fileID: 3454801405679981217}
   - component: {fileID: 3454801405679981218}
   - component: {fileID: 3454801405679981219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front Wheel Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5618,7 +5619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7547817573058157641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fuel Color Strip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5650,7 +5651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2282688317191446990}
   - component: {fileID: 5059402837684319951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Small Piece (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5732,7 +5733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7910053428266488680}
   - component: {fileID: 8763106888388145885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5814,7 +5815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7997362265466823533}
   - component: {fileID: 2265218201689976004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (12)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -5896,7 +5897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2295041259270402663}
   - component: {fileID: 2978556494098523886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Small Piece (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5978,7 +5979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2565816520289825946}
   - component: {fileID: 6466289509349658060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6060,7 +6061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3139537625741763781}
   - component: {fileID: 6217750997009005280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hub Cap (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6142,7 +6143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5459555445916500401}
   - component: {fileID: 2984515108449416291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (11)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -6224,7 +6225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6798151799547224657}
   - component: {fileID: 1201090132603501807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Roof Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6281,7 +6282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575257497677582808}
   - component: {fileID: 2628655465251240733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Small Piece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6363,7 +6364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8780751716900850753}
   - component: {fileID: 5275550038927918648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (6)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -6447,7 +6448,7 @@ GameObject:
   - component: {fileID: 4291367339603524390}
   - component: {fileID: 7234263663404519172}
   - component: {fileID: 7088517813828838235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weight Balancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6533,7 +6534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7868722915441233917}
   - component: {fileID: 7534669756323902120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gray Outline (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6615,7 +6616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4555421015849533224}
   - component: {fileID: 6633938775750675055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (9)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -6698,7 +6699,7 @@ GameObject:
   - component: {fileID: 1057740693119241446}
   - component: {fileID: 703669894637628267}
   - component: {fileID: 2126522473243573638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yellow Speed Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6726,7 +6727,7 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7782236448417502775}
-  serializedVersion: 6
+  serializedVersion: 7
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
@@ -10356,19 +10357,20 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -10542,17 +10544,20 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -11568,7 +11573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3878765919482469781}
   - component: {fileID: 4422497067228073985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gray Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11650,7 +11655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7073443052077764536}
   - component: {fileID: 5538903763456874162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Impact Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11778,7 +11783,7 @@ GameObject:
   - component: {fileID: 8925365381576653918}
   - component: {fileID: 2456814871017471898}
   - component: {fileID: 5768031767260016391}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fuel Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11858,7 +11863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5955520486554784806}
   - component: {fileID: 410183055870169844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Decoration (7)
   m_TagString: ColoredPiece
   m_Icon: {fileID: 0}
@@ -11940,7 +11945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859919047238457300}
   - component: {fileID: 8809446289225570566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Small Piece (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -261,6 +261,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: secondsOfFuel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: fuelStripImage
       value: 
       objectReference: {fileID: 4047515474685195887}
@@ -316,6 +320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup
@@ -373,6 +381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup
@@ -430,6 +442,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup (1)
@@ -540,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1587343321}
+    - target: {fileID: 1781933067517251966, guid: 24ecce54402454432b1aa9a8b103713b, type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1781933067517251967, guid: 24ecce54402454432b1aa9a8b103713b, type: 3}
       propertyPath: m_Name
       value: Virtual Cam
@@ -564,6 +584,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup (4)
@@ -621,6 +645,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup (3)
@@ -780,6 +808,10 @@ PrefabInstance:
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: carImportance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
+      propertyPath: secondsOfFuel
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3454801405459434990, guid: 2bd88342c468c43998498388f23f39d2, type: 3}
       propertyPath: fuelStripImage
@@ -942,6 +974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup (2)
@@ -1004,6 +1040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup (5)
@@ -1061,6 +1101,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup (6)
@@ -1166,6 +1210,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3812250401462147338, guid: 69565cf4d48f24d23bf03dca41209a40, type: 3}
+      propertyPath: far clip plane
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812250401462147338, guid: 69565cf4d48f24d23bf03dca41209a40, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812250401462147338, guid: 69565cf4d48f24d23bf03dca41209a40, type: 3}
+      propertyPath: orthographic size
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69565cf4d48f24d23bf03dca41209a40, type: 3}
 --- !u!1001 &2075705399
@@ -1175,6 +1231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup
@@ -2330,11 +2390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870854352410970201, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3870854352410970201, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.9
       objectReference: {fileID: 0}
     - target: {fileID: 3870854352410970201, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2371,6 +2431,22 @@ PrefabInstance:
     - target: {fileID: 3870854352410970202, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
       propertyPath: m_Name
       value: 4 Coin Formation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104210734837691312, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104210735306007291, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104210736270007442, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104210736615794167, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23a7ab56aa3043879fb54bb23fffd84, type: 3}
@@ -2409,6 +2485,14 @@ PrefabInstance:
     - target: {fileID: 945215762, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -47.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760840273, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 162.10803
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760840273, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -42.06897
       objectReference: {fileID: 0}
     - target: {fileID: 1760840274, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Name
@@ -2494,9 +2578,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text Updater
       objectReference: {fileID: 0}
+    - target: {fileID: 4047515475904811243, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047515475931911633, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.900024
+      objectReference: {fileID: 0}
     - target: {fileID: 4047515475931911638, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Name
       value: Score Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153251026645906012, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8458580135927121007, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_Name
@@ -2509,6 +2605,10 @@ PrefabInstance:
     - target: {fileID: 8813374010271046749, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925365381048457385, guid: e71344b7470104577b9d131c8029e164, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 162.10803
       objectReference: {fileID: 0}
     - target: {fileID: 8925365381048457385, guid: e71344b7470104577b9d131c8029e164, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2954,6 +3054,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672174750}
     m_Modifications:
+    - target: {fileID: 166491600088305798, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6630810033985187522, guid: 73b340bd30d174f4c89610d7229a8cab, type: 3}
       propertyPath: m_Name
       value: Coin Pickup
@@ -4313,7 +4417,7 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9008978305355520940}
-  serializedVersion: 6
+  serializedVersion: 7
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
@@ -7943,19 +8047,20 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -8129,17 +8234,20 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0

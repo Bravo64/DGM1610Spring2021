@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 9191029061995078032}
   - component: {fileID: 6741928377872962930}
   m_Layer: 5
-  m_Name: Out Of Fuel
+  m_Name: Out of Fuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
 --- !u!114 &9191029061995078032
 MonoBehaviour:
   m_ObjectHideFlags: 0

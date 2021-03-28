@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 465632467021621757}
   - component: {fileID: 465632467021621755}
   - component: {fileID: 465632467021621756}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Yellow Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465632467021621758}
-  serializedVersion: 6
+  serializedVersion: 7
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
@@ -3669,19 +3669,20 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 4
     type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    plane0: {fileID: 0}
-    plane1: {fileID: 0}
-    plane2: {fileID: 0}
-    plane3: {fileID: 0}
-    plane4: {fileID: 0}
-    plane5: {fileID: 0}
+    m_Planes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -3855,17 +3856,20 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
-    collisionShape1: {fileID: 0}
-    collisionShape2: {fileID: 0}
-    collisionShape3: {fileID: 0}
-    collisionShape4: {fileID: 0}
-    collisionShape5: {fileID: 0}
+    serializedVersion: 2
     inside: 1
     outside: 0
     enter: 0
     exit: 0
+    colliderQueryMode: 0
     radiusScale: 1
+    primitives:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -4881,7 +4885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632467274275352}
   - component: {fileID: 465632467274275348}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (7)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -4963,7 +4967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632467413706339}
   - component: {fileID: 465632467413706271}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5045,7 +5049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632467732860696}
   - component: {fileID: 465632467732860695}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (3)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5127,7 +5131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632467755433756}
   - component: {fileID: 465632467755433755}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Item Mover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5180,7 +5184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632467873036920}
   - component: {fileID: 465632467873036916}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5262,7 +5266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632468132510027}
   - component: {fileID: 465632468132510023}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (4)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5344,7 +5348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632468471465694}
   - component: {fileID: 465632468471465693}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (4)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5426,7 +5430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632468632775253}
   - component: {fileID: 465632468632775249}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (5)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5508,7 +5512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632468779969657}
   - component: {fileID: 465632468779969656}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5590,7 +5594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465632468871983448}
   - component: {fileID: 465632468871983444}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (6)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5675,7 +5679,7 @@ GameObject:
   - component: {fileID: 6083787596318828164}
   - component: {fileID: 8866102836995678334}
   - component: {fileID: 1172372384691166562}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Super Fuel Pickup
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5777,7 +5781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6870379505027383878}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5808,7 +5812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 561599862951604551}
   - component: {fileID: 3113337247459756523}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5890,7 +5894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2159043636839854805}
   - component: {fileID: 201240063958337362}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -5972,7 +5976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6037716960477021394}
   - component: {fileID: 3314821994825481346}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (5)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6053,7 +6057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312054347913936746}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6084,7 +6088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4220587308602882710}
   - component: {fileID: 6566709400609827734}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (8)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6166,7 +6170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2325256331712326648}
   - component: {fileID: 101174548226466923}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6247,7 +6251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6043891707590333030}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6280,7 +6284,7 @@ GameObject:
   - component: {fileID: 1773202079643743961}
   - component: {fileID: 305645063196798192}
   - component: {fileID: 4203447862128815352}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6409,7 +6413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427808205498249894}
   - component: {fileID: 3211824952044907093}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6491,7 +6495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5065759707976071726}
   - component: {fileID: 4531090294638029841}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6572,7 +6576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4235716509901980869}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6602,7 +6606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5865848126582364719}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Ghostly Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6636,7 +6640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379977192120062643}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Bright Outline (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6671,7 +6675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6216726400666966943}
   - component: {fileID: 2891981296169222292}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (3)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6753,7 +6757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4212340911284030730}
   - component: {fileID: 7452999408858820218}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (4)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6835,7 +6839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8717451972134628425}
   - component: {fileID: 1117477424720007775}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -6917,7 +6921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5408159945564332817}
   - component: {fileID: 4244691325458726084}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Super Fuel Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7044,7 +7048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2754605842346554451}
   - component: {fileID: 6367541734879637336}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (3)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -7125,7 +7129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1087180704592189453}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7156,7 +7160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213135303001256815}
   - component: {fileID: 8778418966626790149}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -7237,7 +7241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8650191695266485142}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7278,7 +7282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3490389065865518588}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Red Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7311,7 +7315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196375441554984279}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Red Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7347,7 +7351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5873793369349853088}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7378,7 +7382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091120402641413512}
   - component: {fileID: 4834669897813538808}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -7460,7 +7464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505662048422895252}
   - component: {fileID: 8505662048422895256}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprite (6)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -7541,7 +7545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5009810844156592500}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Super Fuel Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

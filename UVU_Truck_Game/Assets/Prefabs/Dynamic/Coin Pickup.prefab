@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793467564978464701}
   - component: {fileID: 2745759546426432551}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Item Mover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8032913224982682407}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2167705765077391529}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3001730725901024155}
   - component: {fileID: 3593178291532361726}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Coin Highlight
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5316396066169297786}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 958453550378686781}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810033370461422}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Bright Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810033432558936}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810033528321310}
   - component: {fileID: 6630810033528321311}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810033618024974}
   - component: {fileID: 6630810033618024975}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -496,9 +496,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810033828433446}
   - component: {fileID: 391647411}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Coin
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810033859272255}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Back of Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810033879930601}
   - component: {fileID: 6630810033879930602}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810033985187523}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Coin Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034038198646}
   - component: {fileID: 6630810034038198647}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034045087253}
   - component: {fileID: 6630810034045087254}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034095714551}
   - component: {fileID: 6630810034095714544}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -938,7 +938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034118856250}
   - component: {fileID: 6630810034118856251}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (0)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034130941991}
   - component: {fileID: 6630810034130941984}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Coin Thickness
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1101,7 +1101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810034159396856}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Dark Orange Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1135,7 +1135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034177228376}
   - component: {fileID: 6630810034177228377}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1217,7 +1217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034180340720}
   - component: {fileID: 6630810034180340721}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1298,7 +1298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810034191889470}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Front of Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1334,7 +1334,8 @@ GameObject:
   - component: {fileID: 8504168321072983217}
   - component: {fileID: 1252400312}
   - component: {fileID: 1252400311}
-  m_Layer: 0
+  - component: {fileID: 7469894703744928503}
+  m_Layer: 22
   m_Name: Coin - Floating
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,6 +1408,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7469894703744928503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630810034417599010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a1e2e0ef6474390a1adfa31867ea50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger2DEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8504168321072983217}
+        m_TargetAssemblyTypeName: CoinPickup, Assembly-CSharp
+        m_MethodName: CoinCollected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6630810034671484823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034671484816}
   - component: {fileID: 6630810034671484817}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1499,7 +1527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810034955064949}
   - component: {fileID: 6630810034955064950}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (2)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1580,7 +1608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810035031095869}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Dark Orange Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1613,7 +1641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630810035040627826}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Yellow Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630810035041168497}
   - component: {fileID: 6630810035041168498}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square (1)
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -1728,7 +1756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3028450668976398318}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1758,7 +1786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6645587142127668248}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Waypoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

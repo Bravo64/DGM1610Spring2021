@@ -18,27 +18,27 @@ TagManager:
   - 
   - Water
   - UI
+  - Player
   - 
   - 
   - 
+  - Destroyable
   - 
   - 
   - 
+  - Ground
   - 
   - 
   - 
+  - Crate
+  - CrateTrigger
+  - 
+  - 
+  - Pickup
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DeathWall
   - 
   - 
   - 
