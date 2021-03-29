@@ -146,4 +146,6 @@ Friday, March 26th, 2021: Raining, Cloudy
 
 Saturday, March 27th, 2021: Sunny, Slightly Breezy
 
+Sunday, March 28th, 2021: Sunny
+
 
