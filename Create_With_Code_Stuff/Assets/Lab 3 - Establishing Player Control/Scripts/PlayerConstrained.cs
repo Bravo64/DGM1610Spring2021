@@ -13,8 +13,6 @@ public class PlayerConstrained : MonoBehaviour
     [SerializeField]
     private float jumpForce = 175f;
     [SerializeField]
-    private float mouseTurnSensitivity = 10.0f;
-    [SerializeField]
     private Transform minXMarker;
     [SerializeField]
     private Transform maxXMarker;
