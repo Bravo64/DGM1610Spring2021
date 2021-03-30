@@ -148,4 +148,6 @@ Saturday, March 27th, 2021: Sunny, Slightly Breezy
 
 Sunday, March 28th, 2021: Sunny
 
+Monday, March 29th, 2021: Partly Cloudy, Windy
+
 
