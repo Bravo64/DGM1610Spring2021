@@ -25,7 +25,7 @@ public class PlatformMover : MonoBehaviour
         _currentWaypoint = Random.Range(0, waypoints.Count);
     }
     
-    void Update()
+    void FixedUpdate()
     {
         platformObject.position = Vector3.MoveTowards(platformObject.position, waypoints[_currentWaypoint].position, movementSpeed * Time.deltaTime);
 

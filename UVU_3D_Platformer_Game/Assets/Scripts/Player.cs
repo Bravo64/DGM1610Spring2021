@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         _myCharacterController = GetComponent<CharacterController>();
     }
     
-    void Update()
+    void LateUpdate()
     {
         _moveDirection.Set(movementSpeed * Input.GetAxis("Horizontal"), yDirection, movementSpeed * Input.GetAxis("Vertical"));
 
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         
         if (_myCharacterController.isGrounded && _moveDirection.y < 0)
         {
-            yDirection = -1;
+            yDirection = -5;
         }
 
         if (Input.GetButtonDown("Jump"))
