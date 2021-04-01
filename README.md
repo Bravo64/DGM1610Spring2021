@@ -152,4 +152,6 @@ Monday, March 29th, 2021: Partly Cloudy, Windy
 
 Tuesday, March 30th, 2021: Partly Cloudy, Sunny and Warm
 
+Wednesday, March 31st, 2021: Clear Skies, slightly cold breeze
+
 
