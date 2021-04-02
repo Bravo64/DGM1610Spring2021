@@ -13,6 +13,8 @@ public class PlayerConstrained : MonoBehaviour
     [SerializeField]
     private float jumpForce = 175f;
     [SerializeField]
+    private float powerUpDuration = 3.0f;
+    [SerializeField]
     private Transform minXMarker;
     [SerializeField]
     private Transform maxXMarker;
@@ -21,13 +23,17 @@ public class PlayerConstrained : MonoBehaviour
     [SerializeField]
     private Transform maxZMarker;
     
+    private float _defaultSpeed;
     private CharacterController _myCharacterController;
     private Vector3 _moveDirection;
     private float yDirection, _horizontalInput, _verticalInput;
+    private WaitForSeconds _waitForSecondsObj;
 
     void Start()
     {
         _myCharacterController = GetComponent<CharacterController>();
+        _waitForSecondsObj = new WaitForSeconds(powerUpDuration);
+        _defaultSpeed = movementSpeed;
     }
     
     void Update()
@@ -70,5 +76,17 @@ public class PlayerConstrained : MonoBehaviour
         
         _moveDirection = transform.TransformDirection(_moveDirection);
         _myCharacterController.Move(_moveDirection * Time.deltaTime);
+    }
+
+    public void PowerUpCollected()
+    {
+        StartCoroutine(ActivateSpeedPowerUp());
+    }
+    
+    IEnumerator ActivateSpeedPowerUp()
+    {
+        movementSpeed = _defaultSpeed * 2.0f;
+        yield return _waitForSecondsObj;
+        movementSpeed = _defaultSpeed;
     }
 }

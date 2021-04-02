@@ -14,9 +14,15 @@ public class Enemy : MonoBehaviour
     private Rigidbody _myRigidbody;
     private Vector3 _myVelocity;
 
-    private void Start()
+    private void Awake()
     {
         _myRigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void OnEnable()
+    {
+        _myRigidbody.velocity = Vector3.zero;
+        _myRigidbody.angularVelocity = Vector3.zero;
     }
 
     private void FixedUpdate()
