@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
+    public Transform focalPoint;
     private Rigidbody playerRb;
     private float speed = 750;
-    private GameObject focalPoint;
-    
+
     public bool hasPowerup;
     public GameObject powerupIndicator;
     public int powerUpDuration = 5;
@@ -20,14 +20,13 @@ public class PlayerControllerX : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        focalPoint = GameObject.Find("Focal Point");
     }
 
     void Update()
     {
         // Add force to player in direction of the focal point (and camera)
         float verticalInput = Input.GetAxis("Vertical");
-        playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime); 
+        playerRb.AddForce(focalPoint.forward * (verticalInput * speed * Time.deltaTime)); 
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
@@ -35,7 +34,7 @@ public class PlayerControllerX : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             boostParticle.Play();
-            playerRb.AddForce(focalPoint.transform.forward * boostForce, ForceMode.Impulse);
+            playerRb.AddForce(focalPoint.forward * boostForce, ForceMode.Impulse);
         }
     }
 
@@ -44,7 +43,7 @@ public class PlayerControllerX : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Powerup"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             hasPowerup = true;
             powerupIndicator.SetActive(true);
             StartCoroutine(PowerupCooldown());

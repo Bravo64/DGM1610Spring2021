@@ -1,18 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class EnemyX : MonoBehaviour
 {
     public float speed;
+    public GameObject playerGoal;
     private Rigidbody enemyRb;
-    private GameObject playerGoal;
+    private SpawnManagerX spawnManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerGoal = GameObject.Find("Goals/Player Goal");
         enemyRb = GetComponent<Rigidbody>();
+        spawnManager = transform.parent.GetComponent<SpawnManagerX>();
     }
 
     // Update is called once per frame
@@ -20,22 +23,19 @@ public class EnemyX : MonoBehaviour
     {
         // Set enemy direction towards player goal and move there
         Vector3 lookDirection = (playerGoal.transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * speed * Time.deltaTime);
+        enemyRb.AddForce(lookDirection * (speed * Time.deltaTime));
 
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        // If enemy collides with either goal, destroy it
-        if (other.gameObject.name == "Enemy Goal")
+        // If enemy collides with either goal, disable it
+        if (other.gameObject.name == "Enemy Goal" || 
+            other.gameObject.name == "Player Goal")
         {
-            Destroy(gameObject);
-        } 
-        else if (other.gameObject.name == "Player Goal")
-        {
-            Destroy(gameObject);
+            spawnManager.enemyCount--;
+            spawnManager.CheckEnemyCount();
+            gameObject.SetActive(false);
         }
-
     }
-
 }
