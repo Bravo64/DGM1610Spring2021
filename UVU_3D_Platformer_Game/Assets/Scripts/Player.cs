@@ -7,6 +7,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] 
+    private Vector3Data playerPositionObj;
+    [SerializeField] 
     private float movementSpeed = 10.0f;
     [SerializeField] 
     private float gravity = -9.81f;
@@ -43,5 +45,6 @@ public class Player : MonoBehaviour
         _moveDirection = transform.TransformDirection(_moveDirection);
         _myCharacterController.Move(_moveDirection * Time.deltaTime);
         transform.Rotate(transform.up * (Input.GetAxis("Mouse X") * mouseTurnSensitivity));
+        playerPositionObj.value = transform.position;
     }
 }
