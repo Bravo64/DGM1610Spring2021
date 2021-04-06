@@ -162,4 +162,6 @@ Saturday, April 3nd, 2021: Partly Cloudy and Warm
 
 Sunday (Easter!!), April 4th, 2021: Clear
 
+Monday, April 5th, 2021: Cloudy, Slight Rain
+
 
