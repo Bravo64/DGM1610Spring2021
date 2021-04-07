@@ -166,4 +166,6 @@ Monday, April 5th, 2021: Cloudy, Slight Rain
 
 Tuesday, April 6th, 2021: Cloudy, A bit of Snow
 
+Wednesday, April 7th, 2021: Slightly Cloudy, Sunny
+
 
