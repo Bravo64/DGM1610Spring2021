@@ -49,13 +49,14 @@ public class Object : MonoBehaviour
     
     private Vector3 RandomSpawnPos()
     {
-        randomPos.Set(Random.Range(-_xRange, _xRange), _ySpawnPos, 0);
+        randomPos.Set(Random.Range(-_xRange, _xRange), _ySpawnPos, Random.Range(0.0f, -20.0f));
         return randomPos;
     }
 
     public void PlayParticle()
     {
         myPararticle.transform.parent = null;
+        myPararticle.transform.position = transform.position;
         myPararticle.Play();
     }
 }
