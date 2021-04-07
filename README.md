@@ -164,4 +164,6 @@ Sunday (Easter!!), April 4th, 2021: Clear
 
 Monday, April 5th, 2021: Cloudy, Slight Rain
 
+Tuesday, April 6th, 2021: Cloudy, A bit of Snow
+
 
