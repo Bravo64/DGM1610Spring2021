@@ -11,32 +11,32 @@ TagManager:
   - 
   - Water
   - UI
+  - Player
+  - Player Detector
   - 
   - 
   - 
+  - Enemy
+  - Enemy Detector
   - 
   - 
   - 
+  - Ground
+  - Ground Detector
   - 
   - 
   - 
+  - Obstacle
+  - Obstacle Detector
   - 
   - 
   - 
+  - Pickup
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Dynamic Object
+  - Dynamic Object Detector
   m_SortingLayers:
   - name: Default
     uniqueID: 0
