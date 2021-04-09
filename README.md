@@ -168,4 +168,6 @@ Tuesday, April 6th, 2021: Cloudy, A bit of Snow
 
 Wednesday, April 7th, 2021: Slightly Cloudy, Sunny
 
+Thursday, April 8th, 2021: Partly Cloudy, Slightly Cold Breeze
+
 
