@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465d316a12b76442aa0641d22fd35ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPositionObj: {fileID: 11400000, guid: 937f2dd1211c04e3d882871ff04a0883, type: 2}
+  playerPositionObj: {fileID: 11400000, guid: 05432f37034f64676b3224b26aa79b58, type: 2}
 --- !u!208 &4388452609252729939
 NavMeshObstacle:
   m_ObjectHideFlags: 0

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90a2d1cbef134e63ac687ffafb0531c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPositionObj: {fileID: 11400000, guid: 937f2dd1211c04e3d882871ff04a0883, type: 2}
+  playerPositionObj: {fileID: 11400000, guid: 05432f37034f64676b3224b26aa79b58, type: 2}
   movementSpeed: 10
   gravity: -30
   jumpForce: 20
