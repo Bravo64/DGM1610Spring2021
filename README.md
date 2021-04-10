@@ -172,4 +172,6 @@ Thursday, April 8th, 2021: Partly Cloudy, Slightly Cold Breeze
 
 Friday, April 9th, 2021: Partly Cloudy
 
+Saturday, April 10th, 2021: Clear
+
 
