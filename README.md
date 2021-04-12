@@ -174,4 +174,6 @@ Friday, April 9th, 2021: Partly Cloudy
 
 Saturday, April 10th, 2021: Clear
 
+Sunday, April 11th, 2021: Clear
+
 
