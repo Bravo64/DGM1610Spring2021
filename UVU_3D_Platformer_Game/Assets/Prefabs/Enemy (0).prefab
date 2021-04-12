@@ -160,7 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3209141870223686959}
-  - component: {fileID: 6805671062854859713}
+  - component: {fileID: 2191554070845097594}
   - component: {fileID: 5679542404346528654}
   m_Layer: 7
   m_Name: Player Detector
@@ -183,7 +183,7 @@ Transform:
   m_Father: {fileID: 6363413550972547552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6805671062854859713
+--- !u!114 &2191554070845097594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,9 +192,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 6919375667582148115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612cb26a5d23640bb934677fe1f5e198, type: 3}
+  m_Script: {fileID: 11500000, guid: 73f616251015b4aa1aae120583498d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8a5aa32bd907f4284b723c88e79cb84a, type: 2}
+        m_TargetAssemblyTypeName: IntData, Assembly-CSharp
+        m_MethodName: Decrement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 6b5f9c391eb3748b7bf22e4cad6349fd, type: 2}
+        m_TargetAssemblyTypeName: ActionEvents.VoidAction, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &5679542404346528654
 SphereCollider:
   m_ObjectHideFlags: 0
