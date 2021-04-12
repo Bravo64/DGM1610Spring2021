@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     
     private CharacterController _myCharacterController;
     private Vector3 _moveDirection;
-    private float yDirection;
+    private float _yDirection;
+    private bool _doubleJumpActivated = false;
 
     void Start()
     {
@@ -28,18 +29,31 @@ public class Player : MonoBehaviour
     
     void LateUpdate()
     {
-        _moveDirection.Set(movementSpeed * Input.GetAxis("Horizontal"), yDirection, movementSpeed * Input.GetAxis("Vertical"));
+        _moveDirection.Set(movementSpeed * Input.GetAxis("Horizontal"), _yDirection, movementSpeed * Input.GetAxis("Vertical"));
 
-        yDirection += gravity * Time.deltaTime;
-        
-        if (_myCharacterController.isGrounded && _moveDirection.y < 0)
+        _yDirection += gravity * Time.deltaTime;
+
+        if (_myCharacterController.isGrounded)
         {
-            yDirection = -5;
+            if (_moveDirection.y < 0)
+            {
+                _yDirection = -5;
+            }
+
+            if (_doubleJumpActivated)
+            {
+                _doubleJumpActivated = false;
+            }
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                _yDirection = jumpForce;
+            }
         }
-
-        if (Input.GetButtonDown("Jump"))
+        else if (Input.GetButtonDown("Jump") && !_doubleJumpActivated)
         {
-            yDirection = jumpForce;
+            _yDirection = jumpForce;
+            _doubleJumpActivated = true;
         }
         
         _moveDirection = transform.TransformDirection(_moveDirection);
