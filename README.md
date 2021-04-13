@@ -176,4 +176,6 @@ Saturday, April 10th, 2021: Clear
 
 Sunday, April 11th, 2021: Clear
 
+Monday, April 12th, 2021: Clear, Cold
+
 
