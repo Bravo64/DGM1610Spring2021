@@ -2,9 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Collider2D))]
 public class Trigger2DEvent : MonoBehaviour
 {
-    [SerializeField] UnityEvent triggerEnter2DEvent;
+    public UnityEvent triggerEnter2DEvent;
+
+    private void Start()
+    {
+        GetComponent<Collider2D>().isTrigger = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
