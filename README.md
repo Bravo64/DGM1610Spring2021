@@ -180,4 +180,6 @@ Monday, April 12th, 2021: Clear, Cold
 
 Tuesday, April 13th, 2021: Partly Cloudy
 
+Wednesday, April 14th, 2021: Heavy Rainfall
+
 
