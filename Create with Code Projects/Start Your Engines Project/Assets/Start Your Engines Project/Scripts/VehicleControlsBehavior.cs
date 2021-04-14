@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class VehicleControlsBehavior : MonoBehaviour
 {
     [SerializeField]
@@ -14,12 +15,15 @@ public class VehicleControlsBehavior : MonoBehaviour
     private Transform weaponBarrel;
     [SerializeField]
     private Rigidbody projectile;
+    [SerializeField]
+    private Transform centerOfMass;
     Rigidbody _myRigidbody;
     
     // Start is called before the first frame update
     void Start()
     {
         _myRigidbody = GetComponent<Rigidbody>();
+        _myRigidbody.centerOfMass = centerOfMass.position;
     }
 
     // Update is called once per frame
