@@ -4451,7 +4451,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253618698}
-  m_LocalRotation: {x: 0.17113185, y: -0.000000008476277, z: 0.0000000014722801, w: 0.98524815}
+  m_LocalRotation: {x: 0.17113185, y: 0.0000000084762775, z: -0.0000000014722802, w: 0.98524815}
   m_LocalPosition: {x: 0, y: 13.738766, z: -12.894558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9629,7 +9629,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.17113185, y: -0.000000008476277, z: 0.0000000014722801, w: 0.98524815}
+  m_LocalRotation: {x: 0.17113185, y: 0.0000000084762775, z: -0.0000000014722802, w: 0.98524815}
   m_LocalPosition: {x: 0, y: 13.738766, z: -12.894558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -17092,7 +17092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3add3b28a6848b6ab7f56c1e053ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horsePower: 10000
+  horsePower: 50000
   turnSpeed: 40
   centerOfMass: {fileID: 5517644852660750048}
   speedometerText: {fileID: 1621717481}
