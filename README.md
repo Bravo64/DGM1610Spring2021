@@ -182,4 +182,6 @@ Tuesday, April 13th, 2021: Partly Cloudy
 
 Wednesday, April 14th, 2021: Heavy Rainfall
 
+Thursday, April 15th, 2021: Slight Rainfall
+
 
