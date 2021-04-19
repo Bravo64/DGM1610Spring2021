@@ -184,4 +184,12 @@ Wednesday, April 14th, 2021: Heavy Rainfall
 
 Thursday, April 15th, 2021: Slight Rainfall
 
+Friday, April 16th, 2021: Partly Cloudy
+
+Saturday, April 17th, 2021: Clear
+
+Sunday, April 18th, 2021: Clear
+
+
+
 
