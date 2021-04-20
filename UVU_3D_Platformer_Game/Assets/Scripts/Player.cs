@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
     [SerializeField] 
     private Vector3Data playerPositionObj;
+    [SerializeField] 
+    private UnityEvent activateWeapon;
     [SerializeField] 
     private float movementSpeed = 10.0f;
     [SerializeField] 
@@ -54,6 +57,11 @@ public class Player : MonoBehaviour
         {
             _yDirection = jumpForce;
             _doubleJumpActivated = true;
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            activateWeapon.Invoke();
         }
         
         _moveDirection = transform.TransformDirection(_moveDirection);
