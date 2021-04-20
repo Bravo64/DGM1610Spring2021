@@ -190,6 +190,8 @@ Saturday, April 17th, 2021: Clear
 
 Sunday, April 18th, 2021: Clear
 
+Monday, April 19th, 2021: Cloudy
+
 
 
 
