@@ -194,6 +194,8 @@ Monday, April 19th, 2021: Cloudy
 
 Tuesday, April 20th, 2021: Mostly cloudy
 
+Wednesday, April 21th, 2021: Cloudy, Foggy
+
 
 
 
