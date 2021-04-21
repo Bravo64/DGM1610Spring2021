@@ -1,4 +1,4 @@
--- Daily Weather Report --
+-- Daily Weather Report (Consistent Push Exercise)--
 
 Thursday, January 14th, 2021: Partly Cloudy
 
