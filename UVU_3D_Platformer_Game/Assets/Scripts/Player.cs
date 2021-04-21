@@ -19,6 +19,12 @@ public class Player : MonoBehaviour
     private float jumpForce = 175f;
     [SerializeField]
     private float mouseTurnSensitivity = 10.0f;
+    [SerializeField]
+    private float bulletForce = 50.0f;
+    [SerializeField] 
+    private Transform gunFirePoint;
+    [SerializeField]
+    private Rigidbody[] bulletPool;
     
     private CharacterController _myCharacterController;
     private Vector3 _moveDirection;
@@ -62,6 +68,23 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             activateWeapon.Invoke();
+        }
+        
+        if (Input.GetButtonDown("Fire2"))
+        {
+            foreach (Rigidbody bullet in bulletPool)
+            {
+                if (!bullet.gameObject.activeSelf)
+                {
+                    bullet.Sleep();
+                    bullet.transform.position = gunFirePoint.position;
+                    bullet.transform.rotation = gunFirePoint.rotation;
+                    bullet.gameObject.SetActive(true);
+                    bullet.WakeUp();
+                    bullet.velocity += transform.forward * bulletForce;
+                    break;
+                }
+            }
         }
         
         _moveDirection = transform.TransformDirection(_moveDirection);
