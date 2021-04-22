@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399d5b10e833548359c703f95315775c, type: 3}
-  m_Name: New State Enum Variable
+  m_Script: {fileID: 11500000, guid: 32ab918c1add34de28411d47f04ee0ba, type: 3}
+  m_Name: Active Weapon
   m_EditorClassIdentifier: 
-  value: 0
+  value: 

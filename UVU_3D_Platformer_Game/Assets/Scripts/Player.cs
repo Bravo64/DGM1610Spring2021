@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     private Transform gunFirePoint;
     [SerializeField]
     private Rigidbody[] bulletPool;
+    [SerializeField]
+    private StringData activeWeaponObj;
     
     private CharacterController _myCharacterController;
     private Vector3 _moveDirection;
@@ -67,26 +69,28 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            activateWeapon.Invoke();
-        }
-        
-        if (Input.GetButtonDown("Fire2"))
-        {
-            foreach (Rigidbody bullet in bulletPool)
+            if (activeWeaponObj.GetString() == "Sword")
             {
-                if (!bullet.gameObject.activeSelf)
+                activateWeapon.Invoke();
+            }
+            else if (activeWeaponObj.GetString() == "Gun")
+            {
+                foreach (Rigidbody bullet in bulletPool)
                 {
-                    bullet.Sleep();
-                    bullet.transform.position = gunFirePoint.position;
-                    bullet.transform.rotation = gunFirePoint.rotation;
-                    bullet.gameObject.SetActive(true);
-                    bullet.WakeUp();
-                    bullet.velocity += transform.forward * bulletForce;
-                    break;
+                    if (!bullet.gameObject.activeSelf)
+                    {
+                        bullet.Sleep();
+                        bullet.transform.position = gunFirePoint.position;
+                        bullet.transform.rotation = gunFirePoint.rotation;
+                        bullet.gameObject.SetActive(true);
+                        bullet.WakeUp();
+                        bullet.velocity += transform.forward * bulletForce;
+                        break;
+                    }
                 }
             }
         }
-        
+
         _moveDirection = transform.TransformDirection(_moveDirection);
         _myCharacterController.Move(_moveDirection * Time.deltaTime);
         transform.Rotate(transform.up * (Input.GetAxis("Mouse X") * mouseTurnSensitivity));

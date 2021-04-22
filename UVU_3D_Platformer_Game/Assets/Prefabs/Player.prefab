@@ -518,6 +518,7 @@ MonoBehaviour:
   gravity: -30
   jumpForce: 18
   mouseTurnSensitivity: 10
+  bulletForce: 50
   gunFirePoint: {fileID: 2919522416434961771}
   bulletPool:
   - {fileID: 0}
@@ -540,6 +541,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  activeWeaponObj: {fileID: 11400000, guid: 3e29c4f47e5c345099da5a45e1894cca, type: 2}
 --- !u!208 &4061985208020098868
 NavMeshObstacle:
   m_ObjectHideFlags: 0
