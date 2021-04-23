@@ -1,9 +1,9 @@
 ﻿using UnityEngine.Events;
 
-namespace ActionEvents
+namespace GameEvents
 {
     [System.Serializable]
-    public class UnityIntAction : UnityEvent<int>
+    public class UnityVoidEvent : UnityEvent<Void>
     {
         
     }

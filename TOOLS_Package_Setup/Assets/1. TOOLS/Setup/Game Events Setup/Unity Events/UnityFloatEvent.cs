@@ -1,9 +1,9 @@
 ﻿using UnityEngine.Events;
 
-namespace ActionEvents
+namespace GameEvents
 {
     [System.Serializable]
-    public class UnityFloatAction : UnityEvent<float>
+    public class UnityFloatEvent : UnityEvent<float>
     {
         
     }

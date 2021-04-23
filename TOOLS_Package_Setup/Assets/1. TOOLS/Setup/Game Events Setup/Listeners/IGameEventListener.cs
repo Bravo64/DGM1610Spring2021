@@ -1,4 +1,4 @@
-﻿namespace ActionEvents
+﻿namespace GameEvents
 {
     public interface IGameEventListener<T>
     {
