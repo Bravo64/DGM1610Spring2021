@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Schema;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Vector3 Variable", menuName = "Variable/Vector3")]
