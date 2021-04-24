@@ -1,12 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class AddForce2DBehaviour : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class AddForceBehaviour : MonoBehaviour
 {
     [SerializeField] 
     private float amount;
-    private enum Directions { X, Y }
+    private enum Directions { X, Y, Z }
     private enum DirectionTypes { Global, Local}
     private enum Modes { OnStart, OnCallOnly, ConstantForce }
     [SerializeField]
@@ -16,12 +16,12 @@ public class AddForce2DBehaviour : MonoBehaviour
     [SerializeField]
     private Modes mode = Modes.ConstantForce;
 
-    private Rigidbody2D _myRigidbody2D;
+    private Rigidbody _myRigidbody;
     private Vector3 _direction;
     
     void Start()
     {
-        _myRigidbody2D = GetComponent<Rigidbody2D>();
+        _myRigidbody = GetComponent<Rigidbody>();
 
         switch (alongAxis)
         {
@@ -30,6 +30,9 @@ public class AddForce2DBehaviour : MonoBehaviour
                 break;
             case Directions.Y:
                 _direction = Vector3.up;
+                break;
+            case Directions.Z:
+                _direction = Vector3.forward;
                 break;
             default:
                 _direction = Vector3.right;
@@ -70,8 +73,29 @@ public class AddForce2DBehaviour : MonoBehaviour
             case "y":
                 _direction = Vector3.up;
                 break;
+            case "z":
+                _direction = Vector3.forward;
+                break;
             default:
                 _direction = Vector3.right;
+                break;
+        }
+    }
+    
+    public void SetForceDirectionType(string typeInput)
+    {
+        typeInput = typeInput.ToLower();
+        
+        switch (typeInput)
+        {
+            case "global":
+                directionType = DirectionTypes.Global;
+                break;
+            case "local":
+                directionType = DirectionTypes.Local;
+                break;
+            default:
+                directionType = DirectionTypes.Global;
                 break;
         }
     }
@@ -80,11 +104,11 @@ public class AddForce2DBehaviour : MonoBehaviour
     {
         if (directionType == DirectionTypes.Global)
         {
-            _myRigidbody2D.AddForce(amount * _direction);
+            _myRigidbody.AddForce(amount * _direction);
         }
         else
         {
-            _myRigidbody2D.AddRelativeForce(amount * _direction);
+            _myRigidbody.AddRelativeForce(amount * _direction);
         }
     }
 
@@ -92,7 +116,7 @@ public class AddForce2DBehaviour : MonoBehaviour
     {
         while (true)
         {
-            _myRigidbody2D.AddForce(amount * _direction);
+            _myRigidbody.AddForce(amount * _direction);
             yield return 0;
         }
     }
@@ -101,7 +125,7 @@ public class AddForce2DBehaviour : MonoBehaviour
     {
         while (true)
         {
-            _myRigidbody2D.AddForce(amount * _direction);
+            _myRigidbody.AddForce(amount * _direction);
             yield return 0;
         }
     }
