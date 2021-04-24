@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,44 +9,53 @@ public class CharacterMoveBehaviour : MonoBehaviour
     private float speed;
     private enum Directions { X, Y, Z }
     private enum DirectionTypes { Global, Local}
-    private enum Modes { OnCallOnly, ConstantMovement }
     [SerializeField]
     private Directions alongAxis = Directions.X;
     [SerializeField]
     private DirectionTypes directionType = DirectionTypes.Global;
-    [SerializeField]
-    private Modes mode = Modes.ConstantMovement;
     private CharacterController _myCharacterController;
-    private Vector3 _direction;
+    private Vector3 _globalDirection;
     
     void Start()
     {
         _myCharacterController = GetComponent<CharacterController>();
 
-        switch (alongAxis)
+        if (directionType == DirectionTypes.Global)
         {
-            case Directions.X:
-                _direction = Vector3.right;
-                break;
-            case Directions.Y:
-                _direction = Vector3.up;
-                break;
-            case Directions.Z:
-                _direction = Vector3.forward;
-                break;
-            default:
-                _direction = Vector3.right;
-                break;
+            switch (alongAxis)
+            {
+                case Directions.X:
+                    _globalDirection = Vector3.right;
+                    break;
+                case Directions.Y:
+                    _globalDirection = Vector3.up;
+                    break;
+                case Directions.Z:
+                    _globalDirection = Vector3.forward;
+                    break;
+                default:
+                    _globalDirection = Vector3.right;
+                    break;
+            }
+            StartCoroutine(ConstMoveGlobal());
         }
-        
-        if (directionType == DirectionTypes.Local)
+        else if (directionType == DirectionTypes.Local)
         {
-            _direction = transform.TransformDirection(_direction);
-        }
-        
-        if (mode == Modes.ConstantMovement)
-        {
-            StartCoroutine(ConstantlyMoveCharacter());
+            switch (alongAxis)
+            {
+                case Directions.X:
+                    StartCoroutine(ConstMoveX());
+                    break;
+                case Directions.Y:
+                    StartCoroutine(ConstMoveY());
+                    break;
+                case Directions.Z:
+                    StartCoroutine(ConstMoveZ());
+                    break;
+                default:
+                    StartCoroutine(ConstMoveX());
+                    break;
+            }
         }
     }
 
@@ -54,42 +64,38 @@ public class CharacterMoveBehaviour : MonoBehaviour
         speed = inputSpeed;
     }
 
-    public void SetMoveDirection(string inputAxis)
-    {
-        inputAxis = inputAxis.ToLower();
-        
-        switch (inputAxis)
-        {
-            case "x":
-                _direction = Vector3.right;
-                break;
-            case "y":
-                _direction = Vector3.up;
-                break;
-            case "z":
-                _direction = Vector3.forward;
-                break;
-            default:
-                _direction = Vector3.right;
-                break;
-        }
-        
-        if (directionType == DirectionTypes.Local)
-        {
-            _direction = transform.TransformDirection(_direction);
-        }
-    }
-
-    public void MoveCharacter()
-    {
-        _myCharacterController.Move(_direction * speed * Time.deltaTime);
-    }
-
-    IEnumerator ConstantlyMoveCharacter()
+    IEnumerator ConstMoveGlobal()
     {
         while (true)
         {
-            _myCharacterController.Move(_direction * speed * Time.deltaTime);
+            _myCharacterController.Move(_globalDirection * (speed * Time.deltaTime));
+            yield return 0;
+        }
+    }
+    
+    IEnumerator ConstMoveX()
+    {
+        while (true)
+        {
+            _myCharacterController.Move(transform.right * (speed * Time.deltaTime));
+            yield return 0;
+        }
+    }
+    
+    IEnumerator ConstMoveY()
+    {
+        while (true)
+        {
+            _myCharacterController.Move(transform.up * (speed * Time.deltaTime));
+            yield return 0;
+        }
+    }
+    
+    IEnumerator ConstMoveZ()
+    {
+        while (true)
+        {
+            _myCharacterController.Move(transform.forward * (speed * Time.deltaTime));
             yield return 0;
         }
     }

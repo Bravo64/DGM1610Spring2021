@@ -8,45 +8,50 @@ public class SetVelocity2DBehaviour : MonoBehaviour
     private float speed;
     private enum Directions { X, Y }
     private enum DirectionTypes { Global, Local}
-    private enum Modes { OnStart, OnCallOnly, ConstantVelocity }
+    private enum Modes { OnStart, OnCallOnly, ConstantMovement }
     [SerializeField]
     private Directions alongAxis = Directions.X;
     [SerializeField]
     private DirectionTypes directionType = DirectionTypes.Global;
     [SerializeField]
-    private Modes mode = Modes.ConstantVelocity;
+    private Modes mode = Modes.ConstantMovement;
     private Rigidbody2D _myRigidbody2D;
-    private Vector2 _direction;
+    private Vector2 _actualDirection;
+    private Vector2 _globalDirection;
     
     void Start()
     {
         _myRigidbody2D = GetComponent<Rigidbody2D>();
-
+        
         switch (alongAxis)
         {
             case Directions.X:
-                _direction = Vector2.right;
+                _globalDirection = Vector2.right;
                 break;
             case Directions.Y:
-                _direction = Vector2.up;
+                _globalDirection = Vector2.up;
                 break;
             default:
-                _direction = Vector2.right;
+                _globalDirection = Vector2.right;
                 break;
         }
 
-        if (directionType == DirectionTypes.Local)
+        if (directionType == DirectionTypes.Global)
         {
-            _direction = transform.TransformDirection(_direction);
+            _actualDirection = _globalDirection;
+        }
+        else if (directionType == DirectionTypes.Local)
+        {
+            _actualDirection = transform.TransformDirection(_globalDirection);
         }
 
         if (mode == Modes.OnStart)
         {
             SetVelocity();
         }
-        else if (mode == Modes.ConstantVelocity)
+        else if (mode == Modes.ConstantMovement)
         {
-            StartCoroutine(SetConstantVelocity());
+            StartCoroutine(SetConstantMovement());
         }
     }
 
@@ -55,57 +60,24 @@ public class SetVelocity2DBehaviour : MonoBehaviour
         speed = inputSpeed;
     }
 
-    public void SetVelocityDirection(string inputAxis)
-    {
-        inputAxis = inputAxis.ToLower();
-        
-        switch (inputAxis)
-        {
-            case "x":
-                _direction = Vector2.right;
-                break;
-            case "y":
-                _direction = Vector2.up;
-                break;
-            default:
-                _direction = Vector2.right;
-                break;
-        }
-        
-        if (directionType == DirectionTypes.Local)
-        {
-            _direction = transform.TransformDirection(_direction);
-        }
-    }
-    
-    public void SetVelocityDirectionType(string typeInput)
-    {
-        typeInput = typeInput.ToLower();
-        
-        switch (typeInput)
-        {
-            case "global":
-                directionType = DirectionTypes.Global;
-                break;
-            case "local":
-                directionType = DirectionTypes.Local;
-                break;
-            default:
-                directionType = DirectionTypes.Global;
-                break;
-        }
-    }
-    
     public void SetVelocity()
     {
-        _myRigidbody2D.velocity = _direction * speed;
+        if (directionType == DirectionTypes.Local)
+        {
+            _actualDirection = transform.TransformDirection(_globalDirection);
+        }
+        _myRigidbody2D.velocity = _actualDirection * speed;
     }
 
-    IEnumerator SetConstantVelocity()
+    IEnumerator SetConstantMovement()
     {
         while (true)
         {
-            _myRigidbody2D.velocity = _direction * speed;
+            if (directionType == DirectionTypes.Local)
+            {
+                _actualDirection = transform.TransformDirection(_globalDirection);
+            }
+            _myRigidbody2D.velocity = _actualDirection * speed;
             yield return 0;
         }
     }

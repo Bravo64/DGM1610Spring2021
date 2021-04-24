@@ -57,42 +57,6 @@ public class AddForce2DBehaviour : MonoBehaviour
     {
         amount = inputAmount;
     }
-    
-    public void SetForceDirection(string inputAxis)
-    {
-        inputAxis = inputAxis.ToLower();
-        
-        switch (inputAxis)
-        {
-            case "x":
-                _direction = Vector3.right;
-                break;
-            case "y":
-                _direction = Vector3.up;
-                break;
-            default:
-                _direction = Vector3.right;
-                break;
-        }
-    }
-    
-    public void SetForceDirectionType(string typeInput)
-    {
-        typeInput = typeInput.ToLower();
-        
-        switch (typeInput)
-        {
-            case "global":
-                directionType = DirectionTypes.Global;
-                break;
-            case "local":
-                directionType = DirectionTypes.Local;
-                break;
-            default:
-                directionType = DirectionTypes.Global;
-                break;
-        }
-    }
 
     public void ApplyForce()
     {

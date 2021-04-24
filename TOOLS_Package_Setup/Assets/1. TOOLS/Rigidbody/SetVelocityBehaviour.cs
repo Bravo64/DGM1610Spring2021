@@ -16,31 +16,36 @@ public class SetVelocityBehaviour : MonoBehaviour
     [SerializeField]
     private Modes mode = Modes.ConstantMovement;
     private Rigidbody _myRigidbody;
-    private Vector3 _direction;
+    private Vector3 _actualDirection;
+    private Vector3 _globalDirection;
     
     void Start()
     {
         _myRigidbody = GetComponent<Rigidbody>();
-
+        
         switch (alongAxis)
         {
             case Directions.X:
-                _direction = Vector3.right;
+                _globalDirection = Vector3.right;
                 break;
             case Directions.Y:
-                _direction = Vector3.up;
+                _globalDirection = Vector3.up;
                 break;
             case Directions.Z:
-                _direction = Vector3.forward;
+                _globalDirection = Vector3.forward;
                 break;
             default:
-                _direction = Vector3.right;
+                _globalDirection = Vector3.right;
                 break;
         }
 
-        if (directionType == DirectionTypes.Local)
+        if (directionType == DirectionTypes.Global)
         {
-            _direction = transform.TransformDirection(_direction);
+            _actualDirection = _globalDirection;
+        }
+        else if (directionType == DirectionTypes.Local)
+        {
+            _actualDirection = transform.TransformDirection(_globalDirection);
         }
 
         if (mode == Modes.OnStart)
@@ -58,60 +63,24 @@ public class SetVelocityBehaviour : MonoBehaviour
         speed = inputSpeed;
     }
 
-    public void SetVelocityDirection(string inputAxis)
-    {
-        inputAxis = inputAxis.ToLower();
-        
-        switch (inputAxis)
-        {
-            case "x":
-                _direction = Vector3.right;
-                break;
-            case "y":
-                _direction = Vector3.up;
-                break;
-            case "z":
-                _direction = Vector3.forward;
-                break;
-            default:
-                _direction = Vector3.right;
-                break;
-        }
-        
-        if (directionType == DirectionTypes.Local)
-        {
-            _direction = transform.TransformDirection(_direction);
-        }
-    }
-    
-    public void SetVelocityDirectionType(string typeInput)
-    {
-        typeInput = typeInput.ToLower();
-        
-        switch (typeInput)
-        {
-            case "global":
-                directionType = DirectionTypes.Global;
-                break;
-            case "local":
-                directionType = DirectionTypes.Local;
-                break;
-            default:
-                directionType = DirectionTypes.Global;
-                break;
-        }
-    }
-    
     public void SetVelocity()
     {
-        _myRigidbody.velocity = _direction * speed;
+        if (directionType == DirectionTypes.Local)
+        {
+            _actualDirection = transform.TransformDirection(_globalDirection);
+        }
+        _myRigidbody.velocity = _actualDirection * speed;
     }
 
     IEnumerator SetConstantMovement()
     {
         while (true)
         {
-            _myRigidbody.velocity = _direction * speed;
+            if (directionType == DirectionTypes.Local)
+            {
+                _actualDirection = transform.TransformDirection(_globalDirection);
+            }
+            _myRigidbody.velocity = _actualDirection * speed;
             yield return 0;
         }
     }
