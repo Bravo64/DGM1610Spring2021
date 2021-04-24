@@ -158,7 +158,7 @@ Thursday, April 1st, 2021: Clear, Sunny Skies (yay)
 
 Friday, April 2nd, 2021: Clear, Sunny
 
-Saturday, April 3nd, 2021: Partly Cloudy and Warm
+Saturday, April 3rd, 2021: Partly Cloudy and Warm
 
 Sunday (Easter!!), April 4th, 2021: Clear
 
@@ -194,9 +194,11 @@ Monday, April 19th, 2021: Cloudy
 
 Tuesday, April 20th, 2021: Mostly cloudy
 
-Wednesday, April 21th, 2021: Cloudy, Foggy
+Wednesday, April 21st, 2021: Cloudy, Foggy
 
-Thursday, April 22th, 2021: Clear
+Thursday, April 22nd, 2021: Clear
+
+Friday, April 23rd, 2021: Mostly Cloudy
 
 
 
