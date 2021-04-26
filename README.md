@@ -202,6 +202,8 @@ Friday, April 23rd, 2021: Mostly Cloudy
 
 Saturday, April 24rd, 2021: Slight Rain
 
+Sunday, April 25rd, 2021: Mostly Cloudy
+
 
 
 
