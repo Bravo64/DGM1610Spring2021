@@ -7,12 +7,12 @@ public class AddTorqueBehaviour : MonoBehaviour
     [SerializeField] 
     private float amount;
     private enum Axes { X, Y, Z }
-    private enum rotationTypes { Global, Local}
+    private enum RotationTypes { Global, Local}
     private enum Modes { OnStart, OnCallOnly, ConstantRotation }
     [SerializeField]
     private Axes aroundAxis = Axes.X;
     [SerializeField]
-    private rotationTypes rotationType = rotationTypes.Global;
+    private RotationTypes rotationType = RotationTypes.Global;
     [SerializeField]
     private Modes mode = Modes.ConstantRotation;
 
@@ -45,7 +45,7 @@ public class AddTorqueBehaviour : MonoBehaviour
         }
         else if (mode == Modes.ConstantRotation)
         {
-            if (rotationType == rotationTypes.Global)
+            if (rotationType == RotationTypes.Global)
             {
                 StartCoroutine(ApplyConstantGlobalRotation());
             }
@@ -63,7 +63,7 @@ public class AddTorqueBehaviour : MonoBehaviour
 
     public void ApplyTorque()
     {
-        if (rotationType == rotationTypes.Global)
+        if (rotationType == RotationTypes.Global)
         {
             _myRigidbody.AddTorque(amount * _axisDirection);
         }
