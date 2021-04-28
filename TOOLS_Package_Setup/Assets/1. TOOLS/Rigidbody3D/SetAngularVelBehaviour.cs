@@ -4,17 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SetAngularVelBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private float amount;
-    private enum Directions { X, Y, Z }
-    private enum RotationTypes { Global, Local}
-    private enum Modes { OnStart, OnCallOnly, ConstantRotation }
-    [SerializeField]
-    private Directions alongAxis = Directions.X;
-    [SerializeField]
-    private RotationTypes rotationType = RotationTypes.Global;
-    [SerializeField]
-    private Modes mode = Modes.ConstantRotation;
+    public enum Directions { X, Y, Z }
+    public enum RotationTypes { Global, Local}
+    public enum Modes { OnStart, OnCallOnly, ConstantRotation }
+    
+    public float amount;
+    public Directions alongAxis = Directions.X;
+    public RotationTypes rotationType = RotationTypes.Global;
+    public Modes mode = Modes.ConstantRotation;
+    
     private Rigidbody _myRigidbody;
     private Vector3 _actualDirection;
     private Vector3 _axisDirection;

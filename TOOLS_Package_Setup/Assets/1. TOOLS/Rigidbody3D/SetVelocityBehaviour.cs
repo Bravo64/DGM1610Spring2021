@@ -4,17 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SetVelocityBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
-    private enum Directions { X, Y, Z }
-    private enum DirectionTypes { Global, Local}
-    private enum Modes { OnStart, OnCallOnly, ConstantMovement }
-    [SerializeField]
-    private Directions alongAxis = Directions.X;
-    [SerializeField]
-    private DirectionTypes directionType = DirectionTypes.Global;
-    [SerializeField]
-    private Modes mode = Modes.ConstantMovement;
+    public enum Directions { X, Y, Z }
+    public enum DirectionTypes { Global, Local}
+    public enum Modes { OnStart, OnCallOnly, ConstantMovement }
+    
+    public float speed;
+    public Directions alongAxis = Directions.X;
+    public DirectionTypes directionType = DirectionTypes.Global;
+    public Modes mode = Modes.ConstantMovement;
+    
     private Rigidbody _myRigidbody;
     private Vector3 _actualDirection;
     private Vector3 _globalDirection;

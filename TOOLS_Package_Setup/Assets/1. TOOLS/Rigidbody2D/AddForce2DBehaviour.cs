@@ -4,17 +4,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AddForce2DBehaviour : MonoBehaviour
 {
-    [SerializeField] 
-    private float amount;
-    private enum Directions { X, Y }
-    private enum DirectionTypes { Global, Local}
-    private enum Modes { OnStart, OnCallOnly, ConstantForce }
-    [SerializeField]
-    private Directions alongAxis = Directions.X;
-    [SerializeField]
-    private DirectionTypes directionType = DirectionTypes.Global;
-    [SerializeField]
-    private Modes mode = Modes.ConstantForce;
+    public enum Directions { X, Y }
+    public enum DirectionTypes { Global, Local}
+    public enum Modes { OnStart, OnCallOnly, ConstantForce }
+    
+    public float amount;
+    public Directions alongAxis = Directions.X;
+    public DirectionTypes directionType = DirectionTypes.Global;
+    public Modes mode = Modes.ConstantForce;
 
     private Rigidbody2D _myRigidbody2D;
     private Vector3 _direction;

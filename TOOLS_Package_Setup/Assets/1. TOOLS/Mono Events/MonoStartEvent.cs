@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class MonoStartEvent : MonoBehaviour
 {
-    [SerializeField] private UnityEvent onAwakeEvent;
-    [SerializeField] private UnityEvent onStartEvent;
+    public UnityEvent onAwakeEvent;
+    public UnityEvent onStartEvent;
 
     private void Awake()
     {

@@ -5,14 +5,9 @@ using UnityEngine.Events;
 
 public class RandomDelayBehaviour : MonoBehaviour
 {
-    [SerializeField] 
-    private float minDelayTime = 1.0f;
-    [SerializeField] 
-    private float maxDelayTime = 2.0f;
-    [SerializeField] 
-    private bool beginOnStart = true;
-    [SerializeField]
-    private UnityEvent delayedEvent;
+    public float minDelayTime, maxDelayTime;
+    public bool beginOnStart = true;
+    public UnityEvent delayedEvent;
 
     private WaitForSeconds _waitForSecondsObj;
 

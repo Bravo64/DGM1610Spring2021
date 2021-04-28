@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class MonoDisableEvent : MonoBehaviour
 {
-    [SerializeField] private UnityEvent onDisableEvent;
+    public UnityEvent onDisableEvent;
 
     private void OnDisable()
     {

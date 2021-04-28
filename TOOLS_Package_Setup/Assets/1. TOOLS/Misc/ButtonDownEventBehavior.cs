@@ -6,51 +6,49 @@ using UnityEngine.Events;
 
 public class ButtonDownEventBehavior : MonoBehaviour
 {
-    private enum ButtonInputs {Jump, Fire1, Fire2, Fire3, Horizontal, Vertical }
+    public enum ButtonInputs {Jump, Fire1, Fire2, Fire3, Horizontal, Vertical }
+    
+    public ButtonInputs selectedButton = ButtonInputs.Jump;
+    public UnityEvent buttonDownEvent;
 
-    [SerializeField]
-    private ButtonInputs selectedButton = ButtonInputs.Jump;
-    [SerializeField] 
-    private UnityEvent buttonDownEvent;
-
-    private string inputString;
+    private string _inputString;
     
     void Start()
     {
         switch (selectedButton)
         {
             case ButtonInputs.Jump:
-                inputString = "Jump";
+                _inputString = "Jump";
                 break;
             case ButtonInputs.Fire1:
-                inputString = "Fire1";
+                _inputString = "Fire1";
                 break;
             case ButtonInputs.Fire2:
-                inputString = "Fire2";
+                _inputString = "Fire2";
                 break;
             case ButtonInputs.Fire3:
-                inputString = "Fire3";
+                _inputString = "Fire3";
                 break;
             case ButtonInputs.Horizontal:
-                inputString = "Horizontal";
+                _inputString = "Horizontal";
                 break;
             case ButtonInputs.Vertical:
-                inputString = "Vertical";
+                _inputString = "Vertical";
                 break;
             default:
-                inputString = "Jump";
+                _inputString = "Jump";
                 break;
         }
     }
 
     public void ReassignButton(string newButtonInput)
     {
-        inputString = newButtonInput;
+        _inputString = newButtonInput;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown(inputString))
+        if (Input.GetButtonDown(_inputString))
         {
             buttonDownEvent.Invoke();
         }

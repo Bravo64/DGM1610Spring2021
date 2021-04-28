@@ -4,18 +4,13 @@ using Random = UnityEngine.Random;
 
 public class RandomPositionBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private float minPosition = -10.0f;
-    [SerializeField]
-    private float maxPosition = 10.0f;
-    [SerializeField] 
-    private bool runOnStart = true;
-    private enum Axes { X, Y, Z}
-    [SerializeField] 
-    private Axes alongAxis = Axes.X;
-    private enum Modes { RelativeToZeroPos, RelativeToCurrentPos}
-    [SerializeField] 
-    private Modes mode = Modes.RelativeToZeroPos;
+    public enum Axes { X, Y, Z}
+    public enum Modes { RelativeToZeroPos, RelativeToCurrentPos}
+    
+    public float minPosition, maxPosition;
+    public bool runOnStart = true;
+    public Axes alongAxis = Axes.X;
+    public Modes mode = Modes.RelativeToZeroPos;
 
     private Vector3 _currentPos;
     

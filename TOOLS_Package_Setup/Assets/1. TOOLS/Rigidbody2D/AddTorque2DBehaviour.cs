@@ -4,11 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AddTorque2DBehaviour : MonoBehaviour
 {
-    [SerializeField] 
-    private float amount;
-    private enum Modes { OnStart, OnCallOnly, ConstantRotation }
-    [SerializeField]
-    private Modes mode = Modes.ConstantRotation;
+    public enum Modes { OnStart, OnCallOnly, ConstantRotation }
+
+    public float amount;
+    public Modes mode = Modes.ConstantRotation;
+    
     private Rigidbody2D _myRigidbody2D;
 
     void Start()

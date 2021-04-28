@@ -5,14 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMoveBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
-    private enum Directions { X, Y, Z }
-    private enum DirectionTypes { Global, Local}
-    [SerializeField]
-    private Directions alongAxis = Directions.X;
-    [SerializeField]
-    private DirectionTypes directionType = DirectionTypes.Global;
+    public enum Directions { X, Y, Z }
+    public enum DirectionTypes { Global, Local}
+    
+    public float speed;
+    public Directions alongAxis = Directions.X;
+    public DirectionTypes directionType = DirectionTypes.Global;
+    
     private CharacterController _myCharacterController;
     private Vector3 _globalDirection;
     

@@ -5,12 +5,9 @@ using UnityEngine.Events;
 
 public class DelayedEventBehaviour : MonoBehaviour
 {
-    [SerializeField] 
-    private float delayTime = 1.0f;
-    [SerializeField] 
-    private bool beginOnStart = true;
-    [SerializeField]
-    private UnityEvent delayedEvent;
+    public float delayTime = 1.0f;
+    public bool beginOnStart = true;
+    public UnityEvent delayedEvent;
 
     private WaitForSeconds _waitForSecondsObj;
 
