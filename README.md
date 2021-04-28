@@ -16,7 +16,7 @@ Wednesday, January 20th, 2021: Sunny, Clear Skies
 
 Thursday, January 21st, 2021: Sunny
 
-Friday, January 22st, 2021: Cloudy
+Friday, January 22nd, 2021: Cloudy
 
 Saturday, January 23rd, 2021: Cloudy, Snowing
 
@@ -76,11 +76,11 @@ Friday, February 19th, 2021: Cloudy
 
 Saturday, February 20th, 2021: Mostly Clear
 
-Sunday, February 21th, 2021: Clear
+Sunday, February 21st, 2021: Clear
 
-Monday, February 22th, 2021: Clear
+Monday, February 22nd, 2021: Clear
 
-Tuesday, February 23th, 2021: Mostly Cloudy
+Tuesday, February 23rd, 2021: Mostly Cloudy
 
 Wednesday, February 24th, 2021: Cloudy
 
@@ -207,6 +207,8 @@ Sunday, April 25th, 2021: Mostly Cloudy
 Monday, April 26th, 2021: Rainy
 
 Tuesday, April 27th, 2021: Cloudy
+
+Wednesday, April 28th, 2021: Super Clear and Sunny outside! :D
 
 
 
