@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderBehaviour : MonoBehaviour
+[CreateAssetMenu(fileName = "Scene Loader Obj", menuName = "Misc/Scene Loader Obj")]
+public class SceneLoader : ScriptableObject
 {
     public void ReloadScene()
     {
