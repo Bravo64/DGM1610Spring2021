@@ -3,9 +3,9 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class Trigger2DEvent : MonoBehaviour
+public class TriggerEvent2D : MonoBehaviour
 {
-    public UnityEvent triggerEnter2DEvent;
+    public UnityEvent triggerEnterEvent;
 
     private void Start()
     {
@@ -15,6 +15,6 @@ public class Trigger2DEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        triggerEnter2DEvent.Invoke();
+        triggerEnterEvent.Invoke();
     }
 }
