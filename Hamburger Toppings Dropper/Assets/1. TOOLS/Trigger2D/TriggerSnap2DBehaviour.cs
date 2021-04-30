@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(Rigidbody))]
-public class TriggerSnapBehaviour : MonoBehaviour
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
+public class TriggerSnap2DBehaviour : MonoBehaviour
 {
     public enum Modes { Enabled, Disabled}
 
@@ -16,8 +13,8 @@ public class TriggerSnapBehaviour : MonoBehaviour
     
     private void Start()
     {
-        GetComponent<Collider>().isTrigger = true;
-        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Collider2D>().isTrigger = true;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         
         if (applySnapToParent == Modes.Enabled)
         {
@@ -28,7 +25,7 @@ public class TriggerSnapBehaviour : MonoBehaviour
             _currentTransform = transform;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (snapToOtherPosition)
         {

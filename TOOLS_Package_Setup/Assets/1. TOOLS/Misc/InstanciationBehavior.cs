@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class InstanciationBehavior : MonoBehaviour
@@ -15,6 +14,11 @@ public class InstanciationBehavior : MonoBehaviour
         {
             ActivateInstanciation();
         }
+    }
+
+    public void SetObjectToCreate(GameObject inputObject)
+    {
+        objectToCreate = inputObject;
     }
 
     public void ActivateInstanciation()
