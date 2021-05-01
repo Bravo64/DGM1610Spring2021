@@ -212,6 +212,8 @@ Wednesday, April 28th, 2021: Super Clear and Sunny outside! :D
 
 Thursday, April 29th, 2021: Clear
 
+Friday, April 30th, 2021: Partly Cloudy
+
 
 
 
