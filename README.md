@@ -214,6 +214,8 @@ Thursday, April 29th, 2021: Clear
 
 Friday, April 30th, 2021: Partly Cloudy
 
+Saturday, May 1st, 2021: Mostly Cloudy
+
 
 
 
