@@ -16,15 +16,15 @@ public class TriggerOtherRB : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Rigidbody>())
+        if (other.GetComponent<Rigidbody>())
         {
             if (mode == Modes.DisableOtherRigidbody)
             {
-                other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                other.GetComponent<Rigidbody>().isKinematic = true;
             }
             else
             {
-                other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                other.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
     }
