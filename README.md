@@ -218,6 +218,8 @@ Saturday, May 1st, 2021: Mostly Cloudy
 
 Sunday, May 2nd, 2021: Partly Cloudy
 
+Monday, May 3rd, 2021: Clear!
+
 
 
 
