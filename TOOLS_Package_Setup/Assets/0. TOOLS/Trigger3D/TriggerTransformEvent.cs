@@ -3,9 +3,9 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
-public class TriggerExitEvent : MonoBehaviour
+public class TriggerTransformEvent : MonoBehaviour
 {
-    public UnityEvent<Transform> triggerExitEvent;
+    public UnityEvent<Transform> triggerEnterEvent;
     
     private void Start()
     {
@@ -13,8 +13,8 @@ public class TriggerExitEvent : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
     }
     
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        triggerExitEvent.Invoke(other.transform);
+        triggerEnterEvent.Invoke(other.transform);
     }
 }

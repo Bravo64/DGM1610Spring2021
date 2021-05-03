@@ -3,10 +3,9 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
-public class TriggerEventWReference : MonoBehaviour
+public class TriggerTransformEvent : MonoBehaviour
 {
-    public UnityEvent<GameObject> triggerEnterEvent;
-    public GameObject otherObject;
+    public UnityEvent<Transform> triggerEnterEvent;
     
     private void Start()
     {
@@ -16,7 +15,6 @@ public class TriggerEventWReference : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        otherObject = other.gameObject;
-        triggerEnterEvent.Invoke(otherObject);
+        triggerEnterEvent.Invoke(other.transform);
     }
 }
