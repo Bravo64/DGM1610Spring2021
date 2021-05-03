@@ -216,6 +216,8 @@ Friday, April 30th, 2021: Partly Cloudy
 
 Saturday, May 1st, 2021: Mostly Cloudy
 
+Sunday, May 2nd, 2021: Partly Cloudy
+
 
 
 
