@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SmoothFollow : MonoBehaviour
+public class SmoothFollowBehaviour : MonoBehaviour
 {
     public Transform targetObject;
     public float smoothTime = 0.3F;
