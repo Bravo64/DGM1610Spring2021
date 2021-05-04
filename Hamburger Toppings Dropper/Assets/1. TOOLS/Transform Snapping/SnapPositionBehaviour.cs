@@ -3,17 +3,28 @@ using UnityEngine;
 public class SnapPositionBehaviour : MonoBehaviour
 {
     public enum Modes { SnapToVector3Reference, SnapToTransformReference, SnapToVector3DataReference }
-
-    public Transform objectToSnap;
+    
     public Modes mode = Modes.SnapToVector3Reference;
     public bool vectorIsRelative = false;
     public Vector3 vector3Reference;
     public Transform transformReference;
     public Vector3Data vector3DataReference;
+    public bool applyToParent = false;
     public bool runOnStart = true;
+    
+    private Transform _currentTransform;
 
     void Start()
     {
+        if (applyToParent)
+        {
+            _currentTransform = transformReference.parent;
+        }
+        else
+        {
+            _currentTransform = transform;
+        }
+        
         if (runOnStart)
         {
             ApplyPositionSnapping();
@@ -27,21 +38,21 @@ public class SnapPositionBehaviour : MonoBehaviour
             case Modes.SnapToVector3Reference:
                 if (vectorIsRelative)
                 {
-                    objectToSnap.position += vector3Reference;
+                    _currentTransform.position += vector3Reference;
                 }
                 else
                 {
-                    objectToSnap.position = vector3Reference;
+                    _currentTransform.position = vector3Reference;
                 }
                 break;
             case Modes.SnapToTransformReference:
-                objectToSnap.position = transformReference.position;
+                _currentTransform.position = transformReference.position;
                 break;
             case Modes.SnapToVector3DataReference:
-                objectToSnap.position = vector3DataReference.value;
+                _currentTransform.position = vector3DataReference.value;
                 break;
             default:
-                objectToSnap.position = vector3Reference;
+                _currentTransform.position = vector3Reference;
                 break;
         }
     }

@@ -8,10 +8,22 @@ public class SnapRotationBehaviour : MonoBehaviour
     public Vector3 vector3Reference;
     public Transform transformReference;
     public Vector3Data vector3DataReference;
+    public bool applyToParent = false;
     public bool runOnStart = true;
 
+    private Transform _currentTransform;
+    
     void Start()
     {
+        if (applyToParent)
+        {
+            _currentTransform = transformReference.parent;
+        }
+        else
+        {
+            _currentTransform = transform;
+        }
+        
         if (runOnStart)
         {
             ApplyRotationSnapping();
