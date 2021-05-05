@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DelayedEventBehaviour : MonoBehaviour
+public class RandomDelayBehaviour : MonoBehaviour
 {
-    public float delayTime = 1.0f;
+    public float minDelayTime, maxDelayTime;
     public bool beginOnStart = true;
     public UnityEvent delayedEvent;
 
@@ -13,7 +12,7 @@ public class DelayedEventBehaviour : MonoBehaviour
 
     void Start()
     {
-        _waitForSecondsObj = new WaitForSeconds(delayTime);
+        _waitForSecondsObj = new WaitForSeconds(Random.Range(minDelayTime, maxDelayTime));
         if (beginOnStart)
         {
             InitiateCountdown();
