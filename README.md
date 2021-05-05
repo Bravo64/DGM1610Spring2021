@@ -222,6 +222,8 @@ Monday, May 3rd, 2021: Clear!
 
 Tuesday May 4th, 2021: Mostly Clear
 
+Wednesday May 5th, 2021: Clear
+
 
 
 
