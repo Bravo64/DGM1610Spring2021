@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class InstanciationBehavior : MonoBehaviour
+public class InstantiationBehavior : MonoBehaviour
 {
     public enum RotationTypes { CopyPointRotation, QuaternionIdentity }
     
     public GameObject objectToCreate, creationPoint;
     public RotationTypes rotationType = RotationTypes.CopyPointRotation;
-    public bool instanciateOnStart = false;
+    public bool instantiateOnStart = false;
 
     private void Start()
     {
-        if (instanciateOnStart)
+        if (instantiateOnStart)
         {
-            ActivateInstanciation();
+            ActivateInstantiation();
         }
     }
 
@@ -21,7 +21,7 @@ public class InstanciationBehavior : MonoBehaviour
         objectToCreate = inputObject;
     }
 
-    public void ActivateInstanciation()
+    public void ActivateInstantiation()
     {
         if (rotationType == RotationTypes.CopyPointRotation)
         {
