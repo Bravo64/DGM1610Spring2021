@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
-public class TriggerTagEvent : MonoBehaviour
+public class TagTriggerEvent : MonoBehaviour
 {
     public string tagName;
     public UnityEvent triggerEnterEvent;
@@ -16,9 +16,8 @@ public class TriggerTagEvent : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(tagName))
-        {
-            triggerEnterEvent.Invoke();
-        }
+        if (!other.CompareTag(tagName)) { return; }
+        
+        triggerEnterEvent.Invoke();
     }
 }

@@ -3,10 +3,10 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class TriggerTagEvent2D : MonoBehaviour
+public class TagTriggerExit2DEvent : MonoBehaviour
 {
     public string tagName;
-    public UnityEvent triggerEnterEvent;
+    public UnityEvent triggerExit2DEvent;
     
     private void Start()
     {
@@ -14,11 +14,10 @@ public class TriggerTagEvent2D : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = true;
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(tagName))
-        {
-            triggerEnterEvent.Invoke();
-        }
+        if (!other.CompareTag(tagName)) { return; }
+        
+        triggerExit2DEvent.Invoke();
     }
 }
