@@ -11,16 +11,11 @@ public class RandomRepeaterBehaviour : MonoBehaviour
 
     private List<WaitForSeconds> _waitForSecondsObjs = new List<WaitForSeconds>();
 
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < 10; i++)
         {
             _waitForSecondsObjs.Add(new WaitForSeconds(Random.Range(minimumDelay, maximumDelay)));
-        }
-        
-        if (beginOnStart)
-        {
-            InitiateRepeater();
         }
     }
 
