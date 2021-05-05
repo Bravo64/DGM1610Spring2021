@@ -1,19 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class WaypointMovementBehaviour : MonoBehaviour
 {
-    public enum CycleType { PingPong, Loop}
+    public enum PathType { PingPong, Loop, Randomize}
     public enum Modes { UseWaypointList, UseActiveChildren}
     
     public Transform itemToMove;
-    public float movementSpeed, speedRandomizeAmount, waypointMinDistance;
+    public float movementSpeed, speedRandomizeAmount;
     public Modes mode = Modes.UseWaypointList;
-    public CycleType movementCycleType = CycleType.PingPong;
+    public PathType movementPathType = PathType.PingPong;
     
     public  List<Transform> waypointList = new List<Transform>();
     
@@ -45,21 +42,26 @@ public class WaypointMovementBehaviour : MonoBehaviour
         itemToMove.position = Vector3.MoveTowards(itemToMove.position, waypointList[i].position,
             movementSpeed * Time.deltaTime);
         
-        if (Vector3.Distance(itemToMove.position, waypointList[i].position) < waypointMinDistance)
+        if (Vector3.Distance(itemToMove.position, waypointList[i].position) < 0.01f)
         {
             if (i >= waypointList.Count - 1)
             {
                 i = waypointList.Count - 1;
-                if (movementCycleType == CycleType.PingPong)
+
+                switch (movementPathType)
                 {
-                    _movementDirection = -1;
-                }
-                else
-                {
-                    i = -1;
+                    case PathType.PingPong:
+                        _movementDirection = -1;
+                        break;
+                    case PathType.Loop:
+                        i = -1;
+                        break;
+                    case PathType.Randomize:
+                        i = Random.Range(0, waypointList.Count) - 1;
+                        break;
                 }
             }
-            else if (i <= 0 && movementCycleType == CycleType.PingPong)
+            else if (i <= 0 && movementPathType == PathType.PingPong)
             {
                 i = 0;
                 _movementDirection = 1;
