@@ -220,9 +220,11 @@ Sunday, May 2nd, 2021: Partly Cloudy
 
 Monday, May 3rd, 2021: Clear!
 
-Tuesday May 4th, 2021: Mostly Clear
+Tuesday, May 4th, 2021: Mostly Clear
 
-Wednesday May 5th, 2021: Clear
+Wednesday, May 5th, 2021: Clear
+
+Thursday, May 6th, 2021: Partly Cloudy
 
 
 
