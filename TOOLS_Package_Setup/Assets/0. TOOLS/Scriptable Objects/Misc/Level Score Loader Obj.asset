@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0308da90c8f7b4b65ae9cbd1e98b596c, type: 3}
-  m_Name: Score Loader Obj
+  m_Script: {fileID: 11500000, guid: ca74c5455891a4c799f266f6d9013035, type: 3}
+  m_Name: Level Score Loader Obj
   m_EditorClassIdentifier: 
-  scoreIntDataObj: {fileID: 11400000, guid: 0dc6fb5171f534813bf84b7c3c7a6c5b, type: 2}
-  scoreSaveKey: '@E#c^N%X&'
+  scoreIntDataObj: {fileID: 11400000, guid: de928db82a0324690973f2d9b8a7926e, type: 2}
+  attachSceneIndexToKey: 1
+  scoreSaveKey: '%S@J*c$N^W'
