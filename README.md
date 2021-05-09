@@ -228,6 +228,8 @@ Thursday, May 6th, 2021: Partly Cloudy
 
 Friday, May 7th, 2021: Windy, Mostly Cloudy
 
+Saturday, May 8th, 2021: Cloudy
+
 
 
 
