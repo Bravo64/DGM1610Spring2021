@@ -232,6 +232,8 @@ Saturday, May 8th, 2021: Cloudy
 
 Sunday, May 9th, 2021: Mostly Clear
 
+Monday, May 10th, 2021: Partly Cloudy
+
 
 
 
