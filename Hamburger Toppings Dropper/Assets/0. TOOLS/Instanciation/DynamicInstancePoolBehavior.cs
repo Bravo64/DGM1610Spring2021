@@ -95,5 +95,10 @@ public class DynamicInstancePoolBehavior : MonoBehaviour
             backupObject = (GameObject)Instantiate(inputObject, creationPoint.transform.position, Quaternion.identity);
         }
         objectPoolList.Add(backupObject);
+        
+        if (mode == Modes.UseChildrenAsObjectPool)
+        {
+            backupObject.transform.parent = transform;
+        }
     }
 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2320504469847755439}
   - component: {fileID: 8899813383998177245}
   - component: {fileID: 1357993739902210452}
-  - component: {fileID: 5611751141816599787}
   - component: {fileID: 8558769912624926495}
   m_Layer: 16
   m_Name: Beef
@@ -136,35 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5611751141816599787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2320504469847755442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31ff1e79325f54bac8eb9521016de255, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayTime: 0.5
-  beginOnStart: 1
-  delayedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7946111130011695700}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8558769912624926495
 MonoBehaviour:
   m_ObjectHideFlags: 0

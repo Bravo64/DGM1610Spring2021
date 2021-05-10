@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca74c5455891a4c799f266f6d9013035, type: 3}
+  m_Name: Overall Score Loader Obj
+  m_EditorClassIdentifier: 
+  scoreIntDataObj: {fileID: 11400000, guid: 0dc6fb5171f534813bf84b7c3c7a6c5b, type: 2}
+  attachSceneIndexToKey: 0
+  scoreSaveKey: )N(@v^X$B&W
