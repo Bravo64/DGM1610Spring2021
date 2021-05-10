@@ -38,7 +38,7 @@ public class IntData : ScriptableObject
     
     public void Subtract(int number)
     {
-        value += number;
+        value -= number;
     }
 
     public void Randomize(int boundary)

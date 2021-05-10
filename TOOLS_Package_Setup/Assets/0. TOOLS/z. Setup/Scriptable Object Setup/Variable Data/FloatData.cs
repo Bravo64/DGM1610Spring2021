@@ -39,7 +39,7 @@ public class FloatData : ScriptableObject
     
     public void Subtract(float number)
     {
-        value += number;
+        value -= number;
     }
     
     public void Randomize(float boundary)
