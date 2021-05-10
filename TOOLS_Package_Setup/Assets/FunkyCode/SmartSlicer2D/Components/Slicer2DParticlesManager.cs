@@ -72,8 +72,8 @@ namespace Slicer2D {
                 if (particle.remainingLifetime < 0.01f || particle.GetCurrentSize(particleSystem2D) < 0.01f) {
                     continue;
                 }
-
-                particle.size *= (1f - 5f * Time.deltaTime);
+                
+                particle.startSize *= (1f - 5f * Time.deltaTime);
     
                 particleArray[p] = particle;
             }
