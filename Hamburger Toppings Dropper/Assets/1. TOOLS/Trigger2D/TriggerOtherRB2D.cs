@@ -16,17 +16,17 @@ public class TriggerOtherRB2D : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Rigidbody2D>())
+        if (other.gameObject.GetComponent<Rigidbody2D>())
         {
             if (mode == Modes.DisableOtherRigidbody2D)
             {
-                other.GetComponent<Rigidbody2D>().isKinematic = true;
-                other.GetComponent<Rigidbody2D>().Sleep();
+                other.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                other.gameObject.GetComponent<Rigidbody2D>().Sleep();
             }
             else
             {
-                other.GetComponent<Rigidbody2D>().WakeUp();
-                other.GetComponent<Rigidbody2D>().isKinematic = false;
+                other.gameObject.GetComponent<Rigidbody2D>().WakeUp();
+                other.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
             }
         }
     }

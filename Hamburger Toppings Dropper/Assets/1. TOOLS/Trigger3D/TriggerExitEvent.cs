@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody))]
 public class TriggerExitEvent : MonoBehaviour
 {
-    public UnityEvent triggerExitEvent;
+    public UnityEvent<Transform> triggerExitEvent;
     
     private void Start()
     {
@@ -15,6 +15,6 @@ public class TriggerExitEvent : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        triggerExitEvent.Invoke();
+        triggerExitEvent.Invoke(other.transform);
     }
 }
