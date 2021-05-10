@@ -41,27 +41,27 @@ public class IntData : ScriptableObject
         value += number;
     }
 
-    public void Randomizer(int boundary)
+    public void Randomize(int boundary)
     {
         value = Random.Range(value - boundary, value + boundary);
     }
     
-    public void AdditionRandomizer(int maxAddition)
+    public void AddRandom(int maxAddition)
     {
         value = Random.Range(value + 1, value + maxAddition + 1);
     }
     
-    public void SubtractionRandomizer(int maxSubtraction)
+    public void SubtractRandom(int maxSubtraction)
     {
         value = Random.Range(value - maxSubtraction, value);
     }
     
-    public void RandomizerFloorZero(int maxValue)
+    public void RandomMinZero(int maxValue)
     {
         value = Random.Range(0, maxValue);
     }
     
-    public void RandomizerFloorOne(int maxValue)
+    public void RandomMinOne(int maxValue)
     {
         value = Random.Range(1, maxValue);
     }

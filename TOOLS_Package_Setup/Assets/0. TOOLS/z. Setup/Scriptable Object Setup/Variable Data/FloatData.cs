@@ -42,27 +42,27 @@ public class FloatData : ScriptableObject
         value += number;
     }
     
-    public void Randomizer(float boundary)
+    public void Randomize(float boundary)
     {
         value = Random.Range(value - boundary, value + boundary);
     }
     
-    public void AdditionRandomizer(float maxAddition)
+    public void AddRandom(float maxAddition)
     {
         value = Random.Range(value, value + maxAddition);
     }
     
-    public void SubtractionRandomizer(float maxSubtraction)
+    public void SubtractRandom(float maxSubtraction)
     {
         value = Random.Range(value - maxSubtraction, value);
     }
     
-    public void RandomizerFloorZero(float maxValue)
+    public void RandomMinZero(float maxValue)
     {
         value = Random.Range(0.0f, maxValue);
     }
     
-    public void RandomizerFloorOne(float maxValue)
+    public void RandomMinOne(float maxValue)
     {
         value = Random.Range(1.0f, maxValue);
     }
