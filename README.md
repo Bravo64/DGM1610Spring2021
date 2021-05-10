@@ -230,6 +230,8 @@ Friday, May 7th, 2021: Windy, Mostly Cloudy
 
 Saturday, May 8th, 2021: Cloudy
 
+Sunday, May 9th, 2021: Mostly Clear
+
 
 
 
