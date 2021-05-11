@@ -234,6 +234,8 @@ Sunday, May 9th, 2021: Mostly Clear
 
 Monday, May 10th, 2021: Partly Cloudy
 
+Tuesday, May 11th, 2021: Mostly Clear
+
 
 
 
