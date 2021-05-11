@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627704733292073230}
   - component: {fileID: 809073246650056575}
-  m_Layer: 18
+  m_Layer: 14
   m_Name: Inside Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7267139947640863705}
   - component: {fileID: 8280615636549971432}
   - component: {fileID: 8183063683843683101}
-  m_Layer: 18
+  m_Layer: 14
   m_Name: Lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863964880850523897}
   - component: {fileID: 8357593321246682889}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 7613541520958870431}
   - component: {fileID: 8363911806586613363}
   - component: {fileID: 5193719701279474235}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Lettuce Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

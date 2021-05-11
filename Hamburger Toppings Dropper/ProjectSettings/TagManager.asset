@@ -17,14 +17,14 @@ TagManager:
   - 
   - Level
   - 
-  - 
-  - 
-  - 
-  - 
-  - Topping 1
-  - Topping 1 Detector
-  - Topping 2
-  - Topping 2 Detector
+  - Tomato
+  - Tomato Detector
+  - Lettuce
+  - Lettuce Detector
+  - Beef
+  - Beef Detector
+  - Cheese
+  - Cheese Detector
   - All Toppings Detector
   - Toppings Snap Catcher
   - Toppings Snap Detector

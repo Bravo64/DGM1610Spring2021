@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4946633780796088587}
   - component: {fileID: 1839643041674209618}
   - component: {fileID: 1658885646962975846}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Beef Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5117,7 +5117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1339472122098292693}
   - component: {fileID: 297471402181673760}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

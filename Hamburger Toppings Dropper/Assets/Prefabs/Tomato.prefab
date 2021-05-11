@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097093783676824366}
   - component: {fileID: 915850365536372063}
-  m_Layer: 18
+  m_Layer: 12
   m_Name: Inside Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7267139947640863705}
   - component: {fileID: 8280615636549971432}
   - component: {fileID: 6058495544115449581}
-  m_Layer: 18
+  m_Layer: 12
   m_Name: Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 5789648651285718150}
   - component: {fileID: 4211692210420002661}
   - component: {fileID: 3324782760175161688}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tomato Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5117,7 +5117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4485372169805234469}
   - component: {fileID: 6454434555939350490}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
