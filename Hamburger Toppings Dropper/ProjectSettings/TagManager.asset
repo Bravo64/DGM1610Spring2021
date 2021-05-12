@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Boundary
   - Boundary Detector
-  - 
-  - 
+  - Top Bun
+  - Top Bun Detector
   - Level
   - 
   - Tomato
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Level Background
+    uniqueID: 2562455745
+    locked: 0
+  - name: Burger Items
+    uniqueID: 4088557211
+    locked: 0
+  - name: Level Foreground
+    uniqueID: 2712842759
     locked: 0

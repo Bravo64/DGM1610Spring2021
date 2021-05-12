@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SnapRotationBehaviour : MonoBehaviour
+public class SnapScaleBehaviour : MonoBehaviour
 {
     public enum Modes { SnapToVector3Reference, SnapToTransformReference, SnapToVector3DataReference }
     
@@ -35,16 +35,16 @@ public class SnapRotationBehaviour : MonoBehaviour
         switch (mode)
         {
             case Modes.SnapToVector3Reference:
-                _currentTransform.rotation = Quaternion.Euler(vector3Reference);
+                _currentTransform.localScale = vector3Reference;
                 break;
             case Modes.SnapToTransformReference:
-                _currentTransform.rotation = transformReference.rotation;
+                _currentTransform.localScale = transformReference.localScale;
                 break;
             case Modes.SnapToVector3DataReference:
-                _currentTransform.rotation = Quaternion.Euler(vector3DataReference.value);
+                _currentTransform.localScale = vector3DataReference.value;
                 break;
             default:
-                _currentTransform.rotation = Quaternion.Euler(vector3Reference);
+                _currentTransform.localScale = vector3Reference;
                 break;
         }
     }
