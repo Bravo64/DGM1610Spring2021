@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -98,5 +97,15 @@ public class CharacterMoveBehaviour : MonoBehaviour
             _myCharacterController.Move(transform.forward * (speed * Time.deltaTime));
             yield return 0;
         }
+    }
+
+    private void PauseControllerMovement()
+    {
+        StopAllCoroutines();
+    }
+    
+    private void OnDisable()
+    {
+        PauseControllerMovement();
     }
 }

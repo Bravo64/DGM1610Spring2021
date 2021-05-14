@@ -89,17 +89,13 @@ public class SnapPositionBehaviour : MonoBehaviour
             case Modes.SnapToVector3Reference:
                 if (vectorIsRelative) { return savedPosAxis + vectorAxis; }
                 else { return vectorAxis; }
-                break;
             case Modes.SnapToTransformReference:
                 return transformAxis;
-                break;
             case Modes.SnapToVector3DataReference:
                 return vectorDataAxis;
-                break;
             default:
                 if (vectorIsRelative) { return savedPosAxis + vectorAxis; }
                 else { return vectorAxis; }
-                break;
         }
     }
 }

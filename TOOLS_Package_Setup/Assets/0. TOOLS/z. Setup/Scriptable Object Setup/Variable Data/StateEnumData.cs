@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New State Enum Variable", menuName = "Variable/State Enum")]

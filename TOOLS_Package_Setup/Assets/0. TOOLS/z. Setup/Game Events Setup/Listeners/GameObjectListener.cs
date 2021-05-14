@@ -1,5 +1,4 @@
-﻿using GameEvents;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GameEvents
 {

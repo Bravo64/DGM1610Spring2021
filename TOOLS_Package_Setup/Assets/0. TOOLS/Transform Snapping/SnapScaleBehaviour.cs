@@ -83,16 +83,12 @@ public class SnapScaleBehaviour : MonoBehaviour
         {
             case Modes.SnapToVector3Reference:
                 return vectorAxis;
-                break;
             case Modes.SnapToTransformReference:
                 return transformAxis;
-                break;
             case Modes.SnapToVector3DataReference:
                 return vectorDataAxis;
-                break;
             default:
                 return vectorAxis;
-                break;
         }
     }
 }
