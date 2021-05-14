@@ -238,6 +238,8 @@ Tuesday, May 11th, 2021: Mostly Clear
 
 Wednesday, May 12th, 2021: Clear Day!!
 
+Thursday, May 13th, 2021: Clear, Very Hot
+
 
 
 
