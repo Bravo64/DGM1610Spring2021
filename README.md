@@ -240,6 +240,8 @@ Wednesday, May 12th, 2021: Clear Day!!
 
 Thursday, May 13th, 2021: Clear, Very Hot
 
+Friday, May 14th, 2021: Partly Cloudy
+
 
 
 
