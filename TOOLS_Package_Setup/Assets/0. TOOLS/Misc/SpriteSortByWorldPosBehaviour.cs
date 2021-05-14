@@ -50,6 +50,11 @@ public class SpriteSortByWorldPosBehaviour : MonoBehaviour
     {
         UpdateSpriteSortingLayer();
     }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        UpdateSpriteSortingLayer();
+    }
 
     public void UpdateSpriteSortingLayer()
     {

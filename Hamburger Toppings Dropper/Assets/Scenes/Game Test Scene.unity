@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -8642,7 +8642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -10306,7 +10306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -16468,7 +16468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -26479,7 +26479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -28260,7 +28260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -46141,7 +46141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
@@ -49967,7 +49967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362e7be009b448d983b1b21fe44b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalDelay: 0.5
+  intervalDelay: 0.6
   beginOnStart: 0
   repeatingEvent:
     m_PersistentCalls:
