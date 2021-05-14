@@ -4,8 +4,8 @@ using Random = UnityEngine.Random;
 
 public class RandomPositionBehaviour : MonoBehaviour
 {
-    public enum Axes { X, Y, Z}
-    public enum Modes { RelativeToZeroPos, RelativeToCurrentPos}
+    public enum Axes { X, Y, Z }
+    public enum Modes { RelativeToZeroPos, RelativeToCurrentPos }
     
     public float minPosition, maxPosition;
     public bool runOnStart = true;
