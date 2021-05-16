@@ -59,36 +59,54 @@ public class SnapRotationBehaviour : MonoBehaviour
     public void ApplyXOnlyRotationSnapping()
     {
         _savedRotation = objectToSnap.eulerAngles;
-        _savedRotation.x = ProcessOneAxisSnap(vector3Reference.x, transformReference.eulerAngles.x, vector3DataReference.value.x);
+        switch (mode)
+        {
+            case Modes.SnapToVector3Reference:
+                _savedRotation.x = vector3Reference.x;
+                break;
+            case Modes.SnapToTransformReference:
+                _savedRotation.x = transformReference.eulerAngles.x;
+                break;
+            case Modes.SnapToVector3DataReference:
+                _savedRotation.x = vector3DataReference.value.x;
+                break;
+        }
         objectToSnap.eulerAngles = _savedRotation;
     }
     
     public void ApplyYOnlyRotationSnapping()
     {
         _savedRotation = objectToSnap.eulerAngles;
-        _savedRotation.y = ProcessOneAxisSnap(vector3Reference.y, transformReference.eulerAngles.y, vector3DataReference.value.y);
+        switch (mode)
+        {
+            case Modes.SnapToVector3Reference:
+                _savedRotation.y = vector3Reference.y;
+                break;
+            case Modes.SnapToTransformReference:
+                _savedRotation.y = transformReference.eulerAngles.y;
+                break;
+            case Modes.SnapToVector3DataReference:
+                _savedRotation.y = vector3DataReference.value.y;
+                break;
+        }
         objectToSnap.eulerAngles = _savedRotation;
     }
     
     public void ApplyZOnlyRotationSnapping()
     {
         _savedRotation = objectToSnap.eulerAngles;
-        _savedRotation.z = ProcessOneAxisSnap(vector3Reference.z, transformReference.eulerAngles.z, vector3DataReference.value.z);
-        objectToSnap.eulerAngles = _savedRotation;
-    }
-    
-    private float ProcessOneAxisSnap(float vectorAxis, float transformAxis, float vectorDataAxis)
-    {
         switch (mode)
         {
             case Modes.SnapToVector3Reference:
-                return vectorAxis;
+                _savedRotation.z = vector3Reference.z;
+                break;
             case Modes.SnapToTransformReference:
-                return transformAxis;
+                _savedRotation.z = transformReference.eulerAngles.z;
+                break;
             case Modes.SnapToVector3DataReference:
-                return vectorDataAxis;
-            default:
-                return vectorAxis;
+                _savedRotation.z = vector3DataReference.value.z;
+                break;
         }
+        objectToSnap.eulerAngles = _savedRotation;
     }
 }

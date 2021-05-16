@@ -7,6 +7,7 @@ public class SnapScaleBehaviour : MonoBehaviour
 
     public Transform objectToSnap;
     public Modes mode = Modes.SnapToVector3Reference;
+    public bool vectorIsRelativelyMultiplied = false;
     public Vector3 vector3Reference;
     public Transform transformReference;
     public Vector3Data vector3DataReference;
@@ -42,7 +43,15 @@ public class SnapScaleBehaviour : MonoBehaviour
         switch (mode)
         {
             case Modes.SnapToVector3Reference:
-                objectToSnap.localScale = vector3Reference;
+                if (vectorIsRelativelyMultiplied)
+                {
+                    _savedScale = objectToSnap.localScale;
+                    objectToSnap.localScale = new Vector3(vector3Reference.x * _savedScale.x, vector3Reference.y * _savedScale.y, vector3Reference.z * _savedScale.z);
+                }
+                else
+                {
+                    objectToSnap.localScale = vector3Reference;
+                }
                 break;
             case Modes.SnapToTransformReference:
                 objectToSnap.localScale = transformReference.localScale;
@@ -51,7 +60,8 @@ public class SnapScaleBehaviour : MonoBehaviour
                 objectToSnap.localScale = vector3DataReference.value;
                 break;
             default:
-                objectToSnap.localScale = vector3Reference;
+                _savedScale = objectToSnap.localScale;
+                objectToSnap.localScale = new Vector3(vector3Reference.x * _savedScale.x, vector3Reference.y * _savedScale.y, vector3Reference.z * _savedScale.z);
                 break;
         }
     }
@@ -59,36 +69,57 @@ public class SnapScaleBehaviour : MonoBehaviour
     public void ApplyXOnlyScaleSnapping()
     {
         _savedScale = objectToSnap.localScale;
-        _savedScale.x = ProcessOneAxisSnap(vector3Reference.x, transformReference.position.x, vector3DataReference.value.x);
+        switch (mode)
+        {
+            case Modes.SnapToVector3Reference:
+                if (vectorIsRelativelyMultiplied) { _savedScale.x = _savedScale.x * vector3Reference.x; }
+                else { _savedScale.x = vector3Reference.x; }
+                break;
+            case Modes.SnapToTransformReference:
+                _savedScale.x = transformReference.position.x;
+                break;
+            case Modes.SnapToVector3DataReference:
+                _savedScale.x = vector3DataReference.value.x;
+                break;
+        }
         objectToSnap.localScale = _savedScale;
     }
     
     public void ApplyYOnlyScaleSnapping()
     {
         _savedScale = objectToSnap.localScale;
-        _savedScale.z = ProcessOneAxisSnap(vector3Reference.y, transformReference.position.y, vector3DataReference.value.y);
+        switch (mode)
+        {
+            case Modes.SnapToVector3Reference:
+                if (vectorIsRelativelyMultiplied) { _savedScale.y = _savedScale.y * vector3Reference.y; }
+                else { _savedScale.y = vector3Reference.y; }
+                break;
+            case Modes.SnapToTransformReference:
+                _savedScale.y = transformReference.position.y;
+                break;
+            case Modes.SnapToVector3DataReference:
+                _savedScale.y = vector3DataReference.value.y;
+                break;
+        }
         objectToSnap.localScale = _savedScale;
     }
     
     public void ApplyZOnlyScaleSnapping()
     {
         _savedScale = objectToSnap.localScale;
-        _savedScale.z = ProcessOneAxisSnap(vector3Reference.z, transformReference.position.z, vector3DataReference.value.z);
-        objectToSnap.localScale = _savedScale;
-    }
-
-    private float ProcessOneAxisSnap(float vectorAxis, float transformAxis, float vectorDataAxis)
-    {
         switch (mode)
         {
             case Modes.SnapToVector3Reference:
-                return vectorAxis;
+                if (vectorIsRelativelyMultiplied) { _savedScale.z = _savedScale.z * vector3Reference.z; }
+                else { _savedScale.z = vector3Reference.z; }
+                break;
             case Modes.SnapToTransformReference:
-                return transformAxis;
+                _savedScale.z = transformReference.position.z;
+                break;
             case Modes.SnapToVector3DataReference:
-                return vectorDataAxis;
-            default:
-                return vectorAxis;
+                _savedScale.z = vector3DataReference.value.z;
+                break;
         }
+        objectToSnap.localScale = _savedScale;
     }
 }

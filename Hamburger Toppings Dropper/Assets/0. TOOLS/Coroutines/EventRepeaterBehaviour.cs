@@ -13,10 +13,6 @@ public class EventRepeaterBehaviour : MonoBehaviour
     void Start()
     {
         _waitForSecondsObj = new WaitForSeconds(intervalDelay);
-        if (beginOnStart)
-        {
-            InitiateRepeater();
-        }
     }
 
     private void OnEnable()

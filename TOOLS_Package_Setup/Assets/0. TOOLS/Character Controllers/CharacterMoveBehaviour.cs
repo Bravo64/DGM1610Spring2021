@@ -17,7 +17,11 @@ public class CharacterMoveBehaviour : MonoBehaviour
     void Start()
     {
         _myCharacterController = GetComponent<CharacterController>();
-
+        PlayControllerMovement();
+    }
+    
+    public void PlayControllerMovement()
+    {
         if (directionType == DirectionTypes.Global)
         {
             switch (alongAxis)

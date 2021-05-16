@@ -5082,12 +5082,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38429dae5854428fbf50ab45df63f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToSnap: {fileID: 281815818}
   mode: 0
   vectorIsRelative: 1
   vector3Reference: {x: 0, y: 0.7, z: 0}
   transformReference: {fileID: 0}
   vector3DataReference: {fileID: 0}
-  applyToParent: 0
+  snapAxesType: 0
   runOnStart: 0
 --- !u!114 &281815822
 MonoBehaviour:
@@ -5122,7 +5123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 281815821}
         m_TargetAssemblyTypeName: SnapPositionBehaviour, Assembly-CSharp
-        m_MethodName: ApplyPositionSnapping
+        m_MethodName: ApplyFullPositionSnapping
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

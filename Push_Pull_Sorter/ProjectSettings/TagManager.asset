@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Red
+  - Yellow
+  - Blue
+  - EndZone
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Belt
+  - Belt Detector
+  - Belt Resetter
+  - Ball
+  - Ball Mover
+  - Ball Move Sensor
+  - Ball Detector
+  - Red
+  - Red Detector
+  - Yellow
+  - Yellow Detector
+  - Blue
+  - Blue Detector
+  - Up Pusher
+  - Down Pusher
+  - Push Up Sensor
+  - Push Down Sensor
+  - Boundary
+  - Boundary Detector
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -64,38 +64,57 @@ public class SnapPositionBehaviour : MonoBehaviour
     public void ApplyXOnlyPositionSnapping()
     {
         _savedPos = objectToSnap.position;
-        _savedPos.x = ProcessOneAxisSnap(_savedPos.x, vector3Reference.x, transformReference.position.x, vector3DataReference.value.x);
+        switch (mode)
+        {
+            case Modes.SnapToVector3Reference:
+                if (vectorIsRelative) { _savedPos.x =  _savedPos.x + vector3Reference.x; }
+                else { _savedPos.x = vector3Reference.x; }
+                break;
+            case Modes.SnapToTransformReference:
+                _savedPos.x = transformReference.position.x;
+                break;
+            case Modes.SnapToVector3DataReference:
+                _savedPos.x = vector3DataReference.value.x;
+                break;
+        }
         objectToSnap.position = _savedPos;
     }
     
     public void ApplyYOnlyPositionSnapping()
     {
         _savedPos = objectToSnap.position;
-        _savedPos.y = ProcessOneAxisSnap(_savedPos.y, vector3Reference.y, transformReference.position.y, vector3DataReference.value.y);
+        switch (mode)
+        {
+            case Modes.SnapToVector3Reference:
+                if (vectorIsRelative) { _savedPos.y =  _savedPos.y + vector3Reference.y; }
+                else { _savedPos.y = vector3Reference.y; }
+                break;
+            case Modes.SnapToTransformReference:
+                _savedPos.y = transformReference.position.y;
+                break;
+            case Modes.SnapToVector3DataReference:
+                _savedPos.y = vector3DataReference.value.y;
+                break;
+        }
         objectToSnap.position = _savedPos;
     }
     
     public void ApplyZOnlyPositionSnapping()
     {
         _savedPos = objectToSnap.position;
-        _savedPos.z = ProcessOneAxisSnap(_savedPos.z, vector3Reference.z, transformReference.position.z, vector3DataReference.value.z);
-        objectToSnap.position = _savedPos;
-    }
-
-    private float ProcessOneAxisSnap(float savedPosAxis, float vectorAxis, float transformAxis, float vectorDataAxis)
-    {
         switch (mode)
         {
             case Modes.SnapToVector3Reference:
-                if (vectorIsRelative) { return savedPosAxis + vectorAxis; }
-                else { return vectorAxis; }
+                if (vectorIsRelative) { _savedPos.z =  _savedPos.z + vector3Reference.z; }
+                else { _savedPos.z = vector3Reference.z; }
+                break;
             case Modes.SnapToTransformReference:
-                return transformAxis;
+                _savedPos.z = transformReference.position.z;
+                break;
             case Modes.SnapToVector3DataReference:
-                return vectorDataAxis;
-            default:
-                if (vectorIsRelative) { return savedPosAxis + vectorAxis; }
-                else { return vectorAxis; }
+                _savedPos.z = vector3DataReference.value.z;
+                break;
         }
+        objectToSnap.position = _savedPos;
     }
 }
