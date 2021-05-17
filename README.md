@@ -242,7 +242,9 @@ Thursday, May 13th, 2021: Clear, Very Hot
 
 Friday, May 14th, 2021: Partly Cloudy
 
-Saaturday, May 15th, 2021: Mostly Clear
+Saturday, May 15th, 2021: Mostly Clear
+
+Sunday, May 16th, 2021: Partly Cloudy, Slightly Rainy
 
 
 
