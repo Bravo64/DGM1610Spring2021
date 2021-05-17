@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class CharacterMoveBehaviour : MonoBehaviour
 {
+    public enum Modes { UseMyCharacterController, UseParentCharacterController }
     public enum Directions { X, Y, Z }
     public enum DirectionTypes { Global, Local}
-    
+
+    public Modes controller = Modes.UseMyCharacterController;
     public float speed;
     public Directions alongAxis = Directions.X;
     public DirectionTypes directionType = DirectionTypes.Global;
@@ -16,7 +17,14 @@ public class CharacterMoveBehaviour : MonoBehaviour
     
     void Start()
     {
-        _myCharacterController = GetComponent<CharacterController>();
+        if (controller == Modes.UseMyCharacterController)
+        {
+            _myCharacterController = GetComponent<CharacterController>();
+        }
+        else
+        {
+            _myCharacterController = transform.parent.GetComponent<CharacterController>();
+        }
         PlayControllerMovement();
     }
     
