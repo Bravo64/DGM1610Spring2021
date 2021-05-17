@@ -246,6 +246,8 @@ Saturday, May 15th, 2021: Mostly Clear
 
 Sunday, May 16th, 2021: Partly Cloudy, Slightly Rainy
 
+Monday, May 17th, 2021: Partly Cloudy
+
 
 
 
