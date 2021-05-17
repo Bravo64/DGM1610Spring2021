@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class TriggerDisableOther2D : MonoBehaviour
 {
+    public bool disableOtherParent = false;
+    
     private void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -15,6 +17,13 @@ public class TriggerDisableOther2D : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.gameObject.SetActive(false);
+        if (disableOtherParent)
+        {
+            other.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

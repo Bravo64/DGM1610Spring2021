@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class TriggerDisableOther : MonoBehaviour
 {
+    public bool disableOtherParent = false;
+
     private void Start()
     {
         GetComponent<Collider>().isTrigger = true;
@@ -12,6 +14,13 @@ public class TriggerDisableOther : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.SetActive(false);
+        if (disableOtherParent)
+        {
+            other.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

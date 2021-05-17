@@ -5,6 +5,7 @@ using UnityEngine;
 public class TagTriggerDisableOther : MonoBehaviour
 {
     public string tagName;
+    public bool disableOtherParent = false;
     private void Start()
     {
         GetComponent<Collider>().isTrigger = true;
@@ -15,6 +16,13 @@ public class TagTriggerDisableOther : MonoBehaviour
     {
         if (!other.CompareTag(tagName)) { return; }
         
-        other.gameObject.SetActive(false);
+        if (disableOtherParent)
+        {
+            other.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
